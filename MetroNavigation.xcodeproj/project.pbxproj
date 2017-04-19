@@ -15,6 +15,17 @@
 		343BFB8E1EA802C100CEC472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343BFB8C1EA802C100CEC472 /* LaunchScreen.storyboard */; };
 		343BFB991EA802C100CEC472 /* MetroNavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB981EA802C100CEC472 /* MetroNavigationTests.m */; };
 		343BFBA41EA802C100CEC472 /* MetroNavigationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBA31EA802C100CEC472 /* MetroNavigationUITests.m */; };
+		343BFBB71EA8066E00CEC472 /* MetroGraphLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBB61EA8066E00CEC472 /* MetroGraphLogic.m */; };
+		343BFBC01EA8068900CEC472 /* MNMetro.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBB91EA8068900CEC472 /* MNMetro.m */; };
+		343BFBC11EA8068900CEC472 /* MNMetro.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBB91EA8068900CEC472 /* MNMetro.m */; };
+		343BFBC21EA8068900CEC472 /* MNStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBB1EA8068900CEC472 /* MNStation.m */; };
+		343BFBC31EA8068900CEC472 /* MNStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBB1EA8068900CEC472 /* MNStation.m */; };
+		343BFBC41EA8068900CEC472 /* MNEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBD1EA8068900CEC472 /* MNEdge.m */; };
+		343BFBC51EA8068900CEC472 /* MNEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBD1EA8068900CEC472 /* MNEdge.m */; };
+		343BFBC61EA8068900CEC472 /* MNRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBF1EA8068900CEC472 /* MNRoute.m */; };
+		343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBF1EA8068900CEC472 /* MNRoute.m */; };
+		343BFBCA1EA8070500CEC472 /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBC91EA8070500CEC472 /* DataAPI.m */; };
+		343BFBCB1EA8070500CEC472 /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBC91EA8070500CEC472 /* DataAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +62,17 @@
 		343BFB9F1EA802C100CEC472 /* MetroNavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetroNavigationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		343BFBA31EA802C100CEC472 /* MetroNavigationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetroNavigationUITests.m; sourceTree = "<group>"; };
 		343BFBA51EA802C100CEC472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		343BFBB61EA8066E00CEC472 /* MetroGraphLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroGraphLogic.m; sourceTree = "<group>"; };
+		343BFBB81EA8068900CEC472 /* MNMetro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMetro.h; sourceTree = "<group>"; };
+		343BFBB91EA8068900CEC472 /* MNMetro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMetro.m; sourceTree = "<group>"; };
+		343BFBBA1EA8068900CEC472 /* MNStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNStation.h; sourceTree = "<group>"; };
+		343BFBBB1EA8068900CEC472 /* MNStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNStation.m; sourceTree = "<group>"; };
+		343BFBBC1EA8068900CEC472 /* MNEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNEdge.h; sourceTree = "<group>"; };
+		343BFBBD1EA8068900CEC472 /* MNEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNEdge.m; sourceTree = "<group>"; };
+		343BFBBE1EA8068900CEC472 /* MNRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNRoute.h; sourceTree = "<group>"; };
+		343BFBBF1EA8068900CEC472 /* MNRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNRoute.m; sourceTree = "<group>"; };
+		343BFBC81EA8070500CEC472 /* DataAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAPI.h; sourceTree = "<group>"; };
+		343BFBC91EA8070500CEC472 /* DataAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				343BFB981EA802C100CEC472 /* MetroNavigationTests.m */,
+				343BFBB61EA8066E00CEC472 /* MetroGraphLogic.m */,
 				343BFB9A1EA802C100CEC472 /* Info.plist */,
 			);
 			path = MetroNavigationTests;
@@ -146,6 +169,8 @@
 		343BFBB21EA802F100CEC472 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				343BFBC81EA8070500CEC472 /* DataAPI.h */,
+				343BFBC91EA8070500CEC472 /* DataAPI.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -153,6 +178,14 @@
 		343BFBB31EA802F400CEC472 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				343BFBB81EA8068900CEC472 /* MNMetro.h */,
+				343BFBB91EA8068900CEC472 /* MNMetro.m */,
+				343BFBBA1EA8068900CEC472 /* MNStation.h */,
+				343BFBBB1EA8068900CEC472 /* MNStation.m */,
+				343BFBBC1EA8068900CEC472 /* MNEdge.h */,
+				343BFBBD1EA8068900CEC472 /* MNEdge.m */,
+				343BFBBE1EA8068900CEC472 /* MNRoute.h */,
+				343BFBBF1EA8068900CEC472 /* MNRoute.m */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -316,9 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				343BFBCA1EA8070500CEC472 /* DataAPI.m in Sources */,
 				343BFB861EA802C100CEC472 /* ViewController.m in Sources */,
+				343BFBC41EA8068900CEC472 /* MNEdge.m in Sources */,
 				343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */,
+				343BFBC01EA8068900CEC472 /* MNMetro.m in Sources */,
 				343BFB801EA802C100CEC472 /* main.m in Sources */,
+				343BFBC21EA8068900CEC472 /* MNStation.m in Sources */,
+				343BFBC61EA8068900CEC472 /* MNRoute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +365,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				343BFB991EA802C100CEC472 /* MetroNavigationTests.m in Sources */,
+				343BFBCB1EA8070500CEC472 /* DataAPI.m in Sources */,
+				343BFBC11EA8068900CEC472 /* MNMetro.m in Sources */,
+				343BFBC51EA8068900CEC472 /* MNEdge.m in Sources */,
+				343BFBB71EA8066E00CEC472 /* MetroGraphLogic.m in Sources */,
+				343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */,
+				343BFBC31EA8068900CEC472 /* MNStation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +598,7 @@
 				343BFBAA1EA802C100CEC472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		343BFBAB1EA802C100CEC472 /* Build configuration list for PBXNativeTarget "MetroNavigationTests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +607,7 @@
 				343BFBAD1EA802C100CEC472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		343BFBAE1EA802C100CEC472 /* Build configuration list for PBXNativeTarget "MetroNavigationUITests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +616,7 @@
 				343BFBB01EA802C100CEC472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
