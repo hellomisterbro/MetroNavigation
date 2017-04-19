@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "MNMetro.h"
+#import "DataAPI.h"
 
 @interface MetroNavigationTests : XCTestCase
 
@@ -24,9 +26,9 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testReadingMetroFromFile {
+    MNMetro *metro = [DataAPI metroJSONFile:@"kyiv"];
+    XCTAssertNotNil(metro, @"Can not get json");
 }
 
 - (void)testPerformanceExample {

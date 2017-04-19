@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString *name;
 
 + (MNMetro *)metro;
-+ (MNMetro *)metroFromJSON:(NSData *)jsonData;
++ (MNMetro *)metroFromJSON:(NSDictionary *)metroJSON;
 
 - (id)initWithName:(NSString *)name;
 - (void)addEdge:(MNEdge *)anEdge fromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation;

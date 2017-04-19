@@ -149,10 +149,10 @@
     
     for (MNStation *station in unvisitedStations) {
         
-        [durationFromSource setValue:INFINITY_FOR_SHORTEST_PATH_PROBLEM forKey:station.nameIdentifier];
+        [durationFromSource setValue:INFINITY_FOR_SHORTEST_PATH_PROBLEM forKey:station.identifier];
     }
     
-    [durationFromSource setValue:@0 forKey:sourceStation.nameIdentifier];
+    [durationFromSource setValue:@0 forKey:sourceStation.identifier];
     
     MNStation *currentlyExaminedStation = nil;
     
@@ -179,16 +179,16 @@
                 for (MNStation *neighboringStation in [self neighboringStationsToStation:stationWithMinDuration]) {
                     
                     NSNumber *alt = [NSNumber numberWithFloat:
-                                     [[durationFromSource objectForKey:stationWithMinDuration.nameIdentifier] floatValue] +
+                                     [[durationFromSource objectForKey:stationWithMinDuration.identifier] floatValue] +
                                      [[self durationFromStation:stationWithMinDuration toNeighboringStation:neighboringStation] floatValue]];
                     
-                    NSNumber *durationFromNeighborToOrigin = [durationFromSource objectForKey:neighboringStation.nameIdentifier];
+                    NSNumber *durationFromNeighborToOrigin = [durationFromSource objectForKey:neighboringStation.identifier];
                     
                     if ([durationFromNeighborToOrigin isEqualToNumber:INFINITY_FOR_SHORTEST_PATH_PROBLEM] ||
                         [alt compare:durationFromNeighborToOrigin] == NSOrderedAscending) {
                         
-                        [durationFromSource setValue:alt forKey:neighboringStation.nameIdentifier];
-                        [previousStationInOptimalPath setValue:stationWithMinDuration forKey:neighboringStation.nameIdentifier];
+                        [durationFromSource setValue:alt forKey:neighboringStation.identifier];
+                        [previousStationInOptimalPath setValue:stationWithMinDuration forKey:neighboringStation.identifier];
                     }
                 }
             }
@@ -211,7 +211,7 @@
         
         [stationsSequence addObject:targetStation];
         
-        while ((currentStation = [previousStationInOptimalPath objectForKey:lastStepStation.nameIdentifier])) {
+        while ((currentStation = [previousStationInOptimalPath objectForKey:lastStepStation.identifier])) {
             
             MNEdge* edgerFromLastToPrevious = [self edgeFromStation:lastStepStation toStation:currentStation];
             
@@ -236,7 +236,7 @@
     
     for (MNStation *station in stations) {
         
-        NSNumber *currentTestValue = [durationFromSource objectForKey:station.nameIdentifier];
+        NSNumber *currentTestValue = [durationFromSource objectForKey:station.identifier];
         
         if (![currentTestValue isEqualToNumber:INFINITY_FOR_SHORTEST_PATH_PROBLEM]) {
             

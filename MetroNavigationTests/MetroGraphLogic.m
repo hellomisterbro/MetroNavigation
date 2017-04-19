@@ -25,7 +25,7 @@
     MNStation *stationE;
     MNStation *stationF;
     MNStation *stationG;
-    
+
 }
 
 - (void)setUp {
@@ -34,17 +34,17 @@
     
     cityA = [MNMetro metro];
     
-    stationA = [MNStation stationWithNameIdentifier:@"A"];
-    stationB = [MNStation stationWithNameIdentifier:@"B"];
-    stationC = [MNStation stationWithNameIdentifier:@"C"];
-    stationD = [MNStation stationWithNameIdentifier:@"D"];
-    stationE = [MNStation stationWithNameIdentifier:@"E"];
-    stationF = [MNStation stationWithNameIdentifier:@"F"];
-    stationG = [MNStation stationWithNameIdentifier:@"G"];
+    stationA = [MNStation stationWithIdentifier:@"A"];
+    stationB = [MNStation stationWithIdentifier:@"B"];
+    stationC = [MNStation stationWithIdentifier:@"C"];
+    stationD = [MNStation stationWithIdentifier:@"D"];
+    stationE = [MNStation stationWithIdentifier:@"E"];
+    stationF = [MNStation stationWithIdentifier:@"F"];
+    stationG = [MNStation stationWithIdentifier:@"G"];
     
     //test if it ignores duplicate stations
-    MNStation *stationAClone = [MNStation stationWithNameIdentifier:@"A"];
-    MNStation *stationGClone = [MNStation stationWithNameIdentifier:@"G"];
+    MNStation *stationAClone = [MNStation stationWithIdentifier:@"A"];
+    MNStation *stationGClone = [MNStation stationWithIdentifier:@"G"];
     
     [cityA addEdge:[MNEdge edgeWithDuration:@6] fromStation:stationA toStation:stationB];
     [cityA addEdge:[MNEdge edgeWithDuration:@9] fromStation:stationA toStation:stationD];

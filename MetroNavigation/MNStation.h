@@ -10,14 +10,15 @@
 
 @interface MNStation : NSObject
 
-@property (nonatomic, copy) NSString *nameIdentifier;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, strong) NSNumber *posX;
 @property (nonatomic, strong) NSNumber *posY;
 
-+ (MNStation *)stationWithNameIdentifier:(NSString *)name;
++ (MNStation *)stationWithIdentifier:(NSString *)identifier;
 + (MNStation *)stationFromJSON:(NSDictionary *)jsonStation;
 
-- (id)initWithNameIdentifier:(NSString *)name;
+- (id)initWithIdentifier:(NSString *)identifier;
 - (BOOL)isEqualToStation:(MNStation *)aStation;
 
 @end

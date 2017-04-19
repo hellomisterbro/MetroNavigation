@@ -25,7 +25,11 @@
 
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@ - %@ [%@]", _firstStation.nameIdentifier, _secondStation.nameIdentifier, _duration];
+    
+    return [NSString stringWithFormat:@"%@ - %@ [%@]",
+            _firstStation.identifier,
+            _secondStation.identifier,
+            _duration];
 }
 
 
@@ -35,8 +39,8 @@
     
     MNEdge *edge = [MNEdge edgeWithDuration:@([edgeJSON[@"duration"] doubleValue])];
     
-    edge.firstStation = edgeJSON[@"first"];
-    edge.secondStation = edgeJSON[@"second"];
+    edge.firstStation = [MNStation stationFromJSON:edgeJSON[@"first"]];
+    edge.secondStation = [MNStation stationFromJSON:edgeJSON[@"second"]];
     
     return edge;
 }

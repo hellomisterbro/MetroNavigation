@@ -25,7 +25,7 @@
 
 + (MNStation *)stationFromJSON:(NSDictionary *)jsonStation {
     
-    MNStation *station = [[MNStation alloc] initWithNameIdentifier:jsonStation[@"name"]];
+    MNStation *station = [[MNStation alloc] initWithIdentifier:jsonStation[@"id"]];
     
     station.posX = jsonStation[@"posX"];
     station.posY = jsonStation[@"posY"];
@@ -35,17 +35,17 @@
 
 #pragma mark - Class methods
 
-+ (MNStation *)stationWithNameIdentifier:(NSString *)name {
-    return [[MNStation alloc] initWithNameIdentifier:name];
++ (MNStation *)stationWithIdentifier:(NSString *)identifier {
+    return [[MNStation alloc] initWithIdentifier:identifier];
 }
 
 #pragma mark - Instance methods
 
-- (id)initWithNameIdentifier:(NSString *)name {
+- (id)initWithIdentifier:(NSString *)identifier {
     self = [super init];
     
     if (self) {
-        _nameIdentifier = [name copy];
+        _identifier = [identifier copy];
     }
     
     return self;
@@ -55,7 +55,7 @@
     if (self == aStation)
         return YES;
     
-    if (![self.nameIdentifier isEqualToString:aStation.nameIdentifier])
+    if (![self.identifier isEqualToString:aStation.identifier])
         return NO;
     
     return YES;
