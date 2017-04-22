@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MetroImageView.h"
 
 @interface MetroRouteViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *metroImage;
+@property (weak, nonatomic) IBOutlet MetroImageView *metroImage;
 
 @end

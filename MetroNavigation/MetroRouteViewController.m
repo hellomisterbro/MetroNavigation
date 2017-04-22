@@ -7,8 +7,12 @@
 //
 
 #import "MetroRouteViewController.h"
+#import "MNMetro.h"
+#import "DataAPI.h"
 
-@interface MetroRouteViewController () <UIScrollViewDelegate>
+@interface MetroRouteViewController () <UIScrollViewDelegate, MetroImageViewDelegate>
+
+@property (nonatomic, strong) MNMetro* metro;
 
 @end
 
@@ -17,8 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImage *image = [UIImage imageNamed:@"kiev-metro"];
+    self.metro = [DataAPI metroJSONFile:@"kyiv"];
+    
+    UIImage *image = [UIImage imageNamed:kKyivMetropolitanFileName];
+    
     self.metroImage.image = image;
+    self.metroImage.delegate = self;
     
     self.scrollView.delegate = self;
     self.scrollView.maximumZoomScale = 5.0;
@@ -29,26 +37,22 @@
     [super viewDidAppear:animated];
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 // MARK: - UIScrollViewDelegate
-- (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return  self.metroImage;
 }
 
+// MARK: - UIScrollViewDelegate
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)imageTouchedAtPoint:(CGPoint)point {
+    MNStation *station =  [self.metro stationWithImagePositionX:point.x positionY:point.y radious:10];
+    [self.metroImage addCircleOnImage:CGPointMake([station.posX doubleValue], [station.posY doubleValue])];
+}
 
 @end

@@ -28,5 +28,6 @@
 - (MNEdge *)edgeFromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation;
 - (NSNumber *)durationFromStation:(MNStation *)sourceStation toNeighboringStation:(MNStation *)targetStation;
 - (MNRoute *)shortestRouteFromStation:(MNStation *)sourceStation toStation:(MNStation *)targetStation;
+- (MNStation *)stationWithImagePositionX:(double)x positionY:(double)y radious:(double)radious;
 
 @end

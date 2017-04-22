@@ -8,6 +8,7 @@
 
 #import "MNMetro.h"
 #import "MNEdge.h"
+#import <math.h>
 
 #define INFINITY_FOR_SHORTEST_PATH_PROBLEM @(-1)
 
@@ -17,15 +18,20 @@
 #pragma mark - NSObject
 
 - (instancetype)init {
+    
     self = [super init];
+    
     if (self) {
+        
         _edges = [NSMutableArray array];
         _stations = [NSMutableArray array];
     }
+    
     return self;
 }
 
 - (BOOL)isEqual:(id)other {
+    
     if (other == self)
         return YES;
     
@@ -61,12 +67,16 @@
 #pragma mark - Instance methods
 
 - (id)initWithName:(NSString *)name {
+    
     self = [super init];
+    
     if (self) {
+        
         _edges = [NSMutableArray array];
         _stations = [NSMutableArray array];
         _name = [name copy];
     }
+    
     return self;
 }
 
@@ -86,6 +96,20 @@
     return YES;
 }
 
+- (MNStation *)stationWithImagePositionX:(double)x positionY:(double)y radious:(double)radious {
+    
+    for (MNStation *station in self.stations) {
+        
+        BOOL doesFitCircle = (pow(x - [station.posX doubleValue], 2) + pow(y - [station.posY doubleValue], 2)) < pow(radious, 2);
+        
+        if (doesFitCircle) {
+            
+            return station;
+        }
+    }
+    
+    return nil;
+}
 
 - (void)addEdge:(MNEdge *)anEdge fromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation {
     
@@ -109,10 +133,13 @@
 }
 
 - (NSArray *)neighboringStationsToStation:(MNStation *)aStation {
+    
     NSMutableArray *relatedStations = [NSMutableArray new];
     
     for (MNEdge *edge in self.edges) {
+        
         if ([edge containStation:aStation]) {
+            
             [relatedStations addObject:[edge stationOppositeToStation:aStation]];
         }
     }
@@ -121,11 +148,15 @@
 }
 
 - (MNEdge *)edgeFromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation {
+    
     for (MNEdge *edge in self.edges) {
+        
         if ([edge containStation:aStation] && [edge containStation:anotherStation]) {
+            
             return edge;
         }
     }
+    
     return nil;
 }
 
@@ -252,24 +283,4 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

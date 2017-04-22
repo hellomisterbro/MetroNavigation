@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		343BFB801EA802C100CEC472 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB7F1EA802C100CEC472 /* main.m */; };
 		343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB821EA802C100CEC472 /* AppDelegate.m */; };
-		343BFB861EA802C100CEC472 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB851EA802C100CEC472 /* ViewController.m */; };
 		343BFB891EA802C100CEC472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343BFB871EA802C100CEC472 /* Main.storyboard */; };
 		343BFB8B1EA802C100CEC472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343BFB8A1EA802C100CEC472 /* Assets.xcassets */; };
 		343BFB8E1EA802C100CEC472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343BFB8C1EA802C100CEC472 /* LaunchScreen.storyboard */; };
@@ -28,6 +27,9 @@
 		343BFBCB1EA8070500CEC472 /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBC91EA8070500CEC472 /* DataAPI.m */; };
 		348CC5681EA9F8B700A7302D /* MetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */; };
 		348CC5691EA9F8B700A7302D /* MetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */; };
+		348D3AB71EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
+		348D3AB81EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
+		348D3AB91EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +54,6 @@
 		343BFB7F1EA802C100CEC472 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		343BFB811EA802C100CEC472 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		343BFB821EA802C100CEC472 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		343BFB841EA802C100CEC472 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		343BFB851EA802C100CEC472 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		343BFB881EA802C100CEC472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		343BFB8A1EA802C100CEC472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		343BFB8D1EA802C100CEC472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		343BFBC91EA8070500CEC472 /* DataAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAPI.m; sourceTree = "<group>"; };
 		348CC5661EA9F8B700A7302D /* MetroRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroRouteViewController.h; sourceTree = "<group>"; };
 		348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroRouteViewController.m; sourceTree = "<group>"; };
+		348D3AB51EABD04F00D341C6 /* MetroImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroImageView.h; sourceTree = "<group>"; };
+		348D3AB61EABD04F00D341C6 /* MetroImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,8 @@
 		343BFBB11EA802EE00CEC472 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				348D3AB51EABD04F00D341C6 /* MetroImageView.h */,
+				348D3AB61EABD04F00D341C6 /* MetroImageView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -211,8 +215,6 @@
 		343BFBB51EA8031900CEC472 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				343BFB841EA802C100CEC472 /* ViewController.h */,
-				343BFB851EA802C100CEC472 /* ViewController.m */,
 				348CC5661EA9F8B700A7302D /* MetroRouteViewController.h */,
 				348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */,
 			);
@@ -356,7 +358,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				343BFBCA1EA8070500CEC472 /* DataAPI.m in Sources */,
-				343BFB861EA802C100CEC472 /* ViewController.m in Sources */,
 				343BFBC41EA8068900CEC472 /* MNEdge.m in Sources */,
 				343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */,
 				343BFBC01EA8068900CEC472 /* MNMetro.m in Sources */,
@@ -364,6 +365,7 @@
 				343BFBC21EA8068900CEC472 /* MNStation.m in Sources */,
 				343BFBC61EA8068900CEC472 /* MNRoute.m in Sources */,
 				348CC5681EA9F8B700A7302D /* MetroRouteViewController.m in Sources */,
+				348D3AB71EABD04F00D341C6 /* MetroImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				343BFB991EA802C100CEC472 /* MetroNavigationTests.m in Sources */,
+				348D3AB81EABD04F00D341C6 /* MetroImageView.m in Sources */,
 				343BFBCB1EA8070500CEC472 /* DataAPI.m in Sources */,
 				343BFBC11EA8068900CEC472 /* MNMetro.m in Sources */,
 				343BFBC51EA8068900CEC472 /* MNEdge.m in Sources */,
@@ -385,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348D3AB91EABD04F00D341C6 /* MetroImageView.m in Sources */,
 				348CC5691EA9F8B700A7302D /* MetroRouteViewController.m in Sources */,
 				343BFBA41EA802C100CEC472 /* MetroNavigationUITests.m in Sources */,
 			);
