@@ -27,6 +27,7 @@
     
     MNStation *station = [[MNStation alloc] initWithIdentifier:jsonStation[@"id"]];
     
+    station.name = jsonStation[@"name"];
     station.posX = jsonStation[@"posX"];
     station.posY = jsonStation[@"posY"];
     

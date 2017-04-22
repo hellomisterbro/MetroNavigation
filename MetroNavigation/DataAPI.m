@@ -10,7 +10,8 @@
 
 #import <UIKit/UIKit.h>
 
-#define KYIV_METRO @"kyiv"
+NSString *const kKyivMetropolitanFileName = @"kyiv";
+
 
 @implementation DataAPI
 

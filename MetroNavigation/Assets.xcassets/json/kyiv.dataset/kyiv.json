@@ -8,30 +8,253 @@
     },
     {
       "first": {"id": "102","name": "Chernihivska", "posX": 1.2,"posY":2},
-      "second": {"id": "103","name": "Darnytsia", "posX": 1.2,"posY":2}
+      "second": {"id": "103","name": "Darnytsia", "posX": 1.2,"posY":2},
+      "duration": 1.3
     },
     {
       "first": {"id": "103","name": "Darnytsia", "posX": 1.2,"posY":2},
-      "second": {"id": "104","name": "Livoberezhna", "posX": 1.2,"posY":2}
+      "second": {"id": "104","name": "Livoberezhna", "posX": 1.2,"posY":2},
+      "duration": 1.3
     },
     {
       "first": {"id": "104","name": "Livoberezhna", "posX": 1.2,"posY":2},
-      "second": {"id": "105","name": "Hydropark", "posX": 1.2,"posY":2}
+      "second": {"id": "105","name": "Hydropark", "posX": 1.2,"posY":2},
+      "duration": 1.3
     },
     {
       "first": {"id": "105","name": "Hydropark", "posX": 1.2,"posY":2},
-      "second": {"id": "106","name": "Dnipro", "posX": 1.2,"posY":2}
+      "second": {"id": "106","name": "Dnipro", "posX": 1.2,"posY":2},
+      "duration": 1.3
     },
     {
       "first": {"id": "106","name": "Dnipro", "posX": 1.2,"posY":2},
-      "second": {"id": "107","name": "Arsenalna", "posX": 1.2,"posY":2}
+      "second": {"id": "107","name": "Arsenalna", "posX": 1.2,"posY":2},
+      "duration": 1.3
     },
     {
-      "first": {"id": "108","name": "Arsenalna", "posX": 1.2,"posY":2},
-      "second": {"id": "109","name": "Khreschatyk", "posX": 1.2,"posY":2}
+      "first": {"id": "107","name": "Arsenalna", "posX": 1.2,"posY":2},
+      "second": {"id": "108","name": "Khreschatyk", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+         {
+      "first": {"id": "108","name": "Khreschatyk", "posX": 1.2,"posY":2},
+      "second": {"id": "109","name": "Teatralna", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+     {
+      "first": {"id": "109","name": "Teatralna", "posX": 1.2,"posY":2},
+      "second": {"id": "110","name": "Universytet", "posX": 1.2,"posY":2},
+      "duration": 1.3
     },
     {
-      "first": {"id": "109","name": "Khreschatyk", "posX": 1.2,"posY":2},
-      "second": {"id": "110","name": "Maidan Nezalezhnosti", "posX": 1.2,"posY":2}
+      "first": {"id": "110","name": "Universytet", "posX": 1.2,"posY":2},
+      "second": {"id": "111","name": "Vokzalna", "posX": 1.2,"posY":2}
+    },
+    {
+      "first": {"id": "111","name": "Vokzalna", "posX": 1.2,"posY":2},
+      "second": {"id": "112","name": "Politechnichnyi Instytut", "posX": 1.2,"posY":2}
+    },
+    {
+      "first": {"id": "112","name": "Politechnichnyi Instytut", "posX": 1.2,"posY":2},
+      "second": {"id": "113","name": "Shulavska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "113","name": "Shulavska", "posX": 1.2,"posY":2},
+      "second": {"id": "114","name": "Beresteiska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "114","name": "Beresteiska", "posX": 1.2,"posY":2},
+      "second": {"id": "115","name": "Nyvky", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "115","name": "Nyvky", "posX": 1.2,"posY":2},
+      "second": {"id": "116","name": "Svatoshyn", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+     {
+      "first": {"id": "116","name": "Svatoshyn", "posX": 1.2,"posY":2},
+      "second": {"id": "117","name": "Zhytomyrska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+      {
+      "first": {"id": "117","name": "Zhytomyrska", "posX": 1.2,"posY":2},
+      "second": {"id": "118","name": "Akademmistechko", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "208","name": "Maidan Nezalezhnosti", "posX": 1.2,"posY":2},
+      "second": {"id": "207","name": "Poshtova Square", "posX": 1.2,"posY":2}
+    },
+    {
+      "first": {"id": "207","name": "Poshtova Square", "posX": 1.2,"posY":2},
+      "second": {"id": "206","name": "Kontraktova Square", "posX": 1.2,"posY":2}
+    },
+    {
+      "first": {"id": "206","name": "Kontraktova Square", "posX": 1.2,"posY":2},
+      "second": {"id": "205","name": "Tarasa Shevchenka", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "205","name": "Tarasa Shevchenka", "posX": 1.2,"posY":2},
+      "second": {"id": "204","name": "Petrivka", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "204","name": "Petrivka", "posX": 1.2,"posY":2},
+      "second": {"id": "203","name": "Obolon", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "203","name": "Obolon", "posX": 1.2,"posY":2},
+      "second": {"id": "202","name": "Minska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "202","name": "Minska", "posX": 1.2,"posY":2},
+      "second": {"id": "201","name": "Heroiv Dnipra", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "208","name": "Maidan Nezalezhnosti", "posX": 1.2,"posY":2},
+      "second": {"id": "209","name": "Ploscha Lva Tolstoho", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "209","name": "Ploscha Lva Tolstoho", "posX": 1.2,"posY":2},
+      "second": {"id": "210","name": "Olimpiiska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "210","name": "Olimpiiska", "posX": 1.2,"posY":2},
+      "second": {"id": "211","name": "Palats \"Ukraina\"", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "211","name": "Palats \"Ukraina\"", "posX": 1.2,"posY":2},
+      "second": {"id": "212","name": "Lubidska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "212","name": "Lubidska", "posX": 1.2,"posY":2},
+      "second": {"id": "213","name": "Demiivska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "213","name": "Demiivska", "posX": 1.2,"posY":2},
+      "second": {"id": "214","name": "Holosiivska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "214","name": "Holosiivska", "posX": 1.2,"posY":2},
+      "second": {"id": "215","name": "Vasylkiska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "215","name": "Vasylkiska", "posX": 1.2,"posY":2},
+      "second": {"id": "216","name": "Vystavkovyi centr", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    }
+    ,{
+      "first": {"id": "216","name": "Vystavkovyi centr", "posX": 1.2,"posY":2},
+      "second": {"id": "217","name": "Ipodrom", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "217","name": "Ipodrom", "posX": 1.2,"posY":2},
+      "second": {"id": "218","name": "Teremki", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "301","name": "Chervony Hutir", "posX": 1.2,"posY":2},
+      "second": {"id": "302","name": "Boruspilska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "302","name": "Boruspilska", "posX": 1.2,"posY":2},
+      "second": {"id": "303","name": "Vyrlytsa", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "303","name": "Vyrlytsa", "posX": 1.2,"posY":2},
+      "second": {"id": "304","name": "Harkivska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "304","name": "Harkivska", "posX": 1.2,"posY":2},
+      "second": {"id": "305","name": "Poznyaky", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "305","name": "Poznyaky", "posX": 1.2,"posY":2},
+      "second": {"id": "306","name": "Osokorky", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "306","name": "Osokorky", "posX": 1.2,"posY":2},
+      "second": {"id": "307","name": "Slavutych", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "307","name": "Slavutych", "posX": 1.2,"posY":2},
+      "second": {"id": "308","name": "Vydubychi", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "308","name": "Vydubychi", "posX": 1.2,"posY":2},
+      "second": {"id": "309","name": "Druzhbu narodiv", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "309","name": "Druzhbu narodiv", "posX": 1.2,"posY":2},
+      "second": {"id": "310","name": "Pecherska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "310","name": "Pecherska", "posX": 1.2,"posY":2},
+      "second": {"id": "311","name": "Klovska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "311","name": "Klovska", "posX": 1.2,"posY":2},
+      "second": {"id": "312","name": "Palats sportu", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "312","name": "Palats sportu", "posX": 1.2,"posY":2},
+      "second": {"id": "313","name": "Zoloti vorota", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "313","name": "Zoloti vorota", "posX": 1.2,"posY":2},
+      "second": {"id": "314","name": "Lukjanivska", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "314","name": "Lukjanivska", "posX": 1.2,"posY":2},
+      "second": {"id": "315","name": "Dorohozhychi", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "315","name": "Dorohozhychi", "posX": 1.2,"posY":2},
+      "second": {"id": "316","name": "Syrets", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "313","name": "Zoloti vorota", "posX": 1.2,"posY":2},
+      "second": {"id": "109","name": "Teatralna", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "108","name": "Khreschatyk", "posX": 1.2,"posY":2},
+      "second": {"id": "208","name": "Maidan Nezalezhnosti", "posX": 1.2,"posY":2},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "312","name": "Palats sportu", "posX": 1.2,"posY":2},
+      "second": {"id": "209","name": "Ploscha Lva Tolstoho", "posX": 1.2,"posY":2},
+      "duration": 1.3
     }]
 }
