@@ -13,9 +13,10 @@
 @interface MetroRouteViewController () <UIScrollViewDelegate, MetroImageViewDelegate>
 
 @property (nonatomic, strong) MNMetro* metro;
+@property (nonatomic, strong) MNRoute* route;
 
-@property (nonatomic, strong) MNStation* firstStation;
-@property (nonatomic, strong) MNStation* secondStation;
+@property (nonatomic, strong) MNStation* startStation;
+@property (nonatomic, strong) MNStation* endStation;
 
 @end
 
@@ -59,59 +60,77 @@
     
     if (selectedStation) {
         
-        MNStation *first = self.firstStation;
-        MNStation *second = self.secondStation;
+        MNStation *start = self.startStation;
+        MNStation *end = self.endStation;
         
         CGPoint selectedStationPoint = CGPointMake([selectedStation.posX doubleValue], [selectedStation.posY doubleValue]);
-        CGPoint secondStationPoint = CGPointMake([second.posX doubleValue], [second.posY doubleValue]);
+        CGPoint secondStationPoint = CGPointMake([end.posX doubleValue], [end.posY doubleValue]);
         
         //set first pin if no station selected
-        if (!first && !second) {
-            self.firstStation = selectedStation;
-            [self.metroImage addFirstPinAtPoint:selectedStationPoint];
+        if (!start && !end) {
+            self.startStation = selectedStation;
+            [self.metroImage addStartPinAtPoint:selectedStationPoint];
             
         //remove first pin and set the second one to its place
-        } else if ([first isEqual:selectedStation]) {
+        } else if ([start isEqual:selectedStation]) {
             
-            self.firstStation = second;
-            [self.metroImage removeFirstPin];
+            self.startStation = end;
+            [self.metroImage removeStartPin];
             
-            if (self.secondStation) {
-                [self.metroImage removeSecondPin];
-                [self.metroImage addFirstPinAtPoint:secondStationPoint];
-                self.secondStation = nil;
+            if (self.endStation) {
+                [self.metroImage removeEndPin];
+                [self.metroImage addStartPinAtPoint:secondStationPoint];
+                self.endStation = nil;
             }
             
         //set second pin
-        } else if (first && !second) {
-            self.secondStation = selectedStation;
-            [self.metroImage addSecondPinAtPoint:selectedStationPoint];
+        } else if (start && !end) {
+            self.endStation = selectedStation;
+            [self.metroImage addEndPinAtPoint:selectedStationPoint];
             
         //remove second pin
-        } else if ([second isEqual:selectedStation]) {
-            [self.metroImage removeSecondPin];
-            self.secondStation = nil;
+        } else if ([end isEqual:selectedStation]) {
+            [self.metroImage removeEndPin];
+            self.endStation = nil;
+        }
+        
+        //two pin selected
+        if (self.startStation && self.endStation) {
+            [self displayShortPathRoute];
         }
         
     }
     
 }
 
+- (void)displayShortPathRoute {
+    self.route = [self.metro shortestRouteFromStation:self.startStation toStation:self.endStation];
+    
+    for (MNStation *station in self.route.stationsSequence) {
+        
+        if (![station isEqual:self.startStation] && ![station isEqual:self.endStation]) {
+            
+            CGPoint intermidiatePoint = CGPointMake([station.posX doubleValue], [station.posY doubleValue]);
+            [self.metroImage addInterMediatePinAtPoint:intermidiatePoint];
+        }
+    }
+}
+
 - (void)updatePinsWithMetroImageView:(MetroImageView *)metroImageView {
     
-    if (self.firstStation) {
+    if (self.startStation) {
         
-        [self.metroImage removeFirstPin];
+        [self.metroImage removeStartPin];
         
-        CGPoint firstStationPoint = CGPointMake([self.firstStation.posX doubleValue], [self.firstStation.posY doubleValue]);
-        [self.metroImage addFirstPinAtPoint:firstStationPoint];
+        CGPoint firstStationPoint = CGPointMake([self.startStation.posX doubleValue], [self.startStation.posY doubleValue]);
+        [self.metroImage addStartPinAtPoint:firstStationPoint];
         
-    } else if (self.secondStation) {
+    } else if (self.endStation) {
         
-        [self.metroImage removeSecondPin];
+        [self.metroImage removeEndPin];
         
-        CGPoint secondStationPoint = CGPointMake([self.secondStation.posX doubleValue], [self.secondStation.posY doubleValue]);
-        [self.metroImage addSecondPinAtPoint:secondStationPoint];
+        CGPoint secondStationPoint = CGPointMake([self.endStation.posX doubleValue], [self.endStation.posY doubleValue]);
+        [self.metroImage addEndPinAtPoint:secondStationPoint];
     }
     
 }

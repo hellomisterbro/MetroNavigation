@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 
 NSString *const kKyivMetropolitanFileName = @"kyiv";
+NSString *const kKyivMetropolitanImageName = @"kyiv-metro";
 
 
 @implementation DataAPI

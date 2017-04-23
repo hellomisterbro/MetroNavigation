@@ -7,17 +7,31 @@
 //
 
 #import "MetroImageView.h"
+#import "DataAPI.h"
+
+#define kRadiousForPin 10.0f
+
+NSString *const kMetroNavigationStartPinName = @"start";
+NSString *const kMetroNavigationEndPinName = @"end";
+NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
 
 @interface MetroImageView ()
 
 @property (nonatomic, strong) CAShapeLayer* firstPin;
 @property (nonatomic, strong) CAShapeLayer* secondPin;
 
-- (CAShapeLayer *)addCircleOnImageViewWithPoint:(CGPoint)point;
-
 @end
 
 @implementation MetroImageView
+
+//MARK: UIView
+
+- (void)layoutSubviews {
+    [self.delegate updatePinsWithMetroImageView:self];
+}
+
+
+//MARK: UIResponder
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
@@ -29,6 +43,7 @@
     [self.delegate imageTouchedAtPoint:imageTouchPoint metroImageView:self];
 }
 
+//MARK: Image Points Convertions
 
 - (CGPoint)imagePointFromViewPoint:(CGPoint)viewPoint {
     
@@ -88,57 +103,61 @@
     return viewPoint;
 }
 
-- (CAShapeLayer *)addCircleOnImageViewWithPoint:(CGPoint)point {
+
+//MARK: Pin Handlers
+
+- (CAShapeLayer *)imageAsLayer:(UIImage *)image withPoint:(CGPoint)point {
     
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     
-    circleLayer.bounds = self.bounds;
+    CGFloat radious = kRadiousForPin;
     
-    circleLayer.position = CGPointMake(CGRectGetWidth(self.bounds) / 2.0f, CGRectGetHeight(self.bounds) / 2);
+    circleLayer.frame = CGRectMake(point.x - radious / 2.0f, point.y - radious / 2.0f, radious, radious);
     
-    CGFloat radious = 10.0f;
-    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:
-                          CGRectMake(point.x - radious / 2.0f, point.y - radious / 2.0f, radious, radious)];
-    
-    circleLayer.path = path.CGPath;
-    
-    circleLayer.strokeColor = [UIColor redColor].CGColor;
-    
-    circleLayer.lineWidth = 2.0f;
-    
-    [self.layer addSublayer:circleLayer];
+    circleLayer.contents = (id)image.CGImage;
     
     return circleLayer;
 }
 
 
-- (void)addFirstPinAtPoint:(CGPoint)point {
-    [self removeFirstPin];
+- (void)addStartPinAtPoint:(CGPoint)point {
+    [self removeStartPin];
     
     CGPoint imagePoint = [self viewPointFromImagePoint:point];
-    self.firstPin = [self addCircleOnImageViewWithPoint:imagePoint];
+    UIImage *image = [UIImage imageNamed:kMetroNavigationStartPinName];
+    
+    self.firstPin = [self imageAsLayer:image withPoint:imagePoint];
+    [self.layer addSublayer:self.firstPin];
+}
+
+- (void)addEndPinAtPoint:(CGPoint)point {
+    [self removeEndPin];
+    
+    CGPoint imagePoint = [self viewPointFromImagePoint:point];
+    UIImage *image = [UIImage imageNamed:kMetroNavigationEndPinName];
+    
+    self.secondPin = [self imageAsLayer:image withPoint:imagePoint];
+    [self.layer addSublayer:self.secondPin];
     
 }
 
-- (void)addSecondPinAtPoint:(CGPoint)point {
-    [self removeSecondPin];
+- (void)addInterMediatePinAtPoint:(CGPoint)point {
     CGPoint imagePoint = [self viewPointFromImagePoint:point];
-    self.secondPin = [self addCircleOnImageViewWithPoint:imagePoint];
+    UIImage *image = [UIImage imageNamed:kMetroNavigationIntermediatePinName];
     
+    CALayer *pin = [self imageAsLayer:image withPoint:imagePoint];
+    [self.layer addSublayer:pin];
+
 }
 
-- (void)removeFirstPin {
+- (void)removeStartPin {
     [self.firstPin removeFromSuperlayer];
     self.firstPin = nil;
 }
 
-- (void)removeSecondPin {
+- (void)removeEndPin {
     [self.secondPin removeFromSuperlayer];
     self.secondPin = nil;
-}
-
-- (void)layoutSubviews {
-    [self.delegate updatePinsWithMetroImageView:self];
 }
 
 @end

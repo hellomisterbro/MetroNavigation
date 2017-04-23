@@ -23,10 +23,11 @@
 
 @property (nonatomic, weak) id<MetroImageViewDelegate> delegate;
 
-- (void)addFirstPinAtPoint:(CGPoint)point;
-- (void)addSecondPinAtPoint:(CGPoint)point;
+- (void)addStartPinAtPoint:(CGPoint)point;
+- (void)addEndPinAtPoint:(CGPoint)point;
+- (void)addInterMediatePinAtPoint:(CGPoint)point;
 
-- (void)removeFirstPin;
-- (void)removeSecondPin;;
+- (void)removeStartPin;
+- (void)removeEndPin;;
 
 @end
