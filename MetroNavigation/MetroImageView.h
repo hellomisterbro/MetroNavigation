@@ -23,9 +23,10 @@
 
 @property (nonatomic, weak) id<MetroImageViewDelegate> delegate;
 
-@property (nonatomic, strong) CAShapeLayer* circleFirstStation;
-@property (nonatomic, strong) CAShapeLayer* circleSecondStation;
+- (void)addFirstPinAtPoint:(CGPoint)point;
+- (void)addSecondPinAtPoint:(CGPoint)point;
 
-- (CAShapeLayer *)addCircleOnImageWithPoint:(CGPoint)point;
+- (void)removeFirstPin;
+- (void)removeSecondPin;;
 
 @end

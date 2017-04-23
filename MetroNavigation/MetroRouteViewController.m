@@ -63,37 +63,56 @@
         MNStation *second = self.secondStation;
         
         CGPoint selectedStationPoint = CGPointMake([selectedStation.posX doubleValue], [selectedStation.posY doubleValue]);
+        CGPoint secondStationPoint = CGPointMake([second.posX doubleValue], [second.posY doubleValue]);
         
+        //set first pin if no station selected
         if (!first && !second) {
             self.firstStation = selectedStation;
-            self.metroImage.circleFirstStation =  [self.metroImage addCircleOnImageWithPoint:selectedStationPoint];
+            [self.metroImage addFirstPinAtPoint:selectedStationPoint];
             
+        //remove first pin and set the second one to its place
         } else if ([first isEqual:selectedStation]) {
-            self.firstStation = second;
-            [self.metroImage.circleFirstStation removeFromSuperlayer];
-            self.metroImage.circleFirstStation = self.metroImage.circleSecondStation;
-            self.secondStation = nil;
             
+            self.firstStation = second;
+            [self.metroImage removeFirstPin];
+            
+            if (self.secondStation) {
+                [self.metroImage removeSecondPin];
+                [self.metroImage addFirstPinAtPoint:secondStationPoint];
+                self.secondStation = nil;
+            }
+            
+        //set second pin
         } else if (first && !second) {
             self.secondStation = selectedStation;
-            self.metroImage.circleSecondStation =  [self.metroImage addCircleOnImageWithPoint:selectedStationPoint];
+            [self.metroImage addSecondPinAtPoint:selectedStationPoint];
             
+        //remove second pin
         } else if ([second isEqual:selectedStation]) {
-            [self.metroImage.circleSecondStation removeFromSuperlayer];
+            [self.metroImage removeSecondPin];
             self.secondStation = nil;
         }
+        
     }
+    
 }
 
 - (void)updatePinsWithMetroImageView:(MetroImageView *)metroImageView {
-    [self.metroImage.circleFirstStation removeFromSuperlayer];
-    [self.metroImage.circleSecondStation removeFromSuperlayer];
     
-    CGPoint firstStationPoint = CGPointMake([self.firstStation.posX doubleValue], [self.firstStation.posY doubleValue]);
-    CGPoint secondStationPoint = CGPointMake([self.secondStation.posX doubleValue], [self.secondStation.posY doubleValue]);
-    
-    self.metroImage.circleSecondStation =  [self.metroImage addCircleOnImageWithPoint:secondStationPoint];
-    self.metroImage.circleFirstStation =  [self.metroImage addCircleOnImageWithPoint:firstStationPoint];
+    if (self.firstStation) {
+        
+        [self.metroImage removeFirstPin];
+        
+        CGPoint firstStationPoint = CGPointMake([self.firstStation.posX doubleValue], [self.firstStation.posY doubleValue]);
+        [self.metroImage addFirstPinAtPoint:firstStationPoint];
+        
+    } else if (self.secondStation) {
+        
+        [self.metroImage removeSecondPin];
+        
+        CGPoint secondStationPoint = CGPointMake([self.secondStation.posX doubleValue], [self.secondStation.posY doubleValue]);
+        [self.metroImage addSecondPinAtPoint:secondStationPoint];
+    }
     
 }
 

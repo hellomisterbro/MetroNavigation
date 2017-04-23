@@ -8,8 +8,16 @@
 
 #import "MetroImageView.h"
 
-@implementation MetroImageView
+@interface MetroImageView ()
 
+@property (nonatomic, strong) CAShapeLayer* firstPin;
+@property (nonatomic, strong) CAShapeLayer* secondPin;
+
+- (CAShapeLayer *)addCircleOnImageViewWithPoint:(CGPoint)point;
+
+@end
+
+@implementation MetroImageView
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
@@ -80,34 +88,53 @@
     return viewPoint;
 }
 
-
-- (void)removeCircleOnImage:(CGPoint)point {
-
-}
-
-- (CAShapeLayer *)addCircleOnImageWithPoint:(CGPoint)point {
-    
-    CGPoint viewPoint = [self viewPointFromImagePoint:point];
+- (CAShapeLayer *)addCircleOnImageViewWithPoint:(CGPoint)point {
     
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
-
+    
     circleLayer.bounds = self.bounds;
     
     circleLayer.position = CGPointMake(CGRectGetWidth(self.bounds) / 2.0f, CGRectGetHeight(self.bounds) / 2);
-
+    
     CGFloat radious = 10.0f;
     UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:
-                          CGRectMake(viewPoint.x - radious / 2.0f, viewPoint.y - radious / 2.0f, radious, radious)];
-
+                          CGRectMake(point.x - radious / 2.0f, point.y - radious / 2.0f, radious, radious)];
+    
     circleLayer.path = path.CGPath;
     
     circleLayer.strokeColor = [UIColor redColor].CGColor;
-
+    
     circleLayer.lineWidth = 2.0f;
     
     [self.layer addSublayer:circleLayer];
     
     return circleLayer;
+}
+
+
+- (void)addFirstPinAtPoint:(CGPoint)point {
+    [self removeFirstPin];
+    
+    CGPoint imagePoint = [self viewPointFromImagePoint:point];
+    self.firstPin = [self addCircleOnImageViewWithPoint:imagePoint];
+    
+}
+
+- (void)addSecondPinAtPoint:(CGPoint)point {
+    [self removeSecondPin];
+    CGPoint imagePoint = [self viewPointFromImagePoint:point];
+    self.secondPin = [self addCircleOnImageViewWithPoint:imagePoint];
+    
+}
+
+- (void)removeFirstPin {
+    [self.firstPin removeFromSuperlayer];
+    self.firstPin = nil;
+}
+
+- (void)removeSecondPin {
+    [self.secondPin removeFromSuperlayer];
+    self.secondPin = nil;
 }
 
 - (void)layoutSubviews {
