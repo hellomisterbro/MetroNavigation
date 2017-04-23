@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class MetroImageView;
+
 @protocol MetroImageViewDelegate <NSObject>
 
 @required
 
-- (void)imageTouchedAtPoint:(CGPoint)point;
-
-@required
-
+- (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MetroImageView *)metroImageView;
+- (void)updatePinsWithMetroImageView:(MetroImageView *)metroImageView;
 
 @end
 
@@ -23,6 +23,9 @@
 
 @property (nonatomic, weak) id<MetroImageViewDelegate> delegate;
 
-- (void)addCircleOnImage:(CGPoint)point;
+@property (nonatomic, strong) CAShapeLayer* circleFirstStation;
+@property (nonatomic, strong) CAShapeLayer* circleSecondStation;
+
+- (CAShapeLayer *)addCircleOnImageWithPoint:(CGPoint)point;
 
 @end

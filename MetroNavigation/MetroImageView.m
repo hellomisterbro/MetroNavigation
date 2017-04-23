@@ -18,7 +18,7 @@
     
     CGPoint imageTouchPoint = [self imagePointFromViewPoint:viewTouchPoint];
     
-    [self.delegate imageTouchedAtPoint:imageTouchPoint];
+    [self.delegate imageTouchedAtPoint:imageTouchPoint metroImageView:self];
 }
 
 
@@ -80,30 +80,38 @@
     return viewPoint;
 }
 
-- (void)addCircleOnImage:(CGPoint)point {
+
+- (void)removeCircleOnImage:(CGPoint)point {
+
+}
+
+- (CAShapeLayer *)addCircleOnImageWithPoint:(CGPoint)point {
     
     CGPoint viewPoint = [self viewPointFromImagePoint:point];
     
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
 
-    [circleLayer setBounds:CGRectMake(0.0f, 0.0f, [self bounds].size.width,
-                                      [self bounds].size.height)];
-
-    [circleLayer setPosition:CGPointMake([self bounds].size.width/2.0f,
-                                         [self bounds].size.height/2.0f)];
-
-    CGFloat raious = 10.0f;
-    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:
-                          CGRectMake(viewPoint.x - raious / 2, viewPoint.y - raious / 2, raious, raious)];
-
-    [circleLayer setPath:[path CGPath]];
-
-    [circleLayer setStrokeColor:[[UIColor redColor] CGColor]];
-
-    [circleLayer setLineWidth:2.0f];
+    circleLayer.bounds = self.bounds;
     
-    [[self layer] addSublayer:circleLayer];
+    circleLayer.position = CGPointMake(CGRectGetWidth(self.bounds) / 2.0f, CGRectGetHeight(self.bounds) / 2);
+
+    CGFloat radious = 10.0f;
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:
+                          CGRectMake(viewPoint.x - radious / 2.0f, viewPoint.y - radious / 2.0f, radious, radious)];
+
+    circleLayer.path = path.CGPath;
+    
+    circleLayer.strokeColor = [UIColor redColor].CGColor;
+
+    circleLayer.lineWidth = 2.0f;
+    
+    [self.layer addSublayer:circleLayer];
+    
+    return circleLayer;
 }
 
+- (void)layoutSubviews {
+    [self.delegate updatePinsWithMetroImageView:self];
+}
 
 @end

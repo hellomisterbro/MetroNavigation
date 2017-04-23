@@ -14,6 +14,9 @@
 
 @property (nonatomic, strong) MNMetro* metro;
 
+@property (nonatomic, strong) MNStation* firstStation;
+@property (nonatomic, strong) MNStation* secondStation;
+
 @end
 
 @implementation MetroRouteViewController
@@ -23,7 +26,7 @@
     
     self.metro = [DataAPI metroJSONFile:@"kyiv"];
     
-    UIImage *image = [UIImage imageNamed:kKyivMetropolitanFileName];
+    UIImage *image = [UIImage imageNamed:@"kiev-metro"];
     
     self.metroImage.image = image;
     self.metroImage.delegate = self;
@@ -48,11 +51,50 @@
     return  self.metroImage;
 }
 
-// MARK: - UIScrollViewDelegate
+// MARK: - MetroImageView
 
-- (void)imageTouchedAtPoint:(CGPoint)point {
-    MNStation *station =  [self.metro stationWithImagePositionX:point.x positionY:point.y radious:10];
-    [self.metroImage addCircleOnImage:CGPointMake([station.posX doubleValue], [station.posY doubleValue])];
+- (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MetroImageView *)metroImageView {
+    
+    MNStation *selectedStation =  [self.metro stationWithImagePositionX:point.x positionY:point.y radious:15];
+    
+    if (selectedStation) {
+        
+        MNStation *first = self.firstStation;
+        MNStation *second = self.secondStation;
+        
+        CGPoint selectedStationPoint = CGPointMake([selectedStation.posX doubleValue], [selectedStation.posY doubleValue]);
+        
+        if (!first && !second) {
+            self.firstStation = selectedStation;
+            self.metroImage.circleFirstStation =  [self.metroImage addCircleOnImageWithPoint:selectedStationPoint];
+            
+        } else if ([first isEqual:selectedStation]) {
+            self.firstStation = second;
+            [self.metroImage.circleFirstStation removeFromSuperlayer];
+            self.metroImage.circleFirstStation = self.metroImage.circleSecondStation;
+            self.secondStation = nil;
+            
+        } else if (first && !second) {
+            self.secondStation = selectedStation;
+            self.metroImage.circleSecondStation =  [self.metroImage addCircleOnImageWithPoint:selectedStationPoint];
+            
+        } else if ([second isEqual:selectedStation]) {
+            [self.metroImage.circleSecondStation removeFromSuperlayer];
+            self.secondStation = nil;
+        }
+    }
+}
+
+- (void)updatePinsWithMetroImageView:(MetroImageView *)metroImageView {
+    [self.metroImage.circleFirstStation removeFromSuperlayer];
+    [self.metroImage.circleSecondStation removeFromSuperlayer];
+    
+    CGPoint firstStationPoint = CGPointMake([self.firstStation.posX doubleValue], [self.firstStation.posY doubleValue]);
+    CGPoint secondStationPoint = CGPointMake([self.secondStation.posX doubleValue], [self.secondStation.posY doubleValue]);
+    
+    self.metroImage.circleSecondStation =  [self.metroImage addCircleOnImageWithPoint:secondStationPoint];
+    self.metroImage.circleFirstStation =  [self.metroImage addCircleOnImageWithPoint:firstStationPoint];
+    
 }
 
 @end
