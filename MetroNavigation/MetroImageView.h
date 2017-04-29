@@ -23,11 +23,13 @@
 
 @property (nonatomic, weak) id<MetroImageViewDelegate> delegate;
 
+- (CGRect)rectToZoom;
+
 - (void)addStartPinAtPoint:(CGPoint)point;
 - (void)addEndPinAtPoint:(CGPoint)point;
 - (void)addInterMediatePinAtPoint:(CGPoint)point;
-
 - (void)removeStartPin;
-- (void)removeEndPin;;
+- (void)removeEndPin;
+- (void)removeAllIntermediatePins;
 
 @end

@@ -27,9 +27,9 @@
 - (NSString *)description {
     
     return [NSString stringWithFormat:@"%@ - %@ [%@]",
-            _firstStation.identifier,
-            _secondStation.identifier,
-            _duration];
+            self.firstStation.identifier,
+            self.secondStation.identifier,
+            self.duration];
 }
 
 

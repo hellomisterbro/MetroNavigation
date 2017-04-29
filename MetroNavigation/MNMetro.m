@@ -226,12 +226,14 @@
         }
     }
     
-    if ( currentlyExaminedStation == nil || ! [currentlyExaminedStation isEqual:targetStation]) {
+    //
+    if (currentlyExaminedStation == nil || ![currentlyExaminedStation isEqual:targetStation]) {
         
         return nil;
-        
+     
     } else {
 
+        
         MNRoute *route = [MNRoute route];
         
         NSMutableArray *stationsSequence = [route.stationsSequence mutableCopy];

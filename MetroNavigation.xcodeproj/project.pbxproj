@@ -30,6 +30,18 @@
 		348D3AB71EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
 		348D3AB81EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
 		348D3AB91EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
+		34C3F6331EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */; };
+		34C3F6341EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */; };
+		34C3F6351EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */; };
+		34F9D9121EB4E32F00322D64 /* MetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */; };
+		34F9D9131EB4E32F00322D64 /* MetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */; };
+		34F9D9141EB4E32F00322D64 /* MetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */; };
+		34F9D9171EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */; };
+		34F9D9181EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */; };
+		34F9D9191EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */; };
+		34F9D91C1EB5206900322D64 /* StationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D91B1EB5206900322D64 /* StationLabel.m */; };
+		34F9D91D1EB5206900322D64 /* StationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D91B1EB5206900322D64 /* StationLabel.m */; };
+		34F9D91E1EB5206900322D64 /* StationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D91B1EB5206900322D64 /* StationLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +91,14 @@
 		348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroRouteViewController.m; sourceTree = "<group>"; };
 		348D3AB51EABD04F00D341C6 /* MetroImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroImageView.h; sourceTree = "<group>"; };
 		348D3AB61EABD04F00D341C6 /* MetroImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroImageView.m; sourceTree = "<group>"; };
+		34C3F6311EB1E0D3004B59EA /* MetroRouteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroRouteListViewController.h; sourceTree = "<group>"; };
+		34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroRouteListViewController.m; sourceTree = "<group>"; };
+		34F9D9101EB4E32F00322D64 /* MetroImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroImageScrollView.h; sourceTree = "<group>"; };
+		34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroImageScrollView.m; sourceTree = "<group>"; };
+		34F9D9151EB5185200322D64 /* RouteDescriptionBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDescriptionBannerView.h; sourceTree = "<group>"; };
+		34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDescriptionBannerView.m; sourceTree = "<group>"; };
+		34F9D91A1EB5206900322D64 /* StationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationLabel.h; sourceTree = "<group>"; };
+		34F9D91B1EB5206900322D64 /* StationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +190,12 @@
 			children = (
 				348D3AB51EABD04F00D341C6 /* MetroImageView.h */,
 				348D3AB61EABD04F00D341C6 /* MetroImageView.m */,
+				34F9D9101EB4E32F00322D64 /* MetroImageScrollView.h */,
+				34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */,
+				34F9D9151EB5185200322D64 /* RouteDescriptionBannerView.h */,
+				34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */,
+				34F9D91A1EB5206900322D64 /* StationLabel.h */,
+				34F9D91B1EB5206900322D64 /* StationLabel.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -217,6 +243,8 @@
 			children = (
 				348CC5661EA9F8B700A7302D /* MetroRouteViewController.h */,
 				348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */,
+				34C3F6311EB1E0D3004B59EA /* MetroRouteListViewController.h */,
+				34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -360,6 +388,10 @@
 				343BFBCA1EA8070500CEC472 /* DataAPI.m in Sources */,
 				343BFBC41EA8068900CEC472 /* MNEdge.m in Sources */,
 				343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */,
+				34C3F6331EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */,
+				34F9D9171EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
+				34F9D91C1EB5206900322D64 /* StationLabel.m in Sources */,
+				34F9D9121EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
 				343BFBC01EA8068900CEC472 /* MNMetro.m in Sources */,
 				343BFB801EA802C100CEC472 /* main.m in Sources */,
 				343BFBC21EA8068900CEC472 /* MNStation.m in Sources */,
@@ -373,11 +405,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C3F6341EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */,
+				34F9D9131EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
 				343BFB991EA802C100CEC472 /* MetroNavigationTests.m in Sources */,
 				348D3AB81EABD04F00D341C6 /* MetroImageView.m in Sources */,
 				343BFBCB1EA8070500CEC472 /* DataAPI.m in Sources */,
 				343BFBC11EA8068900CEC472 /* MNMetro.m in Sources */,
+				34F9D91D1EB5206900322D64 /* StationLabel.m in Sources */,
 				343BFBC51EA8068900CEC472 /* MNEdge.m in Sources */,
+				34F9D9181EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
 				343BFBB71EA8066E00CEC472 /* MetroGraphLogic.m in Sources */,
 				343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */,
 				343BFBC31EA8068900CEC472 /* MNStation.m in Sources */,
@@ -388,7 +424,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F9D9141EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
+				34C3F6351EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */,
+				34F9D9191EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
 				348D3AB91EABD04F00D341C6 /* MetroImageView.m in Sources */,
+				34F9D91E1EB5206900322D64 /* StationLabel.m in Sources */,
 				348CC5691EA9F8B700A7302D /* MetroRouteViewController.m in Sources */,
 				343BFBA41EA802C100CEC472 /* MetroNavigationUITests.m in Sources */,
 			);

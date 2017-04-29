@@ -19,10 +19,22 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
 
 @property (nonatomic, strong) CAShapeLayer* firstPin;
 @property (nonatomic, strong) CAShapeLayer* secondPin;
+@property (nonatomic, strong) NSMutableArray* intermediatePins;
 
 @end
 
 @implementation MetroImageView
+
+//MARK: NSObject
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+         self.intermediatePins = [NSMutableArray new];
+    }
+    return self;
+}
 
 //MARK: UIView
 
@@ -145,7 +157,8 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
     CGPoint imagePoint = [self viewPointFromImagePoint:point];
     UIImage *image = [UIImage imageNamed:kMetroNavigationIntermediatePinName];
     
-    CALayer *pin = [self imageAsLayer:image withPoint:imagePoint];
+    CAShapeLayer *pin = [self imageAsLayer:image withPoint:imagePoint];
+    [self.intermediatePins addObject:pin];
     [self.layer addSublayer:pin];
 
 }
@@ -158,6 +171,49 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
 - (void)removeEndPin {
     [self.secondPin removeFromSuperlayer];
     self.secondPin = nil;
+}
+
+-(void)removeAllIntermediatePins {
+    for (CAShapeLayer *shapeLayer in self.intermediatePins) {
+        [shapeLayer removeFromSuperlayer];
+    }
+    self.intermediatePins = [NSMutableArray new];
+}
+
+
+//MARK: Zooming
+
+- (CGRect)rectToZoom {
+    
+    NSMutableArray *allPins = [self.intermediatePins mutableCopy];
+    
+    [allPins addObject:self.firstPin];
+    [allPins addObject:self.secondPin];
+    
+    CGFloat minX = CGFLOAT_MAX, minY = CGFLOAT_MAX, maxX = CGFLOAT_MIN, maxY = CGFLOAT_MIN;
+    
+    for (CAShapeLayer *pin in allPins) {
+        
+        CGFloat pinMinX = CGRectGetMinX(pin.frame);
+        CGFloat pinMinY = CGRectGetMinY(pin.frame);
+        CGFloat pinMaxX = CGRectGetMaxX(pin.frame);
+        CGFloat pinMaxY = CGRectGetMaxY(pin.frame);
+        
+        if (pinMinX < minX) {
+            minX = pinMinX;
+        }
+        if (pinMinY < minY) {
+            minY = pinMinY;
+        }
+        if (pinMaxX > maxX) {
+            maxX = pinMaxX;
+        }
+        if (pinMaxY > maxY) {
+            maxY = pinMaxY;
+        }
+    }
+    
+    return CGRectMake( minX, minY, maxX - minX, maxY - minY);
 }
 
 @end
