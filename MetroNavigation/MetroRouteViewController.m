@@ -13,7 +13,7 @@
 
 NSString *const displayRouteListSegueName = @"displayRouteListSegue";
 
-@interface MetroRouteViewController () <UIScrollViewDelegate, MetroImageViewDelegate, UIViewControllerTransitioningDelegate>
+@interface MetroRouteViewController () <UIScrollViewDelegate, MetroImageViewDelegate, UIViewControllerTransitioningDelegate, RouteDescriptionBannerViewDelegate>
 
 @property (nonatomic, strong) MNMetro* metro;
 @property (nonatomic, strong) MNRoute* route;
@@ -37,12 +37,11 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
     
     self.scrollView.delegate = self;
     
+    self.routeDescriptionBannerView.delegate = self;
+    
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -CGRectGetHeight(self.routeDescriptionBannerView.frame);
     
-    UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(hideRouteDescriptionBanner)];
-    gestureRecognizer.minimumNumberOfTouches = 1;
-    gestureRecognizer.maximumNumberOfTouches = 1;
-    [self.routeDescriptionBannerView addGestureRecognizer:gestureRecognizer];
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -54,6 +53,38 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
         destinationVC.transitioningDelegate = self;
         
     }
+}
+
+
+
+- (IBAction)handleRouteDescriptionBannerPan:(id)sender {
+    [self hideRouteDescriptionBanner];
+}
+
+
+// MARK: - RouteDescriptionBannerViewDelegate
+
+- (void)cancelDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
+    [self hideRouteDescriptionBanner];
+}
+
+- (void)detailsDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
+    
+}
+
+-(void)swipeStationDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
+    MNStation *endStation = self.endStation;
+    
+    self.endStation = self.startStation;
+    self.startStation = endStation;
+    
+    CGPoint startPoint = CGPointMake([self.startStation.posX doubleValue], [self.startStation.posY doubleValue]);
+    CGPoint endPint = CGPointMake([self.endStation.posX doubleValue], [self.endStation.posY doubleValue]);
+    
+    [self.metroImage addStartPinAtPoint:startPoint];
+    [self.metroImage addEndPinAtPoint:endPint];
+    
+    [self displayRouteDescriptionBanner];
 }
 
 
@@ -117,6 +148,9 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
     
 }
 
+
+
+
 - (void)displayShortPathRoute {
     
     self.route = [self.metro shortestRouteFromStation:self.startStation toStation:self.endStation];
@@ -133,14 +167,14 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
     if (self.route) {
         
         //Zoom map to the route
-        CGRect rect = self.metroImage.rectToZoom;
+        CGRect rectToZoom = self.metroImage.rectToZoom;
         
+        CGFloat predictedScale = [self.scrollView scaleAfterZoomingToRect:rectToZoom];
+       
         //Take into account the banner that will be presented
-        //MARK: FIXME Take into account banner
-        //rect.size.height += CGRectGetHeight(self.routeDescriptionBannerView.frame);
-    
-        [self.scrollView zoomToRect:rect animated:YES];
-    
+        rectToZoom.size.height += CGRectGetHeight(self.routeDescriptionBannerView.frame) / predictedScale;
+        
+        [self.scrollView zoomToRect:rectToZoom animated:YES];
         [self displayRouteDescriptionBanner];
     }
 }
@@ -174,9 +208,14 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
 - (void)displayRouteDescriptionBanner {
     [self.view layoutIfNeeded];
     
+    [self.routeDescriptionBannerView setStartStationName:self.startStation.name];
+    [self.routeDescriptionBannerView setEndStationName:self.endStation.name];
+    
+    [self.routeDescriptionBannerView setTotalDuration:self.route.totalDuration];
+    
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = 0;
    
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
     }];
 }
@@ -186,7 +225,7 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
     
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -CGRectGetHeight(self.routeDescriptionBannerView.frame);
    
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
     }];
 }

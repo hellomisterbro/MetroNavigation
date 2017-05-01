@@ -25,6 +25,9 @@
 		343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBF1EA8068900CEC472 /* MNRoute.m */; };
 		343BFBCA1EA8070500CEC472 /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBC91EA8070500CEC472 /* DataAPI.m */; };
 		343BFBCB1EA8070500CEC472 /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBC91EA8070500CEC472 /* DataAPI.m */; };
+		3462DC111EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
+		3462DC121EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
+		3462DC131EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
 		348CC5681EA9F8B700A7302D /* MetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */; };
 		348CC5691EA9F8B700A7302D /* MetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */; };
 		348D3AB71EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
@@ -87,6 +90,8 @@
 		343BFBBF1EA8068900CEC472 /* MNRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNRoute.m; sourceTree = "<group>"; };
 		343BFBC81EA8070500CEC472 /* DataAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAPI.h; sourceTree = "<group>"; };
 		343BFBC91EA8070500CEC472 /* DataAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAPI.m; sourceTree = "<group>"; };
+		3462DC0F1EB7B0FC00D77301 /* UIColor+MNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MNColors.h"; sourceTree = "<group>"; };
+		3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MNColors.m"; sourceTree = "<group>"; };
 		348CC5661EA9F8B700A7302D /* MetroRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroRouteViewController.h; sourceTree = "<group>"; };
 		348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroRouteViewController.m; sourceTree = "<group>"; };
 		348D3AB51EABD04F00D341C6 /* MetroImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroImageView.h; sourceTree = "<group>"; };
@@ -188,6 +193,7 @@
 		343BFBB11EA802EE00CEC472 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3462DC141EB7BABE00D77301 /* Helpers */,
 				348D3AB51EABD04F00D341C6 /* MetroImageView.h */,
 				348D3AB61EABD04F00D341C6 /* MetroImageView.m */,
 				34F9D9101EB4E32F00322D64 /* MetroImageScrollView.h */,
@@ -247,6 +253,15 @@
 				34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3462DC141EB7BABE00D77301 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3462DC0F1EB7B0FC00D77301 /* UIColor+MNColors.h */,
+				3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +405,7 @@
 				343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */,
 				34C3F6331EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */,
 				34F9D9171EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
+				3462DC111EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
 				34F9D91C1EB5206900322D64 /* StationLabel.m in Sources */,
 				34F9D9121EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
 				343BFBC01EA8068900CEC472 /* MNMetro.m in Sources */,
@@ -411,6 +427,7 @@
 				348D3AB81EABD04F00D341C6 /* MetroImageView.m in Sources */,
 				343BFBCB1EA8070500CEC472 /* DataAPI.m in Sources */,
 				343BFBC11EA8068900CEC472 /* MNMetro.m in Sources */,
+				3462DC121EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
 				34F9D91D1EB5206900322D64 /* StationLabel.m in Sources */,
 				343BFBC51EA8068900CEC472 /* MNEdge.m in Sources */,
 				34F9D9181EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
@@ -425,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F9D9141EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
+				3462DC131EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
 				34C3F6351EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */,
 				34F9D9191EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
 				348D3AB91EABD04F00D341C6 /* MetroImageView.m in Sources */,

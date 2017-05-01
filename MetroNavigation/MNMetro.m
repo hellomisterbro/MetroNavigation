@@ -172,7 +172,7 @@
     
     //The smallest amount of time to the origin for each station in the graph
     NSMutableArray *unvisitedStations = [NSMutableArray arrayWithArray:self.stations];
-    
+
     NSMutableDictionary *durationFromSource = [NSMutableDictionary dictionaryWithCapacity:self.stations.count];
     
     NSMutableDictionary *previousStationInOptimalPath = [NSMutableDictionary dictionaryWithCapacity:self.stations.count];
@@ -226,7 +226,7 @@
         }
     }
     
-    //
+    
     if (currentlyExaminedStation == nil || ![currentlyExaminedStation isEqual:targetStation]) {
         
         return nil;

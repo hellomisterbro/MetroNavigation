@@ -20,6 +20,14 @@
 }
 
 
+- (CGFloat)scaleAfterZoomingToRect:(CGRect)rect {
+    
+    CGFloat ratio = CGRectGetHeight(self.frame) / CGRectGetHeight(rect);
+    CGFloat scale = (ratio < self.maximumZoomScale) ? ratio : self.maximumZoomScale;
+    
+    return scale;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

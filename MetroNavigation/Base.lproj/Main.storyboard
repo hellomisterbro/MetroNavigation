@@ -38,10 +38,10 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="du9-yE-YVF" userLabel="Route Description Banner View" customClass="RouteDescriptionBannerView">
-                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="555" width="375" height="112"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="46O-sB-EI7">
-                                        <rect key="frame" x="8" y="9" width="359" height="83"/>
+                                        <rect key="frame" x="8" y="9" width="359" height="98"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="f51-xE-oeM">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
@@ -49,45 +49,61 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQc-C6-ewR">
                                                         <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
                                                         <state key="normal" title="Cancel"/>
+                                                        <connections>
+                                                            <action selector="cancelClicked:" destination="du9-yE-YVF" eventType="touchUpInside" id="hx9-SO-LLV"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-c0-HWL">
                                                         <rect key="frame" x="279.5" y="0.0" width="79.5" height="30"/>
                                                         <state key="normal" title="Details"/>
+                                                        <connections>
+                                                            <action selector="detailsClicked:" destination="du9-yE-YVF" eventType="touchUpInside" id="42G-yG-pyg"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="06d-Fo-eAT">
-                                                <rect key="frame" x="0.0" y="40" width="359" height="43"/>
+                                                <rect key="frame" x="0.0" y="40" width="359" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRf-kS-hBj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fbQ-Qw-T4M">
-                                                        <rect key="frame" x="0.0" y="22.5" width="359" height="20.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fbQ-Qw-T4M">
+                                                        <rect key="frame" x="0.0" y="29.5" width="359" height="28.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dp-gb-duy" customClass="StationLabel">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="28.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKo-SQ-Tf3">
-                                                                <rect key="frame" x="169.5" y="0.0" width="20.5" height="20.5"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKo-SQ-Tf3">
+                                                                <rect key="frame" x="165.5" y="0.0" width="28.5" height="28.5"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="20.5" id="RLA-Rk-1b9"/>
+                                                                    <constraint firstAttribute="width" constant="28.5" id="RLA-Rk-1b9"/>
+                                                                    <constraint firstAttribute="height" constant="28.5" id="blH-XS-5Vm"/>
                                                                 </constraints>
                                                                 <state key="normal" title="x" image="arrows"/>
+                                                                <connections>
+                                                                    <action selector="swipeClicked:" destination="du9-yE-YVF" eventType="touchUpInside" id="ZaN-gR-XZk"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ier-bY-CVh" customClass="StationLabel">
-                                                                <rect key="frame" x="317" y="0.0" width="42" height="20.5"/>
+                                                                <rect key="frame" x="199" y="0.0" width="160" height="28.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="tKo-SQ-Tf3" firstAttribute="leading" secondItem="5dp-gb-duy" secondAttribute="trailing" constant="5" id="Ar2-kl-y95"/>
+                                                            <constraint firstItem="ier-bY-CVh" firstAttribute="leading" secondItem="tKo-SQ-Tf3" secondAttribute="trailing" constant="5" id="LKx-bZ-KJa"/>
+                                                            <constraint firstItem="5dp-gb-duy" firstAttribute="leading" secondItem="fbQ-Qw-T4M" secondAttribute="leading" id="O6o-Ny-lah"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ier-bY-CVh" secondAttribute="trailing" id="Rl1-Gm-Tax"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
@@ -115,10 +131,11 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="2Y6-qL-u27"/>
+                                    <constraint firstAttribute="height" constant="112" id="2Y6-qL-u27"/>
                                     <constraint firstItem="dnz-gu-b18" firstAttribute="centerX" secondItem="du9-yE-YVF" secondAttribute="centerX" id="Bbr-tG-I7Q"/>
-                                    <constraint firstAttribute="bottom" secondItem="46O-sB-EI7" secondAttribute="bottom" constant="8" id="GLl-5Y-SIa"/>
+                                    <constraint firstAttribute="bottom" secondItem="46O-sB-EI7" secondAttribute="bottom" constant="5" id="GLl-5Y-SIa"/>
                                     <constraint firstAttribute="trailing" secondItem="46O-sB-EI7" secondAttribute="trailing" constant="8" id="GzZ-UE-Ywe"/>
                                     <constraint firstItem="46O-sB-EI7" firstAttribute="leading" secondItem="du9-yE-YVF" secondAttribute="leading" constant="8" id="NXc-cy-pUg"/>
                                     <constraint firstItem="46O-sB-EI7" firstAttribute="top" secondItem="dnz-gu-b18" secondAttribute="bottom" id="b6n-AG-x7v"/>
@@ -129,6 +146,7 @@
                                     <outlet property="endStaion" destination="ier-bY-CVh" id="YQP-1l-1yn"/>
                                     <outlet property="startStaion" destination="5dp-gb-duy" id="2F7-IQ-DeD"/>
                                     <outlet property="timelabel" destination="eRf-kS-hBj" id="pYg-OF-TiP"/>
+                                    <outletCollection property="gestureRecognizers" destination="d6h-GN-sgL" appends="YES" id="Pcp-oJ-l6o"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -151,6 +169,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="d6h-GN-sgL">
+                    <connections>
+                        <action selector="handleRouteDescriptionBannerPan:" destination="BYZ-38-t0r" id="uFe-sB-1vv"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="122.78860569715144"/>
         </scene>

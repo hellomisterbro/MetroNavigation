@@ -9,7 +9,7 @@
 #import "MetroImageView.h"
 #import "DataAPI.h"
 
-#define kRadiousForPin 10.0f
+#define kDiameterForPin 10.0f
 
 NSString *const kMetroNavigationStartPinName = @"start";
 NSString *const kMetroNavigationEndPinName = @"end";
@@ -122,7 +122,7 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
     
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     
-    CGFloat radious = kRadiousForPin;
+    CGFloat radious = kDiameterForPin;
     
     circleLayer.frame = CGRectMake(point.x - radious / 2.0f, point.y - radious / 2.0f, radious, radious);
     
@@ -199,7 +199,7 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
         CGFloat pinMaxX = CGRectGetMaxX(pin.frame);
         CGFloat pinMaxY = CGRectGetMaxY(pin.frame);
         
-        if (pinMinX < minX) {
+        if (pinMinX + pin.frame.size.width < minX) {
             minX = pinMinX;
         }
         if (pinMinY < minY) {
@@ -213,7 +213,21 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
         }
     }
     
-    return CGRectMake( minX, minY, maxX - minX, maxY - minY);
+    CGRect strictRectToZoom = CGRectMake(minX, minY, maxX - minX, maxY - minY);
+    
+    //Make it with indents
+    
+    CGRect rectToZoomWithIndents = strictRectToZoom;
+   
+    const NSInteger indent = 10;
+    
+    rectToZoomWithIndents.size.width += 2 * indent;
+    rectToZoomWithIndents.size.height += 2 * indent;
+    
+    rectToZoomWithIndents.origin.x -= indent;
+    rectToZoomWithIndents.origin.y -= indent;
+    
+    return rectToZoomWithIndents;
 }
 
 @end

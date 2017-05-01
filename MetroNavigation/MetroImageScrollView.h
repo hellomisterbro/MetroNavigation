@@ -10,4 +10,6 @@
 
 @interface MetroImageScrollView : UIScrollView
 
+- (CGFloat)scaleAfterZoomingToRect:(CGRect)rect;
+
 @end
