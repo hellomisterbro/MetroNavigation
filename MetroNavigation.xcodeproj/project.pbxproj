@@ -25,9 +25,33 @@
 		343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBF1EA8068900CEC472 /* MNRoute.m */; };
 		343BFBCA1EA8070500CEC472 /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBC91EA8070500CEC472 /* DataAPI.m */; };
 		343BFBCB1EA8070500CEC472 /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBC91EA8070500CEC472 /* DataAPI.m */; };
+		344DFA941EB8F73400960F6F /* MNMetro+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA931EB8F73400960F6F /* MNMetro+JSON.m */; };
+		344DFA951EB8F73400960F6F /* MNMetro+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA931EB8F73400960F6F /* MNMetro+JSON.m */; };
+		344DFA961EB8F73400960F6F /* MNMetro+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA931EB8F73400960F6F /* MNMetro+JSON.m */; };
+		344DFA991EB8F74700960F6F /* MNStation+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA981EB8F74700960F6F /* MNStation+JSON.m */; };
+		344DFA9A1EB8F74700960F6F /* MNStation+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA981EB8F74700960F6F /* MNStation+JSON.m */; };
+		344DFA9B1EB8F74700960F6F /* MNStation+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA981EB8F74700960F6F /* MNStation+JSON.m */; };
+		344DFA9E1EB8F75C00960F6F /* MNEdge+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA9D1EB8F75C00960F6F /* MNEdge+JSON.m */; };
+		344DFA9F1EB8F75C00960F6F /* MNEdge+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA9D1EB8F75C00960F6F /* MNEdge+JSON.m */; };
+		344DFAA01EB8F75C00960F6F /* MNEdge+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA9D1EB8F75C00960F6F /* MNEdge+JSON.m */; };
+		344DFAA31EB8F95900960F6F /* BaseSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFAA21EB8F95900960F6F /* BaseSearchListViewController.m */; };
+		344DFAA41EB8F95900960F6F /* BaseSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFAA21EB8F95900960F6F /* BaseSearchListViewController.m */; };
+		344DFAA51EB8F95900960F6F /* BaseSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFAA21EB8F95900960F6F /* BaseSearchListViewController.m */; };
 		3462DC111EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
 		3462DC121EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
 		3462DC131EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
+		3462DC171EB85A5F00D77301 /* RouterDescriptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* RouterDescriptionButton.m */; };
+		3462DC181EB85A5F00D77301 /* RouterDescriptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* RouterDescriptionButton.m */; };
+		3462DC191EB85A5F00D77301 /* RouterDescriptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* RouterDescriptionButton.m */; };
+		3462DC2C1EB871AF00D77301 /* CitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* CitySearchViewController.m */; };
+		3462DC2D1EB871AF00D77301 /* CitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* CitySearchViewController.m */; };
+		3462DC2E1EB871AF00D77301 /* CitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* CitySearchViewController.m */; };
+		3462DC311EB8722D00D77301 /* CityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* CityButton.m */; };
+		3462DC321EB8722D00D77301 /* CityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* CityButton.m */; };
+		3462DC331EB8722D00D77301 /* CityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* CityButton.m */; };
+		3462DC361EB88F1B00D77301 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* CityTableViewCell.m */; };
+		3462DC371EB88F1B00D77301 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* CityTableViewCell.m */; };
+		3462DC381EB88F1B00D77301 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* CityTableViewCell.m */; };
 		348CC5681EA9F8B700A7302D /* MetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */; };
 		348CC5691EA9F8B700A7302D /* MetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */; };
 		348D3AB71EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
@@ -36,15 +60,31 @@
 		34C3F6331EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */; };
 		34C3F6341EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */; };
 		34C3F6351EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */; };
+		34D2E9F71EB9145D0058E4F5 /* StationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F61EB9145D0058E4F5 /* StationTableViewCell.m */; };
+		34D2E9FA1EB916220058E4F5 /* StationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* StationSearchViewController.m */; };
+		34D2E9FB1EB916220058E4F5 /* StationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* StationSearchViewController.m */; };
+		34D2E9FC1EB916220058E4F5 /* StationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* StationSearchViewController.m */; };
+		34D2EA041EB91B150058E4F5 /* MetroStateHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA031EB91B150058E4F5 /* MetroStateHolder.m */; };
+		34D2EA051EB91B150058E4F5 /* MetroStateHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA031EB91B150058E4F5 /* MetroStateHolder.m */; };
+		34D2EA061EB91B150058E4F5 /* MetroStateHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA031EB91B150058E4F5 /* MetroStateHolder.m */; };
+		34D2EA0A1EB9BA180058E4F5 /* MNMetro+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA091EB9BA180058E4F5 /* MNMetro+NSCoding.m */; };
+		34D2EA0B1EB9BA180058E4F5 /* MNMetro+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA091EB9BA180058E4F5 /* MNMetro+NSCoding.m */; };
+		34D2EA0C1EB9BA180058E4F5 /* MNMetro+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA091EB9BA180058E4F5 /* MNMetro+NSCoding.m */; };
+		34D2EA0F1EB9BA2A0058E4F5 /* MNEdge+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA0E1EB9BA2A0058E4F5 /* MNEdge+NSCoding.m */; };
+		34D2EA101EB9BA2A0058E4F5 /* MNEdge+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA0E1EB9BA2A0058E4F5 /* MNEdge+NSCoding.m */; };
+		34D2EA111EB9BA2A0058E4F5 /* MNEdge+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA0E1EB9BA2A0058E4F5 /* MNEdge+NSCoding.m */; };
+		34D2EA141EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA131EB9BA400058E4F5 /* MNStation+NSCodying.m */; };
+		34D2EA151EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA131EB9BA400058E4F5 /* MNStation+NSCodying.m */; };
+		34D2EA161EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA131EB9BA400058E4F5 /* MNStation+NSCodying.m */; };
+		34D2EA191EB9C8CE0058E4F5 /* StationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* StationButton.m */; };
+		34D2EA1A1EB9C8CE0058E4F5 /* StationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* StationButton.m */; };
+		34D2EA1B1EB9C8CE0058E4F5 /* StationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* StationButton.m */; };
 		34F9D9121EB4E32F00322D64 /* MetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */; };
 		34F9D9131EB4E32F00322D64 /* MetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */; };
 		34F9D9141EB4E32F00322D64 /* MetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */; };
 		34F9D9171EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */; };
 		34F9D9181EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */; };
 		34F9D9191EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */; };
-		34F9D91C1EB5206900322D64 /* StationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D91B1EB5206900322D64 /* StationLabel.m */; };
-		34F9D91D1EB5206900322D64 /* StationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D91B1EB5206900322D64 /* StationLabel.m */; };
-		34F9D91E1EB5206900322D64 /* StationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D91B1EB5206900322D64 /* StationLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,20 +130,48 @@
 		343BFBBF1EA8068900CEC472 /* MNRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNRoute.m; sourceTree = "<group>"; };
 		343BFBC81EA8070500CEC472 /* DataAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAPI.h; sourceTree = "<group>"; };
 		343BFBC91EA8070500CEC472 /* DataAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAPI.m; sourceTree = "<group>"; };
+		344DFA921EB8F73400960F6F /* MNMetro+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNMetro+JSON.h"; sourceTree = "<group>"; };
+		344DFA931EB8F73400960F6F /* MNMetro+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNMetro+JSON.m"; sourceTree = "<group>"; };
+		344DFA971EB8F74700960F6F /* MNStation+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNStation+JSON.h"; sourceTree = "<group>"; };
+		344DFA981EB8F74700960F6F /* MNStation+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNStation+JSON.m"; sourceTree = "<group>"; };
+		344DFA9C1EB8F75C00960F6F /* MNEdge+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNEdge+JSON.h"; sourceTree = "<group>"; };
+		344DFA9D1EB8F75C00960F6F /* MNEdge+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNEdge+JSON.m"; sourceTree = "<group>"; };
+		344DFAA11EB8F95900960F6F /* BaseSearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSearchListViewController.h; sourceTree = "<group>"; };
+		344DFAA21EB8F95900960F6F /* BaseSearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSearchListViewController.m; sourceTree = "<group>"; };
 		3462DC0F1EB7B0FC00D77301 /* UIColor+MNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MNColors.h"; sourceTree = "<group>"; };
 		3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MNColors.m"; sourceTree = "<group>"; };
+		3462DC151EB85A5F00D77301 /* RouterDescriptionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouterDescriptionButton.h; sourceTree = "<group>"; };
+		3462DC161EB85A5F00D77301 /* RouterDescriptionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouterDescriptionButton.m; sourceTree = "<group>"; };
+		3462DC2A1EB871AF00D77301 /* CitySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySearchViewController.h; sourceTree = "<group>"; };
+		3462DC2B1EB871AF00D77301 /* CitySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySearchViewController.m; sourceTree = "<group>"; };
+		3462DC2F1EB8722D00D77301 /* CityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityButton.h; sourceTree = "<group>"; };
+		3462DC301EB8722D00D77301 /* CityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityButton.m; sourceTree = "<group>"; };
+		3462DC341EB88F1B00D77301 /* CityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableViewCell.h; sourceTree = "<group>"; };
+		3462DC351EB88F1B00D77301 /* CityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableViewCell.m; sourceTree = "<group>"; };
 		348CC5661EA9F8B700A7302D /* MetroRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroRouteViewController.h; sourceTree = "<group>"; };
 		348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroRouteViewController.m; sourceTree = "<group>"; };
 		348D3AB51EABD04F00D341C6 /* MetroImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroImageView.h; sourceTree = "<group>"; };
 		348D3AB61EABD04F00D341C6 /* MetroImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroImageView.m; sourceTree = "<group>"; };
 		34C3F6311EB1E0D3004B59EA /* MetroRouteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroRouteListViewController.h; sourceTree = "<group>"; };
 		34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroRouteListViewController.m; sourceTree = "<group>"; };
+		34D2E9F51EB9145D0058E4F5 /* StationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationTableViewCell.h; sourceTree = "<group>"; };
+		34D2E9F61EB9145D0058E4F5 /* StationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationTableViewCell.m; sourceTree = "<group>"; };
+		34D2E9F81EB916220058E4F5 /* StationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationSearchViewController.h; sourceTree = "<group>"; };
+		34D2E9F91EB916220058E4F5 /* StationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationSearchViewController.m; sourceTree = "<group>"; };
+		34D2EA021EB91B150058E4F5 /* MetroStateHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroStateHolder.h; sourceTree = "<group>"; };
+		34D2EA031EB91B150058E4F5 /* MetroStateHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroStateHolder.m; sourceTree = "<group>"; };
+		34D2EA081EB9BA180058E4F5 /* MNMetro+NSCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNMetro+NSCoding.h"; sourceTree = "<group>"; };
+		34D2EA091EB9BA180058E4F5 /* MNMetro+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNMetro+NSCoding.m"; sourceTree = "<group>"; };
+		34D2EA0D1EB9BA2A0058E4F5 /* MNEdge+NSCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNEdge+NSCoding.h"; sourceTree = "<group>"; };
+		34D2EA0E1EB9BA2A0058E4F5 /* MNEdge+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNEdge+NSCoding.m"; sourceTree = "<group>"; };
+		34D2EA121EB9BA400058E4F5 /* MNStation+NSCodying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNStation+NSCodying.h"; sourceTree = "<group>"; };
+		34D2EA131EB9BA400058E4F5 /* MNStation+NSCodying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNStation+NSCodying.m"; sourceTree = "<group>"; };
+		34D2EA171EB9C8CE0058E4F5 /* StationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationButton.h; sourceTree = "<group>"; };
+		34D2EA181EB9C8CE0058E4F5 /* StationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationButton.m; sourceTree = "<group>"; };
 		34F9D9101EB4E32F00322D64 /* MetroImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroImageScrollView.h; sourceTree = "<group>"; };
 		34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroImageScrollView.m; sourceTree = "<group>"; };
 		34F9D9151EB5185200322D64 /* RouteDescriptionBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDescriptionBannerView.h; sourceTree = "<group>"; };
 		34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDescriptionBannerView.m; sourceTree = "<group>"; };
-		34F9D91A1EB5206900322D64 /* StationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationLabel.h; sourceTree = "<group>"; };
-		34F9D91B1EB5206900322D64 /* StationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,8 +268,16 @@
 				34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */,
 				34F9D9151EB5185200322D64 /* RouteDescriptionBannerView.h */,
 				34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */,
-				34F9D91A1EB5206900322D64 /* StationLabel.h */,
-				34F9D91B1EB5206900322D64 /* StationLabel.m */,
+				3462DC151EB85A5F00D77301 /* RouterDescriptionButton.h */,
+				3462DC161EB85A5F00D77301 /* RouterDescriptionButton.m */,
+				3462DC2F1EB8722D00D77301 /* CityButton.h */,
+				3462DC301EB8722D00D77301 /* CityButton.m */,
+				3462DC341EB88F1B00D77301 /* CityTableViewCell.h */,
+				3462DC351EB88F1B00D77301 /* CityTableViewCell.m */,
+				34D2E9F51EB9145D0058E4F5 /* StationTableViewCell.h */,
+				34D2E9F61EB9145D0058E4F5 /* StationTableViewCell.m */,
+				34D2EA171EB9C8CE0058E4F5 /* StationButton.h */,
+				34D2EA181EB9C8CE0058E4F5 /* StationButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -211,6 +287,8 @@
 			children = (
 				343BFBC81EA8070500CEC472 /* DataAPI.h */,
 				343BFBC91EA8070500CEC472 /* DataAPI.m */,
+				34D2EA021EB91B150058E4F5 /* MetroStateHolder.h */,
+				34D2EA031EB91B150058E4F5 /* MetroStateHolder.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -218,6 +296,8 @@
 		343BFBB31EA802F400CEC472 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				344DFA911EB8F6E900960F6F /* JSON Helpers */,
+				34D2EA071EB9B9E20058E4F5 /* NSCoding Helpers */,
 				343BFBB81EA8068900CEC472 /* MNMetro.h */,
 				343BFBB91EA8068900CEC472 /* MNMetro.m */,
 				343BFBBA1EA8068900CEC472 /* MNStation.h */,
@@ -237,8 +317,8 @@
 				343BFB811EA802C100CEC472 /* AppDelegate.h */,
 				343BFB821EA802C100CEC472 /* AppDelegate.m */,
 				343BFB871EA802C100CEC472 /* Main.storyboard */,
-				343BFB8A1EA802C100CEC472 /* Assets.xcassets */,
 				343BFB8C1EA802C100CEC472 /* LaunchScreen.storyboard */,
+				343BFB8A1EA802C100CEC472 /* Assets.xcassets */,
 				343BFB8F1EA802C100CEC472 /* Info.plist */,
 			);
 			name = Application;
@@ -251,8 +331,27 @@
 				348CC5671EA9F8B700A7302D /* MetroRouteViewController.m */,
 				34C3F6311EB1E0D3004B59EA /* MetroRouteListViewController.h */,
 				34C3F6321EB1E0D3004B59EA /* MetroRouteListViewController.m */,
+				344DFAA11EB8F95900960F6F /* BaseSearchListViewController.h */,
+				344DFAA21EB8F95900960F6F /* BaseSearchListViewController.m */,
+				3462DC2A1EB871AF00D77301 /* CitySearchViewController.h */,
+				3462DC2B1EB871AF00D77301 /* CitySearchViewController.m */,
+				34D2E9F81EB916220058E4F5 /* StationSearchViewController.h */,
+				34D2E9F91EB916220058E4F5 /* StationSearchViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		344DFA911EB8F6E900960F6F /* JSON Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				344DFA921EB8F73400960F6F /* MNMetro+JSON.h */,
+				344DFA931EB8F73400960F6F /* MNMetro+JSON.m */,
+				344DFA971EB8F74700960F6F /* MNStation+JSON.h */,
+				344DFA981EB8F74700960F6F /* MNStation+JSON.m */,
+				344DFA9C1EB8F75C00960F6F /* MNEdge+JSON.h */,
+				344DFA9D1EB8F75C00960F6F /* MNEdge+JSON.m */,
+			);
+			name = "JSON Helpers";
 			sourceTree = "<group>";
 		};
 		3462DC141EB7BABE00D77301 /* Helpers */ = {
@@ -262,6 +361,19 @@
 				3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		34D2EA071EB9B9E20058E4F5 /* NSCoding Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				34D2EA081EB9BA180058E4F5 /* MNMetro+NSCoding.h */,
+				34D2EA091EB9BA180058E4F5 /* MNMetro+NSCoding.m */,
+				34D2EA0D1EB9BA2A0058E4F5 /* MNEdge+NSCoding.h */,
+				34D2EA0E1EB9BA2A0058E4F5 /* MNEdge+NSCoding.m */,
+				34D2EA121EB9BA400058E4F5 /* MNStation+NSCodying.h */,
+				34D2EA131EB9BA400058E4F5 /* MNStation+NSCodying.m */,
+			);
+			name = "NSCoding Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,18 +514,32 @@
 			files = (
 				343BFBCA1EA8070500CEC472 /* DataAPI.m in Sources */,
 				343BFBC41EA8068900CEC472 /* MNEdge.m in Sources */,
+				34D2E9F71EB9145D0058E4F5 /* StationTableViewCell.m in Sources */,
+				34D2EA0A1EB9BA180058E4F5 /* MNMetro+NSCoding.m in Sources */,
+				3462DC361EB88F1B00D77301 /* CityTableViewCell.m in Sources */,
+				344DFA9E1EB8F75C00960F6F /* MNEdge+JSON.m in Sources */,
 				343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */,
+				3462DC2C1EB871AF00D77301 /* CitySearchViewController.m in Sources */,
+				344DFA991EB8F74700960F6F /* MNStation+JSON.m in Sources */,
 				34C3F6331EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */,
+				34D2EA141EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */,
 				34F9D9171EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
+				3462DC171EB85A5F00D77301 /* RouterDescriptionButton.m in Sources */,
 				3462DC111EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
-				34F9D91C1EB5206900322D64 /* StationLabel.m in Sources */,
+				34D2EA0F1EB9BA2A0058E4F5 /* MNEdge+NSCoding.m in Sources */,
 				34F9D9121EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
 				343BFBC01EA8068900CEC472 /* MNMetro.m in Sources */,
+				34D2E9FA1EB916220058E4F5 /* StationSearchViewController.m in Sources */,
 				343BFB801EA802C100CEC472 /* main.m in Sources */,
 				343BFBC21EA8068900CEC472 /* MNStation.m in Sources */,
+				34D2EA041EB91B150058E4F5 /* MetroStateHolder.m in Sources */,
+				3462DC311EB8722D00D77301 /* CityButton.m in Sources */,
+				34D2EA191EB9C8CE0058E4F5 /* StationButton.m in Sources */,
 				343BFBC61EA8068900CEC472 /* MNRoute.m in Sources */,
+				344DFA941EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
 				348CC5681EA9F8B700A7302D /* MetroRouteViewController.m in Sources */,
 				348D3AB71EABD04F00D341C6 /* MetroImageView.m in Sources */,
+				344DFAA31EB8F95900960F6F /* BaseSearchListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,19 +547,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3462DC2D1EB871AF00D77301 /* CitySearchViewController.m in Sources */,
 				34C3F6341EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */,
+				3462DC371EB88F1B00D77301 /* CityTableViewCell.m in Sources */,
 				34F9D9131EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
+				34D2EA101EB9BA2A0058E4F5 /* MNEdge+NSCoding.m in Sources */,
+				344DFAA41EB8F95900960F6F /* BaseSearchListViewController.m in Sources */,
 				343BFB991EA802C100CEC472 /* MetroNavigationTests.m in Sources */,
+				344DFA9F1EB8F75C00960F6F /* MNEdge+JSON.m in Sources */,
 				348D3AB81EABD04F00D341C6 /* MetroImageView.m in Sources */,
 				343BFBCB1EA8070500CEC472 /* DataAPI.m in Sources */,
 				343BFBC11EA8068900CEC472 /* MNMetro.m in Sources */,
+				344DFA951EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
+				34D2EA151EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */,
 				3462DC121EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
-				34F9D91D1EB5206900322D64 /* StationLabel.m in Sources */,
+				34D2EA1A1EB9C8CE0058E4F5 /* StationButton.m in Sources */,
+				3462DC181EB85A5F00D77301 /* RouterDescriptionButton.m in Sources */,
 				343BFBC51EA8068900CEC472 /* MNEdge.m in Sources */,
+				34D2EA0B1EB9BA180058E4F5 /* MNMetro+NSCoding.m in Sources */,
+				344DFA9A1EB8F74700960F6F /* MNStation+JSON.m in Sources */,
 				34F9D9181EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
+				34D2E9FB1EB916220058E4F5 /* StationSearchViewController.m in Sources */,
+				3462DC321EB8722D00D77301 /* CityButton.m in Sources */,
 				343BFBB71EA8066E00CEC472 /* MetroGraphLogic.m in Sources */,
 				343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */,
 				343BFBC31EA8068900CEC472 /* MNStation.m in Sources */,
+				34D2EA051EB91B150058E4F5 /* MetroStateHolder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,12 +580,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D2EA1B1EB9C8CE0058E4F5 /* StationButton.m in Sources */,
+				34D2EA061EB91B150058E4F5 /* MetroStateHolder.m in Sources */,
+				344DFAA01EB8F75C00960F6F /* MNEdge+JSON.m in Sources */,
 				34F9D9141EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
 				3462DC131EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
+				34D2EA111EB9BA2A0058E4F5 /* MNEdge+NSCoding.m in Sources */,
+				3462DC381EB88F1B00D77301 /* CityTableViewCell.m in Sources */,
+				3462DC331EB8722D00D77301 /* CityButton.m in Sources */,
+				344DFAA51EB8F95900960F6F /* BaseSearchListViewController.m in Sources */,
 				34C3F6351EB1E0D3004B59EA /* MetroRouteListViewController.m in Sources */,
+				344DFA9B1EB8F74700960F6F /* MNStation+JSON.m in Sources */,
+				34D2EA161EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */,
 				34F9D9191EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
 				348D3AB91EABD04F00D341C6 /* MetroImageView.m in Sources */,
-				34F9D91E1EB5206900322D64 /* StationLabel.m in Sources */,
+				344DFA961EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
+				3462DC2E1EB871AF00D77301 /* CitySearchViewController.m in Sources */,
+				34D2EA0C1EB9BA180058E4F5 /* MNMetro+NSCoding.m in Sources */,
+				3462DC191EB85A5F00D77301 /* RouterDescriptionButton.m in Sources */,
+				34D2E9FC1EB916220058E4F5 /* StationSearchViewController.m in Sources */,
 				348CC5691EA9F8B700A7302D /* MetroRouteViewController.m in Sources */,
 				343BFBA41EA802C100CEC472 /* MetroNavigationUITests.m in Sources */,
 			);

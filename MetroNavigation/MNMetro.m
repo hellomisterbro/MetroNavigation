@@ -15,14 +15,18 @@
 @implementation MNMetro
 
 
-#pragma mark - NSObject
+#pragma mark - Initializers
+
+
++ (MNMetro *)metro {
+    return [[MNMetro alloc] init];
+}
+
 
 - (instancetype)init {
-    
     self = [super init];
     
     if (self) {
-        
         _edges = [NSMutableArray array];
         _stations = [NSMutableArray array];
     }
@@ -30,44 +34,7 @@
     return self;
 }
 
-- (BOOL)isEqual:(id)other {
-    
-    if (other == self)
-        return YES;
-    
-    if (!other || ![other isKindOfClass:[self class]])
-        return NO;
-    
-    return [self isEqualToMetro:other];
-}
-
-
-#pragma mark - Class methods
-
-+ (MNMetro *)metro {
-    return [[MNMetro alloc] init];
-}
-
-+ (MNMetro *)metroFromJSON:(NSDictionary *)metroJSON {
-    
-    NSString *name = metroJSON[@"name"];
-    NSArray *edges = metroJSON[@"edges"];
-    
-    MNMetro *metro = [[MNMetro alloc] initWithName:name];
-    
-    for (id object in edges) {
-        MNEdge *edge = [MNEdge edgeFromJSON:object];
-        [metro addEdge:edge fromStation:edge.firstStation toStation:edge.secondStation];
-    }
-    
-    return metro;
-}
-
-
-#pragma mark - Instance methods
-
 - (id)initWithName:(NSString *)name {
-    
     self = [super init];
     
     if (self) {
@@ -78,6 +45,20 @@
     }
     
     return self;
+}
+
+#pragma mark - Comparison
+
+- (BOOL)isEqual:(id)other {
+    if (other == self) {
+        return YES;
+    }
+    
+    if (!other || ![other isKindOfClass:[self class]]) {
+        return NO;
+    }
+    
+    return [self isEqualToMetro:other];
 }
 
 - (BOOL)isEqualToMetro:(MNMetro *)aMetro {
@@ -96,14 +77,29 @@
     return YES;
 }
 
-- (MNStation *)stationWithImagePositionX:(double)x positionY:(double)y radious:(double)radious {
+#pragma mark - NSCoping
+
+- (id)copyWithZone:(NSZone *)zone {
+  
+    MNMetro *metro = [MNMetro metro];
     
+    metro.edges = [[NSArray alloc] initWithArray:self.edges copyItems:YES];
+    metro.stations = [[NSArray alloc] initWithArray:self.edges copyItems:YES];
+    metro.name = self.name;
+    
+    return metro;
+}
+
+
+
+#pragma mark - Graph Interaction Methods
+
+- (MNStation *)stationWithImagePositionX:(double)x positionY:(double)y radious:(double)radious {
     for (MNStation *station in self.stations) {
         
         BOOL doesFitCircle = (pow(x - [station.posX doubleValue], 2) + pow(y - [station.posY doubleValue], 2)) < pow(radious, 2);
         
         if (doesFitCircle) {
-            
             return station;
         }
     }
@@ -112,7 +108,6 @@
 }
 
 - (void)addEdge:(MNEdge *)anEdge fromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation {
-    
     if ([aStation isEqual:anotherStation] ||
         [self edgeFromStation:aStation toStation:anotherStation]) {
         return;
@@ -148,7 +143,6 @@
 }
 
 - (MNEdge *)edgeFromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation {
-    
     for (MNEdge *edge in self.edges) {
         
         if ([edge containStation:aStation] && [edge containStation:anotherStation]) {
@@ -167,9 +161,10 @@
     return (graphEdge) ? graphEdge.duration : nil;
 }
 
+#pragma mark - Dijkstra shortestpath algorithm 
+
 
 - (MNRoute *)shortestRouteFromStation:(MNStation *)sourceStation toStation:(MNStation *)targetStation {
-    
     //The smallest amount of time to the origin for each station in the graph
     NSMutableArray *unvisitedStations = [NSMutableArray arrayWithArray:self.stations];
 
@@ -232,8 +227,6 @@
         return nil;
      
     } else {
-
-        
         MNRoute *route = [MNRoute route];
         
         NSMutableArray *stationsSequence = [route.stationsSequence mutableCopy];

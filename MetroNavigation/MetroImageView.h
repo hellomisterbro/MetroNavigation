@@ -15,7 +15,6 @@
 @required
 
 - (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MetroImageView *)metroImageView;
-- (void)updatePinsWithMetroImageView:(MetroImageView *)metroImageView;
 
 @end
 

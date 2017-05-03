@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +37,21 @@
                                     <constraint firstAttribute="trailing" secondItem="K0s-Qj-XMS" secondAttribute="trailing" id="hYt-3r-SEf"/>
                                     <constraint firstItem="K0s-Qj-XMS" firstAttribute="centerX" secondItem="QEC-8E-15N" secondAttribute="centerX" id="n3L-Bo-Tog"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eED-D4-gGV"/>
+                                </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6g-uh-TJh" customClass="CityButton">
+                                <rect key="frame" x="25" y="45" width="94" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="1I6-em-fMT"/>
+                                    <constraint firstAttribute="height" constant="20" id="kSG-6v-iVP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="tAm-gz-rwf" kind="presentation" id="z9c-Ap-Wbj"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="du9-yE-YVF" userLabel="Route Description Banner View" customClass="RouteDescriptionBannerView">
                                 <rect key="frame" x="0.0" y="555" width="375" height="112"/>
                                 <subviews>
@@ -46,18 +61,18 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="f51-xE-oeM">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQc-C6-ewR">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQc-C6-ewR" customClass="RouterDescriptionButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
                                                         <state key="normal" title="Cancel"/>
                                                         <connections>
                                                             <action selector="cancelClicked:" destination="du9-yE-YVF" eventType="touchUpInside" id="hx9-SO-LLV"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-c0-HWL">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-c0-HWL" customClass="RouterDescriptionButton">
                                                         <rect key="frame" x="279.5" y="0.0" width="79.5" height="30"/>
                                                         <state key="normal" title="Details"/>
                                                         <connections>
-                                                            <action selector="detailsClicked:" destination="du9-yE-YVF" eventType="touchUpInside" id="42G-yG-pyg"/>
+                                                            <segue destination="s9n-3j-nE7" kind="presentation" id="EBl-CM-UEu"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -74,12 +89,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fbQ-Qw-T4M">
                                                         <rect key="frame" x="0.0" y="29.5" width="359" height="28.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dp-gb-duy" customClass="StationLabel">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8K-Q7-5cJ" customClass="StationButton">
                                                                 <rect key="frame" x="0.0" y="0.0" width="160.5" height="28.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <segue destination="mwq-sb-VZP" kind="presentation" id="1Z9-fE-eFv"/>
+                                                                </connections>
+                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKo-SQ-Tf3">
                                                                 <rect key="frame" x="165.5" y="0.0" width="28.5" height="28.5"/>
                                                                 <constraints>
@@ -91,18 +107,19 @@
                                                                     <action selector="swipeClicked:" destination="du9-yE-YVF" eventType="touchUpInside" id="ZaN-gR-XZk"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ier-bY-CVh" customClass="StationLabel">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVQ-UX-3dD" customClass="StationButton">
                                                                 <rect key="frame" x="199" y="0.0" width="160" height="28.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <segue destination="mwq-sb-VZP" kind="presentation" id="Lch-rU-qDd"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="tKo-SQ-Tf3" firstAttribute="leading" secondItem="5dp-gb-duy" secondAttribute="trailing" constant="5" id="Ar2-kl-y95"/>
-                                                            <constraint firstItem="ier-bY-CVh" firstAttribute="leading" secondItem="tKo-SQ-Tf3" secondAttribute="trailing" constant="5" id="LKx-bZ-KJa"/>
-                                                            <constraint firstItem="5dp-gb-duy" firstAttribute="leading" secondItem="fbQ-Qw-T4M" secondAttribute="leading" id="O6o-Ny-lah"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ier-bY-CVh" secondAttribute="trailing" id="Rl1-Gm-Tax"/>
+                                                            <constraint firstItem="UVQ-UX-3dD" firstAttribute="leading" secondItem="tKo-SQ-Tf3" secondAttribute="trailing" constant="5" id="BoH-bt-yo2"/>
+                                                            <constraint firstItem="m8K-Q7-5cJ" firstAttribute="leading" secondItem="fbQ-Qw-T4M" secondAttribute="leading" id="f1T-Iw-gHE"/>
+                                                            <constraint firstAttribute="trailing" secondItem="UVQ-UX-3dD" secondAttribute="trailing" id="x8y-yX-zNv"/>
+                                                            <constraint firstItem="tKo-SQ-Tf3" firstAttribute="leading" secondItem="m8K-Q7-5cJ" secondAttribute="trailing" constant="5" id="yWF-32-rbm"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
@@ -143,8 +160,10 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="bottomRouteDescriptionContraint" destination="Ai1-ik-kD8" id="c7V-PK-Ucf"/>
-                                    <outlet property="endStaion" destination="ier-bY-CVh" id="YQP-1l-1yn"/>
-                                    <outlet property="startStaion" destination="5dp-gb-duy" id="2F7-IQ-DeD"/>
+                                    <outlet property="cancelButton" destination="gQc-C6-ewR" id="A4a-j8-8EK"/>
+                                    <outlet property="detailsButton" destination="ceT-c0-HWL" id="waj-BM-L4g"/>
+                                    <outlet property="endStaion" destination="UVQ-UX-3dD" id="jlY-Cy-GfO"/>
+                                    <outlet property="startStaion" destination="m8K-Q7-5cJ" id="kfi-8G-kPW"/>
                                     <outlet property="timelabel" destination="eRf-kS-hBj" id="pYg-OF-TiP"/>
                                     <outletCollection property="gestureRecognizers" destination="d6h-GN-sgL" appends="YES" id="Pcp-oJ-l6o"/>
                                 </connections>
@@ -156,16 +175,18 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QEC-8E-15N" secondAttribute="bottom" id="4mJ-ds-6of"/>
                             <constraint firstItem="QEC-8E-15N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="985-uv-K1M"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="du9-yE-YVF" secondAttribute="bottom" id="Ai1-ik-kD8"/>
+                            <constraint firstItem="v6g-uh-TJh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="Bay-vy-CWj"/>
+                            <constraint firstItem="v6g-uh-TJh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="NUD-I7-Iw0"/>
                             <constraint firstAttribute="trailing" secondItem="QEC-8E-15N" secondAttribute="trailing" id="XLa-q7-HS4"/>
                             <constraint firstItem="QEC-8E-15N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="n9z-25-B8a"/>
                             <constraint firstAttribute="trailing" secondItem="du9-yE-YVF" secondAttribute="trailing" id="zcU-96-LOp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cityButton" destination="v6g-uh-TJh" id="sES-WQ-El3"/>
                         <outlet property="metroImage" destination="K0s-Qj-XMS" id="M7j-aB-xnG"/>
                         <outlet property="routeDescriptionBannerView" destination="du9-yE-YVF" id="bsu-gq-86S"/>
                         <outlet property="scrollView" destination="QEC-8E-15N" id="tzw-0Q-6Ni"/>
-                        <segue destination="s9n-3j-nE7" kind="presentation" identifier="displayRouteListSegue" id="1NJ-On-YKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -175,7 +196,147 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="122.78860569715144"/>
+            <point key="canvasLocation" x="137" y="-156"/>
+        </scene>
+        <!--Metro City-->
+        <scene sceneID="zbo-bV-sMe">
+            <objects>
+                <tableViewController id="CBW-n0-kkC" customClass="CitySearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1LV-nh-h2C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityNameCellIdentifier" id="WMv-49-H6M" customClass="CityTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WMv-49-H6M" id="GWD-Pg-Lhm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqF-d7-3gr">
+                                            <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityNameLabel" destination="RqF-d7-3gr" id="SYN-Nz-oai"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CBW-n0-kkC" id="efK-dw-1t0"/>
+                            <outlet property="delegate" destination="CBW-n0-kkC" id="LaY-GK-iGw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Metro City" id="5CP-sp-YhV">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="gOJ-ha-5og">
+                            <connections>
+                                <segue destination="T5t-hz-baX" kind="unwind" unwindAction="applyNoneChanges:" id="0k1-td-5it"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="11h-pm-X4B">
+                            <connections>
+                                <action selector="doneClicked:" destination="CBW-n0-kkC" id="yct-Mj-KIm"/>
+                                <segue destination="T5t-hz-baX" kind="unwind" unwindAction="updateMetroWithUnwindSegue:" id="tef-Vm-3q9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcU-PG-Mic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="T5t-hz-baX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="-481.70914542728639"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="Jac-Fo-tIs">
+            <objects>
+                <tableViewController id="LX2-YM-AXs" customClass="StationSearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HqD-tK-xMi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MNStationTableViewCellIdentidier" id="awC-9E-Zpo" customClass="StationTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awC-9E-Zpo" id="deI-4H-kVG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaG-OR-ABm">
+                                            <rect key="frame" x="8" y="12" width="359" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="stationNameLabel" destination="zaG-OR-ABm" id="Imh-V6-NUN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LX2-YM-AXs" id="eou-OR-jjS"/>
+                            <outlet property="delegate" destination="LX2-YM-AXs" id="d6S-g9-KA7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="hAZ-yY-HoH">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="FK2-zt-lso">
+                            <connections>
+                                <segue destination="ifG-FN-dBN" kind="unwind" unwindAction="applyNoneChanges:" id="cio-hJ-Uxq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="06g-pV-sq4">
+                            <connections>
+                                <action selector="doneClicked:" destination="LX2-YM-AXs" id="8Yc-la-Af6"/>
+                                <segue destination="ifG-FN-dBN" kind="unwind" unwindAction="updateMetroWithUnwindSegue:" id="Bsj-A4-4cd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OZg-af-L40" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ifG-FN-dBN" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="167.76611694152925"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hOd-H5-vmm">
+            <objects>
+                <navigationController id="mwq-sb-VZP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AvQ-J9-6yp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LX2-YM-AXs" kind="relationship" relationship="rootViewController" id="TNi-nZ-avt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BH5-SC-I9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1190" y="168"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XQ7-32-OJG">
+            <objects>
+                <navigationController id="tAm-gz-rwf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b3b-zn-fa9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CBW-n0-kkC" kind="relationship" relationship="rootViewController" id="hgw-kC-49g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Xy-jF-sgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1190" y="-481"/>
         </scene>
         <!--Metro Route List View Controller-->
         <scene sceneID="E66-Gp-4xx">
@@ -197,7 +358,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismissClicked:" destination="s9n-3j-nE7" eventType="touchUpInside" id="l2g-E2-DKc"/>
+                                    <segue destination="2TB-Gr-b7W" kind="unwind" unwindAction="applyNoneChanges:" id="7Sr-3g-43V"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -209,12 +370,16 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fmy-Fx-IDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2TB-Gr-b7W" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="137" y="952"/>
+            <point key="canvasLocation" x="137" y="581"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrows" width="69" height="63"/>
         <image name="handle" width="50" height="6"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lch-rU-qDd"/>
+    </inferredMetricsTieBreakers>
 </document>

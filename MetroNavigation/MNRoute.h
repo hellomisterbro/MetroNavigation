@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MNStation.h"
+#import "MNEdge.h"
+
 @interface MNRoute : NSObject
 
-@property (nonatomic, copy) NSArray *stationsSequence;
-@property (nonatomic, copy) NSArray *edgesSequence;
+@property (nonatomic, copy) NSArray <MNStation *> *stationsSequence;
+@property (nonatomic, copy) NSArray <MNEdge *> *edgesSequence;
 
 + (MNRoute *)route;
 - (NSNumber *)totalDuration;

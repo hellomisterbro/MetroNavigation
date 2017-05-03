@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "MNStation.h"
 
-@interface MNEdge : NSObject
+@interface MNEdge : NSObject <NSCopying>
 
 @property (nonatomic, strong) MNStation *firstStation;
 @property (nonatomic, strong) MNStation *secondStation;
 @property (nonatomic, strong) NSNumber *duration;
 
 + (MNEdge *)edgeWithDuration:(NSNumber *)duration;
-+ (MNEdge *)edgeFromJSON:(NSDictionary *)edgeJSON;
+
 
 - (id)initWithDuration:(NSNumber *)duration;
 - (BOOL)isEqualToEdge:(MNEdge *)anEdge;

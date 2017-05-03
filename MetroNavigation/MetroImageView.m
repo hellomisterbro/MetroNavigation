@@ -36,12 +36,6 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
     return self;
 }
 
-//MARK: UIView
-
-- (void)layoutSubviews {
-    [self.delegate updatePinsWithMetroImageView:self];
-}
-
 
 //MARK: UIResponder
 

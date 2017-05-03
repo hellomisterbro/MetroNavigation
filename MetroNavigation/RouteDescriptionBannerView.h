@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StationLabel.h"
+
+#import "StationButton.h"
+#import "RouterDescriptionButton.h"
 
 @class RouteDescriptionBannerView;
 
@@ -16,8 +18,8 @@
 @required
 
 - (void)cancelDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner;
-- (void)detailsDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner;
 - (void)swipeStationDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner;
+
 
 @required
 
@@ -26,9 +28,14 @@
 
 @interface RouteDescriptionBannerView : UIView
 
-@property (nonatomic, weak) IBOutlet StationLabel *startStaion;
-@property (nonatomic, weak) IBOutlet StationLabel *endStaion;
+
+
+@property (nonatomic, weak) IBOutlet StationButton *startStaion;
+@property (nonatomic, weak) IBOutlet StationButton *endStaion;
 @property (nonatomic, weak) IBOutlet UILabel *timelabel;
+@property (nonatomic, weak) IBOutlet RouterDescriptionButton *cancelButton;
+@property (nonatomic, weak) IBOutlet RouterDescriptionButton *detailsButton;
+
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *bottomRouteDescriptionContraint;
 
 @property (nonatomic, weak) id<RouteDescriptionBannerViewDelegate> delegate;

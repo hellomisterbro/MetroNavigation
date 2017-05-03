@@ -8,18 +8,25 @@
 
 #import "MNMetro.h"
 #import "DataAPI.h"
+#import "MetroStateHolder.h"
 
 #import "MetroRouteViewController.h"
+#import "CitySearchViewController.h"
+#import "StationSearchViewController.h"
 
-NSString *const displayRouteListSegueName = @"displayRouteListSegue";
+NSString *const detailsSegueName = @"MNDisplayRouteListSegue";
+NSString *const cityChangeSegueName = @"MNCityChangeSegue";
+NSString *const stationChangeSegueName = @"MNStationChangeSegue";
 
-@interface MetroRouteViewController () <UIScrollViewDelegate, MetroImageViewDelegate, UIViewControllerTransitioningDelegate, RouteDescriptionBannerViewDelegate>
+@interface MetroRouteViewController () <UIScrollViewDelegate, MetroImageViewDelegate, UIViewControllerTransitioningDelegate, RouteDescriptionBannerViewDelegate, StationSearchViewControllerDelegate>
 
 @property (nonatomic, strong) MNMetro* metro;
 @property (nonatomic, strong) MNRoute* route;
 
 @property (nonatomic, strong) MNStation* startStation;
 @property (nonatomic, strong) MNStation* endStation;
+
+
 
 @end
 
@@ -30,47 +37,44 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.metro = [DataAPI metroJSONFile:kKyivMetropolitanFileName];
-    self.metroImage.image = [UIImage imageNamed:@"kiev-metro"];;
+    self.metro = [MetroStateHolder sharedInstance].currentMetroState;
+    self.metroImage.image = [UIImage imageNamed:[DataAPI imageMetroNameWithMetroName:kKyivMetropolitanName]];;
+    
+    [self.cityButton setTitle:@"Kyiv" forState:UIControlStateNormal];
     
     self.metroImage.delegate = self;
     
-    self.scrollView.delegate = self;
-    
     self.routeDescriptionBannerView.delegate = self;
     
-    self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -CGRectGetHeight(self.routeDescriptionBannerView.frame);
+
     
+    CGFloat bannerHeight = CGRectGetHeight(self.routeDescriptionBannerView.frame);
+    self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -bannerHeight;
 
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:displayRouteListSegueName]) {
-        
-        UIViewController *destinationVC = segue.destinationViewController;
-        destinationVC.modalPresentationStyle = UIModalPresentationCustom;
-        destinationVC.transitioningDelegate = self;
-        
-    }
-}
-
-
+// MARK: - IBAction
 
 - (IBAction)handleRouteDescriptionBannerPan:(id)sender {
     [self hideRouteDescriptionBanner];
 }
 
+- (IBAction)applyNoneChanges:(UIStoryboardSegue*)unwindSegue{}
 
-// MARK: - RouteDescriptionBannerViewDelegate
-
-- (void)cancelDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
-    [self hideRouteDescriptionBanner];
+- (IBAction)updateMetroWithUnwindSegue:(UIStoryboardSegue*)segue{
+    self.metro = MetroStateHolder.sharedInstance.currentMetroState;
 }
 
-- (void)detailsDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
+
+// MARK: - CitySearchViewControllerDelegate
+
+-(void)stationChoosenWithSuccess:(BOOL)success inViewController:(StationSearchViewController *)citySearchViewController {
     
 }
+
+// MARK: - StationSearchViewControllerDelegate
+
+// MARK: - RouteDescriptionBannerViewDelegate
 
 -(void)swipeStationDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
     MNStation *endStation = self.endStation;
@@ -78,8 +82,8 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
     self.endStation = self.startStation;
     self.startStation = endStation;
     
-    CGPoint startPoint = CGPointMake([self.startStation.posX doubleValue], [self.startStation.posY doubleValue]);
-    CGPoint endPint = CGPointMake([self.endStation.posX doubleValue], [self.endStation.posY doubleValue]);
+    CGPoint startPoint = [self pointFromStation:self.startStation];
+    CGPoint endPint = [self pointFromStation:self.endStation];
     
     [self.metroImage addStartPinAtPoint:startPoint];
     [self.metroImage addEndPinAtPoint:endPint];
@@ -87,6 +91,9 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
     [self displayRouteDescriptionBanner];
 }
 
+- (void)cancelDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
+    [self hideRouteDescriptionBanner];
+}
 
 // MARK: - UIScrollViewDelegate
 
@@ -105,8 +112,7 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
         MNStation *start = self.startStation;
         MNStation *end = self.endStation;
         
-        CGPoint selectedStationPoint = CGPointMake([selectedStation.posX doubleValue], [selectedStation.posY doubleValue]);
-        CGPoint secondStationPoint = CGPointMake([end.posX doubleValue], [end.posY doubleValue]);
+        CGPoint selectedStationPoint = [self pointFromStation:selectedStation];;
         
         //set first pin if no station selected
         if (!start && !end) {
@@ -121,7 +127,7 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
             
             if (self.endStation) {
                 [self.metroImage removeEndPin];
-                [self.metroImage addStartPinAtPoint:secondStationPoint];
+                [self.metroImage addStartPinAtPoint:[self pointFromStation:end]];
                 self.endStation = nil;
             }
             
@@ -142,6 +148,8 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
         //two pin selected
         if (self.startStation && self.endStation) {
             [self displayShortPathRoute];
+        } else {
+            [self hideRouteDescriptionBanner];
         }
         
     }
@@ -159,7 +167,7 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
         
         if (![station isEqual:self.startStation] && ![station isEqual:self.endStation]) {
             
-            CGPoint intermidiatePoint = CGPointMake([station.posX doubleValue], [station.posY doubleValue]);
+            CGPoint intermidiatePoint = [self pointFromStation:station];
             [self.metroImage addInterMediatePinAtPoint:intermidiatePoint];
         }
     }
@@ -179,38 +187,15 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
     }
 }
 
-- (void)updatePinsWithMetroImageView:(MetroImageView *)metroImageView {
-    
-    if (self.startStation) {
-        
-        [self.metroImage removeStartPin];
-        
-        CGPoint firstStationPoint = CGPointMake([self.startStation.posX doubleValue],
-                                                [self.startStation.posY doubleValue]);
-        
-        [self.metroImage addStartPinAtPoint:firstStationPoint];
-        
-    } else if (self.endStation) {
-        
-        [self.metroImage removeEndPin];
-        
-        CGPoint secondStationPoint = CGPointMake([self.endStation.posX doubleValue],
-                                                 [self.endStation.posY doubleValue]);
-        
-        [self.metroImage addEndPinAtPoint:secondStationPoint];
-    }
-    
-}
 
 
-// MARK: - Helpers
+// MARK: - RouteDescriptionBannerView Interactions
 
 - (void)displayRouteDescriptionBanner {
     [self.view layoutIfNeeded];
     
     [self.routeDescriptionBannerView setStartStationName:self.startStation.name];
     [self.routeDescriptionBannerView setEndStationName:self.endStation.name];
-    
     [self.routeDescriptionBannerView setTotalDuration:self.route.totalDuration];
     
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = 0;
@@ -230,6 +215,11 @@ NSString *const displayRouteListSegueName = @"displayRouteListSegue";
     }];
 }
 
+// MARK: - Local Helpers
+
+- (CGPoint)pointFromStation:(MNStation *)station {
+    return CGPointMake([station.posX doubleValue], [station.posY doubleValue]);
+}
 
 @end
 

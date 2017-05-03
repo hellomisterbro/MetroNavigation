@@ -10,49 +10,14 @@
 
 @implementation MNEdge
 
-
-#pragma mark - NSObject
-
-- (BOOL)isEqual:(id)other {
-    if (other == self)
-        return YES;
-    
-    if (!other || ![other isKindOfClass:[self class]])
-        return NO;
-    
-    return [self isEqualToEdge:other];
-}
-
-
-- (NSString *)description {
-    
-    return [NSString stringWithFormat:@"%@ - %@ [%@]",
-            self.firstStation.identifier,
-            self.secondStation.identifier,
-            self.duration];
-}
-
-
-#pragma mark - Class methods
-
-+ (MNEdge *)edgeFromJSON:(NSMutableDictionary *)edgeJSON {
-    
-    MNEdge *edge = [MNEdge edgeWithDuration:@([edgeJSON[@"duration"] doubleValue])];
-    
-    edge.firstStation = [MNStation stationFromJSON:edgeJSON[@"first"]];
-    edge.secondStation = [MNStation stationFromJSON:edgeJSON[@"second"]];
-    
-    return edge;
-}
+#pragma mark - Initializers
 
 + (MNEdge *)edgeWithDuration:(NSNumber *)duration  {
     return [[MNEdge alloc] initWithDuration:duration];
 }
 
-
-#pragma mark - Instance methods
-
 - (id)initWithDuration:(NSNumber *)duration {
+   
     self = [super init];
     
     if (self) {
@@ -62,7 +27,23 @@
     return self;
 }
 
+#pragma mark - Comparison
+
+- (BOOL)isEqual:(id)other {
+   
+    if (other == self) {
+        return YES;
+    }
+    
+    if (!other || ![other isKindOfClass:[self class]]) {
+        return NO;
+    }
+    
+    return [self isEqualToEdge:other];
+}
+
 - (BOOL)isEqualToEdge:(MNEdge *)anEdge {
+   
     if (self == anEdge){
         return YES;
     }
@@ -84,7 +65,31 @@
     return YES;
 }
 
+#pragma mark - NSCoping
+
+- (id)copyWithZone:(NSZone *)zone {
+   
+    MNEdge *edge = [MNEdge edgeWithDuration:self.duration];
+    
+    edge.firstStation = self.firstStation;
+    edge.secondStation = self.secondStation;
+    
+    return edge;
+}
+
+#pragma mark - Description
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ - %@ [%@]",
+            self.firstStation.identifier,
+            self.secondStation.identifier,
+            self.duration];
+}
+
+#pragma mark - Graph Interction
+
 - (MNStation *)stationOppositeToStation:(MNStation *)aStation {
+    
     if ([aStation isEqual:_firstStation]) {
         return _secondStation;
         
@@ -99,10 +104,14 @@
     
     if ([aStation isEqual:_firstStation] ||
         [aStation isEqual:_secondStation]) {
+        
         return YES;
     }
     
     return NO;
 }
+
+
+
 
 @end

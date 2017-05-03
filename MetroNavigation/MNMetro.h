@@ -13,14 +13,14 @@
 #import "MNRoute.h"
 
 
-@interface MNMetro : NSObject
+@interface MNMetro : NSObject <NSCopying>
 
-@property (nonatomic, copy) NSArray *edges;
-@property (nonatomic, copy) NSArray *stations;
+@property (nonatomic, copy) NSArray <MNEdge *> *edges;
+@property (nonatomic, copy) NSArray <MNStation *> *stations;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *ID;
 
 + (MNMetro *)metro;
-+ (MNMetro *)metroFromJSON:(NSDictionary *)metroJSON;
 
 - (id)initWithName:(NSString *)name;
 - (void)addEdge:(MNEdge *)anEdge fromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation;
