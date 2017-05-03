@@ -13,10 +13,13 @@
 
 + (MNMetro *)metroFromJSON:(NSDictionary *)metroJSON {
     
+    NSString *ID = metroJSON[@"id"];
     NSString *name = metroJSON[@"name"];
     NSArray *edges = metroJSON[@"edges"];
     
     MNMetro *metro = [[MNMetro alloc] initWithName:name];
+    
+    metro.ID = ID;
     
     for (id object in edges) {
         MNEdge *edge = [MNEdge edgeFromJSON:object];

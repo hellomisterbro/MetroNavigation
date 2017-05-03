@@ -1,5 +1,6 @@
 {
-  "name": "Kyivs'ky Metropoliten",
+  "name": "Kyiv Metro",
+    "id": "911",
   "edges": [
     {
       "first": {"id": "101","name": "Lisova", "posX": 1.2,"posY":2},

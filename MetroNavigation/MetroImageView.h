@@ -30,5 +30,6 @@
 - (void)removeStartPin;
 - (void)removeEndPin;
 - (void)removeAllIntermediatePins;
+- (void)cleanImageFromPins;
 
 @end

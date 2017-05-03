@@ -174,6 +174,12 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
     self.intermediatePins = [NSMutableArray new];
 }
 
+- (void)cleanImageFromPins {
+    [self removeStartPin];
+    [self removeEndPin];
+    [self removeAllIntermediatePins];
+}
+
 
 //MARK: Zooming
 

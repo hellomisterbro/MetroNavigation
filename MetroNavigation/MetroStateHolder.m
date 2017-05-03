@@ -71,7 +71,7 @@ NSString *const kCityMetroStateKeyForUserDefaults = @"MNCityMetroStateKey";
 }
 
 - (MNMetro *)defaultMetroState {
-    return [DataAPI metroWithName:kKyivMetropolitanName];
+    return [DataAPI metroWithIdentifier:kKyivMetropolitanIdentifier];
 }
 
 @end

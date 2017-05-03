@@ -10,18 +10,18 @@
 
 #import "MNMetro.h"
 
-extern NSString *const kKyivMetropolitanName ;
-extern NSString *const kKyivMoscowMetropolitanName ;
-extern NSString *const kPetersburgMetropolitanName;
-extern NSString *const kRigaMetropolitanName;
-extern NSString *const kBrusselsMetropolitanName;
+extern NSString *const kKyivMetropolitanIdentifier;
+extern NSString *const kMoscowMetropolitanIdentifier;
+extern NSString *const kPetersburgMetropolitanIdentifier;
+extern NSString *const kRigaMetropolitanIdentifier;
+extern NSString *const kBrusselsMetropolitanIdentifier;
+
 
 @interface DataAPI : NSObject
 
 + (MNMetro *)metroJSONFile:(NSString *)fileName;
-+ (MNMetro *)metroWithName:(NSString *)metroName;
-+ (NSString *)imageMetroNameWithMetroName:(NSString *)metroName;
-+ (NSArray *)metroNames;
++ (MNMetro *)metroWithIdentifier:(NSString *)metroIdentifier;
++ (NSString *)imageMetroNameWithMetroIdentifier:(NSString *)metroName;
 + (NSDictionary *)metroNamesWithIDs;
 
 @end

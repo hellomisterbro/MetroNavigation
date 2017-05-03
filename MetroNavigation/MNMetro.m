@@ -65,14 +65,21 @@
     if (self == aMetro)
         return YES;
     
-    if (![self.name isEqualToString:aMetro.name])
+    if (![self.ID isEqualToString:aMetro.ID]) {
         return NO;
+    }
     
-    if (![self.edges isEqual:aMetro.edges])
+    if (![self.name isEqualToString:aMetro.name]) {
         return NO;
+    }
     
-    if (![self.stations isEqual:aMetro.stations])
+    if (![self.edges isEqual:aMetro.edges]) {
         return NO;
+    }
+    
+    if (![self.stations isEqual:aMetro.stations]){
+        return NO;
+    }
     
     return YES;
 }

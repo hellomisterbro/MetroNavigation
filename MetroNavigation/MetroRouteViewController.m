@@ -21,12 +21,10 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
 @interface MetroRouteViewController () <UIScrollViewDelegate, MetroImageViewDelegate, UIViewControllerTransitioningDelegate, RouteDescriptionBannerViewDelegate, StationSearchViewControllerDelegate>
 
 @property (nonatomic, strong) MNMetro* metro;
-@property (nonatomic, strong) MNRoute* route;
-
 @property (nonatomic, strong) MNStation* startStation;
 @property (nonatomic, strong) MNStation* endStation;
 
-
+@property (nonatomic, strong) MNRoute* route;
 
 @end
 
@@ -38,9 +36,9 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
     [super viewDidLoad];
     
     self.metro = [MetroStateHolder sharedInstance].currentMetroState;
-    self.metroImage.image = [UIImage imageNamed:[DataAPI imageMetroNameWithMetroName:kKyivMetropolitanName]];;
+    self.metroImage.image = [UIImage imageNamed:[DataAPI imageMetroNameWithMetroIdentifier:kKyivMetropolitanIdentifier]];;
     
-    [self.cityButton setTitle:@"Kyiv" forState:UIControlStateNormal];
+    [self.cityButton setTitle:self.metro.name forState:UIControlStateNormal];
     
     self.metroImage.delegate = self;
     
@@ -50,8 +48,25 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
     
     CGFloat bannerHeight = CGRectGetHeight(self.routeDescriptionBannerView.frame);
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -bannerHeight;
+    
+    [MetroStateHolder.sharedInstance addObserver:self forKeyPath:@"currentMetroState" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"endStation" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"metro" options:NSKeyValueObservingOptionNew context:nil];
 
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"metro"]) {
+        NSLog(@"Hello metro");
+        self.startStation = nil;
+        self.endStation = nil;
+        NSString *imageName = [DataAPI imageMetroNameWithMetroIdentifier:self.metro.ID];
+        self.metroImage.image = [UIImage imageNamed:imageName];
+        [self.cityButton setTitle:self.metro.name forState:UIControlStateNormal];
+    }
+}
+
+
 
 // MARK: - IBAction
 
@@ -65,14 +80,106 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
     self.metro = MetroStateHolder.sharedInstance.currentMetroState;
 }
 
+// MARK: - Scroll View Interactions
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return  self.metroImage;
+}
+
+- (void)zoomToSelectedRoute {
+    
+    if (self.route) {
+        
+        //Zoom map to the route
+        CGRect rectToZoom = self.metroImage.rectToZoom;
+        
+        CGFloat predictedScale = [self.scrollView scaleAfterZoomingToRect:rectToZoom];
+        
+        //Take into account the banner that will be presented
+        rectToZoom.size.height += CGRectGetHeight(self.routeDescriptionBannerView.frame) / predictedScale;
+        
+        [self.scrollView zoomToRect:rectToZoom animated:YES];
+    }
+}
+
+// MARK: - Metro Image View Interactions
+
+- (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MetroImageView *)metroImageView {
+    
+    MNStation *selectedStation =  [self.metro stationWithImagePositionX:point.x positionY:point.y radious:15];
+    
+    if (selectedStation) {
+        
+        if (!self.startStation && !self.endStation) {
+            //set first pin if no station selected
+            self.startStation = selectedStation;
+            
+        } else if ([self.startStation isEqual:selectedStation] && self.endStation) {
+            //replace start station with end station
+            
+            self.startStation = self.endStation;
+            self.endStation = nil;
+            
+        }  else if ([self.startStation isEqual:selectedStation] && !self.endStation) {
+            //remove start station
+            
+            self.startStation = nil;
+            self.endStation = nil;
+            
+            
+        } else if (self.startStation && !self.endStation) {
+            //find shortpathroute
+            
+            self.endStation = selectedStation;;
+            self.route = [self.metro shortestRouteFromStation:self.startStation toStation:self.endStation];
+            
+        } else if ([self.endStation isEqual:selectedStation]) {
+            //remove second pin
+            
+            self.endStation = nil;
+        }
+        
+        [self updateImagePins];
+    }
+    
+}
+
+- (void)updateImagePins {
+    
+    [self.metroImage cleanImageFromPins];
+    
+    if (self.startStation) {
+        CGPoint startStationPoint = [self pointFromStation:self.startStation];
+        [self.metroImage addStartPinAtPoint:startStationPoint];
+    }
+    
+    if (self.endStation) {
+        
+        CGPoint endStationPoint = [self pointFromStation:self.endStation];
+        [self.metroImage addEndPinAtPoint:endStationPoint];
+        
+        for (MNStation *station in self.route.stationsSequence) {
+            
+            if (![station isEqual:self.startStation] && ![station isEqual:self.endStation]) {
+                
+                CGPoint intermidiatePoint = [self pointFromStation:station];
+                [self.metroImage addInterMediatePinAtPoint:intermidiatePoint];
+                
+            }
+        }
+        
+        [self zoomToSelectedRoute];
+        [self displayRouteDescriptionBanner];
+    }
+    
+    
+}
 
 // MARK: - CitySearchViewControllerDelegate
 
 -(void)stationChoosenWithSuccess:(BOOL)success inViewController:(StationSearchViewController *)citySearchViewController {
     
 }
-
-// MARK: - StationSearchViewControllerDelegate
 
 // MARK: - RouteDescriptionBannerViewDelegate
 
@@ -93,98 +200,6 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
 
 - (void)cancelDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
     [self hideRouteDescriptionBanner];
-}
-
-// MARK: - UIScrollViewDelegate
-
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return  self.metroImage;
-}
-
-// MARK: - MetroImageViewDelegate
-
-- (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MetroImageView *)metroImageView {
-    
-    MNStation *selectedStation =  [self.metro stationWithImagePositionX:point.x positionY:point.y radious:15];
-    
-    if (selectedStation) {
-        
-        MNStation *start = self.startStation;
-        MNStation *end = self.endStation;
-        
-        CGPoint selectedStationPoint = [self pointFromStation:selectedStation];;
-        
-        //set first pin if no station selected
-        if (!start && !end) {
-            self.startStation = selectedStation;
-            [self.metroImage addStartPinAtPoint:selectedStationPoint];
-            
-            //remove first pin and set the second one to its place
-        } else if ([start isEqual:selectedStation]) {
-            
-            self.startStation = end;
-            [self.metroImage removeStartPin];
-            
-            if (self.endStation) {
-                [self.metroImage removeEndPin];
-                [self.metroImage addStartPinAtPoint:[self pointFromStation:end]];
-                self.endStation = nil;
-            }
-            
-            [self.metroImage removeAllIntermediatePins];
-            
-            //set second pin
-        } else if (start && !end) {
-            self.endStation = selectedStation;
-            [self.metroImage addEndPinAtPoint:selectedStationPoint];
-            
-            //remove second pin
-        } else if ([end isEqual:selectedStation]) {
-            [self.metroImage removeEndPin];
-            self.endStation = nil;
-            [self.metroImage removeAllIntermediatePins];
-        }
-        
-        //two pin selected
-        if (self.startStation && self.endStation) {
-            [self displayShortPathRoute];
-        } else {
-            [self hideRouteDescriptionBanner];
-        }
-        
-    }
-    
-}
-
-
-
-
-- (void)displayShortPathRoute {
-    
-    self.route = [self.metro shortestRouteFromStation:self.startStation toStation:self.endStation];
-    
-    for (MNStation *station in self.route.stationsSequence) {
-        
-        if (![station isEqual:self.startStation] && ![station isEqual:self.endStation]) {
-            
-            CGPoint intermidiatePoint = [self pointFromStation:station];
-            [self.metroImage addInterMediatePinAtPoint:intermidiatePoint];
-        }
-    }
-    
-    if (self.route) {
-        
-        //Zoom map to the route
-        CGRect rectToZoom = self.metroImage.rectToZoom;
-        
-        CGFloat predictedScale = [self.scrollView scaleAfterZoomingToRect:rectToZoom];
-       
-        //Take into account the banner that will be presented
-        rectToZoom.size.height += CGRectGetHeight(self.routeDescriptionBannerView.frame) / predictedScale;
-        
-        [self.scrollView zoomToRect:rectToZoom animated:YES];
-        [self displayRouteDescriptionBanner];
-    }
 }
 
 

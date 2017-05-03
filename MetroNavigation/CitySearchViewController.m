@@ -12,11 +12,9 @@
 #import "MetroStateHolder.h"
 
 NSString *const kReusableCellForCitySearch = @"cityNameCellIdentifier";
-NSString *const kUnwindMetroRouteSegueName = @"MNUnwindFromCitySearchToMetroRouteSegue";
 
 @interface CitySearchViewController ()
 
-@property (nonatomic, strong) NSString *selectedMetroName;
 @property (nonatomic, strong) NSString *selectedMetroID;
 
 @end
@@ -38,11 +36,12 @@ NSString *const kUnwindMetroRouteSegueName = @"MNUnwindFromCitySearchToMetroRout
 
 
 - (IBAction)doneClicked:(id)sender {
-    MNMetro *metro = [DataAPI metroWithName:self.selectedMetroName];
+    MNMetro *metro = [DataAPI metroWithIdentifier:self.selectedMetroID];
    
     if (metro) {
         [MetroStateHolder sharedInstance].currentMetroState = metro;
     }
+    [self performSegueWithIdentifier:@"MNUnwindToMetroViewController" sender:nil];
 }
 
 #pragma mark UITableView

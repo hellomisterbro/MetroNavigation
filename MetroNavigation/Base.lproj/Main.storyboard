@@ -236,13 +236,12 @@
                     <navigationItem key="navigationItem" title="Metro City" id="5CP-sp-YhV">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="gOJ-ha-5og">
                             <connections>
-                                <segue destination="T5t-hz-baX" kind="unwind" unwindAction="applyNoneChanges:" id="0k1-td-5it"/>
+                                <segue destination="T5t-hz-baX" kind="unwind" identifier="MNUnwindToMetroViewController" unwindAction="applyNoneChanges:" id="0k1-td-5it"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="11h-pm-X4B">
                             <connections>
-                                <action selector="doneClicked:" destination="CBW-n0-kkC" id="yct-Mj-KIm"/>
-                                <segue destination="T5t-hz-baX" kind="unwind" unwindAction="updateMetroWithUnwindSegue:" id="tef-Vm-3q9"/>
+                                <action selector="doneClicked:" destination="CBW-n0-kkC" id="gQl-oT-M90"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
