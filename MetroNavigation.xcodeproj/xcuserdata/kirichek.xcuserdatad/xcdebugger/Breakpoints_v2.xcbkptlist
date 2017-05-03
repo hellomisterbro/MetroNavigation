@@ -104,12 +104,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroNavigation/MetroRouteViewController.m"
-            timestampString = "515538562.104172"
+            timestampString = "515538602.870507"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "-imageTouchedAtPoint:metroImageView:"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -119,14 +119,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MetroNavigation/MetroRouteViewController.m"
-            timestampString = "515538602.870507"
+            filePath = "MetroNavigation/CitySearchViewController.m"
+            timestampString = "515547294.583701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-doneClicked:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CitySearchViewController doneClicked:]"
+                  moduleName = "MetroNavigation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirichek/Library/Mobile%20Documents/com~apple~CloudDocs/Nikita/MacPaw/MetroNavigation/MetroNavigation/CitySearchViewController.m"
+                  timestampString = "515548074.680297"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CitySearchViewController doneClicked:]"
+                  moduleName = "MetroNavigationTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirichek/Library/Mobile%20Documents/com~apple~CloudDocs/Nikita/MacPaw/MetroNavigation/MetroNavigation/CitySearchViewController.m"
+                  timestampString = "515548075.671479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

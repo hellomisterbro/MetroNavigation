@@ -12,7 +12,7 @@
 #import <UIKit/UIKit.h>
 
 NSString *const kKyivMetropolitanIdentifier = @"911";
-NSString *const kMoscowMetropolitanIdentifier = @"102";
+NSString *const kMilanoMetropolitanIdentifier = @"102";
 NSString *const kPetersburgMetropolitanIdentifier = @"103";
 NSString *const kRigaMetropolitanIdentifier = @"104";
 NSString *const kBrusselsMetropolitanIdentifier = @"104";
@@ -36,7 +36,7 @@ NSString *const kBrusselsMetropolitanIdentifier = @"104";
 
 + (MNMetro *)metroWithIdentifier:(NSString *)metroIdentifier {
     NSDictionary *filesForNames = @{kKyivMetropolitanIdentifier: @"kyiv",
-                                    kMoscowMetropolitanIdentifier : @"moscow",
+                                    kMilanoMetropolitanIdentifier : @"milano",
                                     kPetersburgMetropolitanIdentifier : @"petersburg",
                                     kRigaMetropolitanIdentifier : @"riga",
                                     kBrusselsMetropolitanIdentifier : @"brussels"};
@@ -46,7 +46,7 @@ NSString *const kBrusselsMetropolitanIdentifier = @"104";
 
 + (NSString *)imageMetroNameWithMetroIdentifier:(NSString *)metroName {
     NSDictionary *imagesForNames = @{kKyivMetropolitanIdentifier: @"kyiv-metro",
-                                     kMoscowMetropolitanIdentifier : @"moscow-metro",
+                                     kMilanoMetropolitanIdentifier : @"milano-metro",
                                      kPetersburgMetropolitanIdentifier : @"petersburg",
                                      kRigaMetropolitanIdentifier : @"riga",
                                      kBrusselsMetropolitanIdentifier : @"brussels"};
@@ -58,7 +58,7 @@ NSString *const kBrusselsMetropolitanIdentifier = @"104";
 
 + (NSDictionary *)metroNamesWithIDs {
     return @{ @"Kiev Metropolitan": kKyivMetropolitanIdentifier,
-              @"Moscow Metro": kMoscowMetropolitanIdentifier,
+              @"Milano Metro": kMilanoMetropolitanIdentifier,
               @"Petersbutg Subway": kPetersburgMetropolitanIdentifier,
               @"Riga": kBrusselsMetropolitanIdentifier,
               @"Brussels": kBrusselsMetropolitanIdentifier};

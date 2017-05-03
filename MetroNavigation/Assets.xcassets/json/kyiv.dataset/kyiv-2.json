@@ -1,0 +1,285 @@
+{
+  "name": "Kyiv Metro",
+    "id": "911",
+  "edges": [
+    {
+      "first": {"id": "101","name": "Lisova", "posX": 990.463652 ,"posY":150.356355},
+      "second": {"id": "102","name": "Chernihivska", "posX": 941.625397 ,"posY":201.576965},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "102","name": "Chernihivska", "posX": 941.625397 ,"posY":201.576965},
+      "second": {"id": "103","name": "Darnytsia", "posX": 901.720968 ,"posY":240.885805},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "103","name": "Darnytsia", "posX": 901.720968 ,"posY":240.885805},
+      "second": {"id": "104","name": "Livoberezhna", "posX": 870.750367 ,"posY":270.665230},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "104","name": "Livoberezhna", "posX": 870.750367 ,"posY":270.665230},
+      "second": {"id": "105","name": "Hydropark", "posX": 840.970942 ,"posY":300.444654},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "105","name": "Hydropark", "posX": 840.970942 ,"posY":300.444654},
+      "second": {"id": "106","name": "Dnipro", "posX": 790.345921 ,"posY":351.069675},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "106","name": "Dnipro", "posX": 790.345921 ,"posY":351.069675},
+      "second": {"id": "107","name": "Arsenalna", "posX": 720.662068 ,"posY":349.878498
+},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "107","name": "Arsenalna", "posX": 720.662068 ,"posY":349.878498
+},
+      "second": {"id": "108","name": "Khreschatyk", "posX":631.567576 ,"posY":349.841217},
+      "duration": 1.3
+    },
+         {
+      "first": {"id": "108","name": "Khreschatyk", "posX":631.567576 ,"posY":349.841217},
+      "second": {"id": "109","name": "Teatralna", "posX":540.440644 ,"posY":379.865697},
+      "duration": 1.3
+    },
+     {
+      "first": {"id": "109","name": "Teatralna", "posX":540.440644 ,"posY":379.865697},
+      "second": {"id": "110","name": "Universytet", "posX":456.688147 ,"posY":410.416923
+},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "110","name": "Universytet", "posX":456.688147 ,"posY":410.416923
+},
+      "second": {"id": "111","name": "Vokzalna", "posX": 405.593856 ,"posY":409.890177}
+    },
+    {
+      "first": {"id": "111","name": "Vokzalna", "posX": 405.593856 ,"posY":409.890177},
+      "second": {"id": "112","name": "Politechnichnyi Instytut", "posX":346.071641 ,"posY":409.363432}
+    },
+    {
+      "first": {"id": "112","name": "Politechnichnyi Instytut", "posX":346.071641 ,"posY":409.363432},
+      "second": {"id": "113","name": "Shulavska", "posX":289.709897 ,"posY":409.890177
+},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "113","name": "Shulavska", "posX":289.709897 ,"posY":409.890177
+},
+      "second": {"id": "114","name": "Beresteiska", "posX":240.195842 ,"posY":411.470413
+},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "114","name": "Beresteiska", "posX":240.195842 ,"posY":411.470413
+},
+      "second": {"id": "115","name": "Nyvky", "posX": 189.628296 ,"posY":410.416923},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "115","name": "Nyvky", "posX":189.628296 ,"posY":410.416923},
+      "second": {"id": "116","name": "Svatoshyn", "posX":139.587496 ,"posY":410.416923},
+      "duration": 1.3
+    },
+     {
+      "first": {"id": "116","name": "Svatoshyn", "posX": 139.587496 ,"posY":410.416923},
+      "second": {"id": "117","name": "Zhytomyrska", "posX": 90.600186 ,"posY":409.890177},
+      "duration": 1.3
+    },
+      {
+      "first": {"id": "117","name": "Zhytomyrska", "posX": 90.600186 ,"posY":409.890177},
+      "second": {"id": "118","name": "Akademmistechko", "posX":40.032640 ,"posY":409.890177},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "208","name": "Maidan Nezalezhnosti", "posX": 630.175,"posY":329.875},
+      "second": {"id": "207","name": "Poshtova Square", "posX": 630.175,"posY":281.125}
+    },
+    {
+      "first": {"id": "207","name": "Poshtova Square", "posX": 630.175,"posY":281.125},
+      "second": {"id": "206","name": "Kontraktova Square", "posX": 630.175,"posY":240.175}
+    },
+    {
+      "first": {"id": "206","name": "Kontraktova Square", "posX": 630.175,"posY":240.175},
+      "second": {"id": "205","name": "Tarasa Shevchenka", "posX": 630.175,"posY":201.825},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "205","name": "Tarasa Shevchenka", "posX": 630.175,"posY":201.825},
+      "second": {"id": "204","name": "Petrivka", "posX": 630.175,"posY":149.8250},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "204","name": "Petrivka", "posX": 630.175,"posY":149.8250},
+      "second": {"id": "203","name": "Obolon", "posX": 630.175,"posY":110.825},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "203","name": "Obolon", "posX": 630.175,"posY":110.825},
+      "second": {"id": "202","name": "Minska", "posX": 630.175,"posY":70.525000},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "202","name": "Minska", "posX": 630.175,"posY":70.525000},
+      "second": {"id": "201","name": "Heroiv Dnipra", "posX": 630.175,"posY":30.875000},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "208","name": "Maidan Nezalezhnosti", "posX": 630.367989,"posY":329.875},
+      "second": {"id": "209","name": "Ploscha Lva Tolstoho", "posX": 630.367989,"posY":410.022011},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "209","name": "Ploscha Lva Tolstoho", "posX": 630.367989,"posY":410.022011},
+      "second": {"id": "210","name": "Olimpiiska", "posX": 630.367989,"posY":489.747008},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "210","name": "Olimpiiska", "posX": 630.367989,"posY":489.747008},
+      "second": {"id": "211","name": "Palats \"Ukraina\"", "posX": 630.367989,"posY":539.744041},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "211","name": "Palats \"Ukraina\"", "posX": 630.367989,"posY":539.744041},
+      "second": {"id": "212","name": "Lubidska", "posX": 630.367989,"posY":610.010140},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "212","name": "Lubidska", "posX": 630.367989,"posY":610.010140},
+      "second": {"id": "213","name": "Demiivska", "posX": 630.367989,"posY":669.46607},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "213","name": "Demiivska", "posX": 630.367989,"posY":669.466071},
+      "second": {"id": "214","name": "Holosiivska", "posX": 589.829855,"posY":710.00420},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "214","name": "Holosiivska", "posX": 589.829855,"posY":710.004205},
+      "second": {"id": "215","name": "Vasylkiska", "posX": 499.294688,"posY":708.652934},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "215","name": "Vasylkiska", "posX": 499.294688,"posY":708.652934},
+      "second": {"id": "216","name": "Vystavkovyi centr", "posX": 429.028589,"posY":710.0042},
+      "duration": 1.3
+    }
+    ,{
+      "first": {"id": "216","name": "Vystavkovyi centr", "posX": 429.028589,"posY":710.0042},
+      "second": {"id": "217","name": "Ipodrom", "posX": 369.5726,"posY":710.004},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "217","name": "Ipodrom", "posX": 369.572658,"posY":710.004},
+      "second": {"id": "218","name": "Teremki", "posX": 299.30655,"posY":711.355},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "301","name": "Chervony Hutir", "posX": 1010.824168,"posY": 731.731536},
+      "second": {"id": "302","name": "Boruspilska", "posX": 980.272943,"posY": 701.180310},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "302","name": "Boruspilska", "posX": 980.272943,"posY": 701.180310},
+      "second": {"id": "303","name": "Vyrlytsa", "posX": 951.301953,"posY": 670.629085},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "303","name": "Vyrlytsa", "posX": 951.301953,"posY": 670.629085},
+      "second": {"id": "304","name": "Harkivska", "posX": 920.750728,"posY": 641.131350},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "304","name": "Harkivska", "posX": 920.750728,"posY": 641.131350},
+      "second": {"id": "305","name": "Poznyaky", "posX": 890.199502,"posY": 611.106870},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "305","name": "Poznyaky", "posX": 890.199502,"posY": 611.106870},
+      "second": {"id": "306","name": "Osokorky", "posX": 860.701767,"posY": 582.662625
+},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "306","name": "Osokorky", "posX": 860.701767,"posY": 582.662625
+},
+      "second": {"id": "307","name": "Slavutych", "posX": 840.685447,"posY": 561.066069},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "307","name": "Slavutych", "posX": 840.685447,"posY": 561.066069},
+      "second": {"id": "656","name": "Telychka", "posX": 810.134221,"posY": 531.041589},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "656","name": "Telychka", "posX": 810.134221,"posY": 531.041589},
+      "second": {"id": "308","name": "Vydubychi", "posX": 790.644647,"posY": 509.445033},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "308","name": "Vydubychi", "posX": 790.644647,"posY": 509.445033},
+      "second": {"id": "309","name": "Druzhbu narodiv", "posX": 760.093421,"posY": 481.000788},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "309","name": "Druzhbu narodiv", "posX": 760.093421,"posY": 481.000788},
+      "second": {"id": "310","name": "Pecherska", "posX": 730.068941,"posY": 453.083289},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "310","name": "Pecherska", "posX": 730.068941,"posY": 453.083289},
+      "second": {"id": "311","name": "Klovska", "posX": 710.052621,"posY": 432.540224},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "311","name": "Klovska", "posX": 710.052621,"posY": 432.540224},
+      "second": {"id": "312","name": "Palats sportu", "posX": 649.476915,"posY": 409.363432
+    },
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "312","name": "Palats sportu", "posX": 649.476915,"posY": 409.363432
+    },
+      "second": {"id": "313","name": "Zoloti vorota", "posX": 529.378994,"posY": 368.804047},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "313","name": "Zoloti vorota", "posX": 529.378994,"posY": 368.804047},
+      "second": {"id": "654","name": "Lvivska brama", "posX": 438.778808 ,"posY":281.364332},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "654","name": "Lvivska brama", "posX": 438.778808 ,"posY":281.364332},
+      "second": {"id": "314","name": "Lukjanivska", "posX": 389.264753 ,"posY":230.796786
+},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "314","name": "Lukjanivska", "posX": 389.264753 ,"posY":230.796786
+},
+      "second": {"id": "315","name": "Dorohozhychi", "posX": 349.758858 ,"posY":190.764146},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "315","name": "Dorohozhychi", "posX": 349.758858 ,"posY":190.764146},
+      "second": {"id": "316","name": "Syrets", "posX": 310.779708 ,"posY":150.731506},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "313","name": "Zoloti vorota", "posX": 529.378994,"posY": 368.804047},
+      "second": {"id": "109","name": "Teatralna", "posX":540.440644 ,"posY":379.865697},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "108","name": "Khreschatyk", "posX":631.567576 ,"posY":349.841217},
+      "second": {"id": "208","name": "Maidan Nezalezhnosti", "posX":  630.175,"posY":329.875},
+      "duration": 1.3
+    },
+    {
+      "first": {"id": "312","name": "Palats sportu", "posX": 649.476915,"posY": 409.363432},
+      "second": {"id": "209","name": "Ploscha Lva Tolstoho", "posX": 630.367989,"posY":410.022011},
+      "duration": 1.3
+    }]
+}

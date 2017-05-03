@@ -30,10 +30,10 @@
     
     MNMetro *metro = [DataAPI metroJSONFile:@"kyiv"];
     
-    NSNumber *predictedStationsQty = @52;
+    NSNumber *predictedStationsQty = @54;
     NSNumber *realStationsQty = @(metro.stations.count);
     
-    NSNumber *predictedEdgeQty = @52;
+    NSNumber *predictedEdgeQty = @54;
     NSNumber *realEdgeQty = @(metro.stations.count);
     
     

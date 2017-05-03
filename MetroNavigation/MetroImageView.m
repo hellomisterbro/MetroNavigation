@@ -46,6 +46,8 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
     
     CGPoint imageTouchPoint = [self imagePointFromViewPoint:viewTouchPoint];
     
+    NSLog(@"\"posX\":%f , \"posY\":%f", imageTouchPoint.x, imageTouchPoint.y);
+    
     [self.delegate imageTouchedAtPoint:imageTouchPoint metroImageView:self];
 }
 

@@ -35,38 +35,24 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.metro = [MetroStateHolder sharedInstance].currentMetroState;
-    self.metroImage.image = [UIImage imageNamed:[DataAPI imageMetroNameWithMetroIdentifier:kKyivMetropolitanIdentifier]];;
+    [self addObserver:self forKeyPath:@"metro" options:NSKeyValueObservingOptionNew context:nil];
     
-    [self.cityButton setTitle:self.metro.name forState:UIControlStateNormal];
-    
-    self.metroImage.delegate = self;
+    self.metro = MetroStateHolder.sharedInstance.currentMetroState;
     
     self.routeDescriptionBannerView.delegate = self;
-    
-
+    self.metroImage.delegate = self;
     
     CGFloat bannerHeight = CGRectGetHeight(self.routeDescriptionBannerView.frame);
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -bannerHeight;
     
-    [MetroStateHolder.sharedInstance addObserver:self forKeyPath:@"currentMetroState" options:NSKeyValueObservingOptionNew context:nil];
-    [self addObserver:self forKeyPath:@"endStation" options:NSKeyValueObservingOptionNew context:nil];
-    [self addObserver:self forKeyPath:@"metro" options:NSKeyValueObservingOptionNew context:nil];
-
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"metro"]) {
-        NSLog(@"Hello metro");
-        self.startStation = nil;
-        self.endStation = nil;
-        NSString *imageName = [DataAPI imageMetroNameWithMetroIdentifier:self.metro.ID];
-        self.metroImage.image = [UIImage imageNamed:imageName];
-        [self.cityButton setTitle:self.metro.name forState:UIControlStateNormal];
+        //update controller when metro changed
+        [self updateControllerState];
     }
 }
-
-
 
 // MARK: - IBAction
 
@@ -171,8 +157,6 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
         [self zoomToSelectedRoute];
         [self displayRouteDescriptionBanner];
     }
-    
-    
 }
 
 // MARK: - CitySearchViewControllerDelegate
@@ -202,8 +186,6 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
     [self hideRouteDescriptionBanner];
 }
 
-
-
 // MARK: - RouteDescriptionBannerView Interactions
 
 - (void)displayRouteDescriptionBanner {
@@ -214,7 +196,7 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
     [self.routeDescriptionBannerView setTotalDuration:self.route.totalDuration];
     
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = 0;
-   
+    
     [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
     }];
@@ -224,11 +206,26 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
     [self.view layoutIfNeeded];
     
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -CGRectGetHeight(self.routeDescriptionBannerView.frame);
-   
+    
     [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
     }];
 }
+
+
+- (void)updateControllerState {
+    
+    [self.metroImage cleanImageFromPins];
+    
+    self.startStation = nil;
+    self.endStation = nil;
+    
+    NSString *imageName = [DataAPI imageMetroNameWithMetroIdentifier:self.metro.ID];
+    self.metroImage.image = [UIImage imageNamed:imageName];
+    
+    [self.cityButton setTitle:self.metro.name forState:UIControlStateNormal];
+}
+
 
 // MARK: - Local Helpers
 
