@@ -10,6 +10,7 @@
 
 #import "StationButton.h"
 #import "BarItemButton.h"
+#import "MNDurationDescriptionLabel.h"
 
 @class RouteDescriptionBannerView;
 
@@ -28,11 +29,9 @@
 
 @interface RouteDescriptionBannerView : UIView
 
-
-
 @property (nonatomic, weak) IBOutlet StationButton *startStaion;
 @property (nonatomic, weak) IBOutlet StationButton *endStaion;
-@property (nonatomic, weak) IBOutlet UILabel *timelabel;
+@property (nonatomic, weak) IBOutlet MNDurationDescriptionLabel *timelabel;
 @property (nonatomic, weak) IBOutlet BarItemButton *cancelButton;
 @property (nonatomic, weak) IBOutlet BarItemButton *detailsButton;
 

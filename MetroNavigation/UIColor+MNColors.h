@@ -10,6 +10,6 @@
 
 @interface UIColor (MNColors)
 
-+ (UIColor *)lightBlueMNColor;
++ (UIColor *)lightGreenMNColor;
 
 @end

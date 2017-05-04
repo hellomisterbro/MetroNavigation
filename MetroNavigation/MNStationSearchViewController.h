@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "MNBaseSearchListViewController.h"
+
+typedef NS_ENUM(NSUInteger, MNStationToChange) {
+    MNStationToChangeNone,
+    MNStationToChangeStart,
+    MNStationToChangeEnd
+};
 
 @class MNStationSearchViewController;
 
@@ -19,6 +26,8 @@
 
 @interface MNStationSearchViewController : MNBaseSearchListViewController
 
-@property (nonatomic, strong) id <MNStationSearchViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <MNStationSearchViewControllerDelegate> delegate;
+
+@property (nonatomic, assign) MNStationToChange stationToChangeType;
 
 @end

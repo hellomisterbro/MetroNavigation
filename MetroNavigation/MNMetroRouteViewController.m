@@ -16,7 +16,8 @@
 
 NSString *const detailsSegueName = @"MNDisplayRouteListSegue";
 NSString *const cityChangeSegueName = @"MNCityChangeSegue";
-NSString *const stationChangeSegueName = @"MNStationChangeSegue";
+NSString *const endStationChangeSegueName = @"MNSEndStationChangeSegue";
+NSString *const startStationChangeSegueName = @"MNStartStationChangeSegue";
 
 NSString *const keyPathForCurrentMetroState = @"currentMetroState";
 
@@ -45,7 +46,7 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
 //zooming scroll view for convinient look of the route
 - (void)zoomToSelectedRoute;
 
-//getting CGPoint value from the MNStation object's posX and posY properties 
+//getting CGPoint value from the MNStation object's posX and posY properties
 - (CGPoint)pointFromStation:(MNStation *)station;
 
 @end
@@ -81,6 +82,20 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
 - (IBAction)applyNoneChanges:(UIStoryboardSegue*)unwindSegue {}
 
 - (IBAction)updateMetroWithUnwindSegue:(UIStoryboardSegue*)segue {}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:startStationChangeSegueName]) {
+        
+        MNStationSearchViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.stationToChangeType = MNStationToChangeEnd;
+        
+    } else if ([segue.identifier isEqualToString:startStationChangeSegueName]) {
+        
+        MNStationSearchViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.stationToChangeType = MNStationToChangeStart;
+    }
+}
 
 // MARK: - Scroll View Interactions
 
@@ -131,7 +146,7 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
             
         } else if (self.startStation && !self.endStation) {
             //set second pin
-
+            
             self.endStation = selectedStation;
             
         } else if ([self.endStation isEqual:selectedStation]) {
@@ -199,6 +214,9 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
         
         //display banner for the further interecations
         [self displayRouteDescriptionBanner];
+        
+    } else {
+        [self hideRouteDescriptionBanner];
     }
 }
 
@@ -211,9 +229,9 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
 // MARK: - RouteDescriptionBannerViewDelegate
 
 -(void)swipeStationDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
-   
+    
     MNStation *endStation = self.endStation;
-   
+    
     self.endStation = self.startStation;
     self.startStation = endStation;
     

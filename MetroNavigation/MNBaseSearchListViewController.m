@@ -20,6 +20,12 @@
 @property (nonatomic, strong) NSArray <NSString *> *namesForTableView;
 @property (nonatomic, strong) NSArray <NSString *> *filteredNamesForTableView;
 
+- (void)filterContentsForSeachText:(NSString *)seachedText;
+
+- (BOOL)isPresentingFilteredList;
+
+- (void)configSearchController;
+
 @end
 
 
@@ -53,17 +59,7 @@
     [self filterContentsForSeachText:searchController.searchBar.text];
 }
 
-// MARK: - Filtering
-
-- (void)filterContentsForSeachText:(NSString *)seachedText {
-    NSPredicate *namePredicate = [NSPredicate predicateWithFormat:@"self contains[cd] %@", seachedText];
-    self.filteredNamesForTableView =  [self.namesForTableView filteredArrayUsingPredicate:namePredicate];
-    [self.tableView reloadData];
-}
-
-- (BOOL)isPresentingFilteredList {
-    return self.searchController.isActive && ![self.searchController.searchBar.text isEqualToString:@""];
-}
+// MARK: - Accesing data
 
 - (NSString *)nameForIndexPath:(NSIndexPath *)indexPath {
     return [self isPresentingFilteredList] ? self.filteredNamesForTableView[indexPath.row] : self.namesForTableView[indexPath.row];
@@ -73,6 +69,20 @@
     NSString *nameForIndexPath =  [self isPresentingFilteredList] ? self.filteredNamesForTableView[indexPath.row] : self.namesForTableView[indexPath.row];
     return self.contentForTableView[nameForIndexPath];
 }
+
+// MARK: - Local helpers
+
+- (void)filterContentsForSeachText:(NSString *)seachedText {
+    NSPredicate *namePredicate = [NSPredicate predicateWithFormat:@"self contains[cd] %@", seachedText];
+    self.filteredNamesForTableView =  [self.namesForTableView filteredArrayUsingPredicate:namePredicate];
+    [self.tableView reloadData];
+}
+
+
+- (BOOL)isPresentingFilteredList {
+    return self.searchController.isActive && ![self.searchController.searchBar.text isEqualToString:@""];
+}
+
 
 - (void)configSearchController {
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];

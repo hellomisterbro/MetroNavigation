@@ -16,7 +16,7 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        self.tintColor = [UIColor lightBlueMNColor];
+        self.tintColor = [UIColor lightGreenMNColor];
         
     }
     return self;

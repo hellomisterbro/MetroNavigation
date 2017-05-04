@@ -266,7 +266,7 @@
 		343BFBB11EA802EE00CEC472 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3462DC141EB7BABE00D77301 /* Color Helpers */,
+				3462DC141EB7BABE00D77301 /* Colors */,
 				349B7B291EBB4EAE00BC37D0 /* Metro Route */,
 				349B7B231EBB260800BC37D0 /* Route Description */,
 				349B7B2B1EBB4F3F00BC37D0 /* Station Search */,
@@ -347,13 +347,13 @@
 			name = "JSON Helpers";
 			sourceTree = "<group>";
 		};
-		3462DC141EB7BABE00D77301 /* Color Helpers */ = {
+		3462DC141EB7BABE00D77301 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
 				3462DC0F1EB7B0FC00D77301 /* UIColor+MNColors.h */,
 				3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */,
 			);
-			name = "Color Helpers";
+			name = Colors;
 			sourceTree = "<group>";
 		};
 		349B7B231EBB260800BC37D0 /* Route Description */ = {

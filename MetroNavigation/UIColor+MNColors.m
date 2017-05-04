@@ -10,7 +10,7 @@
 
 @implementation UIColor (MNColors)
 
-+ (UIColor *)lightBlueMNColor {
++ (UIColor *)lightGreenMNColor {
     
     static UIColor *lightBlueMNColor;
     static dispatch_once_t onceToken;

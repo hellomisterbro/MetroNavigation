@@ -7,6 +7,7 @@
 //
 
 #import "StationTableViewCell.h"
+#import "UIColor+MNColors.h"
 
 @implementation StationTableViewCell
 
@@ -17,6 +18,10 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+
+    self.accessoryType = selected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    
+    self.accessoryView.tintColor = [UIColor lightGreenMNColor];
 
     // Configure the view for the selected state
 }

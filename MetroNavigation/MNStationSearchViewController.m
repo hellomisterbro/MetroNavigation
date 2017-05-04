@@ -26,11 +26,9 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNUnwindFromSrarionSearchToMetr
   
     NSArray *stations = MNMetroStateHolder.sharedInstance.currentMetroState.stations;
     self.contentForTableView = [self stationNamesDictionaryWithStations:stations];
-    
-    // Do any additional setup after loading the view.
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     StationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableCellForStationSearch forIndexPath:indexPath];
     
@@ -41,14 +39,14 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNUnwindFromSrarionSearchToMetr
     return cell;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.selectedStation = [self contentForIndexPath:indexPath];
 }
 
-- (IBAction)doneClicked:(id)sender {
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [self.delegate stationChoosenWithSuccess:YES inViewController:self];
 }
+
 // MARK: - Local Helpers
 
 
@@ -61,8 +59,6 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNUnwindFromSrarionSearchToMetr
     }
     return [stationNamesWithStations copy];
 }
-
-
 
 
 @end

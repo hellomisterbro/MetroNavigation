@@ -96,7 +96,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="160.5" height="28.5"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <segue destination="mwq-sb-VZP" kind="presentation" id="1Z9-fE-eFv"/>
+                                                                    <segue destination="mwq-sb-VZP" kind="presentation" identifier="MNStartStationChangeSegue" id="1Z9-fE-eFv"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKo-SQ-Tf3">
@@ -114,7 +114,7 @@
                                                                 <rect key="frame" x="199" y="0.0" width="160" height="28.5"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
-                                                                    <segue destination="mwq-sb-VZP" kind="presentation" id="Lch-rU-qDd"/>
+                                                                    <segue destination="mwq-sb-VZP" kind="presentation" identifier="MNEndStationChangeSegue" id="Lch-rU-qDd"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -302,7 +302,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="06g-pV-sq4">
                             <connections>
-                                <action selector="doneClicked:" destination="LX2-YM-AXs" id="8Yc-la-Af6"/>
                                 <segue destination="ifG-FN-dBN" kind="unwind" unwindAction="updateMetroWithUnwindSegue:" id="Bsj-A4-4cd"/>
                             </connections>
                         </barButtonItem>
@@ -387,6 +386,6 @@
         <image name="handle" width="50" height="6"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lch-rU-qDd"/>
+        <segue reference="1Z9-fE-eFv"/>
     </inferredMetricsTieBreakers>
 </document>

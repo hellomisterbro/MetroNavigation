@@ -15,7 +15,7 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        self.backgroundColor = [UIColor lightBlueMNColor];
+        self.backgroundColor = [UIColor lightGreenMNColor];
         self.layer.cornerRadius = 5;
         self.layer.shadowOffset = CGSizeMake(0, -0.5);
         self.layer.shadowRadius = 1;

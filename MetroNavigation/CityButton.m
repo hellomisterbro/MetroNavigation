@@ -15,7 +15,7 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        self.backgroundColor = [UIColor lightBlueMNColor];
+        self.backgroundColor = [UIColor lightGreenMNColor];
         self.tintColor = [UIColor whiteColor];
         self.layer.cornerRadius = 5;
         self.clipsToBounds = YES;
