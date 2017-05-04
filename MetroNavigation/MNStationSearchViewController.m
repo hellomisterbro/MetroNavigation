@@ -1,30 +1,30 @@
 //
-//  StationSearchViewController.m
+//  MNStationSearchViewController.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "StationSearchViewController.h"
-#import "MetroStateHolder.h"
+#import "MNStationSearchViewController.h"
+#import "MNMetroStateHolder.h"
 #import "StationTableViewCell.h"
 
 NSString *const kReusableCellForStationSearch = @"MNStationTableViewCellIdentidier";
 NSString *const kUnwindToMetroRouteSegueName = @"MNUnwindFromSrarionSearchToMetroRouteSegue";
 
-@interface StationSearchViewController ()
+@interface MNStationSearchViewController ()
 
 @property (nonatomic, strong) MNStation *selectedStation;
 
 @end
 
-@implementation StationSearchViewController
+@implementation MNStationSearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-    NSArray *stations = MetroStateHolder.sharedInstance.currentMetroState.stations;
+    NSArray *stations = MNMetroStateHolder.sharedInstance.currentMetroState.stations;
     self.contentForTableView = [self stationNamesDictionaryWithStations:stations];
     
     // Do any additional setup after loading the view.
@@ -49,7 +49,7 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNUnwindFromSrarionSearchToMetr
 - (IBAction)doneClicked:(id)sender {
 
 }
-#pragma MARK: Local Helpers
+// MARK: - Local Helpers
 
 
 - (NSDictionary <NSString *, MNStation *> *)stationNamesDictionaryWithStations:(NSArray <MNStation *> *)stations {

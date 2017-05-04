@@ -1,18 +1,18 @@
 //
-//  BaseSearchListViewController.m
+//  MNBaseSearchListViewController.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "BaseSearchListViewController.h"
+#import "MNBaseSearchListViewController.h"
 
 
 #import "CityTableViewCell.h"
-#import "DataAPI.h"
+#import "MNDataAPI.h"
 
-@interface BaseSearchListViewController () <UISearchBarDelegate, UISearchResultsUpdating>
+@interface MNBaseSearchListViewController () <UISearchBarDelegate, UISearchResultsUpdating>
 
 
 @property (nonatomic, strong) UISearchController *searchController;
@@ -23,7 +23,7 @@
 @end
 
 
-@implementation BaseSearchListViewController
+@implementation MNBaseSearchListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

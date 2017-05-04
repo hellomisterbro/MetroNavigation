@@ -10,7 +10,7 @@
 
 @implementation MNStation
 
-#pragma mark - Initializers
+// MARK: - Initializers
 
 - (id)initWithIdentifier:(NSString *)identifier {
     self = [super init];
@@ -26,7 +26,7 @@
     return [[MNStation alloc] initWithIdentifier:identifier];
 }
 
-#pragma mark - Comparison
+// MARK: - Comparison
 
 - (BOOL)isEqual:(id)other {
     if (other == self)

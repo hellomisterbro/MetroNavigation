@@ -34,8 +34,6 @@
     self.timelabel.text = [NSString stringWithFormat:@"~Approx. %.2f mins", [totalDuration doubleValue]];
 }
 
-
-
 - (IBAction)cancelClicked:(id)sender {
     [self.delegate cancelDidClickWithRouteDescriptionBanner:self];
 }

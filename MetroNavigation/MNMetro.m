@@ -15,7 +15,7 @@
 @implementation MNMetro
 
 
-#pragma mark - Initializers
+// MARK: - Initializers
 
 
 + (MNMetro *)metro {
@@ -47,7 +47,7 @@
     return self;
 }
 
-#pragma mark - Comparison
+// MARK: - Comparison
 
 - (BOOL)isEqual:(id)other {
     if (other == self) {
@@ -84,7 +84,7 @@
     return YES;
 }
 
-#pragma mark - NSCoping
+// MARK: - NSCoping
 
 - (id)copyWithZone:(NSZone *)zone {
   
@@ -99,7 +99,7 @@
 
 
 
-#pragma mark - Graph Interaction Methods
+// MARK: - Graph Interaction Methods
 
 - (MNStation *)stationWithImagePositionX:(double)x positionY:(double)y radious:(double)radious {
     for (MNStation *station in self.stations) {
@@ -168,7 +168,7 @@
     return (graphEdge) ? graphEdge.duration : nil;
 }
 
-#pragma mark - Dijkstra shortestpath algorithm 
+// MARK: - Dijkstra shortestpath algorithm 
 
 
 - (MNRoute *)shortestRouteFromStation:(MNStation *)sourceStation toStation:(MNStation *)targetStation {

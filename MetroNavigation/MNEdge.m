@@ -10,7 +10,7 @@
 
 @implementation MNEdge
 
-#pragma mark - Initializers
+// MARK: - Initializers
 
 + (MNEdge *)edgeWithDuration:(NSNumber *)duration  {
     return [[MNEdge alloc] initWithDuration:duration];
@@ -27,7 +27,7 @@
     return self;
 }
 
-#pragma mark - Comparison
+// MARK: - Comparison
 
 - (BOOL)isEqual:(id)other {
    
@@ -65,7 +65,7 @@
     return YES;
 }
 
-#pragma mark - NSCoping
+// MARK: - NSCoping
 
 - (id)copyWithZone:(NSZone *)zone {
    
@@ -77,7 +77,7 @@
     return edge;
 }
 
-#pragma mark - Description
+// MARK: - Description
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ - %@ [%@]",
@@ -86,7 +86,7 @@
             self.duration];
 }
 
-#pragma mark - Graph Interction
+// MARK: - Graph Interction
 
 - (MNStation *)stationOppositeToStation:(MNStation *)aStation {
     

@@ -13,7 +13,7 @@
 @implementation MNRoute
 
 
-#pragma mark - NSObject
+// MARK: - NSObject
 
 - (instancetype)init {
     self = [super init];
@@ -34,15 +34,13 @@
     return [self isEqualToRoute:other];
 }
 
-
-#pragma mark - Class Methods
+// MARK: - Class Methods
 
 + (MNRoute *)route {
     return [[MNRoute alloc] init];
 }
 
-
-#pragma mark - Instance Methods
+// MARK: - Instance Methods
 
 - (BOOL)isEqualToRoute:(MNRoute *)aRoute {
     if (self == aRoute){

@@ -13,7 +13,7 @@
         <!--Metro Route View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MetroRouteViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MNMetroRouteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -201,7 +201,7 @@
         <!--Metro City-->
         <scene sceneID="zbo-bV-sMe">
             <objects>
-                <tableViewController id="CBW-n0-kkC" customClass="CitySearchViewController" sceneMemberID="viewController">
+                <tableViewController id="CBW-n0-kkC" customClass="MNCitySearchViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1LV-nh-h2C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,7 +254,7 @@
         <!--Root View Controller-->
         <scene sceneID="Jac-Fo-tIs">
             <objects>
-                <tableViewController id="LX2-YM-AXs" customClass="StationSearchViewController" sceneMemberID="viewController">
+                <tableViewController id="LX2-YM-AXs" customClass="MNStationSearchViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HqD-tK-xMi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

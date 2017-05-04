@@ -1,5 +1,5 @@
 //
-//  MetroRouteViewController.h
+//  MNMetroRouteViewController.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 4/21/17.
@@ -14,7 +14,7 @@
 #import "CityButton.h"
 
 
-@interface MetroRouteViewController : UIViewController
+@interface MNMetroRouteViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet MetroImageScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet MetroImageView *metroImage;

@@ -1,17 +1,17 @@
 //
-//  MetroRouteListViewController.m
+//  MNMetroRouteListViewController.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 4/27/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "MetroRouteListViewController.h"
+#import "MNMetroRouteListViewController.h"
 
-@interface MetroRouteListViewController ()
+@interface MNMetroRouteListViewController ()
 @end
 
-@implementation MetroRouteListViewController
+@implementation MNMetroRouteListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,10 +23,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)viewWillAppear:(BOOL)animated {
-    
-}
-
 
 @end

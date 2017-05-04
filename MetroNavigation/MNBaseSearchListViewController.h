@@ -1,5 +1,5 @@
 //
-//  BaseSearchListViewController.h
+//  MNBaseSearchListViewController.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseSearchListViewController : UITableViewController
+@interface MNBaseSearchListViewController : UITableViewController
 
 @property (nonatomic, strong) NSDictionary <NSString *, id> *contentForTableView;
 

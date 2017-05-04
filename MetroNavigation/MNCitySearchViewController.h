@@ -1,5 +1,5 @@
 //
-//  CitySearchViewController.h
+//  MNCitySearchViewController.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseSearchListViewController.h"
+#import "MNBaseSearchListViewController.h"
 
 
-@interface CitySearchViewController : BaseSearchListViewController
+@interface MNCitySearchViewController : MNBaseSearchListViewController
 @end

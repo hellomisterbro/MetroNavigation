@@ -1,5 +1,5 @@
 //
-//  MetroStateHolder.h
+//  MNMetroStateHolder.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "MNMetro.h"
 
-@interface MetroStateHolder : NSObject
+@interface MNMetroStateHolder : NSObject
 
 @property (nonatomic, copy) MNMetro *currentMetroState;
 
-+ (MetroStateHolder *)sharedInstance;
++ (MNMetroStateHolder *)sharedInstance;
 
 @end

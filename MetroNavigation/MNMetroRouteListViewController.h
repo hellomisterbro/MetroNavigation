@@ -1,5 +1,5 @@
 //
-//  MetroRouteListViewController.h
+//  MNMetroRouteListViewController.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 4/27/17.
@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MetroRouteListViewController : UIViewController
+@interface MNMetroRouteListViewController : UIViewController
 @end

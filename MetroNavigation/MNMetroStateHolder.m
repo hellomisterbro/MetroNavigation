@@ -1,28 +1,28 @@
 //
-//  MetroStateHolder.m
+//  MNMetroStateHolder.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "MetroStateHolder.h"
-#import "DataAPI.h"
+#import "MNMetroStateHolder.h"
+#import "MNDataAPI.h"
 #import "MNMetro+NSCoding.h"
 
 NSString *const kCityMetroStateKeyForUserDefaults = @"MNCityMetroStateKey";
 
-@implementation MetroStateHolder
+@implementation MNMetroStateHolder
 
 @synthesize currentMetroState = _currentMetroState;
 
-+ (MetroStateHolder *)sharedInstance {
++ (MNMetroStateHolder *)sharedInstance {
     
-    static MetroStateHolder *cityMetroStateHolder;
+    static MNMetroStateHolder *cityMetroStateHolder;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        cityMetroStateHolder = [[MetroStateHolder alloc] init];
+        cityMetroStateHolder = [[MNMetroStateHolder alloc] init];
     });
     
     return cityMetroStateHolder;

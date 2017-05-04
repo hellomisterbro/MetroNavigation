@@ -1,27 +1,27 @@
 //
-//  CitySearchViewController.m
+//  MNCitySearchViewController.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "CitySearchViewController.h"
+#import "MNCitySearchViewController.h"
 #import "CityTableViewCell.h"
-#import "DataAPI.h"
-#import "MetroStateHolder.h"
+#import "MNDataAPI.h"
+#import "MNMetroStateHolder.h"
 
 NSString *const kReusableCellForCitySearch = @"cityNameCellIdentifier";
 NSString *const kUnwindToMetroViewControllerSegueName = @"MNUnwindToMetroViewController";
 
-@interface CitySearchViewController ()
+@interface MNCitySearchViewController ()
 
 @property (nonatomic, strong) NSString *selectedMetroID;
 
 @end
 
 
-@implementation CitySearchViewController
+@implementation MNCitySearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +33,7 @@ NSString *const kUnwindToMetroViewControllerSegueName = @"MNUnwindToMetroViewCon
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark Segues
+// MARK: - Segues
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -41,12 +41,12 @@ NSString *const kUnwindToMetroViewControllerSegueName = @"MNUnwindToMetroViewCon
         MNMetro *metro = [DataAPI metroWithIdentifier:self.selectedMetroID];
         
         if (metro) {
-            [MetroStateHolder sharedInstance].currentMetroState = metro;
+            [MNMetroStateHolder sharedInstance].currentMetroState = metro;
         }
     }
 }
 
-#pragma mark UITableView
+// MARK: - UITableView
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
