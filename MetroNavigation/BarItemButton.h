@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RouterDescriptionButton : UIButton
+@interface BarItemButton : UIButton
 
 @end

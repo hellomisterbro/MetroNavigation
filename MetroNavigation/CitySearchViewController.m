@@ -12,6 +12,7 @@
 #import "MetroStateHolder.h"
 
 NSString *const kReusableCellForCitySearch = @"cityNameCellIdentifier";
+NSString *const kUnwindToMetroViewControllerSegueName = @"MNUnwindToMetroViewController";
 
 @interface CitySearchViewController ()
 
@@ -32,16 +33,17 @@ NSString *const kReusableCellForCitySearch = @"cityNameCellIdentifier";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark IBAction
+#pragma mark Segues
 
 
-- (IBAction)doneClicked:(id)sender {
-    MNMetro *metro = [DataAPI metroWithIdentifier:self.selectedMetroID];
-   
-    if (metro) {
-        [MetroStateHolder sharedInstance].currentMetroState = metro;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kUnwindToMetroViewControllerSegueName]) {
+        MNMetro *metro = [DataAPI metroWithIdentifier:self.selectedMetroID];
+        
+        if (metro) {
+            [MetroStateHolder sharedInstance].currentMetroState = metro;
+        }
     }
-    [self performSegueWithIdentifier:@"MNUnwindToMetroViewController" sender:nil];
 }
 
 #pragma mark UITableView

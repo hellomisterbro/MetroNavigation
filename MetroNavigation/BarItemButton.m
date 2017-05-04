@@ -6,10 +6,10 @@
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "RouterDescriptionButton.h"
+#import "BarItemButton.h"
 #import "UIColor+MNColors.h"
 
-@implementation RouterDescriptionButton
+@implementation BarItemButton
 
 
 - (instancetype)initWithCoder:(NSCoder *)coder

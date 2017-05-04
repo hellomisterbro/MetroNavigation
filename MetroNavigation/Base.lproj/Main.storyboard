@@ -61,14 +61,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="f51-xE-oeM">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQc-C6-ewR" customClass="RouterDescriptionButton">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQc-C6-ewR" customClass="BarItemButton">
                                                         <rect key="frame" x="0.0" y="0.0" width="79.5" height="30"/>
                                                         <state key="normal" title="Cancel"/>
                                                         <connections>
                                                             <action selector="cancelClicked:" destination="du9-yE-YVF" eventType="touchUpInside" id="hx9-SO-LLV"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-c0-HWL" customClass="RouterDescriptionButton">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-c0-HWL" customClass="BarItemButton">
                                                         <rect key="frame" x="279.5" y="0.0" width="79.5" height="30"/>
                                                         <state key="normal" title="Details"/>
                                                         <connections>
@@ -80,9 +80,9 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="06d-Fo-eAT">
                                                 <rect key="frame" x="0.0" y="40" width="359" height="58"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRf-kS-hBj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRf-kS-hBj" customClass="MNDurationDescriptionLabel">
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -236,12 +236,12 @@
                     <navigationItem key="navigationItem" title="Metro City" id="5CP-sp-YhV">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="gOJ-ha-5og">
                             <connections>
-                                <segue destination="T5t-hz-baX" kind="unwind" identifier="MNUnwindToMetroViewController" unwindAction="applyNoneChanges:" id="0k1-td-5it"/>
+                                <segue destination="T5t-hz-baX" kind="unwind" identifier="" unwindAction="applyNoneChanges:" id="0k1-td-5it"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="11h-pm-X4B">
                             <connections>
-                                <action selector="doneClicked:" destination="CBW-n0-kkC" id="gQl-oT-M90"/>
+                                <segue destination="T5t-hz-baX" kind="unwind" identifier="MNUnwindToMetroViewController" unwindAction="updateMetroWithUnwindSegue:" id="ZeV-Hg-WtF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

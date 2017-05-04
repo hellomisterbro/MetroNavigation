@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "StationButton.h"
-#import "RouterDescriptionButton.h"
+#import "BarItemButton.h"
 
 @class RouteDescriptionBannerView;
 
@@ -33,8 +33,8 @@
 @property (nonatomic, weak) IBOutlet StationButton *startStaion;
 @property (nonatomic, weak) IBOutlet StationButton *endStaion;
 @property (nonatomic, weak) IBOutlet UILabel *timelabel;
-@property (nonatomic, weak) IBOutlet RouterDescriptionButton *cancelButton;
-@property (nonatomic, weak) IBOutlet RouterDescriptionButton *detailsButton;
+@property (nonatomic, weak) IBOutlet BarItemButton *cancelButton;
+@property (nonatomic, weak) IBOutlet BarItemButton *detailsButton;
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *bottomRouteDescriptionContraint;
 

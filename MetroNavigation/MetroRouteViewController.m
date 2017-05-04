@@ -17,13 +17,17 @@
 NSString *const detailsSegueName = @"MNDisplayRouteListSegue";
 NSString *const cityChangeSegueName = @"MNCityChangeSegue";
 NSString *const stationChangeSegueName = @"MNStationChangeSegue";
+NSString *const keyPathForCurrentMetroState = @"MNStationChangeSegue";
 
 @interface MetroRouteViewController () <UIScrollViewDelegate, MetroImageViewDelegate, UIViewControllerTransitioningDelegate, RouteDescriptionBannerViewDelegate, StationSearchViewControllerDelegate>
 
-@property (nonatomic, strong) MNMetro* metro;
+//currently selected start station
 @property (nonatomic, strong) MNStation* startStation;
+
+//currently selected end station
 @property (nonatomic, strong) MNStation* endStation;
 
+//calculated short path
 @property (nonatomic, strong) MNRoute* route;
 
 @end
@@ -35,9 +39,7 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self addObserver:self forKeyPath:@"metro" options:NSKeyValueObservingOptionNew context:nil];
-    
-    self.metro = MetroStateHolder.sharedInstance.currentMetroState;
+    [self updateControllerState];
     
     self.routeDescriptionBannerView.delegate = self;
     self.metroImage.delegate = self;
@@ -45,13 +47,8 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
     CGFloat bannerHeight = CGRectGetHeight(self.routeDescriptionBannerView.frame);
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -bannerHeight;
     
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"metro"]) {
-        //update controller when metro changed
-        [self updateControllerState];
-    }
+    [MetroStateHolder.sharedInstance addObserver:self forKeyPath:keyPathForCurrentMetroState options:NSKeyValueObservingOptionNew context:nil];
+    
 }
 
 // MARK: - IBAction
@@ -60,10 +57,12 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
     [self hideRouteDescriptionBanner];
 }
 
+// MARK: - Segues
+
 - (IBAction)applyNoneChanges:(UIStoryboardSegue*)unwindSegue{}
 
 - (IBAction)updateMetroWithUnwindSegue:(UIStoryboardSegue*)segue{
-    self.metro = MetroStateHolder.sharedInstance.currentMetroState;
+//    self.metro = MetroStateHolder.sharedInstance.currentMetroState;
 }
 
 // MARK: - Scroll View Interactions
@@ -92,7 +91,9 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
 
 - (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MetroImageView *)metroImageView {
     
-    MNStation *selectedStation =  [self.metro stationWithImagePositionX:point.x positionY:point.y radious:15];
+    MNMetro *metro = MetroStateHolder.sharedInstance.currentMetroState;
+    
+    MNStation *selectedStation =  [metro stationWithImagePositionX:point.x positionY:point.y radious:15];
     
     if (selectedStation) {
         
@@ -110,19 +111,22 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
             //remove start station
             
             self.startStation = nil;
-            self.endStation = nil;
-            
             
         } else if (self.startStation && !self.endStation) {
-            //find shortpathroute
-            
-            self.endStation = selectedStation;;
-            self.route = [self.metro shortestRouteFromStation:self.startStation toStation:self.endStation];
+            //set second pin
+
+            self.endStation = selectedStation;
             
         } else if ([self.endStation isEqual:selectedStation]) {
             //remove second pin
             
             self.endStation = nil;
+        }
+        
+        self.route = nil;
+        
+        if (self.startStation && self.endStation) {
+            self.route = [metro shortestRouteFromStation:self.startStation toStation:self.endStation];
         }
         
         [self updateImagePins];
@@ -143,7 +147,9 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
         
         CGPoint endStationPoint = [self pointFromStation:self.endStation];
         [self.metroImage addEndPinAtPoint:endStationPoint];
-        
+    }
+    
+    if (self.route) {
         for (MNStation *station in self.route.stationsSequence) {
             
             if (![station isEqual:self.startStation] && ![station isEqual:self.endStation]) {
@@ -212,18 +218,28 @@ NSString *const stationChangeSegueName = @"MNStationChangeSegue";
     }];
 }
 
+// MARK: - Updating Controller
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:keyPathForCurrentMetroState]) {
+        [self updateControllerState];
+    }
+}
+
 
 - (void)updateControllerState {
     
-    [self.metroImage cleanImageFromPins];
+    MNMetro *metro = MetroStateHolder.sharedInstance.currentMetroState;
     
     self.startStation = nil;
     self.endStation = nil;
     
-    NSString *imageName = [DataAPI imageMetroNameWithMetroIdentifier:self.metro.ID];
+    NSString *imageName = [DataAPI imageMetroNameWithMetroIdentifier:metro.ID];
     self.metroImage.image = [UIImage imageNamed:imageName];
     
-    [self.cityButton setTitle:self.metro.name forState:UIControlStateNormal];
+    [self.cityButton setTitle:metro.name forState:UIControlStateNormal];
+    
+    [self updateImagePins];
 }
 
 
