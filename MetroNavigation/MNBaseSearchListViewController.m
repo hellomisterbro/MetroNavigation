@@ -31,7 +31,7 @@
     [self configSearchController];
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     self.namesForTableView = self.contentForTableView.allKeys;
 }
 
@@ -40,20 +40,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+// MARK: - UISearchResultsUpdating
 
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return [self isPresentingFilteredList] ? self.filteredNamesForTableView.count : self.namesForTableView.count;
 }
 
-#pragma mark - UISearchResultsUpdating
+// MARK: - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     [self filterContentsForSeachText:searchController.searchBar.text];
 }
 
-#pragma mark - Local Helpers
+// MARK: - Filtering
 
 - (void)filterContentsForSeachText:(NSString *)seachedText {
     NSPredicate *namePredicate = [NSPredicate predicateWithFormat:@"self contains[cd] %@", seachedText];

@@ -31,6 +31,23 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
 //calculated short path
 @property (nonatomic, strong) MNRoute* route;
 
+//update all pins in image view
+- (void)updateImagePins;
+
+//update controllers state (image, pins etc.).
+//Typically need calling when metro state is changed
+- (void)updateControllerState;
+
+//displaing and hiding banner correspondingly
+- (void)displayRouteDescriptionBanner;
+- (void)hideRouteDescriptionBanner;
+
+//zooming scroll view for convinient look of the route
+- (void)zoomToSelectedRoute;
+
+//getting CGPoint value from the MNStation object's posX and posY properties 
+- (CGPoint)pointFromStation:(MNStation *)station;
+
 @end
 
 @implementation MNMetroRouteViewController
@@ -61,9 +78,9 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
 
 // MARK: - Segues
 
-- (IBAction)applyNoneChanges:(UIStoryboardSegue*)unwindSegue{}
+- (IBAction)applyNoneChanges:(UIStoryboardSegue*)unwindSegue {}
 
-- (IBAction)updateMetroWithUnwindSegue:(UIStoryboardSegue*)segue{}
+- (IBAction)updateMetroWithUnwindSegue:(UIStoryboardSegue*)segue {}
 
 // MARK: - Scroll View Interactions
 
@@ -134,6 +151,16 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
     }
     
 }
+
+- (IBAction)handleDoubleTap : (UIGestureRecognizer*) sender {
+    
+    if (self.scrollView.zoomScale > 1.0f) {
+        [self.scrollView zoomToRect:self.metroImage.frame animated:YES];
+    } else {
+        [self.scrollView scrollToPoint: [sender locationInView:self.scrollView] withScale:5];
+    }
+}
+
 
 - (void)updateImagePins {
     
@@ -264,6 +291,11 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
     
     //updating the image with the corresponing pins
     [self updateImagePins];
+    
+    //hide route description banner
+    [self hideRouteDescriptionBanner];
+    
+    [self.scrollView zoomToRect:self.metroImage.frame animated:YES];
 }
 
 

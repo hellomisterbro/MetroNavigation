@@ -13,7 +13,6 @@
 
 @protocol MNStationSearchViewControllerDelegate <NSObject>
 
-@required
 - (void)stationChoosenWithSuccess:(BOOL)success inViewController:(MNStationSearchViewController *)citySearchViewController;
 
 @end

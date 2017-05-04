@@ -27,8 +27,10 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K0s-Qj-XMS" customClass="MetroImageView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="K0s-Qj-XMS" firstAttribute="top" secondItem="QEC-8E-15N" secondAttribute="top" id="AuK-pf-90c"/>
                                     <constraint firstItem="K0s-Qj-XMS" firstAttribute="centerY" secondItem="QEC-8E-15N" secondAttribute="centerY" id="E00-oe-x0B"/>
@@ -39,6 +41,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="eED-D4-gGV"/>
+                                    <outletCollection property="gestureRecognizers" destination="KPD-ED-vZD" appends="YES" id="KB1-Zf-lXq"/>
                                 </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6g-uh-TJh" customClass="CityButton">
@@ -195,6 +198,11 @@
                         <action selector="handleRouteDescriptionBannerPan:" destination="BYZ-38-t0r" id="uFe-sB-1vv"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="KPD-ED-vZD">
+                    <connections>
+                        <action selector="handleDoubleTap:" destination="BYZ-38-t0r" id="9Bx-ql-f3X"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137" y="-156"/>
         </scene>

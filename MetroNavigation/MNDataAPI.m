@@ -12,7 +12,7 @@
 #import <UIKit/UIKit.h>
 
 NSString *const kKyivMetropolitanIdentifier = @"911";
-NSString *const kMilanoMetropolitanIdentifier = @"102";
+NSString *const kMilanoMetropolitanIdentifier = @"100";
 NSString *const kPetersburgMetropolitanIdentifier = @"103";
 NSString *const kRigaMetropolitanIdentifier = @"104";
 NSString *const kBrusselsMetropolitanIdentifier = @"104";

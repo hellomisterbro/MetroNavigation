@@ -1,7 +1,7 @@
  
 {
-  "name": "Kyiv Metro",
-    "id": "911",
+  "name": "Milano Metro",
+    "id": "100",
   "edges": [
     {
       "first": {"id": "101","name": "Sesto I Maggio", "posX": 1.2,"posY":2},

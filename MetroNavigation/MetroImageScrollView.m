@@ -29,4 +29,19 @@
 }
 
 
+- (void)scrollToPoint:(CGPoint)zoomPoint withScale:(CGFloat)scale {
+    
+    CGRect rectToZoom;
+    
+    //obviously the resulting size and width will be in scale time smaller than the current ones
+    rectToZoom.size.width = CGRectGetWidth(self.frame) / scale;
+    rectToZoom.size.height = CGRectGetHeight(self.frame) / scale;
+    
+    //move rect so passed zoomPoint will be the center of the resulting rect
+    rectToZoom.origin.x = zoomPoint.x - (CGRectGetWidth(rectToZoom) / 2.0f);
+    rectToZoom.origin.y = zoomPoint.y - (CGRectGetHeight(rectToZoom) / 2.0f);
+    
+    [self zoomToRect:rectToZoom animated:YES];
+}
+
 @end
