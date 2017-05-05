@@ -10,13 +10,10 @@
 
 @implementation MNDurationDescriptionLabel
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.textColor = [UIColor grayColor];
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.textColor = [UIColor grayColor];
 }
 
 @end

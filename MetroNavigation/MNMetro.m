@@ -81,6 +81,10 @@
         return NO;
     }
     
+    if (![self.lines isEqual:aMetro.lines]){
+        return NO;
+    }
+    
     return YES;
 }
 
@@ -92,6 +96,10 @@
     
     metro.edges = [[NSArray alloc] initWithArray:self.edges copyItems:YES];
     metro.stations = [[NSArray alloc] initWithArray:self.edges copyItems:YES];
+    metro.lines = [[NSArray alloc] initWithArray:self.lines copyItems:YES];
+    
+    metro.name = self.name;
+    metro.ID = self.ID;
     metro.name = self.name;
     
     return metro;
@@ -99,7 +107,8 @@
 
 
 
-// MARK: - Graph Interaction Methods
+// MARK: - Metro Interaction Methods
+
 
 - (MNStation *)stationWithImagePositionX:(double)x positionY:(double)y radious:(double)radious {
     for (MNStation *station in self.stations) {
@@ -191,12 +200,12 @@
     
     while ([unvisitedStations count] > 0) {
         
+        //check the station that we didnt visit yet and that gives us the minimum duration from source to itself
         MNStation *stationWithMinDuration = [self stationWithMinDurationInDictionary:durationFromSource fromSet:unvisitedStations];
         
         if (stationWithMinDuration == nil) {
-            
             break;
-            
+
         } else {
             
             if ([stationWithMinDuration isEqual:targetStation]) {
@@ -211,9 +220,7 @@
    
                 for (MNStation *neighboringStation in [self neighboringStationsToStation:stationWithMinDuration]) {
                     
-                    NSNumber *alt = [NSNumber numberWithFloat:
-                                     [[durationFromSource objectForKey:stationWithMinDuration.identifier] floatValue] +
-                                     [[self durationFromStation:stationWithMinDuration toNeighboringStation:neighboringStation] floatValue]];
+                    NSNumber *alt = @([[durationFromSource objectForKey:stationWithMinDuration.identifier] floatValue] + [[self durationFromStation:stationWithMinDuration toNeighboringStation:neighboringStation] floatValue]);
                     
                     NSNumber *durationFromNeighborToOrigin = [durationFromSource objectForKey:neighboringStation.identifier];
                     
@@ -234,6 +241,7 @@
         return nil;
      
     } else {
+        
         MNRoute *route = [MNRoute route];
         
         NSMutableArray *stationsSequence = [route.stationsSequence mutableCopy];

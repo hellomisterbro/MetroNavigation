@@ -11,15 +11,13 @@
 
 @implementation MNCityButton
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.backgroundColor = [UIColor lightGreenMNColor];
-        self.tintColor = [UIColor whiteColor];
-        self.layer.cornerRadius = 5;
-        self.clipsToBounds = YES;
-    }
-    return self;
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.backgroundColor = [UIColor lightGreenMNColor];
+    self.tintColor = [UIColor whiteColor];
+    self.layer.cornerRadius = 5;
+    self.clipsToBounds = YES;
 }
 @end

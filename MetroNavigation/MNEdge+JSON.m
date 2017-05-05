@@ -11,7 +11,7 @@
 
 @implementation MNEdge (JSON)
 
-+ (MNEdge *)edgeFromJSON:(NSMutableDictionary *)edgeJSON {
++ (MNEdge *)edgeFromJSON:(NSDictionary *)edgeJSON {
     
     MNEdge *edge = [MNEdge edgeWithDuration:@([edgeJSON[@"duration"] doubleValue])];
     

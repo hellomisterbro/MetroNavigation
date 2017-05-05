@@ -11,6 +11,8 @@
 #import "MNDataAPI.h"
 #import "MNMetroStateHolder.h"
 
+#import "UIColor+MNColors.h"
+
 NSString *const kReusableCellForCitySearch = @"cityNameCellIdentifier";
 NSString *const kUnwindToMetroViewControllerSegueName = @"MNMetroChangedUnwindToMetroViewController";
 
@@ -19,7 +21,6 @@ NSString *const kUnwindToMetroViewControllerSegueName = @"MNMetroChangedUnwindTo
 @property (nonatomic, strong) NSString *selectedMetroID;
 
 @end
-
 
 @implementation MNCitySearchViewController
 

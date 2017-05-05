@@ -11,15 +11,12 @@
 
 @implementation MNRouteDescriptionBannerView
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.layer.shadowOffset = CGSizeMake(0, -2);
-        self.layer.shadowRadius = 3;
-        self.layer.shadowOpacity = 0.5;
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.layer.shadowOffset = CGSizeMake(0, -2);
+    self.layer.shadowRadius = 3;
+    self.layer.shadowOpacity = 0.5;
 }
 
 - (void)setStartStationName:(NSString *)name {

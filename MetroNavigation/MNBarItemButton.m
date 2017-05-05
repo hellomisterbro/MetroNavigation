@@ -11,15 +11,11 @@
 
 @implementation MNBarItemButton
 
-
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.tintColor = [UIColor lightGreenMNColor];
-        
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    self.tintColor = [UIColor lightGreenMNColor];
 }
+
 
 @end

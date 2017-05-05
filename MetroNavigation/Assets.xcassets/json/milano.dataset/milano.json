@@ -2,271 +2,684 @@
 {
   "name": "Milano Metro",
     "id": "100",
+            "lines":[
+        {
+            "color":{"red":233, "green":244, "blue":243},
+            "name":"red"
+        },
+        {
+            "color":{"red":233, "green":244, "blue":243},
+            "name":"red-branch"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"green"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"green-branch-one"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"green-branch-two"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"violet"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"yellow"
+        }
+    ],
   "edges": [
     {
       "first": {"id": "101","name": "Sesto I Maggio", "posX": 1.2,"posY":2},
       "second": {"id": "102","name": "Sesto Rondò", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "102","name": "Sesto Rondò", "posX": 1.2,"posY":2},
       "second": {"id": "103","name": "Sesto Marelli", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "103","name": "Sesto Marelli", "posX": 1.2,"posY":2},
       "second": {"id": "104","name": "Villa San Giovanni", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "104","name": "Villa San Giovanni", "posX": 1.2,"posY":2},
       "second": {"id": "105","name": "Precotto", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "105","name": "Precotto", "posX": 1.2,"posY":2},
       "second": {"id": "106","name": "Gorla", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "106","name": "Gorla", "posX": 1.2,"posY":2},
       "second": {"id": "107","name": "Turro", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "107","name": "Turro", "posX": 1.2,"posY":2},
       "second": {"id": "108","name": "Rovereto", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
          {
       "first": {"id": "108","name": "Rovereto", "posX": 1.2,"posY":2},
       "second": {"id": "109","name": "Pasteur", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
      {
       "first": {"id": "109","name": "Pasteur", "posX": 1.2,"posY":2},
       "second": {"id": "110","name": "Loreto", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "110","name": "Loreto", "posX": 1.2,"posY":2},
-      "second": {"id": "111","name": "Lima", "posX": 1.2,"posY":2}
+      "second": {"id": "111","name": "Lima", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "111","name": "Lima", "posX": 1.2,"posY":2},
-      "second": {"id": "112","name": "Porta Venezia", "posX": 1.2,"posY":2}
+      "second": {"id": "112","name": "Porta Venezia", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "112","name": "Porta Venezia", "posX": 1.2,"posY":2},
       "second": {"id": "113","name": "Palestro", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "113","name": "Palestro", "posX": 1.2,"posY":2},
       "second": {"id": "114","name": "San babila", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "114","name": "San babila", "posX": 1.2,"posY":2},
       "second": {"id": "115","name": "Duomo", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
       "first": {"id": "115","name": "Duomo", "posX": 1.2,"posY":2},
       "second": {"id": "116","name": "Cordusio", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
      {
       "first": {"id": "116","name": "Cordusio", "posX": 1.2,"posY":2},
       "second": {"id": "117","name": "Cairoli", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
       {
       "first": {"id": "117","name": "Cairoli", "posX": 1.2,"posY":2},
       "second": {"id": "118","name": "Cadorna", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "208","name": "Cadorna", "posX": 630.175,"posY":329.875},
-      "second": {"id": "207","name": "Conciliazione", "posX": 630.175,"posY":281.125}
+      "first": {"id": "118","name": "Cadorna", "posX": 630.175,"posY":329.875},
+      "second": {"id": "119","name": "Conciliazione", "posX": 630.175,"posY":281.125},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "207","name": "Conciliazione", "posX": 630.175,"posY":281.125},
-      "second": {"id": "206","name": "Pagano", "posX": 630.175,"posY":240.175}
+      "first": {"id": "119","name": "Conciliazione", "posX": 630.175,"posY":281.125},
+      "second": {"id": "120","name": "Pagano", "posX": 630.175,"posY":240.175},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "206","name": "Pagano", "posX": 630.175,"posY":240.175},
-      "second": {"id": "205","name": "Buonarroti", "posX": 630.175,"posY":201.825},
-      "duration": 1.3
+      "first": {"id": "120","name": "Pagano", "posX": 630.175,"posY":240.175},
+      "second": {"id": "121","name": "Buonarroti", "posX": 630.175,"posY":201.825},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "205","name": "Buonarroti", "posX": 630.175,"posY":201.825},
-      "second": {"id": "204","name": "Amendola", "posX": 630.175,"posY":149.8250},
-      "duration": 1.3
+      "first": {"id": "121","name": "Buonarroti", "posX": 630.175,"posY":201.825},
+      "second": {"id": "122","name": "Amendola", "posX": 630.175,"posY":149.8250},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "204","name": "Amendola", "posX": 630.175,"posY":149.8250},
-      "second": {"id": "203","name": "Lotto", "posX": 630.175,"posY":110.825},
-      "duration": 1.3
+      "first": {"id": "122","name": "Amendola", "posX": 630.175,"posY":149.8250},
+      "second": {"id": "123","name": "Lotto", "posX": 630.175,"posY":110.825},
+      "duration": 1.3,
+        "line":["red"]
+    },
+      {
+      "first": {"id": "123","name": "Lotto", "posX": 630.175,"posY":110.825},
+      "second": {"id": "124","name": "QT8", "posX": 630.175,"posY":70.525000},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "203","name": "Lotto", "posX": 630.175,"posY":110.825},
-      "second": {"id": "202","name": "Lampugnano", "posX": 630.175,"posY":70.525000},
-      "duration": 1.3
+      "first": {"id": "124","name": "QT8", "posX": 630.175,"posY":110.825},
+      "second": {"id": "125","name": "Lampugnano", "posX": 630.175,"posY":70.525000},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "202","name": "Lampugnano", "posX": 630.175,"posY":2},
-      "second": {"id": "201","name": "Urugvay", "posX": 630.175,"posY":30.875000},
-      "duration": 1.3
+      "first": {"id": "125","name": "Lampugnano", "posX": 630.175,"posY":2},
+      "second": {"id": "126","name": "Urugvay", "posX": 630.175,"posY":30.875000},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "208","name": "Urugvay", "posX": 630.367989,"posY":329.875},
-      "second": {"id": "209","name": "Bonola", "posX": 630.367989,"posY":410.022011},
-      "duration": 1.3
+      "first": {"id": "126","name": "Urugvay", "posX": 630.367989,"posY":329.875},
+      "second": {"id": "127","name": "Bonola", "posX": 630.367989,"posY":410.022011},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "209","name": "Bonola", "posX": 1.2,"posY":410.022011},
-      "second": {"id": "210","name": "San Leonardo", "posX": 630.367989,"posY":489.747008},
-      "duration": 1.3
+      "first": {"id": "127","name": "Bonola", "posX": 1.2,"posY":410.022011},
+      "second": {"id": "128","name": "San Leonardo", "posX": 630.367989,"posY":489.747008},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "210","name": "San Leonardo", "posX": 1.2,"posY":489.747008},
-      "second": {"id": "211","name": "Molino Dorino", "posX": 630.367989,"posY":539.744041},
-      "duration": 1.3
+      "first": {"id": "128","name": "San Leonardo", "posX": 1.2,"posY":489.747008},
+      "second": {"id": "129","name": "Molino Dorino", "posX": 630.367989,"posY":539.744041},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "211","name": "Molino Dorino", "posX": 1.2,"posY":539.744041},
-      "second": {"id": "212","name": "Pero", "posX": 630.367989,"posY":610.010140},
-      "duration": 1.3
+      "first": {"id": "129","name": "Molino Dorino", "posX": 1.2,"posY":539.744041},
+      "second": {"id": "130","name": "Pero", "posX": 630.367989,"posY":610.010140},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "212","name": "Pero", "posX": 630.367989,"posY":610.010140},
-      "second": {"id": "213","name": "Rhno fiera", "posX": 630.367989,"posY":669.46607},
-      "duration": 1.3
+      "first": {"id": "130","name": "Pero", "posX": 630.367989,"posY":610.010140},
+      "second": {"id": "131","name": "Rhno fiera", "posX": 630.367989,"posY":669.46607},
+      "duration": 1.3,
+        "line":["red"]
     },
     {
-      "first": {"id": "213","name": "Pagano", "posX": 1.2,"posY":669.466071},
-      "second": {"id": "214","name": "Wagner", "posX": 589.829855,"posY":710.00420},
-      "duration": 1.3
+      "first": {"id": "120","name": "Pagano", "posX": 1.2,"posY":669.466071},
+      "second": {"id": "132","name": "Wagner", "posX": 589.829855,"posY":710.00420},
+      "duration": 1.3,
+        "line":["red-branch"]
     },
     {
-      "first": {"id": "214","name": "Wagner", "posX": 589.829855,"posY":710.004205},
-      "second": {"id": "215","name": "De angeli", "posX": 499.294688,"posY":708.652934},
-      "duration": 1.3
+      "first": {"id": "132","name": "Wagner", "posX": 589.829855,"posY":710.004205},
+      "second": {"id": "133","name": "De angeli", "posX": 499.294688,"posY":708.652934},
+      "duration": 1.3,
+        "line":["red-branch"]
     },
     {
-      "first": {"id": "215","name": "De angeli", "posX": 499.294688,"posY":708.652934},
-      "second": {"id": "216","name": "Gambara", "posX": 429.028589,"posY":710.0042},
-      "duration": 1.3
+      "first": {"id": "133","name": "De angeli", "posX": 499.294688,"posY":708.652934},
+      "second": {"id": "134","name": "Gambara", "posX": 429.028589,"posY":710.0042},
+      "duration": 1.3,
+        "line":["red-branch"]
     }
     ,{
-      "first": {"id": "216","name": "Gambara", "posX": 429.028589,"posY":710.0042},
-      "second": {"id": "217","name": "Bande Nere", "posX": 369.5726,"posY":710.004},
-      "duration": 1.3
+      "first": {"id": "134","name": "Gambara", "posX": 429.028589,"posY":710.0042},
+      "second": {"id": "135","name": "Bande Nere", "posX": 369.5726,"posY":710.004},
+      "duration": 1.3,
+        "line":["red-branch"]
     },
     {
-      "first": {"id": "217","name": "Bande Nere", "posX": 369.572658,"posY":710.004},
-      "second": {"id": "218","name": "Primaticcio", "posX": 299.30655,"posY":711.355},
-      "duration": 1.3
+      "first": {"id": "135","name": "Bande Nere", "posX": 369.572658,"posY":710.004},
+      "second": {"id": "136","name": "Primaticcio", "posX": 299.30655,"posY":711.355},
+      "duration": 1.3,
+        "line":["red-branch"]
     },
     {
-      "first": {"id": "301","name": "Primaticcio", "posX": 1.2,"posY":2},
-      "second": {"id": "302","name": "Inganni", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "136","name": "Primaticcio", "posX": 1.2,"posY":2},
+      "second": {"id": "137","name": "Inganni", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["red-branch"]
     },
     {
-      "first": {"id": "302","name": "Inganni", "posX": 1.2,"posY":2},
-      "second": {"id": "303","name": "Biseglie", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "137","name": "Inganni", "posX": 1.2,"posY":2},
+      "second": {"id": "138","name": "Biseglie", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["red-branch"]
     },
     {
-      "first": {"id": "303","name": "Bignami", "posX": 1.2,"posY":2},
-      "second": {"id": "304","name": "Ponale", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "201","name": "Bignami", "posX": 1.2,"posY":2},
+      "second": {"id": "202","name": "Ponale", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "304","name": "Ponale", "posX": 1.2,"posY":2},
-      "second": {"id": "305","name": "Bicocca", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "202","name": "Ponale", "posX": 1.2,"posY":2},
+      "second": {"id": "203","name": "Bicocca", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "305","name": "Bicocca", "posX": 1.2,"posY":2},
-      "second": {"id": "306","name": "Ca'granda", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "203","name": "Bicocca", "posX": 1.2,"posY":2},
+      "second": {"id": "204","name": "Ca'granda", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "306","name": "Ca'granda", "posX": 1.2,"posY":2},
-      "second": {"id": "307","name": "Istria", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "204","name": "Ca'granda", "posX": 1.2,"posY":2},
+      "second": {"id": "205","name": "Istria", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "307","name": "Istria", "posX": 1.2,"posY":2},
-      "second": {"id": "308","name": "Marche", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "205","name": "Istria", "posX": 1.2,"posY":2},
+      "second": {"id": "206","name": "Marche", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "308","name": "Marche", "posX": 1.2,"posY":2},
-      "second": {"id": "309","name": "Zara", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "206","name": "Marche", "posX": 1.2,"posY":2},
+      "second": {"id": "207","name": "Zara", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "309","name": "Zara", "posX": 1.2,"posY":2},
-      "second": {"id": "310","name": "Isola", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "207","name": "Zara", "posX": 1.2,"posY":2},
+      "second": {"id": "208","name": "Isola", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "310","name": "Isola", "posX": 1.2,"posY":2},
-      "second": {"id": "311","name": "Garibaldi", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "208","name": "Isola", "posX": 1.2,"posY":2},
+      "second": {"id": "209","name": "Garibaldi", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "311","name": "Garibaldi", "posX": 1.2,"posY":2},
-      "second": {"id": "312","name": "Monumantale", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "209","name": "Garibaldi", "posX": 1.2,"posY":2},
+      "second": {"id": "210","name": "Monumantale", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "312","name": "Monumantale", "posX": 1.2,"posY":2},
-      "second": {"id": "313","name": "Censio", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "210","name": "Monumantale", "posX": 1.2,"posY":2},
+      "second": {"id": "211","name": "Censio", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "313","name": "Censio", "posX": 1.2,"posY":2},
-      "second": {"id": "314","name": "Gerusalemme", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "211","name": "Censio", "posX": 1.2,"posY":2},
+      "second": {"id": "212","name": "Gerusalemme", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "314","name": "Gerusalemme", "posX": 1.2,"posY":2},
-      "second": {"id": "315","name": "Domodossola", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "212","name": "Gerusalemme", "posX": 1.2,"posY":2},
+      "second": {"id": "213","name": "Domodossola", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "315","name": "Domodossola", "posX": 1.2,"posY":2},
-      "second": {"id": "316","name": "Tre torri", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "213","name": "Domodossola", "posX": 1.2,"posY":2},
+      "second": {"id": "214","name": "Tre torri", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "313","name": "Tre torri", "posX": 1.2,"posY":2},
-      "second": {"id": "109","name": "Portello", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "214","name": "Tre torri", "posX": 1.2,"posY":2},
+      "second": {"id": "215","name": "Portello", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "108","name": "Portello", "posX": 1.2,"posY":2},
-      "second": {"id": "208","name": "Lotto", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "215","name": "Portello", "posX": 1.2,"posY":2},
+      "second": {"id": "216","name": "Lotto", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "312","name": "Lotto", "posX": 1.2,"posY":2},
-      "second": {"id": "209","name": "Segesta", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "216","name": "Lotto", "posX": 1.2,"posY":2},
+      "second": {"id": "217","name": "Segesta", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "312","name": "Segesta", "posX": 1.2,"posY":2},
-      "second": {"id": "209","name": "San Siro Ippodromo", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "217","name": "Segesta", "posX": 1.2,"posY":2},
+      "second": {"id": "218","name": "San Siro Ippodromo", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["violet"]
     },
     {
-      "first": {"id": "312","name": "San Siro Ippodromo", "posX": 1.2,"posY":2},
-      "second": {"id": "209","name": "San siro stadio", "posX": 1.2,"posY":2},
-      "duration": 1.3
+      "first": {"id": "301","name": "Cosmasina", "posX": 1.2,"posY":2},
+      "second": {"id": "302","name": "Affori FN", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "302","name": "Affori FN", "posX": 1.2,"posY":2},
+      "second": {"id": "303","name": "Affori Centro", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "303","name": "Affori Centro", "posX": 1.2,"posY":2},
+      "second": {"id": "304","name": "Dergano", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "304","name": "Dergano", "posX": 1.2,"posY":2},
+      "second": {"id": "305","name": "Maciachini", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "305","name": "Maciachini", "posX": 1.2,"posY":2},
+      "second": {"id": "306","name": "Zara", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "306","name": "Zara", "posX": 1.2,"posY":2},
+      "second": {"id": "307","name": "Sondrio", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "307","name": "Sondrio", "posX": 1.2,"posY":2},
+      "second": {"id": "308","name": "Centrale", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "308","name": "Centrale", "posX": 1.2,"posY":2},
+      "second": {"id": "309","name": "Republica", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "309","name": "Republica", "posX": 1.2,"posY":2},
+      "second": {"id": "310","name": "Turati", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "310","name": "Turati", "posX": 1.2,"posY":2},
+      "second": {"id": "311","name": "Montenapoleone", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "311","name": "Montenapoleone", "posX": 1.2,"posY":2},
+      "second": {"id": "312","name": "Duomo", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "312","name": "Duomo", "posX": 1.2,"posY":2},
+      "second": {"id": "313","name": "Missori", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "313","name": "Missori", "posX": 1.2,"posY":2},
+      "second": {"id": "314","name": "Crocetta", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "314","name": "Crocetta", "posX": 1.2,"posY":2},
+      "second": {"id": "315","name": "Porta Romana", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "315","name": "Porta Romana", "posX": 1.2,"posY":2},
+      "second": {"id": "316","name": "Lodi tib", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "316","name": "Lodi tib", "posX": 1.2,"posY":2},
+      "second": {"id": "317","name": "Brenta", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "317","name": "Brenta", "posX": 1.2,"posY":2},
+      "second": {"id": "318","name": "Crvetto", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "318","name": "Crvetto", "posX": 1.2,"posY":2},
+      "second": {"id": "319","name": "Porto di mare", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "319","name": "Porto di mare", "posX": 1.2,"posY":2},
+      "second": {"id": "320","name": "Rogoredo FS", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "320","name": "Rogoredo FS", "posX": 1.2,"posY":2},
+      "second": {"id": "321","name": "San Donato", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+
+    {
+      "first": {"id": "401","name": "Gessate", "posX": 1.2,"posY":2},
+      "second": {"id": "402","name": "Cascina Antonietta", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "402","name": "Cascina Antonietta", "posX": 1.2,"posY":2},
+      "second": {"id": "403","name": "Gorgonzola", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "403","name": "Gorgonzola", "posX": 1.2,"posY":2},
+      "second": {"id": "404","name": "Villa Pompea", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "404","name": "Villa Pompea", "posX": 1.2,"posY":2},
+      "second": {"id": "405","name": "Bussero", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "405","name": "Bussero", "posX": 1.2,"posY":2},
+      "second": {"id": "406","name": "Cassina de'Pecchi", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "406","name": "Cassina de'Pecchi", "posX": 1.2,"posY":2},
+      "second": {"id": "407","name": "Villa Fiorita", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "407","name": "Villa Fiorita", "posX": 1.2,"posY":2},
+      "second": {"id": "408","name": "Cernusco sul Naviglio", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "408","name": "Cernusco sul Naviglio", "posX": 1.2,"posY":2},
+      "second": {"id": "409","name": "Cassina Burrona", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "409","name": "Cassina Burrona", "posX": 1.2,"posY":2},
+      "second": {"id": "410","name": "Vimodrone", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "410","name": "Vimodrone", "posX": 1.2,"posY":2},
+      "second": {"id": "411","name": "Cascina Gobba", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "411","name": "Cascina Gobba", "posX": 1.2,"posY":2},
+      "second": {"id": "412","name": "Cologno Sud", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green-branch-1"]
+    },
+    {
+      "first": {"id": "412","name": "Cologno Sud", "posX": 1.2,"posY":2},
+      "second": {"id": "413","name": "Cologno Centro", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green-branch-1"]
+    },
+    {
+      "first": {"id": "413","name": "Cologno Centro", "posX": 1.2,"posY":2},
+      "second": {"id": "415","name": "Cologno Nord", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green-branch-1"]
+    },
+    {
+      "first": {"id": "411","name": "Cascina Gobba", "posX": 1.2,"posY":2},
+      "second": {"id": "416","name": "Crescenzago", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "416","name": "Crescenzago", "posX": 1.2,"posY":2},
+      "second": {"id": "417","name": "Cimiano", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "418","name": "Cimiano", "posX": 1.2,"posY":2},
+      "second": {"id": "419","name": "Udine", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "419","name": "Udine", "posX": 1.2,"posY":2},
+      "second": {"id": "420","name": "Lambrate FS", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "420","name": "Lambrate FS", "posX": 1.2,"posY":2},
+      "second": {"id": "421","name": "Piola", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "421","name": "Piola", "posX": 1.2,"posY":2},
+      "second": {"id": "422","name": "Loreto", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "422","name": "Loreto", "posX": 1.2,"posY":2},
+      "second": {"id": "423","name": "Caiazzo", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "423","name": "Caiazzo", "posX": 1.2,"posY":2},
+      "second": {"id": "424","name": "Centrale FS", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "424","name": "Centrale FS", "posX": 1.2,"posY":2},
+      "second": {"id": "425","name": "Giola", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "425","name": "Giola", "posX": 1.2,"posY":2},
+      "second": {"id": "426","name": "Garibaldi FS", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "426","name": "Garibaldi FS", "posX": 1.2,"posY":2},
+      "second": {"id": "427","name": "Moscova", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "427","name": "Moscova", "posX": 1.2,"posY":2},
+      "second": {"id": "428","name": "Lanza", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "428","name": "Lanza", "posX": 1.2,"posY":2},
+      "second": {"id": "429","name": "Cadorna", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "429","name": "Cadorna", "posX": 1.2,"posY":2},
+      "second": {"id": "430","name": "Sant'Ambrogio", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "430","name": "Sant'Ambrogio", "posX": 1.2,"posY":2},
+      "second": {"id": "431","name": "Sant'Agostino", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "431","name": "Sant'Agostino", "posX": 1.2,"posY":2},
+      "second": {"id": "432","name": "Porta Genova FS", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "432","name": "Porta Genova FS", "posX": 1.2,"posY":2},
+      "second": {"id": "433","name": "Romolo", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "433","name": "Romolo", "posX": 1.2,"posY":2},
+      "second": {"id": "434","name": "Famagosta", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "434","name": "Famagosta", "posX": 1.2,"posY":2},
+      "second": {"id": "435","name": "Abbiategrasso", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green-branch-2"]
+    },
+    {
+      "first": {"id": "434","name": "Famagosta", "posX": 1.2,"posY":2},
+      "second": {"id": "436","name": "Assago Milanofiori Nord", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "436","name": "Assago Milanofiori Nord", "posX": 1.2,"posY":2},
+      "second": {"id": "437","name": "Assago Milanofiori Forum", "posX": 1.2,"posY":2},
+      "duration": 1.3,
+        "line":["green"]
     }]
 }

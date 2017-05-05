@@ -11,14 +11,10 @@
 @implementation MNMetroImageScrollView
 
 
-- (instancetype)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.maximumZoomScale = 5.0;
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.maximumZoomScale = 5.0;
 }
-
 
 - (CGFloat)scaleAfterZoomingToRect:(CGRect)rect {
     

@@ -17,6 +17,8 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNStationChangedUnwindToMetroVi
 
 @property (nonatomic, strong) MNStation *selectedStation;
 
+- (NSDictionary <NSString *, MNStation *> *)stationNamesDictionaryFromStations:(NSArray <MNStation *> *)stations;
+
 @end
 
 @implementation MNStationSearchViewController
@@ -27,8 +29,10 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNStationChangedUnwindToMetroVi
     NSMutableArray *stations = [MNMetroStateHolder.sharedInstance.currentMetroState.stations mutableCopy];
     [stations removeObject:self.stationToExclude];
     
-    self.contentForTableView = [self stationNamesDictionaryWithStations:stations];
+    self.contentForTableView = [self stationNamesDictionaryFromStations:stations];
 }
+
+// MARK: - UITableView
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -44,10 +48,20 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNStationChangedUnwindToMetroVi
     self.selectedStation = [self contentForIndexPath:indexPath];
 }
 
-// MARK: - Local Helpers
+// MARK: - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kUnwindToMetroRouteSegueName]) {
+        if (self.selectedStation) {
+            [self.delegate didChooseStation:self.selectedStation withType:self.stationToChangeType inViewController:self];
+        }
+    }
+}
+
+// MARK: - Converting
 
 
-- (NSDictionary <NSString *, MNStation *> *)stationNamesDictionaryWithStations:(NSArray <MNStation *> *)stations {
+- (NSDictionary <NSString *, MNStation *> *)stationNamesDictionaryFromStations:(NSArray <MNStation *> *)stations {
     
     NSMutableDictionary *stationNamesWithStations = [NSMutableDictionary dictionary];
     
@@ -58,12 +72,6 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNStationChangedUnwindToMetroVi
     return [stationNamesWithStations copy];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:kUnwindToMetroRouteSegueName]) {
-        if (self.selectedStation) {
-            [self.delegate didChooseStation:self.selectedStation withType:self.stationToChangeType inViewController:self];
-        }
-    }
-}
+
 
 @end

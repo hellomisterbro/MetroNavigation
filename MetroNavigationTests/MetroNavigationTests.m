@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "MNMetro.h"
-#import "DataAPI.h"
+#import "MNDataAPI.h"
 
 @interface MetroNavigationTests : XCTestCase
 
@@ -26,7 +26,7 @@
     [super tearDown];
 }
 
-- (void)testReadingMetroFromFile {
+- (void)testReadingKyivMetroFromFile {
     
     MNMetro *metro = [DataAPI metroJSONFile:@"kyiv"];
     
@@ -80,11 +80,30 @@
     
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testReadingMilanoMetroFromFile {
+    
+    MNMetro *metro = [DataAPI metroJSONFile:@"milano"];
+    
+    NSNumber *predictedStationsQty = @113;
+    NSNumber *realStationsQty = @(metro.stations.count);
+    
+    NSNumber *predictedEdgeQty = @108;
+    NSNumber *realEdgeQty = @(metro.stations.count);
+    
+    
+    XCTAssertNotNil(metro, @"Parsing json returned nil.");
+    
+    XCTAssertEqualObjects(predictedStationsQty, realStationsQty,
+                          @"Number of stations should be %@, not %@",
+                          predictedStationsQty,realStationsQty);
+    
+    XCTAssertEqualObjects(predictedEdgeQty, realEdgeQty,
+                          @"Number of edges should be %@, not %@",
+                          predictedEdgeQty,realEdgeQty);
+    
+    
+    
 }
+
 
 @end

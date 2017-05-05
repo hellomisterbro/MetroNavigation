@@ -11,12 +11,16 @@
 #import "MNStation.h"
 #import "MNEdge.h"
 #import "MNRoute.h"
+#import "MNColor.h"
+#import "MNLine.h"
 
 
 @interface MNMetro : NSObject <NSCopying>
 
 @property (nonatomic, copy) NSArray <MNEdge *> *edges;
 @property (nonatomic, copy) NSArray <MNStation *> *stations;
+@property (nonatomic, copy) NSArray<MNLine *> *lines;
+
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *ID;
 

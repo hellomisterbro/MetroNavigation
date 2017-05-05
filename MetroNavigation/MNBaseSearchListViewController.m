@@ -11,9 +11,9 @@
 
 #import "MNCityTableViewCell.h"
 #import "MNDataAPI.h"
+#import "UISearchBar+MNApearence.h"
 
-@interface MNBaseSearchListViewController () <UISearchBarDelegate, UISearchResultsUpdating>
-
+@interface MNBaseSearchListViewController () <UISearchResultsUpdating>
 
 @property (nonatomic, strong) UISearchController *searchController;
 
@@ -90,6 +90,7 @@
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.hidesNavigationBarDuringPresentation = NO;
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    [self.searchController.searchBar configCustomMNApearence];
 }
 
 

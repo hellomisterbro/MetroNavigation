@@ -74,9 +74,6 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-c0-HWL" customClass="MNBarItemButton">
                                                         <rect key="frame" x="279.5" y="0.0" width="79.5" height="30"/>
                                                         <state key="normal" title="Details"/>
-                                                        <connections>
-                                                            <segue destination="s9n-3j-nE7" kind="presentation" id="EBl-CM-UEu"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -84,8 +81,8 @@
                                                 <rect key="frame" x="0.0" y="40" width="359" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRf-kS-hBj" customClass="MNDurationDescriptionLabel">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -206,7 +203,7 @@
             </objects>
             <point key="canvasLocation" x="137" y="-156"/>
         </scene>
-        <!--Metro City-->
+        <!--Choose Metro-->
         <scene sceneID="zbo-bV-sMe">
             <objects>
                 <tableViewController id="CBW-n0-kkC" customClass="MNCitySearchViewController" sceneMemberID="viewController">
@@ -241,7 +238,7 @@
                             <outlet property="delegate" destination="CBW-n0-kkC" id="LaY-GK-iGw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Metro City" id="5CP-sp-YhV">
+                    <navigationItem key="navigationItem" title="Choose Metro" id="5CP-sp-YhV">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="gOJ-ha-5og">
                             <connections>
                                 <segue destination="T5t-hz-baX" kind="unwind" identifier="" unwindAction="applyNoneChanges:" id="0k1-td-5it"/>
@@ -253,13 +250,24 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="As2-YU-o8D" id="za9-E3-QwL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcU-PG-Mic" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="T5t-hz-baX" userLabel="Exit" sceneMemberID="exit"/>
+                <searchDisplayController id="As2-YU-o8D">
+                    <connections>
+                        <outlet property="delegate" destination="CBW-n0-kkC" id="xzC-ej-yJ4"/>
+                        <outlet property="searchContentsController" destination="CBW-n0-kkC" id="ERz-4G-bNx"/>
+                        <outlet property="searchResultsDataSource" destination="CBW-n0-kkC" id="4VY-Wf-DCi"/>
+                        <outlet property="searchResultsDelegate" destination="CBW-n0-kkC" id="ceX-Vt-i1h"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1924" y="-481.70914542728639"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Choose Stataion-->
         <scene sceneID="Jac-Fo-tIs">
             <objects>
                 <tableViewController id="LX2-YM-AXs" customClass="MNStationSearchViewController" sceneMemberID="viewController">
@@ -294,7 +302,7 @@
                             <outlet property="delegate" destination="LX2-YM-AXs" id="d6S-g9-KA7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="hAZ-yY-HoH">
+                    <navigationItem key="navigationItem" title="Choose Stataion" id="hAZ-yY-HoH">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="FK2-zt-lso">
                             <connections>
                                 <segue destination="ifG-FN-dBN" kind="unwind" unwindAction="applyNoneChanges:" id="cio-hJ-Uxq"/>
@@ -310,13 +318,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZg-af-L40" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ifG-FN-dBN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="167.76611694152925"/>
+            <point key="canvasLocation" x="1945" y="274"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hOd-H5-vmm">
             <objects>
                 <navigationController id="mwq-sb-VZP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AvQ-J9-6yp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AvQ-J9-6yp" customClass="MNSearchListNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -326,13 +334,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BH5-SC-I9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190" y="168"/>
+            <point key="canvasLocation" x="1190" y="308"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XQ7-32-OJG">
             <objects>
                 <navigationController id="tAm-gz-rwf" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b3b-zn-fa9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b3b-zn-fa9" customClass="MNSearchListNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -378,7 +386,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fmy-Fx-IDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2TB-Gr-b7W" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="137" y="581"/>
+            <point key="canvasLocation" x="137" y="498"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="sPl-ul-ZUb">
+            <objects>
+                <tableViewController id="jcR-Lg-khn" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2z1-dA-XY3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sh7-vm-FNP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sh7-vm-FNP" id="84A-gT-crF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jcR-Lg-khn" id="vdD-p1-UIN"/>
+                            <outlet property="delegate" destination="jcR-Lg-khn" id="1rq-aq-zUa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="GBd-hY-hYl"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rh7-kb-ImE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="1269"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jXl-sq-clX">
+            <objects>
+                <navigationController id="Thd-Mv-qU2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RiX-Qu-5S7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jcR-Lg-khn" kind="relationship" relationship="rootViewController" id="Sxz-Km-hPh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsh-yg-KJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="1269"/>
         </scene>
     </scenes>
     <resources>

@@ -25,17 +25,12 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
 
 @implementation MNMetroImageView
 
-//MARK: NSObject
+//MARK: Initialization code
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-         self.intermediatePins = [NSMutableArray new];
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.intermediatePins = [NSMutableArray new];
 }
-
 
 //MARK: UIResponder
 

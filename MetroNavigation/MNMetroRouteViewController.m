@@ -39,7 +39,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
 @property (nonatomic, strong) MNRoute* route;
 
 //update all pins in image view
-- (void)updateImageWithPinsAndRoute;
+- (void)updatePinsAndRouteDisplayingWithStartStation:(MNStation *)station endStation:(MNStation *)endStation;
 
 //update controllers state (image, pins etc.).
 //Typically need calling when metro state is changed
@@ -79,7 +79,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
 
 -(void)viewDidAppear:(BOOL)animated {
     
-    [self updateImageWithPinsAndRoute];
+    [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
 }
 
 // MARK: - IBAction
@@ -163,7 +163,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     [self.cityButton setTitle:metro.name forState:UIControlStateNormal];
     
     //updating the image with the corresponing pins
-    [self updateImageWithPinsAndRoute];
+    [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
     
     //hide route description banner
     [self hideRouteDescriptionBanner];
@@ -175,7 +175,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
 //Builds a route if end station is not nill
 //If the route is built the appropriate banner is displayed, if not - is hidden
 
-- (void)updateImageWithPinsAndRoute {
+- (void)updatePinsAndRouteDisplayingWithStartStation:(MNStation *)station endStation:(MNStation *)endStation {
     
     //clean the image
     [self.metroImage cleanImageFromPins];
@@ -288,7 +288,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
             self.endStation = nil;
         }
 
-        [self updateImageWithPinsAndRoute];
+    [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
     }
     
 }
@@ -325,7 +325,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     self.startStation = endStation;
     
     //update swapped pins
-    [self updateImageWithPinsAndRoute];
+    [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
     
     //dispay route banner correctly
     [self displayRouteDescriptionBanner];
