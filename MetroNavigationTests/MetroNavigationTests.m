@@ -36,6 +36,8 @@
     NSNumber *predictedEdgeQty = @54;
     NSNumber *realEdgeQty = @(metro.stations.count);
     
+    NSNumber *predictedLinesQty = @3;
+    NSNumber *realLinesQty = @(metro.lines.count);
     
     XCTAssertNotNil(metro, @"Parsing json returned nil.");
     
@@ -46,6 +48,10 @@
     XCTAssertEqualObjects(predictedEdgeQty, realEdgeQty,
                           @"Number of edges should be %@, not %@",
                           predictedEdgeQty,realEdgeQty);
+    
+    XCTAssertEqualObjects(predictedEdgeQty, realEdgeQty,
+                          @"Number of edges should be %@, not %@",
+                          predictedLinesQty,realLinesQty);
     
     NSPredicate *teatralnaPredicate = [NSPredicate predicateWithFormat:@"identifier = %@", @"109"];
     NSPredicate *pecherskaPredicate = [NSPredicate predicateWithFormat:@"identifier = %@", @"310"];
@@ -63,6 +69,11 @@
     XCTAssertEqualObjects(pecherska.name, @"Pecherska", @"The name of station with 310 id is not 'Pecherska'");
     XCTAssertEqualObjects(klovska.name, @"Klovska", @"The name of station with 311 id is not 'Klovska'");
     
+    MNEdge *edge = [metro edgeFromStation:klovska toStation:pecherska];
+    
+    XCTAssertNotNil(edge, @"Can not find edge between klovska and pecherska");
+    XCTAssertEqualObjects([edge.lineNames firstObject], @"green", @"Wrong name of the line.");
+
     NSNumber *predictedDuration = @(1.3);
     NSNumber *realDuration = [metro durationFromStation:klovska toNeighboringStation:pecherska];
     
@@ -102,6 +113,10 @@
                           predictedEdgeQty,realEdgeQty);
     
     
+    
+}
+
+- (void)testStateHolder {
     
 }
 

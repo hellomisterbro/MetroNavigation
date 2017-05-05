@@ -23,16 +23,18 @@
     
     metro.ID = ID;
     
-    for (NSDictionary *edgeDictionary in edges) {
-        MNEdge *edge = [MNEdge edgeFromJSON:edgeDictionary];
-        [metro addEdge:edge fromStation:edge.firstStation toStation:edge.secondStation];
-    }
-    
     NSMutableArray *resultLines = [NSMutableArray array];
     
     for (NSDictionary *lineDictionary in lines) {
         MNLine *line = [MNLine lineFromJSON:lineDictionary];
         [resultLines addObject:line];
+    }
+    
+    metro.lines = resultLines;
+    
+    for (NSDictionary *edgeDictionary in edges) {
+        MNEdge *edge = [MNEdge edgeFromJSON:edgeDictionary];
+        [metro addEdge:edge fromStation:edge.firstStation toStation:edge.secondStation];
     }
     
     return metro;

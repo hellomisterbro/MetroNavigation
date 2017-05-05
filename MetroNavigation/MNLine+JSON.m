@@ -16,7 +16,9 @@
     MNLine *line = [MNLine new];
 
     line.name = lineJSON[@"name"];
-    line.color = [MNColor colorFromJSON:lineJSON[@"color"]];
+    
+    NSDictionary *colorDictionary = lineJSON[@"color"];
+    line.color = [MNColor colorFromJSON:colorDictionary];;
 
     return line;
 }

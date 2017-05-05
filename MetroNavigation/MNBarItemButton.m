@@ -14,8 +14,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.tintColor = [UIColor lightGreenMNColor];
+//    self.tintColor = [UIColor lightGreenMNColor];
 }
-
 
 @end

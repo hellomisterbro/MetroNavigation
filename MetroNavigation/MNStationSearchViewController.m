@@ -60,7 +60,6 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNStationChangedUnwindToMetroVi
 
 // MARK: - Converting
 
-
 - (NSDictionary <NSString *, MNStation *> *)stationNamesDictionaryFromStations:(NSArray <MNStation *> *)stations {
     
     NSMutableDictionary *stationNamesWithStations = [NSMutableDictionary dictionary];

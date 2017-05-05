@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MNColor.h"
 
-@interface MNLine : NSObject <NSCopying>
+@interface MNLine : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) MNColor *color;

@@ -18,6 +18,14 @@
     edge.firstStation = [MNStation stationFromJSON:edgeJSON[@"first"]];
     edge.secondStation = [MNStation stationFromJSON:edgeJSON[@"second"]];
     
+    NSMutableArray *linesNames = [NSMutableArray array];
+    
+    for (NSString *lineName in edgeJSON[@"line"]) {
+        [linesNames addObject:lineName];
+    }
+    
+    edge.lineNames = linesNames;
+    
     return edge;
 }
 

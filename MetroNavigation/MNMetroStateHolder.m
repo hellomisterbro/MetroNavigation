@@ -8,7 +8,6 @@
 
 #import "MNMetroStateHolder.h"
 #import "MNDataAPI.h"
-#import "MNMetro+NSCoding.h"
 
 NSString *const kCityMetroStateKeyForUserDefaults = @"MNCityMetroStateKey";
 

@@ -8,11 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MNColor : NSObject <NSCopying>
+@interface MNColor : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, copy) NSNumber *red;
 @property (nonatomic, copy) NSNumber *green;
 @property (nonatomic, copy) NSNumber *blue;
-
 
 @end

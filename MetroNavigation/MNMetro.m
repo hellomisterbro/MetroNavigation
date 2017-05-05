@@ -29,6 +29,7 @@
     if (self) {
         _edges = [NSMutableArray array];
         _stations = [NSMutableArray array];
+        _lines = [NSMutableArray array];
     }
     
     return self;
@@ -38,9 +39,9 @@
     self = [super init];
     
     if (self) {
-        
         _edges = [NSMutableArray array];
         _stations = [NSMutableArray array];
+        _lines = [NSMutableArray array];
         _name = [name copy];
     }
     
@@ -97,12 +98,32 @@
     metro.edges = [[NSArray alloc] initWithArray:self.edges copyItems:YES];
     metro.stations = [[NSArray alloc] initWithArray:self.edges copyItems:YES];
     metro.lines = [[NSArray alloc] initWithArray:self.lines copyItems:YES];
-    
+
     metro.name = self.name;
     metro.ID = self.ID;
     metro.name = self.name;
     
     return metro;
+}
+
+// MARK: - NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        self.name = [aDecoder decodeObjectForKey:@"name"];
+        self.stations = [aDecoder decodeObjectForKey:@"stations"];
+        self.edges = [aDecoder decodeObjectForKey:@"edges"];
+        self.ID = [aDecoder decodeObjectForKey:@"ID"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.stations forKey:@"stations"];
+    [aCoder encodeObject:self.edges forKey:@"edges"];
+    [aCoder encodeObject:self.ID forKey:@"ID"];
 }
 
 
@@ -145,17 +166,17 @@
 
 - (NSArray *)neighboringStationsToStation:(MNStation *)aStation {
     
-    NSMutableArray *relatedStations = [NSMutableArray new];
+    NSMutableArray *neighboringStations = [NSMutableArray new];
     
     for (MNEdge *edge in self.edges) {
         
         if ([edge containStation:aStation]) {
             
-            [relatedStations addObject:[edge stationOppositeToStation:aStation]];
+            [neighboringStations addObject:[edge stationOppositeToStation:aStation]];
         }
     }
     
-    return relatedStations;
+    return neighboringStations;
 }
 
 - (MNEdge *)edgeFromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation {

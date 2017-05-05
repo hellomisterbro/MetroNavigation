@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "MNStation.h"
 
-@interface MNEdge : NSObject <NSCopying>
+@interface MNEdge : NSObject <NSCopying, NSCoding>
 
-@property (nonatomic, strong) MNStation *firstStation;
-@property (nonatomic, strong) MNStation *secondStation;
+@property (nonatomic, copy) MNStation *firstStation;
+@property (nonatomic, copy) MNStation *secondStation;
 @property (nonatomic, strong) NSNumber *duration;
+
+@property (nonatomic, copy) NSArray *lineNames;
 
 + (MNEdge *)edgeWithDuration:(NSNumber *)duration;
 

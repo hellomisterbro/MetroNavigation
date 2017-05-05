@@ -15,7 +15,7 @@
 #import "MNLine.h"
 
 
-@interface MNMetro : NSObject <NSCopying>
+@interface MNMetro : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, copy) NSArray <MNEdge *> *edges;
 @property (nonatomic, copy) NSArray <MNStation *> *stations;

@@ -38,6 +38,8 @@
     return YES;
 }
 
+// MARK: - NSCoping
+
 - (id)copyWithZone:(NSZone *)zone {
     MNLine *line = [MNLine new];
     
@@ -47,5 +49,20 @@
     return line;
 }
 
+// MARK: - NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        self.name = [aDecoder decodeObjectForKey:@"name"];
+        self.color = [aDecoder decodeObjectForKey:@"colors"];
+    }
+    return self;
+}
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.color forKey:@"colors"];
+}
 
 @end

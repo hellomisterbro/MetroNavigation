@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MNStation : NSObject <NSCopying>
+@interface MNStation : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *identifier;
