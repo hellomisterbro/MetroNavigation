@@ -1,15 +1,15 @@
 //
-//  RouteDescriptionBannerView.m
+//  MNRouteDescriptionBannerView.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 4/29/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "RouteDescriptionBannerView.h"
+#import "MNRouteDescriptionBannerView.h"
 #import "UIColor+MNColors.h"
 
-@implementation RouteDescriptionBannerView
+@implementation MNRouteDescriptionBannerView
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {

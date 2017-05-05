@@ -1,15 +1,15 @@
 //
-//  StationButton.m
+//  MNStationButton.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/3/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "StationButton.h"
+#import "MNStationButton.h"
 #import "UIColor+MNColors.h"
 
-@implementation StationButton
+@implementation MNStationButton
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {

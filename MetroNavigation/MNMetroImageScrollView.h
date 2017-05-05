@@ -1,5 +1,5 @@
 //
-//  MetroImageScrollView.h
+//  MNMetroImageScrollView.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 4/29/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MetroImageScrollView : UIScrollView
+@interface MNMetroImageScrollView : UIScrollView
 
 - (CGFloat)scaleAfterZoomingToRect:(CGRect)rect;
 - (void)scrollToPoint:(CGPoint)zoomPoint withScale:(CGFloat)scale;

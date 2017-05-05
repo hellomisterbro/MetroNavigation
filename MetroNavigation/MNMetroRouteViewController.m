@@ -14,14 +14,20 @@
 #import "MNCitySearchViewController.h"
 #import "MNStationSearchViewController.h"
 
-NSString *const detailsSegueName = @"MNDisplayRouteListSegue";
-NSString *const cityChangeSegueName = @"MNCityChangeSegue";
-NSString *const endStationChangeSegueName = @"MNSEndStationChangeSegue";
-NSString *const startStationChangeSegueName = @"MNStartStationChangeSegue";
 
-NSString *const keyPathForCurrentMetroState = @"currentMetroState";
+NSString *const kDetailsSegueName = @"MNDisplayRouteListSegue";
+NSString *const kCityChangeSegueName = @"MNCityChangeSegue";
 
-@interface MNMetroRouteViewController () <UIScrollViewDelegate, MetroImageViewDelegate, UIViewControllerTransitioningDelegate, RouteDescriptionBannerViewDelegate, MNStationSearchViewControllerDelegate>
+NSString *const kEndStationChangeSegueName = @"MNEndStationChangeSegue";
+NSString *const kStartStationChangeSegueName = @"MNStartStationChangeSegue";
+
+NSString *const kUnwindStationChangedSegueName = @"MNMetroChangedUnwindToMetroViewController";
+NSString *const kUnwindMetroChangedSegueName = @"MNStationChangedUnwindToMetroViewController";
+
+NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
+
+
+@interface MNMetroRouteViewController () <UIScrollViewDelegate, MNMetroImageViewDelegate, UIViewControllerTransitioningDelegate, MNRouteDescriptionBannerViewDelegate, MNStationSearchViewControllerDelegate>
 
 //currently selected start station
 @property (nonatomic, strong) MNStation* startStation;
@@ -33,7 +39,7 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
 @property (nonatomic, strong) MNRoute* route;
 
 //update all pins in image view
-- (void)updateImagePins;
+- (void)updateImageWithPinsAndRoute;
 
 //update controllers state (image, pins etc.).
 //Typically need calling when metro state is changed
@@ -67,8 +73,13 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -bannerHeight;
     
     //updating the controller state if global metro is changed
-    [MNMetroStateHolder.sharedInstance addObserver:self forKeyPath:keyPathForCurrentMetroState options:NSKeyValueObservingOptionNew context:nil];
+    [MNMetroStateHolder.sharedInstance addObserver:self forKeyPath:kKeyPathForCurrentMetroState options:NSKeyValueObservingOptionNew context:nil];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [self updateImageWithPinsAndRoute];
 }
 
 // MARK: - IBAction
@@ -77,31 +88,142 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
     [self hideRouteDescriptionBanner];
 }
 
+- (IBAction)handleDoubleTap : (UIGestureRecognizer*) sender {
+    
+    CGFloat scaleToZoom = 3;
+    
+    //Zoom in - if currently all the image is displayed, if not - zoom out
+    if (self.scrollView.zoomScale > 1.0f) {
+        [self.scrollView zoomToRect:self.metroImage.frame animated:YES];
+    } else {
+        [self.scrollView scrollToPoint: [sender locationInView:self.scrollView] withScale:scaleToZoom];
+    }
+}
+
+
 // MARK: - Segues
 
 - (IBAction)applyNoneChanges:(UIStoryboardSegue*)unwindSegue {}
+
+- (IBAction)updateStationsWithUnwindSegue:(UIStoryboardSegue*)segue {}
 
 - (IBAction)updateMetroWithUnwindSegue:(UIStoryboardSegue*)segue {}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:startStationChangeSegueName]) {
+    BOOL isStartStationChangeSegue = [segue.identifier isEqualToString:kStartStationChangeSegueName];
+    BOOL isEndStationChangeSegue = [segue.identifier isEqualToString:kEndStationChangeSegueName];
+    
+    if (isStartStationChangeSegue || isEndStationChangeSegue) {
         
-        MNStationSearchViewController *destinationViewController = segue.destinationViewController;
-        destinationViewController.stationToChangeType = MNStationToChangeEnd;
+        //getting root view controller
+        UINavigationController *navigationViewController = segue.destinationViewController;
         
-    } else if ([segue.identifier isEqualToString:startStationChangeSegueName]) {
+        MNStationSearchViewController *destinationViewController = navigationViewController.viewControllers.firstObject;
+        destinationViewController.delegate = self;
         
-        MNStationSearchViewController *destinationViewController = segue.destinationViewController;
-        destinationViewController.stationToChangeType = MNStationToChangeStart;
+        if (isStartStationChangeSegue) {
+            destinationViewController.stationToChangeType = MNStationToChangeStart;
+            destinationViewController.stationToExclude = self.endStation;
+            
+        } else if (isEndStationChangeSegue) {
+            destinationViewController.stationToChangeType = MNStationToChangeEnd;
+            destinationViewController.stationToExclude = self.startStation;
+        }
+        
     }
 }
 
-// MARK: - Scroll View Interactions
+// MARK: - Updating Controller
 
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return  self.metroImage;
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+    //updating the controller state if global metro is changed
+    if ([keyPath isEqualToString:kKeyPathForCurrentMetroState]) {
+        
+        [self updateControllerState];
+    }
 }
+
+- (void)updateControllerState {
+    
+    MNMetro *metro = MNMetroStateHolder.sharedInstance.currentMetroState;
+    
+    //deleting the pins
+    self.startStation = nil;
+    self.endStation = nil;
+    
+    self.route = nil;
+    
+    //change the image
+    NSString *imageName = [DataAPI imageMetroNameWithMetroIdentifier:metro.ID];
+    self.metroImage.image = [UIImage imageNamed:imageName];
+    
+    //change the city button title
+    [self.cityButton setTitle:metro.name forState:UIControlStateNormal];
+    
+    //updating the image with the corresponing pins
+    [self updateImageWithPinsAndRoute];
+    
+    //hide route description banner
+    [self hideRouteDescriptionBanner];
+    
+    [self.scrollView zoomToRect:self.metroImage.frame animated:YES];
+}
+
+//The following method updates all image pins due to the properties if view controller -  startStation, end Station
+//Builds a route if end station is not nill
+//If the route is built the appropriate banner is displayed, if not - is hidden
+
+- (void)updateImageWithPinsAndRoute {
+    
+    //clean the image
+    [self.metroImage cleanImageFromPins];
+   
+    self.route = nil;
+    
+    //set first pin
+    if (self.startStation) {
+        CGPoint startStationPoint = [self pointFromStation:self.startStation];
+        [self.metroImage addStartPinAtPoint:startStationPoint];
+    }
+    
+    //set second pin
+    if (self.endStation) {
+        CGPoint endStationPoint = [self pointFromStation:self.endStation];
+        [self.metroImage addEndPinAtPoint:endStationPoint];
+        
+        MNMetro *metro = MNMetroStateHolder.sharedInstance.currentMetroState;
+        self.route = [metro shortestRouteFromStation:self.startStation toStation:self.endStation];
+    }
+    
+    if (self.route) {
+        
+        //setting intermediates pins
+        
+        for (MNStation *station in self.route.stationsSequence) {
+            
+            if (![station isEqual:self.startStation] && ![station isEqual:self.endStation]) {
+                
+                CGPoint intermidiatePoint = [self pointFromStation:station];
+                [self.metroImage addInterMediatePinAtPoint:intermidiatePoint];
+                
+            }
+        }
+        
+        //zoom to for convinient look of the route
+        [self zoomToSelectedRoute];
+        
+        //display banner for the further interecations
+        [self displayRouteDescriptionBanner];
+        
+    } else {
+        
+        [self hideRouteDescriptionBanner];
+    }
+}
+
+//Zooms to the route. Takes into account all the pins presented on image view and the banner, that will be displayed afterwards. Does nothing, if the pins doesnt currently exist.
 
 - (void)zoomToSelectedRoute {
     
@@ -109,6 +231,11 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
         
         //Zoom map to the route
         CGRect rectToZoom = self.metroImage.rectToZoom;
+        
+        //do nothing if nothing to show
+        if (CGRectIsNull(rectToZoom)) {
+            return;
+        }
         
         CGFloat predictedScale = [self.scrollView scaleAfterZoomingToRect:rectToZoom];
         
@@ -119,9 +246,15 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
     }
 }
 
-// MARK: - Metro Image View Interactions
+// MARK: - UIScrollViewDelegate
 
-- (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MetroImageView *)metroImageView {
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return  self.metroImage;
+}
+
+// MARK: - MetroImageViewDelegate
+
+- (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MNMetroImageView *)metroImageView {
     
     MNMetro *metro = MNMetroStateHolder.sharedInstance.currentMetroState;
     
@@ -154,95 +287,51 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
             
             self.endStation = nil;
         }
-        
-        self.route = nil;
-        
-        if (self.startStation && self.endStation) {
-            //setting the route if two pins selected
-            self.route = [metro shortestRouteFromStation:self.startStation toStation:self.endStation];
-        }
-        
-        [self updateImagePins];
+
+        [self updateImageWithPinsAndRoute];
     }
     
 }
 
-- (IBAction)handleDoubleTap : (UIGestureRecognizer*) sender {
-    
-    if (self.scrollView.zoomScale > 1.0f) {
-        [self.scrollView zoomToRect:self.metroImage.frame animated:YES];
-    } else {
-        [self.scrollView scrollToPoint: [sender locationInView:self.scrollView] withScale:5];
-    }
-}
 
+// MARK: - StationSearchViewControllerDelegate
 
-- (void)updateImagePins {
+-(void)didChooseStation:(MNStation *)station withType:(MNStationToChangeType)stationToChange inViewController:(MNStationSearchViewController *)citySearchViewController {
     
-    //clean the image
-    [self.metroImage cleanImageFromPins];
-    
-    //set first pin
-    if (self.startStation) {
-        CGPoint startStationPoint = [self pointFromStation:self.startStation];
-        [self.metroImage addStartPinAtPoint:startStationPoint];
-    }
-    
-    //set second pin
-    if (self.endStation) {
-        
-        CGPoint endStationPoint = [self pointFromStation:self.endStation];
-        [self.metroImage addEndPinAtPoint:endStationPoint];
-    }
-    
-    if (self.route) {
-        
-        //setting intermediates pins
-        
-        for (MNStation *station in self.route.stationsSequence) {
+    switch (stationToChange) {
+            //apply no changes
+        case MNStationToChangeNone:
+            break;
             
-            if (![station isEqual:self.startStation] && ![station isEqual:self.endStation]) {
-                
-                CGPoint intermidiatePoint = [self pointFromStation:station];
-                [self.metroImage addInterMediatePinAtPoint:intermidiatePoint];
-                
-            }
-        }
-        
-        //zoom to for convinient look of the route
-        [self zoomToSelectedRoute];
-        
-        //display banner for the further interecations
-        [self displayRouteDescriptionBanner];
-        
-    } else {
-        [self hideRouteDescriptionBanner];
+         //change start station
+        case MNStationToChangeStart:
+            self.startStation = station;
+            break;
+            
+       //change end station
+        case MNStationToChangeEnd:
+            self.endStation = station;
+            break;
     }
-}
-
-// MARK: - CitySearchViewControllerDelegate
-
--(void)stationChoosenWithSuccess:(BOOL)success inViewController:(MNStationSearchViewController *)citySearchViewController {
-    
 }
 
 // MARK: - RouteDescriptionBannerViewDelegate
 
--(void)swipeStationDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
+-(void)swipeStationDidClickWithRouteDescriptionBanner:(MNRouteDescriptionBannerView *)routeDescBanner {
     
     MNStation *endStation = self.endStation;
     
     self.endStation = self.startStation;
     self.startStation = endStation;
     
-    //update swiped pins
-    [self updateImagePins];
+    //update swapped pins
+    [self updateImageWithPinsAndRoute];
     
     //dispay route banner correctly
     [self displayRouteDescriptionBanner];
 }
 
-- (void)cancelDidClickWithRouteDescriptionBanner:(RouteDescriptionBannerView *)routeDescBanner {
+- (void)cancelDidClickWithRouteDescriptionBanner:(MNRouteDescriptionBannerView *)routeDescBanner {
     [self hideRouteDescriptionBanner];
 }
 
@@ -277,45 +366,6 @@ NSString *const keyPathForCurrentMetroState = @"currentMetroState";
         [self.view layoutIfNeeded];
     }];
 }
-
-// MARK: - Updating Controller
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    
-    //updating the controller state if global metro is changed
-    if ([keyPath isEqualToString:keyPathForCurrentMetroState]) {
-        
-        [self updateControllerState];
-    }
-}
-
-
-- (void)updateControllerState {
-    
-    MNMetro *metro = MNMetroStateHolder.sharedInstance.currentMetroState;
-    
-    //deleting the pins
-    self.startStation = nil;
-    self.endStation = nil;
-    
-    self.route = nil;
-    
-    //changin the image
-    NSString *imageName = [DataAPI imageMetroNameWithMetroIdentifier:metro.ID];
-    self.metroImage.image = [UIImage imageNamed:imageName];
-    
-    //changin the city button title
-    [self.cityButton setTitle:metro.name forState:UIControlStateNormal];
-    
-    //updating the image with the corresponing pins
-    [self updateImagePins];
-    
-    //hide route description banner
-    [self hideRouteDescriptionBanner];
-    
-    [self.scrollView zoomToRect:self.metroImage.frame animated:YES];
-}
-
 
 // MARK: - Local Helpers
 

@@ -1,5 +1,5 @@
 //
-//  StationTableViewCell.h
+//  MNStationTableViewCell.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StationTableViewCell : UITableViewCell
+@interface MNStationTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *stationNameLabel;
 

@@ -1,14 +1,14 @@
 //
-//  MetroImageScrollView.m
+//  MNMetroImageScrollView.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 4/29/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "MetroImageScrollView.h"
+#import "MNMetroImageScrollView.h"
 
-@implementation MetroImageScrollView
+@implementation MNMetroImageScrollView
 
 
 - (instancetype)initWithCoder:(NSCoder *)coder {

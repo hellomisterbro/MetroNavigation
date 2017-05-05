@@ -8,10 +8,10 @@
 
 #import "MNStationSearchViewController.h"
 #import "MNMetroStateHolder.h"
-#import "StationTableViewCell.h"
+#import "MNStationTableViewCell.h"
 
 NSString *const kReusableCellForStationSearch = @"MNStationTableViewCellIdentidier";
-NSString *const kUnwindToMetroRouteSegueName = @"MNUnwindFromSrarionSearchToMetroRouteSegue";
+NSString *const kUnwindToMetroRouteSegueName = @"MNStationChangedUnwindToMetroViewController";
 
 @interface MNStationSearchViewController ()
 
@@ -24,16 +24,17 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNUnwindFromSrarionSearchToMetr
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-    NSArray *stations = MNMetroStateHolder.sharedInstance.currentMetroState.stations;
+    NSMutableArray *stations = [MNMetroStateHolder.sharedInstance.currentMetroState.stations mutableCopy];
+    [stations removeObject:self.stationToExclude];
+    
     self.contentForTableView = [self stationNamesDictionaryWithStations:stations];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    StationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableCellForStationSearch forIndexPath:indexPath];
+    MNStationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableCellForStationSearch forIndexPath:indexPath];
     
     NSString *labelName = [self nameForIndexPath:indexPath];
-    
     cell.stationNameLabel.text = labelName;
     
     return cell;
@@ -41,10 +42,6 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNUnwindFromSrarionSearchToMetr
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.selectedStation = [self contentForIndexPath:indexPath];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [self.delegate stationChoosenWithSuccess:YES inViewController:self];
 }
 
 // MARK: - Local Helpers
@@ -57,8 +54,16 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNUnwindFromSrarionSearchToMetr
     for (MNStation *station in stations) {
         [stationNamesWithStations setObject:station forKey:station.name];
     }
+    
     return [stationNamesWithStations copy];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kUnwindToMetroRouteSegueName]) {
+        if (self.selectedStation) {
+            [self.delegate didChooseStation:self.selectedStation withType:self.stationToChangeType inViewController:self];
+        }
+    }
+}
 
 @end

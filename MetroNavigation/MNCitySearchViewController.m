@@ -7,12 +7,12 @@
 //
 
 #import "MNCitySearchViewController.h"
-#import "CityTableViewCell.h"
+#import "MNCityTableViewCell.h"
 #import "MNDataAPI.h"
 #import "MNMetroStateHolder.h"
 
 NSString *const kReusableCellForCitySearch = @"cityNameCellIdentifier";
-NSString *const kUnwindToMetroViewControllerSegueName = @"MNUnwindToMetroViewController";
+NSString *const kUnwindToMetroViewControllerSegueName = @"MNMetroChangedUnwindToMetroViewController";
 
 @interface MNCitySearchViewController ()
 
@@ -37,11 +37,15 @@ NSString *const kUnwindToMetroViewControllerSegueName = @"MNUnwindToMetroViewCon
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     if ([segue.identifier isEqualToString:kUnwindToMetroViewControllerSegueName]) {
-        MNMetro *metro = [DataAPI metroWithIdentifier:self.selectedMetroID];
         
-        if (metro) {
-            [MNMetroStateHolder sharedInstance].currentMetroState = metro;
+        if (self.selectedMetroID) {
+            MNMetro *metro = [DataAPI metroWithIdentifier:self.selectedMetroID];
+            
+            if (metro) {
+                [MNMetroStateHolder sharedInstance].currentMetroState = metro;
+            }
         }
     }
 }
@@ -50,10 +54,9 @@ NSString *const kUnwindToMetroViewControllerSegueName = @"MNUnwindToMetroViewCon
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    CityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableCellForCitySearch forIndexPath:indexPath];
+    MNCityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableCellForCitySearch forIndexPath:indexPath];
     
     NSString *labelName = [self nameForIndexPath:indexPath];
-    
     cell.cityNameLabel.text = labelName;
     
     return cell;

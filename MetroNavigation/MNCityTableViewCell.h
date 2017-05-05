@@ -1,5 +1,5 @@
 //
-//  CityTableViewCell.h
+//  MNCityTableViewCell.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CityTableViewCell : UITableViewCell
+@interface MNCityTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 

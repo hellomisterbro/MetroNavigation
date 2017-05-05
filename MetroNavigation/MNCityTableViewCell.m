@@ -1,15 +1,14 @@
 //
-//  StationTableViewCell.m
+//  MNCityTableViewCell.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "StationTableViewCell.h"
-#import "UIColor+MNColors.h"
+#import "MNCityTableViewCell.h"
 
-@implementation StationTableViewCell
+@implementation MNCityTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -20,10 +19,6 @@
     [super setSelected:selected animated:animated];
 
     self.accessoryType = selected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-    
-    self.accessoryView.tintColor = [UIColor lightGreenMNColor];
-
-    // Configure the view for the selected state
 }
 
 @end

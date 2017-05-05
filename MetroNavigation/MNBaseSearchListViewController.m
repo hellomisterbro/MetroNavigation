@@ -9,7 +9,7 @@
 #import "MNBaseSearchListViewController.h"
 
 
-#import "CityTableViewCell.h"
+#import "MNCityTableViewCell.h"
 #import "MNDataAPI.h"
 
 @interface MNBaseSearchListViewController () <UISearchBarDelegate, UISearchResultsUpdating>
@@ -88,6 +88,7 @@
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
     self.tableView.tableHeaderView = self.searchController.searchBar;
 }
 

@@ -1,12 +1,12 @@
 //
-//  MetroImage.m
+//  MNMetroImage.m
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 4/22/17.
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "MetroImageView.h"
+#import "MNMetroImageView.h"
 #import "MNDataAPI.h"
 
 #define kDiameterForPin 10.0f
@@ -15,7 +15,7 @@ NSString *const kMetroNavigationStartPinName = @"start";
 NSString *const kMetroNavigationEndPinName = @"end";
 NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
 
-@interface MetroImageView ()
+@interface MNMetroImageView ()
 
 @property (nonatomic, strong) CAShapeLayer* firstPin;
 @property (nonatomic, strong) CAShapeLayer* secondPin;
@@ -23,7 +23,7 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
 
 @end
 
-@implementation MetroImageView
+@implementation MNMetroImageView
 
 //MARK: NSObject
 
@@ -185,7 +185,14 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
 
 //MARK: Zooming
 
+
+
 - (CGRect)rectToZoom {
+    
+    //if the route is not built, nothing to show
+    if (!self.firstPin && !self.secondPin) {
+        return CGRectNull;
+    }
     
     NSMutableArray *allPins = [self.intermediatePins mutableCopy];
     

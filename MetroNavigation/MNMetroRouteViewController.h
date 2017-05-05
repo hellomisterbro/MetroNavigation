@@ -8,17 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MetroImageView.h"
-#import "MetroImageScrollView.h"
-#import "RouteDescriptionBannerView.h"
-#import "CityButton.h"
+#import "MNMetroImageView.h"
+#import "MNMetroImageScrollView.h"
+#import "MNRouteDescriptionBannerView.h"
+#import "MNCityButton.h"
 
 
 @interface MNMetroRouteViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet MetroImageScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet MetroImageView *metroImage;
-@property (weak, nonatomic) IBOutlet RouteDescriptionBannerView *routeDescriptionBannerView;
-@property (weak, nonatomic) IBOutlet CityButton *cityButton;
+@property (weak, nonatomic) IBOutlet MNMetroImageScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet MNMetroImageView *metroImage;
+@property (weak, nonatomic) IBOutlet MNRouteDescriptionBannerView *routeDescriptionBannerView;
+@property (weak, nonatomic) IBOutlet MNCityButton *cityButton;
 
 @end

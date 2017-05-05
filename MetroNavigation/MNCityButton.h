@@ -1,5 +1,5 @@
 //
-//  RouterDescriptionButton.h
+//  MNCityButton.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/2/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BarItemButton : UIButton
+@interface MNCityButton : UIButton
 
 @end

@@ -40,30 +40,30 @@
 		3462DC111EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
 		3462DC121EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
 		3462DC131EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
-		3462DC171EB85A5F00D77301 /* BarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* BarItemButton.m */; };
-		3462DC181EB85A5F00D77301 /* BarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* BarItemButton.m */; };
-		3462DC191EB85A5F00D77301 /* BarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* BarItemButton.m */; };
+		3462DC171EB85A5F00D77301 /* MNBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* MNBarItemButton.m */; };
+		3462DC181EB85A5F00D77301 /* MNBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* MNBarItemButton.m */; };
+		3462DC191EB85A5F00D77301 /* MNBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* MNBarItemButton.m */; };
 		3462DC2C1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */; };
 		3462DC2D1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */; };
 		3462DC2E1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */; };
-		3462DC311EB8722D00D77301 /* CityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* CityButton.m */; };
-		3462DC321EB8722D00D77301 /* CityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* CityButton.m */; };
-		3462DC331EB8722D00D77301 /* CityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* CityButton.m */; };
-		3462DC361EB88F1B00D77301 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* CityTableViewCell.m */; };
-		3462DC371EB88F1B00D77301 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* CityTableViewCell.m */; };
-		3462DC381EB88F1B00D77301 /* CityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* CityTableViewCell.m */; };
+		3462DC311EB8722D00D77301 /* MNCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* MNCityButton.m */; };
+		3462DC321EB8722D00D77301 /* MNCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* MNCityButton.m */; };
+		3462DC331EB8722D00D77301 /* MNCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* MNCityButton.m */; };
+		3462DC361EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */; };
+		3462DC371EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */; };
+		3462DC381EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */; };
 		348CC5681EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MNMetroRouteViewController.m */; };
 		348CC5691EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MNMetroRouteViewController.m */; };
-		348D3AB71EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
-		348D3AB81EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
-		348D3AB91EABD04F00D341C6 /* MetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MetroImageView.m */; };
+		348D3AB71EABD04F00D341C6 /* MNMetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */; };
+		348D3AB81EABD04F00D341C6 /* MNMetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */; };
+		348D3AB91EABD04F00D341C6 /* MNMetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */; };
 		349B7B261EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */; };
 		349B7B271EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */; };
 		349B7B281EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */; };
 		34C3F6331EB1E0D3004B59EA /* MNMetroRouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3F6321EB1E0D3004B59EA /* MNMetroRouteListViewController.m */; };
 		34C3F6341EB1E0D3004B59EA /* MNMetroRouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3F6321EB1E0D3004B59EA /* MNMetroRouteListViewController.m */; };
 		34C3F6351EB1E0D3004B59EA /* MNMetroRouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3F6321EB1E0D3004B59EA /* MNMetroRouteListViewController.m */; };
-		34D2E9F71EB9145D0058E4F5 /* StationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F61EB9145D0058E4F5 /* StationTableViewCell.m */; };
+		34D2E9F71EB9145D0058E4F5 /* MNStationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F61EB9145D0058E4F5 /* MNStationTableViewCell.m */; };
 		34D2E9FA1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */; };
 		34D2E9FB1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */; };
 		34D2E9FC1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */; };
@@ -79,15 +79,15 @@
 		34D2EA141EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA131EB9BA400058E4F5 /* MNStation+NSCodying.m */; };
 		34D2EA151EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA131EB9BA400058E4F5 /* MNStation+NSCodying.m */; };
 		34D2EA161EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA131EB9BA400058E4F5 /* MNStation+NSCodying.m */; };
-		34D2EA191EB9C8CE0058E4F5 /* StationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* StationButton.m */; };
-		34D2EA1A1EB9C8CE0058E4F5 /* StationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* StationButton.m */; };
-		34D2EA1B1EB9C8CE0058E4F5 /* StationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* StationButton.m */; };
-		34F9D9121EB4E32F00322D64 /* MetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */; };
-		34F9D9131EB4E32F00322D64 /* MetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */; };
-		34F9D9141EB4E32F00322D64 /* MetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */; };
-		34F9D9171EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */; };
-		34F9D9181EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */; };
-		34F9D9191EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */; };
+		34D2EA191EB9C8CE0058E4F5 /* MNStationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */; };
+		34D2EA1A1EB9C8CE0058E4F5 /* MNStationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */; };
+		34D2EA1B1EB9C8CE0058E4F5 /* MNStationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */; };
+		34F9D9121EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */; };
+		34F9D9131EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */; };
+		34F9D9141EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */; };
+		34F9D9171EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */; };
+		34F9D9181EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */; };
+		34F9D9191EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,24 +143,24 @@
 		344DFAA21EB8F95900960F6F /* MNBaseSearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBaseSearchListViewController.m; sourceTree = "<group>"; };
 		3462DC0F1EB7B0FC00D77301 /* UIColor+MNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MNColors.h"; sourceTree = "<group>"; };
 		3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MNColors.m"; sourceTree = "<group>"; };
-		3462DC151EB85A5F00D77301 /* BarItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItemButton.h; sourceTree = "<group>"; };
-		3462DC161EB85A5F00D77301 /* BarItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItemButton.m; sourceTree = "<group>"; };
+		3462DC151EB85A5F00D77301 /* MNBarItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBarItemButton.h; sourceTree = "<group>"; };
+		3462DC161EB85A5F00D77301 /* MNBarItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBarItemButton.m; sourceTree = "<group>"; };
 		3462DC2A1EB871AF00D77301 /* MNCitySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCitySearchViewController.h; sourceTree = "<group>"; };
 		3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCitySearchViewController.m; sourceTree = "<group>"; };
-		3462DC2F1EB8722D00D77301 /* CityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityButton.h; sourceTree = "<group>"; };
-		3462DC301EB8722D00D77301 /* CityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityButton.m; sourceTree = "<group>"; };
-		3462DC341EB88F1B00D77301 /* CityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableViewCell.h; sourceTree = "<group>"; };
-		3462DC351EB88F1B00D77301 /* CityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableViewCell.m; sourceTree = "<group>"; };
+		3462DC2F1EB8722D00D77301 /* MNCityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCityButton.h; sourceTree = "<group>"; };
+		3462DC301EB8722D00D77301 /* MNCityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCityButton.m; sourceTree = "<group>"; };
+		3462DC341EB88F1B00D77301 /* MNCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCityTableViewCell.h; sourceTree = "<group>"; };
+		3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCityTableViewCell.m; sourceTree = "<group>"; };
 		348CC5661EA9F8B700A7302D /* MNMetroRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMetroRouteViewController.h; sourceTree = "<group>"; };
 		348CC5671EA9F8B700A7302D /* MNMetroRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMetroRouteViewController.m; sourceTree = "<group>"; };
-		348D3AB51EABD04F00D341C6 /* MetroImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroImageView.h; sourceTree = "<group>"; };
-		348D3AB61EABD04F00D341C6 /* MetroImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroImageView.m; sourceTree = "<group>"; };
+		348D3AB51EABD04F00D341C6 /* MNMetroImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMetroImageView.h; sourceTree = "<group>"; };
+		348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMetroImageView.m; sourceTree = "<group>"; };
 		349B7B241EBB272200BC37D0 /* MNDurationDescriptionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNDurationDescriptionLabel.h; sourceTree = "<group>"; };
 		349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNDurationDescriptionLabel.m; sourceTree = "<group>"; };
 		34C3F6311EB1E0D3004B59EA /* MNMetroRouteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMetroRouteListViewController.h; sourceTree = "<group>"; };
 		34C3F6321EB1E0D3004B59EA /* MNMetroRouteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMetroRouteListViewController.m; sourceTree = "<group>"; };
-		34D2E9F51EB9145D0058E4F5 /* StationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationTableViewCell.h; sourceTree = "<group>"; };
-		34D2E9F61EB9145D0058E4F5 /* StationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationTableViewCell.m; sourceTree = "<group>"; };
+		34D2E9F51EB9145D0058E4F5 /* MNStationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNStationTableViewCell.h; sourceTree = "<group>"; };
+		34D2E9F61EB9145D0058E4F5 /* MNStationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNStationTableViewCell.m; sourceTree = "<group>"; };
 		34D2E9F81EB916220058E4F5 /* MNStationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNStationSearchViewController.h; sourceTree = "<group>"; };
 		34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNStationSearchViewController.m; sourceTree = "<group>"; };
 		34D2EA021EB91B150058E4F5 /* MNMetroStateHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMetroStateHolder.h; sourceTree = "<group>"; };
@@ -171,12 +171,12 @@
 		34D2EA0E1EB9BA2A0058E4F5 /* MNEdge+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNEdge+NSCoding.m"; sourceTree = "<group>"; };
 		34D2EA121EB9BA400058E4F5 /* MNStation+NSCodying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNStation+NSCodying.h"; sourceTree = "<group>"; };
 		34D2EA131EB9BA400058E4F5 /* MNStation+NSCodying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNStation+NSCodying.m"; sourceTree = "<group>"; };
-		34D2EA171EB9C8CE0058E4F5 /* StationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationButton.h; sourceTree = "<group>"; };
-		34D2EA181EB9C8CE0058E4F5 /* StationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationButton.m; sourceTree = "<group>"; };
-		34F9D9101EB4E32F00322D64 /* MetroImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroImageScrollView.h; sourceTree = "<group>"; };
-		34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroImageScrollView.m; sourceTree = "<group>"; };
-		34F9D9151EB5185200322D64 /* RouteDescriptionBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDescriptionBannerView.h; sourceTree = "<group>"; };
-		34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDescriptionBannerView.m; sourceTree = "<group>"; };
+		34D2EA171EB9C8CE0058E4F5 /* MNStationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNStationButton.h; sourceTree = "<group>"; };
+		34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNStationButton.m; sourceTree = "<group>"; };
+		34F9D9101EB4E32F00322D64 /* MNMetroImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMetroImageScrollView.h; sourceTree = "<group>"; };
+		34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMetroImageScrollView.m; sourceTree = "<group>"; };
+		34F9D9151EB5185200322D64 /* MNRouteDescriptionBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNRouteDescriptionBannerView.h; sourceTree = "<group>"; };
+		34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNRouteDescriptionBannerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,14 +322,14 @@
 			children = (
 				348CC5661EA9F8B700A7302D /* MNMetroRouteViewController.h */,
 				348CC5671EA9F8B700A7302D /* MNMetroRouteViewController.m */,
-				34C3F6311EB1E0D3004B59EA /* MNMetroRouteListViewController.h */,
-				34C3F6321EB1E0D3004B59EA /* MNMetroRouteListViewController.m */,
 				344DFAA11EB8F95900960F6F /* MNBaseSearchListViewController.h */,
 				344DFAA21EB8F95900960F6F /* MNBaseSearchListViewController.m */,
 				3462DC2A1EB871AF00D77301 /* MNCitySearchViewController.h */,
 				3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */,
 				34D2E9F81EB916220058E4F5 /* MNStationSearchViewController.h */,
 				34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */,
+				34C3F6311EB1E0D3004B59EA /* MNMetroRouteListViewController.h */,
+				34C3F6321EB1E0D3004B59EA /* MNMetroRouteListViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -359,12 +359,12 @@
 		349B7B231EBB260800BC37D0 /* Route Description */ = {
 			isa = PBXGroup;
 			children = (
-				34F9D9151EB5185200322D64 /* RouteDescriptionBannerView.h */,
-				34F9D9161EB5185200322D64 /* RouteDescriptionBannerView.m */,
-				34D2EA171EB9C8CE0058E4F5 /* StationButton.h */,
-				34D2EA181EB9C8CE0058E4F5 /* StationButton.m */,
-				3462DC151EB85A5F00D77301 /* BarItemButton.h */,
-				3462DC161EB85A5F00D77301 /* BarItemButton.m */,
+				34F9D9151EB5185200322D64 /* MNRouteDescriptionBannerView.h */,
+				34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */,
+				34D2EA171EB9C8CE0058E4F5 /* MNStationButton.h */,
+				34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */,
+				3462DC151EB85A5F00D77301 /* MNBarItemButton.h */,
+				3462DC161EB85A5F00D77301 /* MNBarItemButton.m */,
 				349B7B241EBB272200BC37D0 /* MNDurationDescriptionLabel.h */,
 				349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */,
 			);
@@ -374,12 +374,12 @@
 		349B7B291EBB4EAE00BC37D0 /* Metro Route */ = {
 			isa = PBXGroup;
 			children = (
-				348D3AB51EABD04F00D341C6 /* MetroImageView.h */,
-				348D3AB61EABD04F00D341C6 /* MetroImageView.m */,
-				34F9D9101EB4E32F00322D64 /* MetroImageScrollView.h */,
-				34F9D9111EB4E32F00322D64 /* MetroImageScrollView.m */,
-				3462DC2F1EB8722D00D77301 /* CityButton.h */,
-				3462DC301EB8722D00D77301 /* CityButton.m */,
+				348D3AB51EABD04F00D341C6 /* MNMetroImageView.h */,
+				348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */,
+				34F9D9101EB4E32F00322D64 /* MNMetroImageScrollView.h */,
+				34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */,
+				3462DC2F1EB8722D00D77301 /* MNCityButton.h */,
+				3462DC301EB8722D00D77301 /* MNCityButton.m */,
 			);
 			name = "Metro Route";
 			sourceTree = "<group>";
@@ -387,8 +387,8 @@
 		349B7B2A1EBB4F1500BC37D0 /* City Search */ = {
 			isa = PBXGroup;
 			children = (
-				3462DC341EB88F1B00D77301 /* CityTableViewCell.h */,
-				3462DC351EB88F1B00D77301 /* CityTableViewCell.m */,
+				3462DC341EB88F1B00D77301 /* MNCityTableViewCell.h */,
+				3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */,
 			);
 			name = "City Search";
 			sourceTree = "<group>";
@@ -396,8 +396,8 @@
 		349B7B2B1EBB4F3F00BC37D0 /* Station Search */ = {
 			isa = PBXGroup;
 			children = (
-				34D2E9F51EB9145D0058E4F5 /* StationTableViewCell.h */,
-				34D2E9F61EB9145D0058E4F5 /* StationTableViewCell.m */,
+				34D2E9F51EB9145D0058E4F5 /* MNStationTableViewCell.h */,
+				34D2E9F61EB9145D0058E4F5 /* MNStationTableViewCell.m */,
 			);
 			name = "Station Search";
 			sourceTree = "<group>";
@@ -553,32 +553,32 @@
 			files = (
 				343BFBCA1EA8070500CEC472 /* MNDataAPI.m in Sources */,
 				343BFBC41EA8068900CEC472 /* MNEdge.m in Sources */,
-				34D2E9F71EB9145D0058E4F5 /* StationTableViewCell.m in Sources */,
+				34D2E9F71EB9145D0058E4F5 /* MNStationTableViewCell.m in Sources */,
 				34D2EA0A1EB9BA180058E4F5 /* MNMetro+NSCoding.m in Sources */,
-				3462DC361EB88F1B00D77301 /* CityTableViewCell.m in Sources */,
+				3462DC361EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */,
 				344DFA9E1EB8F75C00960F6F /* MNEdge+JSON.m in Sources */,
 				343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */,
 				3462DC2C1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */,
 				344DFA991EB8F74700960F6F /* MNStation+JSON.m in Sources */,
 				34C3F6331EB1E0D3004B59EA /* MNMetroRouteListViewController.m in Sources */,
 				34D2EA141EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */,
-				34F9D9171EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
-				3462DC171EB85A5F00D77301 /* BarItemButton.m in Sources */,
+				34F9D9171EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */,
+				3462DC171EB85A5F00D77301 /* MNBarItemButton.m in Sources */,
 				3462DC111EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
 				34D2EA0F1EB9BA2A0058E4F5 /* MNEdge+NSCoding.m in Sources */,
-				34F9D9121EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
+				34F9D9121EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */,
 				343BFBC01EA8068900CEC472 /* MNMetro.m in Sources */,
 				34D2E9FA1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */,
 				343BFB801EA802C100CEC472 /* main.m in Sources */,
 				343BFBC21EA8068900CEC472 /* MNStation.m in Sources */,
 				34D2EA041EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */,
-				3462DC311EB8722D00D77301 /* CityButton.m in Sources */,
-				34D2EA191EB9C8CE0058E4F5 /* StationButton.m in Sources */,
+				3462DC311EB8722D00D77301 /* MNCityButton.m in Sources */,
+				34D2EA191EB9C8CE0058E4F5 /* MNStationButton.m in Sources */,
 				343BFBC61EA8068900CEC472 /* MNRoute.m in Sources */,
 				344DFA941EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
 				349B7B261EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */,
 				348CC5681EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */,
-				348D3AB71EABD04F00D341C6 /* MetroImageView.m in Sources */,
+				348D3AB71EABD04F00D341C6 /* MNMetroImageView.m in Sources */,
 				344DFAA31EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,27 +589,27 @@
 			files = (
 				3462DC2D1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */,
 				34C3F6341EB1E0D3004B59EA /* MNMetroRouteListViewController.m in Sources */,
-				3462DC371EB88F1B00D77301 /* CityTableViewCell.m in Sources */,
-				34F9D9131EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
+				3462DC371EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */,
+				34F9D9131EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */,
 				34D2EA101EB9BA2A0058E4F5 /* MNEdge+NSCoding.m in Sources */,
 				344DFAA41EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */,
 				343BFB991EA802C100CEC472 /* MetroNavigationTests.m in Sources */,
 				344DFA9F1EB8F75C00960F6F /* MNEdge+JSON.m in Sources */,
-				348D3AB81EABD04F00D341C6 /* MetroImageView.m in Sources */,
+				348D3AB81EABD04F00D341C6 /* MNMetroImageView.m in Sources */,
 				343BFBCB1EA8070500CEC472 /* MNDataAPI.m in Sources */,
 				343BFBC11EA8068900CEC472 /* MNMetro.m in Sources */,
 				344DFA951EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
 				34D2EA151EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */,
 				3462DC121EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
-				34D2EA1A1EB9C8CE0058E4F5 /* StationButton.m in Sources */,
-				3462DC181EB85A5F00D77301 /* BarItemButton.m in Sources */,
+				34D2EA1A1EB9C8CE0058E4F5 /* MNStationButton.m in Sources */,
+				3462DC181EB85A5F00D77301 /* MNBarItemButton.m in Sources */,
 				343BFBC51EA8068900CEC472 /* MNEdge.m in Sources */,
 				34D2EA0B1EB9BA180058E4F5 /* MNMetro+NSCoding.m in Sources */,
 				344DFA9A1EB8F74700960F6F /* MNStation+JSON.m in Sources */,
-				34F9D9181EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
+				34F9D9181EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */,
 				349B7B271EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */,
 				34D2E9FB1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */,
-				3462DC321EB8722D00D77301 /* CityButton.m in Sources */,
+				3462DC321EB8722D00D77301 /* MNCityButton.m in Sources */,
 				343BFBB71EA8066E00CEC472 /* MetroGraphLogic.m in Sources */,
 				343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */,
 				343BFBC31EA8068900CEC472 /* MNStation.m in Sources */,
@@ -621,25 +621,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D2EA1B1EB9C8CE0058E4F5 /* StationButton.m in Sources */,
+				34D2EA1B1EB9C8CE0058E4F5 /* MNStationButton.m in Sources */,
 				34D2EA061EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */,
 				344DFAA01EB8F75C00960F6F /* MNEdge+JSON.m in Sources */,
-				34F9D9141EB4E32F00322D64 /* MetroImageScrollView.m in Sources */,
+				34F9D9141EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */,
 				3462DC131EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
 				34D2EA111EB9BA2A0058E4F5 /* MNEdge+NSCoding.m in Sources */,
-				3462DC381EB88F1B00D77301 /* CityTableViewCell.m in Sources */,
-				3462DC331EB8722D00D77301 /* CityButton.m in Sources */,
+				3462DC381EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */,
+				3462DC331EB8722D00D77301 /* MNCityButton.m in Sources */,
 				344DFAA51EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */,
 				34C3F6351EB1E0D3004B59EA /* MNMetroRouteListViewController.m in Sources */,
 				344DFA9B1EB8F74700960F6F /* MNStation+JSON.m in Sources */,
 				34D2EA161EB9BA400058E4F5 /* MNStation+NSCodying.m in Sources */,
-				34F9D9191EB5185200322D64 /* RouteDescriptionBannerView.m in Sources */,
-				348D3AB91EABD04F00D341C6 /* MetroImageView.m in Sources */,
+				34F9D9191EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */,
+				348D3AB91EABD04F00D341C6 /* MNMetroImageView.m in Sources */,
 				349B7B281EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */,
 				344DFA961EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
 				3462DC2E1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */,
 				34D2EA0C1EB9BA180058E4F5 /* MNMetro+NSCoding.m in Sources */,
-				3462DC191EB85A5F00D77301 /* BarItemButton.m in Sources */,
+				3462DC191EB85A5F00D77301 /* MNBarItemButton.m in Sources */,
 				34D2E9FC1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */,
 				348CC5691EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */,
 				343BFBA41EA802C100CEC472 /* MetroNavigationUITests.m in Sources */,

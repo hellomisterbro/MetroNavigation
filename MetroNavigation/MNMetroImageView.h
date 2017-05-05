@@ -1,5 +1,5 @@
 //
-//  MetroImage.h
+//  MNMetroImage.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 4/22/17.
@@ -8,19 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class MetroImageView;
+@class MNMetroImageView;
 
-@protocol MetroImageViewDelegate <NSObject>
+@protocol MNMetroImageViewDelegate <NSObject>
 
 @required
 
-- (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MetroImageView *)metroImageView;
+- (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MNMetroImageView *)metroImageView;
 
 @end
 
-@interface MetroImageView : UIImageView
+@interface MNMetroImageView : UIImageView
 
-@property (nonatomic, weak) id<MetroImageViewDelegate> delegate;
+@property (nonatomic, weak) id<MNMetroImageViewDelegate> delegate;
 
 - (CGRect)rectToZoom;
 

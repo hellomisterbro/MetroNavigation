@@ -12,7 +12,7 @@
 @interface MNBaseSearchListViewController : UITableViewController
 
 
-//The following dictionary represents the correspondence between the names of the objects and objects itself. The names will be used when seraching for the object corresponding to entered text.
+//The following dictionary represents the correspondence between the names of the objects and objects itself. The names will be used when seraching for the corresponding object to entered text.
 @property (nonatomic, strong) NSDictionary <NSString *, id> *contentForTableView;
 
 //Returns the content object passed in contentForTableView for indexPath

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "MNBaseSearchListViewController.h"
 
-typedef NS_ENUM(NSUInteger, MNStationToChange) {
+#import "MNStation.h"
+
+typedef NS_ENUM(NSUInteger, MNStationToChangeType) {
     MNStationToChangeNone,
     MNStationToChangeStart,
     MNStationToChangeEnd
@@ -20,7 +21,7 @@ typedef NS_ENUM(NSUInteger, MNStationToChange) {
 
 @protocol MNStationSearchViewControllerDelegate <NSObject>
 
-- (void)stationChoosenWithSuccess:(BOOL)success inViewController:(MNStationSearchViewController *)citySearchViewController;
+- (void)didChooseStation:(MNStation *)station withType:(MNStationToChangeType)stationToChange inViewController:(MNStationSearchViewController *)citySearchViewController;
 
 @end
 
@@ -28,6 +29,7 @@ typedef NS_ENUM(NSUInteger, MNStationToChange) {
 
 @property (nonatomic, weak) id <MNStationSearchViewControllerDelegate> delegate;
 
-@property (nonatomic, assign) MNStationToChange stationToChangeType;
+@property (nonatomic, assign) MNStationToChangeType stationToChangeType;
+@property (nonatomic, strong) MNStation *stationToExclude;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  StationButton.h
+//  MNStationButton.h
 //  MetroNavigation
 //
 //  Created by Nikita Kirichek on 5/3/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StationButton : UIButton
+@interface MNStationButton : UIButton
 
 @end
