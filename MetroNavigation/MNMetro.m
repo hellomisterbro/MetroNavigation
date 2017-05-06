@@ -203,11 +203,11 @@
 
 - (MNRoute *)shortestRouteFromStation:(MNStation *)sourceStation toStation:(MNStation *)targetStation {
     //The smallest amount of time to the origin for each station in the graph
-    NSMutableArray *unvisitedStations = [NSMutableArray arrayWithArray:self.stations];
+    NSMutableArray <MNStation *> *unvisitedStations = [NSMutableArray arrayWithArray:self.stations];
 
-    NSMutableDictionary *durationFromSource = [NSMutableDictionary dictionaryWithCapacity:self.stations.count];
+    NSMutableDictionary <NSString *, NSNumber*> *durationFromSource = [NSMutableDictionary dictionaryWithCapacity:self.stations.count];
     
-    NSMutableDictionary *previousStationInOptimalPath = [NSMutableDictionary dictionaryWithCapacity:self.stations.count];
+    NSMutableDictionary <NSString *, MNStation*> *previousStationInOptimalPath = [NSMutableDictionary dictionaryWithCapacity:self.stations.count];
     
     
     for (MNStation *station in unvisitedStations) {
@@ -238,13 +238,24 @@
                 
                 [unvisitedStations removeObject:stationWithMinDuration];
                 
+                //
+                MNStation *previousStation = previousStationInOptimalPath[stationWithMinDuration.identifier];
+                MNEdge *edgeFromStationWithMinDurationToItsPrevious = [self edgeFromStation:previousStation toStation:stationWithMinDuration];
+                
+                //
    
+                
                 for (MNStation *neighboringStation in [self neighboringStationsToStation:stationWithMinDuration]) {
                     
-                    NSNumber *alt = @([[durationFromSource objectForKey:stationWithMinDuration.identifier] floatValue] + [[self durationFromStation:stationWithMinDuration toNeighboringStation:neighboringStation] floatValue]);
-                    
-                    NSNumber *durationFromNeighborToOrigin = [durationFromSource objectForKey:neighboringStation.identifier];
-                    
+                    NSNumber *alt = @([durationFromSource[stationWithMinDuration.identifier] floatValue] + [[self durationFromStation:stationWithMinDuration toNeighboringStation:neighboringStation] floatValue]);
+            
+                    NSNumber *durationFromNeighborToOrigin = durationFromSource[neighboringStation.identifier];
+                    //
+                    MNEdge *edgeFromStationWithMinDurationToNeighbour = [self edgeFromStation:previousStation toStation:stationWithMinDuration];
+//                    if ([NSSet setWithArray:<#(nonnull NSArray *)#>]) {
+//                        
+//                    }
+                    //
                     if ([durationFromNeighborToOrigin isEqualToNumber:INFINITY_FOR_SHORTEST_PATH_PROBLEM] ||
                         [alt compare:durationFromNeighborToOrigin] == NSOrderedAscending) {
                         
