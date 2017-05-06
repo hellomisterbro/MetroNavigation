@@ -13,9 +13,6 @@
 
 NSString *const kKyivMetropolitanIdentifier = @"911";
 NSString *const kMilanoMetropolitanIdentifier = @"100";
-NSString *const kPetersburgMetropolitanIdentifier = @"103";
-NSString *const kRigaMetropolitanIdentifier = @"104";
-NSString *const kBrusselsMetropolitanIdentifier = @"104";
 
 
 @implementation DataAPI
@@ -36,20 +33,14 @@ NSString *const kBrusselsMetropolitanIdentifier = @"104";
 
 + (MNMetro *)metroWithIdentifier:(NSString *)metroIdentifier {
     NSDictionary *filesForNames = @{kKyivMetropolitanIdentifier: @"kyiv",
-                                    kMilanoMetropolitanIdentifier : @"milano",
-                                    kPetersburgMetropolitanIdentifier : @"petersburg",
-                                    kRigaMetropolitanIdentifier : @"riga",
-                                    kBrusselsMetropolitanIdentifier : @"brussels"};
+                                    kMilanoMetropolitanIdentifier : @"milano"};
     
     return [DataAPI metroJSONFile:filesForNames[metroIdentifier]];
 }
 
 + (NSString *)imageMetroNameWithMetroIdentifier:(NSString *)metroName {
     NSDictionary *imagesForNames = @{kKyivMetropolitanIdentifier: @"kyiv-metro",
-                                     kMilanoMetropolitanIdentifier : @"milano-metro",
-                                     kPetersburgMetropolitanIdentifier : @"petersburg",
-                                     kRigaMetropolitanIdentifier : @"riga",
-                                     kBrusselsMetropolitanIdentifier : @"brussels"};
+                                     kMilanoMetropolitanIdentifier : @"milano-metro"};
     
     return imagesForNames[metroName];
 }
@@ -58,10 +49,7 @@ NSString *const kBrusselsMetropolitanIdentifier = @"104";
 
 + (NSDictionary *)metroNamesWithIDs {
     return @{ @"Kiev Metropolitan": kKyivMetropolitanIdentifier,
-              @"Milano Metro": kMilanoMetropolitanIdentifier,
-              @"Petersbutg Subway": kPetersburgMetropolitanIdentifier,
-              @"Riga": kBrusselsMetropolitanIdentifier,
-              @"Brussels": kBrusselsMetropolitanIdentifier};
+              @"Milano Metro": kMilanoMetropolitanIdentifier};
 }
 
 @end

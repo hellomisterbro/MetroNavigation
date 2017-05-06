@@ -25,6 +25,6 @@
 + (MNRoute *)route;
 - (NSNumber *)totalDuration;
 - (NSInteger)totalTransfers;
-- (NSArray <MNLineRoute *> *)lineRoutes;
+- (NSArray <MNLineRoute *> *)routeLines;
 
 @end

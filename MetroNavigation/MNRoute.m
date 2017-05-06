@@ -99,7 +99,7 @@
     return totalTransfersCount;
 }
 
-- (NSArray <MNLineRoute *> *)lineRoutes {
+- (NSArray <MNLineRoute *> *)routeLines {
     
     NSMutableArray *lineRoutes = [NSMutableArray array];
     
@@ -128,6 +128,8 @@
                 
                 lineRoute.line = [self.metro lineForStation:previousStation];
                 
+                lineRoute.transferToNextDuration = edgeFromCurrentToPrevious.duration;
+                
                 break;
             }
             
@@ -138,6 +140,8 @@
                 
                 lineRoute.line = [self.metro lineByNamed:[previousEdge.lineNames firstObject]];
                 
+                lineRoute.transferToNextDuration = previousStation.transferDuration;
+                
                 break;
             }
             
@@ -145,6 +149,8 @@
             
             if ([currentStation isEqual:stationsSequence.lastObject]) {
                 [stationsSequence removeObjectsInArray:lineStationSequence];
+                lineRoute.line = [self.metro lineByNamed:[edgeFromCurrentToPrevious.lineNames firstObject]];
+                lineRoute.stationSequence = lineStationSequence;
             }
             
             previousStation = currentStation;

@@ -90,7 +90,7 @@
                           @"Number of stations should be %@, not %@",
                           predictedShortPathDuration,realShortPathDuration);
     
-    NSArray <MNLineRoute *> *detailedRoutes = route.lineRoutes;
+    NSArray <MNLineRoute *> *detailedRoutes = route.routeLines;
     
     
     NSNumber *predictedLineRoutesQty = @2;
@@ -187,7 +187,7 @@
                           @"Number of stations should be %@, not %@",
                          predictedShortPathDuration, realShortPathDuration);
     
-    NSArray <MNLineRoute *> *detailedRoutes = route.lineRoutes;
+    NSArray <MNLineRoute *> *detailedRoutes = route.routeLines;
     
     
     NSNumber *predictedLineRoutesQty = @3;

@@ -16,6 +16,9 @@
 		3417FA8F1EBE1629009E5E29 /* MNLineRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA8E1EBE1629009E5E29 /* MNLineRoute.m */; };
 		3417FA901EBE1629009E5E29 /* MNLineRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA8E1EBE1629009E5E29 /* MNLineRoute.m */; };
 		3417FA911EBE1629009E5E29 /* MNLineRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA8E1EBE1629009E5E29 /* MNLineRoute.m */; };
+		3417FA941EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */; };
+		3417FA951EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */; };
+		3417FA961EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */; };
 		343BFB801EA802C100CEC472 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB7F1EA802C100CEC472 /* main.m */; };
 		343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB821EA802C100CEC472 /* AppDelegate.m */; };
 		343BFB891EA802C100CEC472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343BFB871EA802C100CEC472 /* Main.storyboard */; };
@@ -126,6 +129,8 @@
 		3417FA891EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNRouteDetailsForLineTableViewCell.m; sourceTree = "<group>"; };
 		3417FA8D1EBE1629009E5E29 /* MNLineRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNLineRoute.h; sourceTree = "<group>"; };
 		3417FA8E1EBE1629009E5E29 /* MNLineRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNLineRoute.m; sourceTree = "<group>"; };
+		3417FA921EBE7F73009E5E29 /* MNTransferTimeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNTransferTimeLabel.h; sourceTree = "<group>"; };
+		3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNTransferTimeLabel.m; sourceTree = "<group>"; };
 		343BFB7B1EA802C100CEC472 /* MetroNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		343BFB7F1EA802C100CEC472 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		343BFB811EA802C100CEC472 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -231,6 +236,8 @@
 			children = (
 				3417FA881EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.h */,
 				3417FA891EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m */,
+				3417FA921EBE7F73009E5E29 /* MNTransferTimeLabel.h */,
+				3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */,
 			);
 			name = "Route Details";
 			sourceTree = "<group>";
@@ -613,6 +620,7 @@
 				344DFA941EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
 				349B7B261EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */,
 				348CC5681EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */,
+				3417FA941EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */,
 				348D3AB71EABD04F00D341C6 /* MNMetroImageView.m in Sources */,
 				3417FA8A1EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m in Sources */,
 				34D088041EBD23CF006FB6AE /* MNColor.m in Sources */,
@@ -655,6 +663,7 @@
 				343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */,
 				343BFBC31EA8068900CEC472 /* MNStation.m in Sources */,
 				34D2EA051EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */,
+				3417FA951EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +686,7 @@
 				34F9D9191EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */,
 				348D3AB91EABD04F00D341C6 /* MNMetroImageView.m in Sources */,
 				349B7B281EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */,
+				3417FA961EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */,
 				344DFA961EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
 				34D087FA1EBD239C006FB6AE /* MNLine+JSON.m in Sources */,
 				3462DC2E1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */,

@@ -51,7 +51,9 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNStationChangedUnwindToMetroVi
 // MARK: - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     if ([segue.identifier isEqualToString:kUnwindToMetroRouteSegueName]) {
+        
         if (self.selectedStation) {
             [self.delegate didChooseStation:self.selectedStation withType:self.stationToChangeType inViewController:self];
         }

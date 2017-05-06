@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MNRoute.h"
+#import "MNDurationDescriptionLabel.h"
 
 @interface MNRouteDetailsViewController : UITableViewController
 
 @property (nonatomic, strong) MNRoute *route;
+@property (weak, nonatomic) IBOutlet MNDurationDescriptionLabel *totalDurationLabel;
 
 @end

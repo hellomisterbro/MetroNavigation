@@ -66,6 +66,7 @@
     }
     return self;
 }
+
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.red forKey:@"red"];
     [aCoder encodeObject:self.green forKey:@"green"];

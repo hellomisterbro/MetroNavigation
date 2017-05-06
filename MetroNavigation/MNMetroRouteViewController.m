@@ -13,6 +13,7 @@
 #import "MNMetroRouteViewController.h"
 #import "MNCitySearchViewController.h"
 #import "MNStationSearchViewController.h"
+#import "MNRouteDetailsViewController.h"
 
 
 NSString *const kDetailsSegueName = @"MNDisplayRouteListSegue";
@@ -20,11 +21,10 @@ NSString *const kCityChangeSegueName = @"MNCityChangeSegue";
 
 NSString *const kEndStationChangeSegueName = @"MNEndStationChangeSegue";
 NSString *const kStartStationChangeSegueName = @"MNStartStationChangeSegue";
-
-NSString *const kUnwindStationChangedSegueName = @"MNMetroChangedUnwindToMetroViewController";
-NSString *const kUnwindMetroChangedSegueName = @"MNStationChangedUnwindToMetroViewController";
+NSString *const kShowDetailsSegue = @"MNShowDetailsSegue";
 
 NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
+
 
 #define MNDiameterForPinDetecting 20
 
@@ -118,6 +118,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     
     BOOL isStartStationChangeSegue = [segue.identifier isEqualToString:kStartStationChangeSegueName];
     BOOL isEndStationChangeSegue = [segue.identifier isEqualToString:kEndStationChangeSegueName];
+    BOOL isShowDetailSegue = [segue.identifier isEqualToString:kShowDetailsSegue];
     
     if (isStartStationChangeSegue || isEndStationChangeSegue) {
         
@@ -136,7 +137,14 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
             destinationViewController.stationToExclude = self.startStation;
         }
         
+    } else if (isShowDetailSegue) {
+        
+        UINavigationController *navigationViewController = segue.destinationViewController;
+        MNRouteDetailsViewController *routeDetailViewController = navigationViewController.viewControllers.firstObject;
+        
+        routeDetailViewController.route = self.route;
     }
+    
 }
 
 // MARK: - Updating Controller
@@ -247,6 +255,39 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     }
 }
 
+// MARK: - RouteDescriptionBannerView Interactions
+
+- (void)displayRouteDescriptionBanner {
+    [self.view layoutIfNeeded];
+    
+    //banner configuration
+    [self.routeDescriptionBannerView setStartStationName:self.startStation.name];
+    [self.routeDescriptionBannerView setEndStationName:self.endStation.name];
+    [self.routeDescriptionBannerView.timelabel setTotalDuration:self.route.totalDuration withTransfersCount:self.route.totalTransfers];
+    
+    //updating contrains
+    self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = 0;
+    
+    //updating views to fit the contrains
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)hideRouteDescriptionBanner {
+    [self.view layoutIfNeeded];
+    
+    //updating contrains for hiding the banner
+    CGFloat bannerHeight = CGRectGetHeight(self.routeDescriptionBannerView.frame);
+    self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -bannerHeight;
+    
+    //updating views to fit the contrains
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
+
 // MARK: - UIScrollViewDelegate
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
@@ -299,20 +340,12 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
 
 -(void)didChooseStation:(MNStation *)station withType:(MNStationToChangeType)stationToChange inViewController:(MNStationSearchViewController *)citySearchViewController {
     
-    switch (stationToChange) {
-            //apply no changes
-        case MNStationToChangeNone:
-            break;
-            
-         //change start station
-        case MNStationToChangeStart:
-            self.startStation = station;
-            break;
-            
-       //change end station
-        case MNStationToChangeEnd:
-            self.endStation = station;
-            break;
+    
+    if (stationToChange == MNStationToChangeStart) {
+        self.startStation = station;
+        
+    } else if (stationToChange == MNStationToChangeEnd) {
+        self.endStation = station;
     }
 }
 
@@ -327,46 +360,12 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     
     //update swapped pins
     [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
-    
-    //dispay route banner correctly
-    [self displayRouteDescriptionBanner];
 }
 
 - (void)cancelDidClickWithRouteDescriptionBanner:(MNRouteDescriptionBannerView *)routeDescBanner {
     [self hideRouteDescriptionBanner];
 }
 
-// MARK: - RouteDescriptionBannerView Interactions
-
-- (void)displayRouteDescriptionBanner {
-    [self.view layoutIfNeeded];
-    
-    //banner configuration
-    [self.routeDescriptionBannerView setStartStationName:self.startStation.name];
-    [self.routeDescriptionBannerView setEndStationName:self.endStation.name];
-    [self.routeDescriptionBannerView setTotalDuration:self.route.totalDuration withTransfersCount:self.route.totalTransfers];
-    
-    //updating contrains
-    self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = 0;
-    
-    //updating views to fit the contrains
-    [UIView animateWithDuration:0.3 animations:^{
-        [self.view layoutIfNeeded];
-    }];
-}
-
-- (void)hideRouteDescriptionBanner {
-    [self.view layoutIfNeeded];
-    
-    //updating contrains for hiding the banner
-    CGFloat bannerHeight = CGRectGetHeight(self.routeDescriptionBannerView.frame);
-    self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -bannerHeight;
-    
-    //updating views to fit the contrains
-    [UIView animateWithDuration:0.3 animations:^{
-        [self.view layoutIfNeeded];
-    }];
-}
 
 // MARK: - Local Helpers
 

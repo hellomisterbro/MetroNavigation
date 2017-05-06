@@ -10,4 +10,7 @@
 
 @interface MNDurationDescriptionLabel : UILabel
 
+- (void)setTotalDuration:(NSNumber *)totalDuration;
+- (void)setTotalDuration:(NSNumber *)totalDuration withTransfersCount:(NSInteger)transfersCount;
+
 @end

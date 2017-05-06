@@ -41,6 +41,4 @@
 
 - (void)setStartStationName:(NSString *)name;
 - (void)setEndStationName:(NSString *)name;
-- (void)setTotalDuration:(NSNumber *)totalDuration withTransfersCount:(NSInteger)transfersCount; 
-
 @end

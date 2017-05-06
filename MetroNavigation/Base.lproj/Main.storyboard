@@ -75,7 +75,7 @@
                                                         <rect key="frame" x="279.5" y="0.0" width="79.5" height="30"/>
                                                         <state key="normal" title="Details"/>
                                                         <connections>
-                                                            <segue destination="Thd-Mv-qU2" kind="presentation" id="6EA-t8-rKV"/>
+                                                            <segue destination="Thd-Mv-qU2" kind="presentation" identifier="MNShowDetailsSegue" id="6EA-t8-rKV"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -371,16 +371,35 @@
             </objects>
             <point key="canvasLocation" x="137" y="622"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Route Details-->
         <scene sceneID="SL7-aZ-Gpx">
             <objects>
-                <tableViewController id="tug-9j-AIr" sceneMemberID="viewController">
+                <tableViewController id="tug-9j-AIr" customClass="MNRouteDetailsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MsX-rF-GGU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="SgI-i1-61k">
+                            <rect key="frame" x="0.0" y="205" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsB-Qw-5As" customClass="MNDurationDescriptionLabel">
+                                    <rect key="frame" x="19" y="12" width="339" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-Cp-LhY">
+                                    <rect key="frame" x="19" y="0.0" width="356" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MNRouteDetailsReusabelCellIdentifier" rowHeight="134" id="Qb7-xL-ZbE" customClass="MNRouteDetailsForLineTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MNRofuteDetailsTwoStationsReusabelCell" rowHeight="134" id="Qb7-xL-ZbE" customClass="MNRouteDetailsForLineTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qb7-xL-ZbE" id="1nC-Yp-glT">
@@ -388,14 +407,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IC-sO-Ybc">
-                                            <rect key="frame" x="47" y="8" width="80" height="21"/>
+                                            <rect key="frame" x="47" y="8" width="320" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYv-MO-5El">
-                                            <rect key="frame" x="47" y="89" width="80" height="21"/>
+                                            <rect key="frame" x="47" y="89" width="320" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <nil key="textColor"/>
@@ -406,14 +425,14 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHx-0n-hyK" customClass="MNDurationDescriptionLabel">
-                                            <rect key="frame" x="47" y="50" width="199" height="21"/>
+                                            <rect key="frame" x="47" y="50" width="320" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBk-lc-LT4" customClass="MNDurationDescriptionLabel">
-                                            <rect key="frame" x="244" y="112" width="123" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBk-lc-LT4" customClass="MNTransferTimeLabel">
+                                            <rect key="frame" x="241" y="113" width="123" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -429,13 +448,38 @@
                                     <outlet property="timeDescriptionForTransferLabel" destination="EBk-lc-LT4" id="vSr-Y6-ebt"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MNRofuteDetailsOneStationReusabelCell" rowHeight="43" id="mPD-ee-SxY" customClass="MNRouteDetailsForLineTableViewCell">
+                                <rect key="frame" x="0.0" y="162" width="375" height="43"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mPD-ee-SxY" id="p4p-wd-xCI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlD-3B-hwL">
+                                            <rect key="frame" x="47" y="8" width="320" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circel-details" translatesAutoresizingMaskIntoConstraints="NO" id="qMe-Vf-MbH">
+                                            <rect key="frame" x="19" y="10" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="metroLineImageView" destination="qMe-Vf-MbH" id="fyJ-0E-lhJ"/>
+                                    <outlet property="startStationLabel" destination="TlD-3B-hwL" id="spB-Iv-YQ3"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="tug-9j-AIr" id="nVn-xQ-iwC"/>
-                            <outlet property="delegate" destination="tug-9j-AIr" id="7rW-Ot-xOg"/>
+                            <outlet property="dataSource" destination="tug-9j-AIr" id="4Yu-rl-N33"/>
+                            <outlet property="delegate" destination="tug-9j-AIr" id="8aV-Jk-dAN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sHL-1m-pJv">
+                    <navigationItem key="navigationItem" title="Route Details" id="sHL-1m-pJv">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="TnW-A5-KNl">
                             <connections>
                                 <segue destination="2F6-UL-CJR" kind="unwind" unwindAction="applyNoneChanges:" id="6gf-aF-iTs"/>
@@ -447,6 +491,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="totalDurationLabel" destination="EsB-Qw-5As" id="HIa-uL-4sI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIb-e0-qUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2F6-UL-CJR" userLabel="Exit" sceneMemberID="exit"/>
@@ -456,6 +503,7 @@
     </scenes>
     <resources>
         <image name="arrows" width="69" height="63"/>
+        <image name="circel-details" width="34" height="37"/>
         <image name="combined-shape" width="69" height="330"/>
         <image name="handle" width="50" height="6"/>
     </resources>

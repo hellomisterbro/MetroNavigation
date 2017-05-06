@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MNColor.h"
 
 @interface UIColor (MNColors)
 
 + (UIColor *)lightGreenMNColor;
++ (UIColor *)colorWithMNColor:(MNColor *)aColor;
 
 @end
