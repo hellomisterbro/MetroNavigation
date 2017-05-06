@@ -1,0 +1,692 @@
+
+{
+  "name": "Milano Metro",
+    "id": "100",
+            "lines":[
+        {
+            "color":{"red":233, "green":244, "blue":243},
+            "name":"red"
+        },
+        {
+            "color":{"red":233, "green":244, "blue":243},
+            "name":"red-branch"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"green"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"green-branch-one"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"green-branch-two"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"violet"
+        },
+        {
+            "color":{"red":234, "green":244, "blue":243},
+            "name":"yellow"
+        }
+    ],
+  "edges": [
+    {
+      "first": {"id": "101","name": "Sesto I Maggio", "posX":1242.262600 , "posY":138.721242},
+      "second": {"id": "102","name": "Sesto Rondò", "posX":1238.312640 , "posY":198.628978},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "102","name": "Sesto Rondò", "posX":1238.312640 , "posY":198.628978},
+      "second": {"id": "103","name": "Sesto Marelli", "posX": 1238.970966 , "posY":256.561733},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "103","name": "Sesto Marelli", "posX": 1238.970966 , "posY":256.561733},
+      "second": {"id": "104","name": "Villa San Giovanni", "posX": 1238.970966 , "posY":319.102775},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "104","name": "Villa San Giovanni", "posX": 1238.970966 , "posY":319.102775},
+      "second": {"id": "105","name": "Precotto", "posX": 1240.287620 , "posY":377.035530},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "105","name": "Precotto", "posX": 1240.287620 , "posY":377.035530},
+      "second": {"id": "106","name": "Gorla", "posX": 1240.287620 , "posY":438.918246},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "106","name": "Gorla", "posX": 1240.287620 , "posY":438.918246},
+      "second": {"id": "107","name": "Turro", "posX": 1239.629293 , "posY":495.534347},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "107","name": "Turro", "posX": 1239.629293 , "posY":495.534347},
+      "second": {"id": "108","name": "Rovereto", "posX": 1238.312640 , "posY":556.758736},
+      "duration": 1.3,
+        "line":["red"]
+    },
+         {
+      "first": {"id": "108","name": "Rovereto", "posX":1238.312640 , "posY":556.758736},
+      "second": {"id": "109","name": "Pasteur", "posX": 1238.970966 , "posY":619.958106},
+      "duration": 1.3,
+        "line":["red"]
+    },
+     {
+      "first": {"id": "109","name": "Pasteur", "posX": 1238.970966 , "posY":619.958106},
+      "second": {"id": "422","name": "Loreto", "posX": 1238.970966 , "posY":675.915880, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "422","name": "Loreto", "posX": 1238.970966 , "posY":675.915880, "transferDuration":5.0},
+      "second": {"id": "111","name": "Lima", "posX": 1237.654313 , "posY":807.581233},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "111","name": "Lima", "posX": 1237.654313 , "posY":807.581233},
+      "second": {"id": "112","name": "Porta Venezia", "posX": 1238.970966 , "posY":857.614067},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "112","name": "Porta Venezia", "posX": 1238.970966 , "posY":857.614067},
+      "second": {"id": "113","name": "Palestro", "posX": 1239.629293 , "posY":904.355267},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "113","name": "Palestro", "posX": 1239.629293 , "posY":904.355267},
+      "second": {"id": "114","name": "San babila", "posX": 1119.813822 , "posY":961.629695},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "114","name": "San babila", "posX": 1119.813822 , "posY":961.629695},
+      "second": {"id": "312","name": "Duomo", "posX": 1051.347839 , "posY":965.579656, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "312","name": "Duomo", "posX": 1051.347839 , "posY":965.579656, "transferDuration":5.0},
+      "second": {"id": "116","name": "Cordusio", "posX": 963.790380 , "posY":963.604675},
+      "duration": 1.3,
+        "line":["red"]
+    },
+     {
+      "first": {"id": "116","name": "Cordusio", "posX": 963.790380 , "posY":963.604675},
+      "second": {"id": "117","name": "Cairoli", "posX": 919.682487 , "posY":966.237982},
+      "duration": 1.3,
+        "line":["red"]
+    },
+      {
+      "first": {"id": "117","name": "Cairoli", "posX": 919.682487 , "posY":966.237982},
+      "second": {"id": "429","name": "Cadorna", "posX": 843.974909 , "posY":963.604675},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "429","name": "Cadorna", "posX": 843.974909 , "posY":963.604675},
+      "second": {"id": "119","name": "Conciliazione", "posX": 716.053333 , "posY":965.053333 },
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "119","name": "Conciliazione", "posX": 716.053333 , "posY":965.053333 },
+      "second": {"id": "120","name": "Pagano", "posX": 659.306667 , "posY":963.560000, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "120","name": "Pagano", "posX": 659.306667 , "posY":963.560000, "transferDuration":5.0},
+      "second": {"id": "121","name": "Buonarroti", "posX": 603.306667 , "posY":963.560000},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "121","name": "Buonarroti", "posX": 603.306667 , "posY":963.560000},
+      "second": {"id": "122","name": "Amendola", "posX": 543.573333 , "posY":965.053333},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "122","name": "Amendola", "posX": 543.573333 , "posY":965.053333},
+      "second": {"id": "123","name": "Lotto", "posX":505.120000 , "posY":958.520000, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["red"]
+    },
+      {
+      "first": {"id": "123","name": "Lotto", "posX": 505.120000 , "posY":958.520000, "transferDuration":5.0},
+      "second": {"id": "124","name": "QT8", "posX": 464.426667 , "posY":964.306667 },
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "124","name": "QT8", "posX": 464.426667 , "posY":964.306667 },
+      "second": {"id": "125","name": "Lampugnano", "posX": 417.386667 , "posY":941.160000},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "125","name": "Lampugnano", "posX": 417.386667 , "posY":941.160000},
+      "second": {"id": "126","name": "Urugvay", "posX": 375.573333 , "posY":901.586667},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "126","name": "Urugvay", "posX": 375.573333 , "posY":901.586667},
+      "second": {"id": "127","name": "Bonola", "posX": 333.760000 , "posY":858.280000},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "127","name": "Bonola", "posX": 333.760000 , "posY":858.280000},
+      "second": {"id": "128","name": "San Leonardo", "posX": 291.946667 , "posY":821.693333},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "128","name": "San Leonardo", "posX": 291.946667 , "posY":821.693333},
+      "second": {"id": "129","name": "Molino Dorino", "posX": 253.120000 , "posY":776.893333},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "129","name": "Molino Dorino", "posX": 253.120000 , "posY":776.893333},
+      "second": {"id": "130","name": "Pero", "posX": 212.800000 , "posY":738.813333},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "130","name": "Pero", "posX": 212.800000 , "posY":738.813333},
+      "second": {"id": "131","name": "Rhno fiera", "posX": 168.746667 , "posY":697.746667},
+      "duration": 1.3,
+        "line":["red"]
+    },
+    {
+      "first": {"id": "120","name": "Pagano", "posX": 659.306667 , "posY":963.560000, "transferDuration":5.0},
+      "second": {"id": "132","name": "Wagner", "posX": 622.160000 , "posY":1017.320000 },
+      "duration": 1.3,
+        "line":["red-branch"]
+    },
+    {
+      "first": {"id": "132","name": "Wagner", "posX": 622.160000 , "posY":1017.320000 },
+      "second": {"id": "133","name": "De angeli", "posX": 622.160000 , "posY":1072.760000},
+      "duration": 1.3,
+        "line":["red-branch"]
+    },
+    {
+      "first": {"id": "133","name": "De angeli", "posX": 622.160000 , "posY":1072.760000},
+      "second": {"id": "134","name": "Gambara", "posX": 592.480000 , "posY":1128.760000},
+      "duration": 1.3,
+        "line":["red-branch"]
+    }
+    ,{
+      "first": {"id": "134","name": "Gambara", "posX": 592.480000 , "posY":1128.760000},
+      "second": {"id": "135","name": "Bande Nere", "posX":547.680000 , "posY":1173.000000},
+      "duration": 1.3,
+        "line":["red-branch"]
+    },
+    {
+      "first": {"id": "135","name": "Bande Nere", "posX": 547.680000 , "posY":1173.000000},
+      "second": {"id": "136","name": "Primaticcio", "posX": 502.320000 , "posY":1220.600000},
+      "duration": 1.3,
+        "line":["red-branch"]
+    },
+    {
+      "first": {"id": "136","name": "Primaticcio", "posX": 502.320000 , "posY":1220.600000},
+      "second": {"id": "137","name": "Inganni", "posX": 458.640000 , "posY":1262.040000},
+      "duration": 1.3,
+        "line":["red-branch"]
+    },
+    {
+      "first": {"id": "137","name": "Inganni", "posX": 458.640000 , "posY":1262.040000},
+      "second": {"id": "138","name": "Biseglie", "posX": 413.280000 , "posY":1307.400000 },
+      "duration": 1.3,
+        "line":["red-branch"]
+    },
+    {
+      "first": {"id": "201","name": "Bignami", "posX": 843.920000 , "posY":148.200000 },
+      "second": {"id": "202","name": "Ponale", "posX": 843.920000 , "posY":204.200000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "202","name": "Ponale", "posX": 843.920000 , "posY":204.200000},
+      "second": {"id": "203","name": "Bicocca", "posX": 842.800000 , "posY":261.320000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "203","name": "Bicocca", "posX": 842.800000 , "posY":261.320000},
+      "second": {"id": "204","name": "Ca'granda", "posX": 843.360000 , "posY":316.200000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "204","name": "Ca'granda", "posX": 843.360000 , "posY":316.200000},
+      "second": {"id": "205","name": "Istria", "posX": 842.240000 , "posY":369.400000 },
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "205","name": "Istria", "posX": 842.240000 , "posY":369.400000 },
+      "second": {"id": "206","name": "Marche", "posX": 842.240000 , "posY":424.280000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "206","name": "Marche", "posX": 842.240000 , "posY":424.280000},
+      "second": {"id": "306","name": "Zara", "posX": 841.120000 , "posY":474.120000, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "306","name": "Zara", "posX": 841.120000 , "posY":474.120000, "transferDuration":5.0},
+      "second": {"id": "208","name": "Isola", "posX": 843.920000 , "posY":610.760000 },
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "208","name": "Isola", "posX": 843.920000 , "posY":610.760000},
+      "second": {"id": "209","name": "Garibaldi", "posX": 843.360000 , "posY":676.280000, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "209","name": "Garibaldi", "posX": 843.360000 , "posY":676.280000, "transferDuration":5.0},
+      "second": {"id": "210","name": "Monumantale", "posX": 729.680000 , "posY":677.400000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "210","name": "Monumantale", "posX": 729.680000 , "posY":677.400000},
+      "second": {"id": "211","name": "Censio", "posX": 650.720000 , "posY":702.600000 },
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "211","name": "Censio", "posX": 650.720000 , "posY":702.600000 },
+      "second": {"id": "212","name": "Gerusalemme", "posX": 610.960000 , "posY":742.920000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "212","name": "Gerusalemme", "posX": 610.960000 , "posY":742.920000},
+      "second": {"id": "213","name": "Domodossola", "posX": 568.400000 , "posY":784.360000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "213","name": "Domodossola", "posX": 568.400000 , "posY":784.360000},
+      "second": {"id": "214","name": "Tre torri", "posX": 526.960000 , "posY":826.360000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "214","name": "Tre torri", "posX": 526.960000 , "posY":826.360000},
+      "second": {"id": "215","name": "Portello", "posX": 506.800000 , "posY":903.640000 },
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "215","name": "Portello", "posX": 506.800000 , "posY":903.640000 },
+      "second": {"id": "123","name": "Lotto", "posX": 505.120000 , "posY":958.520000, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "123","name": "Lotto", "posX": 505.120000 , "posY":958.520000}, "transferDuration":5.0,
+      "second": {"id": "217","name": "Segesta", "posX": 463.680000 , "posY":1063.800000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "217","name": "Segesta", "posX": 463.680000 , "posY":1063.800000},
+      "second": {"id": "218","name": "San Siro Ippodromo", "posX": 423.360000 , "posY":1108.600000},
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "218","name": "San Siro Ippodromo", "posX": 423.360000 , "posY":1108.600000},
+      "second": {"id": "219","name": "San Siro Stadio", "posX": 380.240000 , "posY":1146.680000 },
+      "duration": 1.3,
+        "line":["violet"]
+    },
+    {
+      "first": {"id": "301","name": "Cosmasina", "posX": 548.240000 , "posY":308.920000 },
+      "second": {"id": "302","name": "Affori FN", "posX": 593.600000 , "posY":354.840000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "302","name": "Affori FN", "posX": 593.600000 , "posY":354.840000},
+      "second": {"id": "303","name": "Affori Centro", "posX": 640.080000 , "posY":399.640000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "303","name": "Affori Centro", "posX": 640.080000 , "posY":399.640000},
+      "second": {"id": "304","name": "Dergano", "posX": 685.440000 , "posY":444.440000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "304","name": "Dergano", "posX": 685.440000 , "posY":444.440000},
+      "second": {"id": "305","name": "Maciachini", "posX": 763.280000 , "posY":475.240000 },
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "305","name": "Maciachini", "posX": 763.280000 , "posY":475.240000 },
+      "second": {"id": "306","name": "Zara", "posX": 842.240000 , "posY":476.360000, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "306","name": "Zara", "posX": 842.240000 , "posY":476.360000, "transferDuration":5.0},
+      "second": {"id": "307","name": "Sondrio", "posX": 957.600000 , "posY":475.240000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "307","name": "Sondrio", "posX": 957.600000 , "posY":475.240000},
+      "second": {"id": "308","name": "Centrale FS", "posX": 1057.280000 , "posY":675.160000, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "308","name": "Centrale FS", "posX": 1057.280000 , "posY":675.160000, "transferDuration":5.0},
+      "second": {"id": "309","name": "Republica", "posX": 1057.280000 , "posY":807.880000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "309","name": "Republica", "posX": 1057.280000 , "posY":807.880000},
+      "second": {"id": "310","name": "Turati", "posX": 1056.720000 , "posY":858.280000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "310","name": "Turati", "posX": 1056.720000 , "posY":858.280000},
+      "second": {"id": "311","name": "Montenapoleone", "posX": 1056.720000 , "posY":907.560000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "311","name": "Montenapoleone", "posX": 1056.720000 , "posY":907.560000},
+      "second": {"id": "312","name": "Duomo", "posX": 1057.280000 , "posY":963.560000 , "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "312","name": "Duomo", "posX": 1057.280000 , "posY":963.560000 , "transferDuration":5.0},
+      "second": {"id": "313","name": "Missori", "posX": 1079.680000 , "posY":1061.000000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "313","name": "Missori", "posX": 1079.680000 , "posY":1061.000000},
+      "second": {"id": "314","name": "Crocetta", "posX": 1125.040000 , "posY":1104.680000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "314","name": "Crocetta", "posX": 1125.040000 , "posY":1104.680000},
+      "second": {"id": "315","name": "Porta Romana", "posX": 1169.280000 , "posY":1148.360000 },
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "315","name": "Porta Romana", "posX":1169.280000 , "posY":1148.360000 },
+      "second": {"id": "316","name": "Lodi tib", "posX": 1214.640000 , "posY":1195.400000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "316","name": "Lodi tib", "posX": 1214.640000 , "posY":1195.400000},
+      "second": {"id": "317","name": "Brenta", "posX": 1260.000000 , "posY":1238.520000 },
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "317","name": "Brenta", "posX": 1260.000000 , "posY":1238.520000 },
+      "second": {"id": "318","name": "Crvetto", "posX": 1303.680000 , "posY":1284.440000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "318","name": "Crvetto", "posX": 1303.680000 , "posY":1284.440000},
+      "second": {"id": "319","name": "Porto di mare", "posX": 1349.600000 , "posY":1329.800000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "319","name": "Porto di mare", "posX": 1349.600000 , "posY":1329.800000},
+      "second": {"id": "320","name": "Rogoredo FS", "posX": 1394.400000 , "posY":1373.480000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+    {
+      "first": {"id": "320","name": "Rogoredo FS", "posX": 1394.400000 , "posY":1373.480000},
+      "second": {"id": "321","name": "San Donato", "posX": 1438.080000 , "posY":1420.520000},
+      "duration": 1.3,
+        "line":["yellow"]
+    },
+
+    {
+      "first": {"id": "401","name": "Gessate", "posX":2009.466667 , "posY":159.400000},
+      "second": {"id": "402","name": "Cascina Antonietta", "posX":1956.266667 , "posY":155.666667},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "402","name": "Cascina Antonietta", "posX":1956.266667 , "posY":155.666667},
+      "second": {"id": "403","name": "Gorgonzola", "posX":1896.533333 , "posY":158.466667},
+      "duration": 1.3,
+        "line":["green"]
+    
+    },
+    {
+      "first": {"id": "403","name": "Gorgonzola", "posX":1896.533333 , "posY":158.466667 },
+      "second": {"id": "404","name": "Villa Pompea", "posX":1827.466667 , "posY":186.466667 },
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "404","name": "Villa Pompea", "posX":1827.466667 , "posY":186.466667 },
+      "second": {"id": "405","name": "Bussero", "posX":1786.400000 , "posY":226.600000 },
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "405","name": "Bussero", "posX":1786.400000 , "posY":226.600000 },
+      "second": {"id": "406","name": "Cassina de'Pecchi", "posX":1741.600000 , "posY":264.866667},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "406","name": "Cassina de'Pecchi", "posX":1741.600000 , "posY":264.866667},
+      "second": {"id": "407","name": "Villa Fiorita", "posX":1704.266667 , "posY":307.800000},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "407","name": "Villa Fiorita", "posX":1704.266667 , "posY":307.800000},
+      "second": {"id": "408","name": "Cernusco sul Naviglio", "posX":1664.133333 , "posY":350.733333 },
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "408","name": "Cernusco sul Naviglio", "posX":1664.133333 , "posY":350.733333 },
+      "second": {"id": "409","name": "Cassina Burrona", "posX":1623.066667 , "posY":390.866667},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "409","name": "Cassina Burrona", "posX":1623.066667 , "posY":390.866667},
+      "second": {"id": "410","name": "Vimodrone", "posX":1578.266667 , "posY":430.066667},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "410","name": "Vimodrone", "posX":1578.266667 , "posY":430.066667},
+      "second": {"id": "411","name": "Cascina Gobba", "posX":1526.933333 , "posY":485.133333, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "411","name": "Cascina Gobba", "posX":1526.933333 , "posY":485.133333, "transferDuration":5.0},
+      "second": {"id": "412","name": "Cologno Sud", "posX":1534.400000 , "posY":407.666667},
+      "duration": 1.3,
+        "line":["green-branch-1"]
+    },
+    {
+      "first": {"id": "412","name": "Cologno Sud", "posX":1534.400000 , "posY":407.666667},
+      "second": {"id": "413","name": "Cologno Centro", "posX":1534.400000 , "posY":352.600000},
+      "duration": 1.3,
+        "line":["green-branch-1"]
+    },
+    {
+      "first": {"id": "413","name": "Cologno Centro", "posX":1534.400000 , "posY":352.600000},
+      "second": {"id": "415","name": "Cologno Nord", "posX":1536.266667 , "posY":293.800000},
+      "duration": 1.3,
+        "line":["green-branch-1"]
+    },
+    {
+      "first": {"id": "411","name": "Cascina Gobba", "posX":1526.933333 , "posY":485.133333, "transferDuration":5.0},
+      "second": {"id": "416","name": "Crescenzago", "posX":1484.933333 , "posY":526.200000},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "416","name": "Crescenzago", "posX":1484.933333 , "posY":526.200000},
+      "second": {"id": "418","name": "Cimiano", "posX":1442.933333 , "posY":564.466667},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "418","name": "Cimiano", "posX":1442.933333 , "posY":564.466667},
+      "second": {"id": "419","name": "Udine","posX":1401.858312 , "posY":607.780014},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "419","name": "Udine", "posX":1401.858312 , "posY":607.780014},
+      "second": {"id": "420","name": "Lambrate FS", "posX":1360.800000 , "posY":652.200000},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "420","name": "Lambrate FS", "posX":1360.800000 , "posY":652.200000},
+      "second": {"id": "421","name": "Piola", "posX":1297.333333 , "posY":678.33333},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "421","name": "Piola", "posX":1297.333333 , "posY":678.33333},
+      "second": {"id": "422","name": "Loreto",  "posX":1237.600000 , "posY":675.53333, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "422","name": "Loreto",  "posX":1237.600000 , "posY":675.53333, "transferDuration":5.0},
+      "second": {"id": "423","name": "Caiazzo", "posX":1141.466667 , "posY":677.400000},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "423","name": "Caiazzo", "posX":1141.466667 , "posY":677.400000},
+      "second": {"id": "308","name": "Centrale FS", "posX":1056.533333 , "posY":678.333333, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "308","name": "Centrale FS", "posX":1056.533333 , "posY":678.333333, "transferDuration":5.0},
+      "second": {"id": "425","name": "Giola", "posX":932.400000 , "posY":679.266667},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "425","name": "Giola", "posX":932.400000 , "posY":679.266667},
+      "second": {"id": "209","name": "Garibaldi FS", "posX":845.600000 , "posY":678.333333, "transferDuration":5.0},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "209","name": "Garibaldi FS", "posX":845.600000 , "posY":678.333333, "transferDuration":5.0},
+      "second": {"id": "427","name": "Moscova", "posX":847.280000 , "posY":759.720000},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "427","name": "Moscova", "posX":847.280000 , "posY":759.720000},
+      "second": {"id": "428","name": "Lanza", "posX":842.800000 , "posY":808.066667},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "428","name": "Lanza", "posX":842.800000 , "posY":808.066667},
+      "second": {"id": "429","name": "Cadorna",  "posX":840.933333 , "posY":960.200000},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "429","name": "Cadorna",  "posX":840.933333 , "posY":960.200000},
+      "second": {"id": "430","name": "Sant'Ambrogio", "posX":844.666667 , "posY":1016.200000},
+      "duration": 1.3,
+        "line":["green"]
+    },    
+    {
+      "first": {"id": "430","name": "Sant'Ambrogio", "posX":844.666667 , "posY":1016.20000},
+      "second": {"id": "431","name": "Sant'Agostino", "posX":842.800000 , "posY":1075.000000},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "431","name": "Sant'Agostino", "posX":842.800000 , "posY":1075.000000},
+      "second": {"id": "432","name": "Porta Genova FS", "posX":842.800000 , "posY":1130.065000},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "432","name": "Porta Genova FS", "posX":842.800000 , "posY":1130.0600},
+      "second": {"id": "433","name": "Romolo", "posX":842.800000 , "posY":1187.5600006},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "433","name": "Romolo", "posX":842.800000 , "posY":1187.560000},
+      "second": {"id": "434","name": "Famagosta", "posX":842.800000 , "posY":1243.933333},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "434","name": "Famagosta", "posX":842.800000 , "posY":1243.933333},
+      "second": {"id": "435","name": "Abbiategrasso", "posX":928.666667 , "posY":1364.333333},
+      "duration": 1.3,
+        "line":["green-branch-2"]
+    },
+    {
+      "first": {"id": "434","name": "Famagosta", "posX":842.800000 , "posY":1243.933333},
+      "second": {"id": "436","name": "Assago Milanofiori Nord", "posX":842.800000 , "posY":1354.0},
+      "duration": 1.3,
+        "line":["green"]
+    },
+    {
+      "first": {"id": "436","name": "Assago Milanofiori Nord","posX":842.800000 , "posY":1354.0},
+      "second": {"id": "437","name": "Assago Milanofiori Forum", "posX":845.040000 , "posY":1416.600000},
+      "duration": 1.3,
+        "line":["green"]
+    }]
+}

@@ -180,8 +180,6 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
 
 //MARK: Zooming
 
-
-
 - (CGRect)rectToZoom {
     
     //if the route is not built, nothing to show

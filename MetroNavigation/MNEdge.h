@@ -15,14 +15,16 @@
 @property (nonatomic, copy) MNStation *secondStation;
 @property (nonatomic, strong) NSNumber *duration;
 
-@property (nonatomic, copy) NSArray *lineNames;
+@property (nonatomic, copy) NSArray <NSString*> *lineNames;
 
 + (MNEdge *)edgeWithDuration:(NSNumber *)duration;
-
 
 - (id)initWithDuration:(NSNumber *)duration;
 - (BOOL)isEqualToEdge:(MNEdge *)anEdge;
 - (MNStation *)stationOppositeToStation:(MNStation *)aStation;
+- (MNStation *)commonStationWithEdge:(MNEdge *)aEdge;
 - (BOOL)containStation:(MNStation *)aStation;
+- (BOOL)needsTranserWithEdge:(MNEdge *)aEdge;;
+- (BOOL)isTransferEdge;
 
 @end

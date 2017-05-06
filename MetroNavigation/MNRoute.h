@@ -10,13 +10,21 @@
 
 #import "MNStation.h"
 #import "MNEdge.h"
+#import "MNLineRoute.h"
+#import "MNMetro.h"
+
+@class MNMetro;
+@class MNLineRoute;
 
 @interface MNRoute : NSObject
 
 @property (nonatomic, copy) NSArray <MNStation *> *stationsSequence;
 @property (nonatomic, copy) NSArray <MNEdge *> *edgesSequence;
+@property (nonatomic, copy) MNMetro *metro;
 
 + (MNRoute *)route;
 - (NSNumber *)totalDuration;
+- (NSInteger)totalTransfers;
+- (NSArray <MNLineRoute *> *)lineRoutes;
 
 @end

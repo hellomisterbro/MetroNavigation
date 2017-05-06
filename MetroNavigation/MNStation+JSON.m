@@ -17,6 +17,7 @@
     station.name = jsonStation[@"name"];
     station.posX = jsonStation[@"posX"];
     station.posY = jsonStation[@"posY"];
+    station.transferDuration = jsonStation[@"transferDuration"];
     
     return station;
 }

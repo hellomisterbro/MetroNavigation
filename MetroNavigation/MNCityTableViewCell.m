@@ -13,17 +13,14 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
-    // Initialization code
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
-    [UITableViewCell appearance].tintColor = [UIColor lightGreenMNColor];
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     self.accessoryType = selected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    
+    self.accessoryView.tintColor = [UIColor lightGreenMNColor];
 }
 
 @end

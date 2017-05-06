@@ -45,10 +45,10 @@
                                 </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6g-uh-TJh" customClass="MNCityButton">
-                                <rect key="frame" x="25" y="45" width="94" height="20"/>
+                                <rect key="frame" x="25" y="45" width="120" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="1I6-em-fMT"/>
-                                    <constraint firstAttribute="height" constant="20" id="kSG-6v-iVP"/>
+                                    <constraint firstAttribute="width" constant="120" id="1I6-em-fMT"/>
+                                    <constraint firstAttribute="height" constant="25" id="kSG-6v-iVP"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -364,7 +364,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="tug-9j-AIr" kind="presentation" id="MrN-Za-6sd"/>
+                        <segue destination="tug-9j-AIr" kind="relationship" relationship="rootViewController" id="mhc-qp-iZI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsh-yg-KJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -380,23 +380,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hBi-vl-5ID">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hBi-vl-5ID" id="EdN-q7-Nhj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="Qb7-xL-ZbE">
-                                <rect key="frame" x="0.0" y="72" width="375" height="61"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MNRouteDetailsReusabelCellIdentifier" rowHeight="134" id="Qb7-xL-ZbE" customClass="MNRouteDetailsForLineTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qb7-xL-ZbE" id="1nC-Yp-glT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IC-sO-Ybc">
-                                            <rect key="frame" x="13" y="8" width="42" height="21"/>
+                                            <rect key="frame" x="47" y="8" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYv-MO-5El">
+                                            <rect key="frame" x="47" y="89" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="combined-shape" translatesAutoresizingMaskIntoConstraints="NO" id="FgO-7i-Lm8">
+                                            <rect key="frame" x="19" y="10" width="22" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHx-0n-hyK" customClass="MNDurationDescriptionLabel">
+                                            <rect key="frame" x="47" y="50" width="199" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBk-lc-LT4" customClass="MNDurationDescriptionLabel">
+                                            <rect key="frame" x="244" y="112" width="123" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -404,6 +421,13 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="endStationLabel" destination="pYv-MO-5El" id="IjA-CX-RVT"/>
+                                    <outlet property="metroLineImageView" destination="FgO-7i-Lm8" id="JSD-K2-DeS"/>
+                                    <outlet property="startStationLabel" destination="6IC-sO-Ybc" id="nh9-1o-wlK"/>
+                                    <outlet property="timeDescriptionForLineLabel" destination="sHx-0n-hyK" id="ahB-n8-piU"/>
+                                    <outlet property="timeDescriptionForTransferLabel" destination="EBk-lc-LT4" id="vSr-Y6-ebt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -411,14 +435,28 @@
                             <outlet property="delegate" destination="tug-9j-AIr" id="7rW-Ot-xOg"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="sHL-1m-pJv">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="TnW-A5-KNl">
+                            <connections>
+                                <segue destination="2F6-UL-CJR" kind="unwind" unwindAction="applyNoneChanges:" id="6gf-aF-iTs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="3od-Wh-VjG">
+                            <connections>
+                                <segue destination="2F6-UL-CJR" kind="unwind" unwindAction="applyNoneChanges:" id="Q5P-9o-hzF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIb-e0-qUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2F6-UL-CJR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="137" y="1350"/>
+            <point key="canvasLocation" x="136.80000000000001" y="1349.7751124437782"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrows" width="69" height="63"/>
+        <image name="combined-shape" width="69" height="330"/>
         <image name="handle" width="50" height="6"/>
     </resources>
     <inferredMetricsTieBreakers>

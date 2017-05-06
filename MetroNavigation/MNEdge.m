@@ -22,6 +22,7 @@
     
     if (self) {
         _duration = duration;
+        _lineNames = [NSArray array];
     }
     
     return self;
@@ -73,6 +74,8 @@
     
     edge.firstStation = self.firstStation;
     edge.secondStation = self.secondStation;
+    edge.duration = self.duration;
+    edge.lineNames = self.lineNames;
     
     return edge;
 }
@@ -87,6 +90,7 @@
         self.firstStation = [aDecoder decodeObjectForKey:@"firstStation"];
         self.secondStation = [aDecoder decodeObjectForKey:@"secondStation"];
         self.duration = [aDecoder decodeObjectForKey:@"duration"];
+        self.lineNames = [aDecoder decodeObjectForKey:@"lineNames"];
     }
     return self;
 }
@@ -94,14 +98,15 @@
     [aCoder encodeObject:self.firstStation forKey:@"firstStation"];
     [aCoder encodeObject:self.secondStation forKey:@"secondStation"];
     [aCoder encodeObject:self.duration forKey:@"duration"];
+    [aCoder encodeObject:self.lineNames forKey:@"lineNames"];
 }
 
 // MARK: - Description
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ - %@ [%@]",
-            self.firstStation.identifier,
-            self.secondStation.identifier,
+            self.firstStation.name,
+            self.secondStation.name,
             self.duration];
 }
 
@@ -130,5 +135,33 @@
     return NO;
 }
 
+- (MNStation *)commonStationWithEdge:(MNEdge *)aEdge {
+    
+    if ([self containStation:aEdge.firstStation]) {
+        return aEdge.firstStation;
+    }
+    
+    if ([self containStation:aEdge.secondStation]) {
+        return aEdge.secondStation;
+    }
+    
+    return nil;
+}
+
+- (BOOL)needsTranserWithEdge:(MNEdge *)aEdge {
+    
+    if (!aEdge) {
+        return NO;
+    }
+    
+    NSSet *selfLinesSet = [NSSet setWithArray:self.lineNames];
+    NSSet *edgeLinesSet = [NSSet setWithArray:aEdge.lineNames];
+    
+    return ![selfLinesSet isSubsetOfSet:edgeLinesSet] && ![edgeLinesSet isSubsetOfSet:selfLinesSet];
+}
+
+- (BOOL)isTransferEdge {
+    return self.lineNames.count > 1;
+}
 
 @end

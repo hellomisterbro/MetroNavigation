@@ -62,11 +62,107 @@
     
     double totalDuration = 0;
     
-    for (MNEdge *edge in self.edgesSequence) {
-        totalDuration += [edge.duration doubleValue];
+    MNEdge *previousEdge = nil;
+    for (MNEdge *currentEdge in self.edgesSequence) {
+       
+        totalDuration += [currentEdge.duration doubleValue];
+        
+        if ([previousEdge needsTranserWithEdge:currentEdge]) {
+            NSNumber *transferDuration = [previousEdge commonStationWithEdge:currentEdge].transferDuration;
+            totalDuration += [transferDuration doubleValue];
+        }
+        
+        previousEdge = currentEdge;
     }
     
     return @(totalDuration);
 }
 
+- (NSInteger)totalTransfers {
+    
+    NSInteger totalTransfersCount = 0;
+    
+    MNEdge *previousEdge = nil;
+    for (MNEdge *currentEdge in self.edgesSequence) {
+        
+        if (currentEdge.isTransferEdge) {
+            totalTransfersCount++;
+        }
+        
+        if ([previousEdge needsTranserWithEdge:currentEdge]) {
+            totalTransfersCount++;
+        }
+        
+        previousEdge = currentEdge;
+    }
+    
+    return totalTransfersCount;
+}
+
+- (NSArray <MNLineRoute *> *)lineRoutes {
+    
+    NSMutableArray *lineRoutes = [NSMutableArray array];
+    
+    NSMutableArray *stationsSequence = [self.stationsSequence mutableCopy];
+
+    while (stationsSequence.count) {
+        
+        NSMutableArray *lineStationSequence = [NSMutableArray new];
+        
+        MNStation *previousStation = nil;
+        MNEdge *previousEdge = nil;
+        
+        MNLineRoute *lineRoute = [MNLineRoute new];
+        lineRoute.metro = self.metro;
+        
+        [lineRoutes addObject:lineRoute];
+        
+        for (MNStation *currentStation in stationsSequence) {
+
+            MNEdge *edgeFromCurrentToPrevious = [self.metro edgeFromStation:currentStation toStation:previousStation];
+            
+            if (edgeFromCurrentToPrevious.isTransferEdge) {
+
+                lineRoute.stationSequence = lineStationSequence;
+                [stationsSequence removeObjectsInArray:lineStationSequence];
+                
+                lineRoute.line = [self.metro lineForStation:previousStation];
+                
+                break;
+            }
+            
+            if ([edgeFromCurrentToPrevious needsTranserWithEdge:previousEdge]) {
+                lineRoute.stationSequence = lineStationSequence;
+                [stationsSequence removeObjectsInArray:lineStationSequence];
+                [stationsSequence insertObject:previousStation atIndex:0];
+                
+                lineRoute.line = [self.metro lineByNamed:[previousEdge.lineNames firstObject]];
+                
+                break;
+            }
+            
+            [lineStationSequence addObject:currentStation];
+            
+            if ([currentStation isEqual:stationsSequence.lastObject]) {
+                [stationsSequence removeObjectsInArray:lineStationSequence];
+            }
+            
+            previousStation = currentStation;
+            previousEdge = edgeFromCurrentToPrevious;
+        }
+        
+    }
+
+    return lineRoutes;
+}
+
+
+
 @end
+
+
+
+
+
+
+

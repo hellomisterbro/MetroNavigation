@@ -27,8 +27,15 @@
     [self.endStaion setTitle:name forState:UIControlStateNormal];
 }
 
-- (void)setTotalDuration:(NSNumber *)totalDuration {
-    self.timelabel.text = [NSString stringWithFormat:@"~Approx. %.2f mins", [totalDuration doubleValue]];
+- (void)setTotalDuration:(NSNumber *)totalDuration withTransfersCount:(NSInteger)transfersCount {
+    NSMutableString *textTotPresent = [NSMutableString stringWithFormat:@"~Approx. %.2f mins", [totalDuration doubleValue]];
+    
+    NSString *transfersDescription = (transfersCount == 0) ? @", no transfers" : [NSString stringWithFormat:@", %li transfers.", (long)transfersCount];
+    
+    [textTotPresent appendString:transfersDescription];
+    
+    self.timelabel.text = textTotPresent;
+    
 }
 
 - (IBAction)cancelClicked:(id)sender {

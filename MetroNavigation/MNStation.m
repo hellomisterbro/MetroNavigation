@@ -60,6 +60,7 @@
     station.name = self.name;
     station.posX = self.posX;
     station.posY = self.posY;
+    station.transferDuration = self.transferDuration;
     
     return station;
 }
@@ -74,6 +75,7 @@
         self.identifier = [aDecoder decodeObjectForKey:@"identifier"];
         self.posX = [aDecoder decodeObjectForKey:@"posX"];
         self.posY = [aDecoder decodeObjectForKey:@"posY"];
+        self.transferDuration = [aDecoder decodeObjectForKey:@"transferDuration"];
     }
     return self;
 }
@@ -82,6 +84,7 @@
     [aCoder encodeObject:self.identifier forKey:@"identifier"];
     [aCoder encodeObject:self.posX forKey:@"posX"];
     [aCoder encodeObject:self.posY forKey:@"posY"];
+    [aCoder encodeObject:self.transferDuration forKey:@"transferDuration"];
 }
 
 @end

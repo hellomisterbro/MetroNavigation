@@ -26,6 +26,8 @@ NSString *const kUnwindMetroChangedSegueName = @"MNStationChangedUnwindToMetroVi
 
 NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
 
+#define MNDiameterForPinDetecting 20
+
 
 @interface MNMetroRouteViewController () <UIScrollViewDelegate, MNMetroImageViewDelegate, UIViewControllerTransitioningDelegate, MNRouteDescriptionBannerViewDelegate, MNStationSearchViewControllerDelegate>
 
@@ -38,18 +40,21 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
 //calculated short path
 @property (nonatomic, strong) MNRoute* route;
 
-//update all pins in image view
-- (void)updatePinsAndRouteDisplayingWithStartStation:(MNStation *)station endStation:(MNStation *)endStation;
+//The following method updates all image pins due to the passed parameters -  startStation, end Station
+//Builds a route if end station is not nill
+//If the route is built the appropriate banner is displayed, if not - is hidden
+- (void)updatePinsAndRouteDisplayingWithStartStation:(MNStation *)aStartStation endStation:(MNStation *)anEndStation;
 
 //update controllers state (image, pins etc.).
-//Typically need calling when metro state is changed
+//Typically need calling when global metro state is changed
 - (void)updateControllerState;
 
 //displaing and hiding banner correspondingly
 - (void)displayRouteDescriptionBanner;
 - (void)hideRouteDescriptionBanner;
 
-//zooming scroll view for convinient look of the route
+//Zooms to the route. Takes into account all the pins presented on image view and the banner, that will be displayed afterwards.
+//Does nothing, if the pins doesnt currently exist.
 - (void)zoomToSelectedRoute;
 
 //getting CGPoint value from the MNStation object's posX and posY properties
@@ -171,11 +176,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     [self.scrollView zoomToRect:self.metroImage.frame animated:YES];
 }
 
-//The following method updates all image pins due to the properties if view controller -  startStation, end Station
-//Builds a route if end station is not nill
-//If the route is built the appropriate banner is displayed, if not - is hidden
-
-- (void)updatePinsAndRouteDisplayingWithStartStation:(MNStation *)station endStation:(MNStation *)endStation {
+- (void)updatePinsAndRouteDisplayingWithStartStation:(MNStation *)aStartStation endStation:(MNStation *)anEndStation {
     
     //clean the image
     [self.metroImage cleanImageFromPins];
@@ -184,17 +185,17 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     
     //set first pin
     if (self.startStation) {
-        CGPoint startStationPoint = [self pointFromStation:self.startStation];
+        CGPoint startStationPoint = [self pointFromStation:aStartStation];
         [self.metroImage addStartPinAtPoint:startStationPoint];
     }
     
     //set second pin
     if (self.endStation) {
-        CGPoint endStationPoint = [self pointFromStation:self.endStation];
+        CGPoint endStationPoint = [self pointFromStation:anEndStation];
         [self.metroImage addEndPinAtPoint:endStationPoint];
         
         MNMetro *metro = MNMetroStateHolder.sharedInstance.currentMetroState;
-        self.route = [metro shortestRouteFromStation:self.startStation toStation:self.endStation];
+        self.route = [metro shortestRouteFromStation:aStartStation toStation:anEndStation];
     }
     
     if (self.route) {
@@ -203,7 +204,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
         
         for (MNStation *station in self.route.stationsSequence) {
             
-            if (![station isEqual:self.startStation] && ![station isEqual:self.endStation]) {
+            if (![station isEqual:aStartStation] && ![station isEqual:anEndStation]) {
                 
                 CGPoint intermidiatePoint = [self pointFromStation:station];
                 [self.metroImage addInterMediatePinAtPoint:intermidiatePoint];
@@ -223,7 +224,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     }
 }
 
-//Zooms to the route. Takes into account all the pins presented on image view and the banner, that will be displayed afterwards. Does nothing, if the pins doesnt currently exist.
+
 
 - (void)zoomToSelectedRoute {
     
@@ -258,7 +259,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     
     MNMetro *metro = MNMetroStateHolder.sharedInstance.currentMetroState;
     
-    MNStation *selectedStation =  [metro stationWithImagePositionX:point.x positionY:point.y radious:15];
+    MNStation *selectedStation =  [metro stationWithImagePositionX:point.x positionY:point.y radious:MNDiameterForPinDetecting];
     
     if (selectedStation) {
         
@@ -343,9 +344,9 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     //banner configuration
     [self.routeDescriptionBannerView setStartStationName:self.startStation.name];
     [self.routeDescriptionBannerView setEndStationName:self.endStation.name];
-    [self.routeDescriptionBannerView setTotalDuration:self.route.totalDuration];
+    [self.routeDescriptionBannerView setTotalDuration:self.route.totalDuration withTransfersCount:self.route.totalTransfers];
     
-    //updating contrains for seeing for displaying the banner
+    //updating contrains
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = 0;
     
     //updating views to fit the contrains

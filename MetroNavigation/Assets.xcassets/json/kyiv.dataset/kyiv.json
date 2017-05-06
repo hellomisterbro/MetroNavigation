@@ -323,7 +323,7 @@
       "first": {"id": "313","name": "Zoloti vorota", "posX": 529.378994,"posY": 368.804047},
       "second": {"id": "109","name": "Teatralna", "posX":540.440644 ,"posY":379.865697},
       "duration": 1.3,
-        "line":["green", "blue"]
+        "line":["green", "red"]
     },
     {
       "first": {"id": "108","name": "Khreschatyk", "posX":631.567576 ,"posY":349.841217},

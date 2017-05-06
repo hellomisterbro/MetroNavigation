@@ -92,13 +92,13 @@
 // MARK: - NSCoping
 
 - (id)copyWithZone:(NSZone *)zone {
-  
+    
     MNMetro *metro = [MNMetro metro];
     
     metro.edges = [[NSArray alloc] initWithArray:self.edges copyItems:YES];
     metro.stations = [[NSArray alloc] initWithArray:self.edges copyItems:YES];
     metro.lines = [[NSArray alloc] initWithArray:self.lines copyItems:YES];
-
+    
     metro.name = self.name;
     metro.ID = self.ID;
     metro.name = self.name;
@@ -115,6 +115,7 @@
         self.stations = [aDecoder decodeObjectForKey:@"stations"];
         self.edges = [aDecoder decodeObjectForKey:@"edges"];
         self.ID = [aDecoder decodeObjectForKey:@"ID"];
+        self.lines = [aDecoder decodeObjectForKey:@"lines"];
     }
     return self;
 }
@@ -124,6 +125,7 @@
     [aCoder encodeObject:self.stations forKey:@"stations"];
     [aCoder encodeObject:self.edges forKey:@"edges"];
     [aCoder encodeObject:self.ID forKey:@"ID"];
+    [aCoder encodeObject:self.lines forKey:@"lines"];
 }
 
 
@@ -160,7 +162,7 @@
     if (![self.stations containsObject:anotherStation]) {
         self.stations = [self.stations arrayByAddingObject:anotherStation];
     }
-
+    
     self.edges = [self.edges arrayByAddingObject:anEdge];
 }
 
@@ -194,17 +196,29 @@
 - (NSNumber *)durationFromStation:(MNStation *)sourceStation toNeighboringStation:(MNStation *)targetStation
 {
     MNEdge *graphEdge = [self edgeFromStation:sourceStation toStation:targetStation];
-
+    
     return (graphEdge) ? graphEdge.duration : nil;
 }
 
-// MARK: - Dijkstra shortestpath algorithm 
+- (MNLine *)lineByNamed:(NSString *)aName {
+    
+    for (MNLine *line in self.lines) {
+        
+        if ([line.name isEqualToString:aName]) {
+            return line;
+        }
+    }
+    
+    return nil;
+}
+
+// MARK: - Dijkstra shortestpath algorithm
 
 
 - (MNRoute *)shortestRouteFromStation:(MNStation *)sourceStation toStation:(MNStation *)targetStation {
     //The smallest amount of time to the origin for each station in the graph
     NSMutableArray <MNStation *> *unvisitedStations = [NSMutableArray arrayWithArray:self.stations];
-
+    
     NSMutableDictionary <NSString *, NSNumber*> *durationFromSource = [NSMutableDictionary dictionaryWithCapacity:self.stations.count];
     
     NSMutableDictionary <NSString *, MNStation*> *previousStationInOptimalPath = [NSMutableDictionary dictionaryWithCapacity:self.stations.count];
@@ -226,7 +240,7 @@
         
         if (stationWithMinDuration == nil) {
             break;
-
+            
         } else {
             
             if ([stationWithMinDuration isEqual:targetStation]) {
@@ -238,24 +252,21 @@
                 
                 [unvisitedStations removeObject:stationWithMinDuration];
                 
-                //
                 MNStation *previousStation = previousStationInOptimalPath[stationWithMinDuration.identifier];
                 MNEdge *edgeFromStationWithMinDurationToItsPrevious = [self edgeFromStation:previousStation toStation:stationWithMinDuration];
                 
-                //
-   
-                
                 for (MNStation *neighboringStation in [self neighboringStationsToStation:stationWithMinDuration]) {
                     
-                    NSNumber *alt = @([durationFromSource[stationWithMinDuration.identifier] floatValue] + [[self durationFromStation:stationWithMinDuration toNeighboringStation:neighboringStation] floatValue]);
-            
+                    NSNumber *alt = @([durationFromSource[stationWithMinDuration.identifier] doubleValue] + [[self durationFromStation:stationWithMinDuration toNeighboringStation:neighboringStation] doubleValue]);
+                    
                     NSNumber *durationFromNeighborToOrigin = durationFromSource[neighboringStation.identifier];
-                    //
-                    MNEdge *edgeFromStationWithMinDurationToNeighbour = [self edgeFromStation:previousStation toStation:stationWithMinDuration];
-//                    if ([NSSet setWithArray:<#(nonnull NSArray *)#>]) {
-//                        
-//                    }
-                    //
+                    
+                    //Take into account the tranfer
+                    MNEdge *edgeFromStationWithMinDurationToNeighbour = [self edgeFromStation:neighboringStation toStation:stationWithMinDuration];
+                    if ([edgeFromStationWithMinDurationToNeighbour needsTranserWithEdge:edgeFromStationWithMinDurationToItsPrevious]) {
+                        alt = @([alt doubleValue] + [stationWithMinDuration.transferDuration doubleValue]);
+                    }
+                    
                     if ([durationFromNeighborToOrigin isEqualToNumber:INFINITY_FOR_SHORTEST_PATH_PROBLEM] ||
                         [alt compare:durationFromNeighborToOrigin] == NSOrderedAscending) {
                         
@@ -271,10 +282,12 @@
     if (currentlyExaminedStation == nil || ![currentlyExaminedStation isEqual:targetStation]) {
         
         return nil;
-     
+        
     } else {
         
         MNRoute *route = [MNRoute route];
+        
+        route.metro = self;
         
         NSMutableArray *stationsSequence = [route.stationsSequence mutableCopy];
         NSMutableArray *edgesSequence = [route.edgesSequence mutableCopy];
@@ -322,6 +335,22 @@
     }
     
     return resultStation;
+}
+
+//Returns the line for a station
+//IMPORTANT: only works for specific strucure of graph (when one station cannot belong to several lines).
+- (MNLine *)lineForStation:(MNStation *)aStation {
+    
+    for (MNStation *neighboringStation in [self neighboringStationsToStation:aStation]) {
+        
+        MNEdge *neighboringEdge = [self edgeFromStation:aStation toStation:neighboringStation];
+        
+        if (!neighboringEdge.isTransferEdge) {
+            return [self lineByNamed:[neighboringEdge.lineNames firstObject]];
+        }
+    }
+    
+    return nil;
 }
 
 @end
