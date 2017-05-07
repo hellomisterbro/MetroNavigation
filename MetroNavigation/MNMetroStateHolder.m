@@ -52,7 +52,7 @@ NSString *const kCityMetroStateKeyForUserDefaults = @"MNCityMetroStateKey";
     NSData *encodedObject = [defaults objectForKey:kCityMetroStateKeyForUserDefaults];
    
     if (encodedObject) {
-        MNMetro *loadedMetro = (MNMetro *)[NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+        MNMetro *loadedMetro = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
         return loadedMetro;
     }
     

@@ -15,21 +15,16 @@
 #import "MNStationSearchViewController.h"
 #import "MNRouteDetailsViewController.h"
 
-
-NSString *const kDetailsSegueName = @"MNDisplayRouteListSegue";
-NSString *const kCityChangeSegueName = @"MNCityChangeSegue";
-
 NSString *const kEndStationChangeSegueName = @"MNEndStationChangeSegue";
 NSString *const kStartStationChangeSegueName = @"MNStartStationChangeSegue";
 NSString *const kShowDetailsSegue = @"MNShowDetailsSegue";
 
 NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
 
-
 const int kMinDiameterForPinDetecting = 20;
 
 
-@interface MNMetroRouteViewController () <UIScrollViewDelegate, MNMetroImageViewDelegate, UIViewControllerTransitioningDelegate, MNRouteDescriptionBannerViewDelegate, MNStationSearchViewControllerDelegate>
+@interface MNMetroRouteViewController () <UIScrollViewDelegate, MNMetroImageViewDelegate, MNRouteDescriptionBannerViewDelegate, MNStationSearchViewControllerDelegate>
 
 //currently selected start station
 @property (nonatomic, strong) MNStation* startStation;
@@ -188,7 +183,7 @@ const int kMinDiameterForPinDetecting = 20;
     
     //clean the image
     [self.metroImage cleanImageFromPins];
-   
+    
     self.route = nil;
     
     //set first pin
@@ -264,8 +259,7 @@ const int kMinDiameterForPinDetecting = 20;
     [self.routeDescriptionBannerView setStartStationName:self.startStation.name];
     [self.routeDescriptionBannerView setEndStationName:self.endStation.name];
     [self.routeDescriptionBannerView.timelabel setTotalDuration:self.route.totalDuration withTransfersCount:self.route.totalTransfers];
-    
-    //updating contrains
+
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = 0;
     
     //updating views to fit the contrains
@@ -277,7 +271,7 @@ const int kMinDiameterForPinDetecting = 20;
 - (void)hideRouteDescriptionBanner {
     [self.view layoutIfNeeded];
     
-    //updating contrains for hiding the banner
+    //change conatrains to hide the banner
     CGFloat bannerHeight = CGRectGetHeight(self.routeDescriptionBannerView.frame);
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = -bannerHeight;
     
@@ -287,6 +281,23 @@ const int kMinDiameterForPinDetecting = 20;
     }];
 }
 
+// MARK: - RouteDescriptionBannerViewDelegate
+
+-(void)swipeStationDidClickWithRouteDescriptionBanner:(MNRouteDescriptionBannerView *)routeDescBanner {
+    
+    MNStation *endStation = self.endStation;
+    
+    self.endStation = self.startStation;
+    self.startStation = endStation;
+    
+    [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
+}
+
+- (void)cancelDidClickWithRouteDescriptionBanner:(MNRouteDescriptionBannerView *)routeDescBanner {
+    [self hideRouteDescriptionBanner];
+}
+
+
 
 // MARK: - UIScrollViewDelegate
 
@@ -294,7 +305,17 @@ const int kMinDiameterForPinDetecting = 20;
     return  self.metroImage;
 }
 
-// MARK: - MetroImageViewDelegate
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    
+}
+
+
+// MARK: - MNMetroImageViewDelegate
 
 - (void)imageTouchedAtPoint:(CGPoint)point metroImageView:(MNMetroImageView *)metroImageView {
     
@@ -329,8 +350,9 @@ const int kMinDiameterForPinDetecting = 20;
             
             self.endStation = nil;
         }
-
-    [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
+        
+        [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
+        
     }
     
 }
@@ -349,22 +371,6 @@ const int kMinDiameterForPinDetecting = 20;
     }
 }
 
-// MARK: - RouteDescriptionBannerViewDelegate
-
--(void)swipeStationDidClickWithRouteDescriptionBanner:(MNRouteDescriptionBannerView *)routeDescBanner {
-    
-    MNStation *endStation = self.endStation;
-    
-    self.endStation = self.startStation;
-    self.startStation = endStation;
-    
-    //update swapped pins
-    [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
-}
-
-- (void)cancelDidClickWithRouteDescriptionBanner:(MNRouteDescriptionBannerView *)routeDescBanner {
-    [self hideRouteDescriptionBanner];
-}
 
 
 // MARK: - Local Helpers

@@ -34,6 +34,8 @@
 - (MNLine *)lineByNamed:(NSString *)aName;
 - (NSNumber *)durationFromStation:(MNStation *)sourceStation toNeighboringStation:(MNStation *)targetStation;
 - (MNRoute *)shortestRouteFromStation:(MNStation *)sourceStation toStation:(MNStation *)targetStation;
+
+//Returns the statation the has 
 - (MNStation *)stationWithImagePositionX:(double)x positionY:(double)y radious:(double)radious;
 
 //Returns the line for a station

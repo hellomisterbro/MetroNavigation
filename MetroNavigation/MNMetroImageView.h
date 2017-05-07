@@ -20,7 +20,7 @@
 
 @interface MNMetroImageView : UIImageView
 
-@property (nonatomic, weak) id<MNMetroImageViewDelegate> delegate;
+@property (nonatomic, weak) id <MNMetroImageViewDelegate> delegate;
 
 - (CGRect)rectToZoom;
 

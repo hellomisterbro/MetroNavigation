@@ -79,6 +79,7 @@
     }
     return self;
 }
+
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.identifier forKey:@"identifier"];

@@ -6,10 +6,10 @@
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
+#import "UIColor+MNColors.h"
 #import "MNRouteDetailsViewController.h"
 #import "MNRouteDetailsForLineTableViewCell.h"
 
-#import "UIColor+MNColors.h"
 
 NSString *const kTwoStationsReusableCell = @"MNRofuteDetailsTwoStationsReusabelCell";
 NSString *const kOneStationReusableCell = @"MNRofuteDetailsOneStationReusabelCell";

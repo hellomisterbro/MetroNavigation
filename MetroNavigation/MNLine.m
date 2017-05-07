@@ -60,6 +60,7 @@
     }
     return self;
 }
+
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.color forKey:@"colors"];

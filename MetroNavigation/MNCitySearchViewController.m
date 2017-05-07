@@ -6,11 +6,11 @@
 //  Copyright © 2017 Nikita Kirichek. All rights reserved.
 //
 
-#import "MNCitySearchViewController.h"
-#import "MNCityTableViewCell.h"
 #import "MNDataAPI.h"
 #import "MNMetroStateHolder.h"
 
+#import "MNCitySearchViewController.h"
+#import "MNCityTableViewCell.h"
 #import "UIColor+MNColors.h"
 
 NSString *const kReusableCellForCitySearch = @"cityNameCellIdentifier";
@@ -43,10 +43,7 @@ NSString *const kUnwindToMetroViewControllerSegueName = @"MNMetroChangedUnwindTo
         
         if (self.selectedMetroID) {
             MNMetro *metro = [DataAPI metroWithIdentifier:self.selectedMetroID];
-            
-            if (metro) {
-                [MNMetroStateHolder sharedInstance].currentMetroState = metro;
-            }
+            [MNMetroStateHolder sharedInstance].currentMetroState = metro;
         }
     }
 }

@@ -121,6 +121,7 @@
             
             MNEdge *edgeFromCurrentToPrevious = [self.metro edgeFromStation:currentStation toStation:previousStation];
             
+            //transfer found
             if (edgeFromCurrentToPrevious.isTransferEdge) {
                 
                 lineRoute.stationSequence = lineStationSequence;
@@ -133,6 +134,7 @@
                 break;
             }
             
+            //transfer found
             if ([edgeFromCurrentToPrevious needsTranserWithEdge:previousEdge]) {
                 lineRoute.stationSequence = lineStationSequence;
                 [stationsSequence removeObjectsInArray:lineStationSequence];
@@ -151,7 +153,7 @@
                 [stationsSequence removeObjectsInArray:lineStationSequence];
                 lineRoute.stationSequence = lineStationSequence;
                 
-                //if no previous, connect it to 
+                //if no previous, connect it to the station that  
                 if (!previousStation) {
                     previousStation = lineRoutes.lastObject.stationSequence.lastObject;
                     edgeFromCurrentToPrevious = [self.metro edgeFromStation:currentStation toStation:previousStation];;

@@ -9,7 +9,7 @@
 #import "MNMetroImageView.h"
 #import "MNDataAPI.h"
 
-#define kDiameterForPin 10.0f
+const CGFloat kDiameterForPin = 10.0f;
 
 NSString *const kMetroNavigationStartPinName = @"start";
 NSString *const kMetroNavigationEndPinName = @"end";

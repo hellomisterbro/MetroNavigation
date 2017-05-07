@@ -321,7 +321,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZg-af-L40" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ifG-FN-dBN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="274"/>
+            <point key="canvasLocation" x="1924" y="307"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hOd-H5-vmm">
@@ -359,7 +359,7 @@
         <scene sceneID="jXl-sq-clX">
             <objects>
                 <navigationController id="Thd-Mv-qU2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RiX-Qu-5S7" customClass="MNSearchListNavigationBar">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RiX-Qu-5S7" customClass="MNSearchListNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -369,7 +369,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsh-yg-KJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="622"/>
+            <point key="canvasLocation" x="137" y="572"/>
         </scene>
         <!--Route Details-->
         <scene sceneID="SL7-aZ-Gpx">
@@ -480,11 +480,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Route Details" id="sHL-1m-pJv">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="TnW-A5-KNl">
-                            <connections>
-                                <segue destination="2F6-UL-CJR" kind="unwind" unwindAction="applyNoneChanges:" id="6gf-aF-iTs"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="3od-Wh-VjG">
                             <connections>
                                 <segue destination="2F6-UL-CJR" kind="unwind" unwindAction="applyNoneChanges:" id="Q5P-9o-hzF"/>
@@ -498,7 +493,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIb-e0-qUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2F6-UL-CJR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="1349.7751124437782"/>
+            <point key="canvasLocation" x="137" y="1271"/>
         </scene>
     </scenes>
     <resources>
@@ -508,6 +503,6 @@
         <image name="handle" width="50" height="6"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lch-rU-qDd"/>
+        <segue reference="1Z9-fE-eFv"/>
     </inferredMetricsTieBreakers>
 </document>
