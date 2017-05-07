@@ -26,7 +26,7 @@ NSString *const kShowDetailsSegue = @"MNShowDetailsSegue";
 NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
 
 
-#define MNDiameterForPinDetecting 20
+const int kMinDiameterForPinDetecting = 20;
 
 
 @interface MNMetroRouteViewController () <UIScrollViewDelegate, MNMetroImageViewDelegate, UIViewControllerTransitioningDelegate, MNRouteDescriptionBannerViewDelegate, MNStationSearchViewControllerDelegate>
@@ -300,7 +300,7 @@ NSString *const kKeyPathForCurrentMetroState = @"currentMetroState";
     
     MNMetro *metro = MNMetroStateHolder.sharedInstance.currentMetroState;
     
-    MNStation *selectedStation =  [metro stationWithImagePositionX:point.x positionY:point.y radious:MNDiameterForPinDetecting];
+    MNStation *selectedStation =  [metro stationWithImagePositionX:point.x positionY:point.y radious:kMinDiameterForPinDetecting];
     
     if (selectedStation) {
         
