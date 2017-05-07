@@ -25,6 +25,8 @@
 + (MNRoute *)route;
 - (NSNumber *)totalDuration;
 - (NSInteger)totalTransfers;
+
+//Returns route lines for current route. Route lines consist of the sequence of station that applies for part of the route between stations
 - (NSArray <MNLineRoute *> *)routeLines;
 
 @end

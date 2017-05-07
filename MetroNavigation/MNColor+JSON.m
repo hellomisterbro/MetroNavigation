@@ -12,7 +12,7 @@
 
 + (MNColor *)colorFromJSON:(NSDictionary *)colorJSON {
     
-    MNColor *color = [MNColor new];
+    MNColor *color = [[MNColor alloc] init];
     
     color.red = colorJSON[@"red"];
     color.green = colorJSON[@"green"];

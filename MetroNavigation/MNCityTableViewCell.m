@@ -13,6 +13,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [UITableViewCell appearance].tintColor = [UIColor lightGreenMNColor];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

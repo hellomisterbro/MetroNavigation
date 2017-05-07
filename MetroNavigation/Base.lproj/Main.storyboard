@@ -432,7 +432,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBk-lc-LT4" customClass="MNTransferTimeLabel">
-                                            <rect key="frame" x="241" y="113" width="123" height="21"/>
+                                            <rect key="frame" x="121" y="113" width="243" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -504,7 +504,7 @@
     <resources>
         <image name="arrows" width="69" height="63"/>
         <image name="circel-details" width="34" height="37"/>
-        <image name="combined-shape" width="69" height="330"/>
+        <image name="combined-shape" width="69" height="327"/>
         <image name="handle" width="50" height="6"/>
     </resources>
     <inferredMetricsTieBreakers>

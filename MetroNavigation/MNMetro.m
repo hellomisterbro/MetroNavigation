@@ -55,7 +55,7 @@
         return YES;
     }
     
-    if (!other || ![other isKindOfClass:[self class]]) {
+    if (!other || ![other isKindOfClass:[MNMetro class]]) {
         return NO;
     }
     
@@ -63,9 +63,6 @@
 }
 
 - (BOOL)isEqualToMetro:(MNMetro *)aMetro {
-    if (self == aMetro)
-        return YES;
-    
     if (![self.ID isEqualToString:aMetro.ID]) {
         return NO;
     }

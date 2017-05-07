@@ -11,7 +11,7 @@
 @implementation MNTransferTimeLabel
 
 - (void)setTransferDuration:(NSNumber *)aTransferDuration {
-    self.text = [NSString stringWithFormat:@"+ %.2f mins", [aTransferDuration doubleValue]];
+    self.text = [NSString stringWithFormat:@"+ %.2f mins transfer", [aTransferDuration doubleValue]];
 }
 
 @end

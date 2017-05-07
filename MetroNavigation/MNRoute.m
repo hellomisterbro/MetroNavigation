@@ -64,7 +64,7 @@
     
     MNEdge *previousEdge = nil;
     for (MNEdge *currentEdge in self.edgesSequence) {
-       
+        
         totalDuration += [currentEdge.duration doubleValue];
         
         if ([previousEdge needsTranserWithEdge:currentEdge]) {
@@ -101,10 +101,10 @@
 
 - (NSArray <MNLineRoute *> *)routeLines {
     
-    NSMutableArray *lineRoutes = [NSMutableArray array];
+    NSMutableArray <MNLineRoute*> *lineRoutes = [NSMutableArray array];
     
     NSMutableArray *stationsSequence = [self.stationsSequence mutableCopy];
-
+    
     while (stationsSequence.count) {
         
         NSMutableArray *lineStationSequence = [NSMutableArray new];
@@ -118,11 +118,11 @@
         [lineRoutes addObject:lineRoute];
         
         for (MNStation *currentStation in stationsSequence) {
-
+            
             MNEdge *edgeFromCurrentToPrevious = [self.metro edgeFromStation:currentStation toStation:previousStation];
             
             if (edgeFromCurrentToPrevious.isTransferEdge) {
-
+                
                 lineRoute.stationSequence = lineStationSequence;
                 [stationsSequence removeObjectsInArray:lineStationSequence];
                 
@@ -149,8 +149,22 @@
             
             if ([currentStation isEqual:stationsSequence.lastObject]) {
                 [stationsSequence removeObjectsInArray:lineStationSequence];
-                lineRoute.line = [self.metro lineByNamed:[edgeFromCurrentToPrevious.lineNames firstObject]];
                 lineRoute.stationSequence = lineStationSequence;
+                
+                //if no previous, connect it to 
+                if (!previousStation) {
+                    previousStation = lineRoutes.lastObject.stationSequence.lastObject;
+                    edgeFromCurrentToPrevious = [self.metro edgeFromStation:currentStation toStation:previousStation];;
+                }
+                
+                if (edgeFromCurrentToPrevious.isTransferEdge) {
+                    
+                    lineRoute.line = [self.metro lineForStation:previousStation];
+                    
+                } else {
+                    
+                    lineRoute.line = [self.metro lineByNamed:[edgeFromCurrentToPrevious.lineNames firstObject]];
+                }
             }
             
             previousStation = currentStation;
@@ -158,7 +172,7 @@
         }
         
     }
-
+    
     return lineRoutes;
 }
 

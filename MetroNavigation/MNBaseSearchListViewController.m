@@ -38,7 +38,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.namesForTableView = self.contentForTableView.allKeys;
+    // fill names of sorted keys
+    self.namesForTableView = [self.contentForTableView.allKeys  sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 }
 
 - (void)didReceiveMemoryWarning {

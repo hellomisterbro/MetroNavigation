@@ -8,100 +8,70 @@
 
 /* Begin PBXBuildFile section */
 		3417FA841EBE0C5D009E5E29 /* MNRouteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA831EBE0C5D009E5E29 /* MNRouteDetailsViewController.m */; };
-		3417FA851EBE0C5D009E5E29 /* MNRouteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA831EBE0C5D009E5E29 /* MNRouteDetailsViewController.m */; };
 		3417FA861EBE0C5D009E5E29 /* MNRouteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA831EBE0C5D009E5E29 /* MNRouteDetailsViewController.m */; };
 		3417FA8A1EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA891EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m */; };
-		3417FA8B1EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA891EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m */; };
 		3417FA8C1EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA891EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m */; };
 		3417FA8F1EBE1629009E5E29 /* MNLineRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA8E1EBE1629009E5E29 /* MNLineRoute.m */; };
-		3417FA901EBE1629009E5E29 /* MNLineRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA8E1EBE1629009E5E29 /* MNLineRoute.m */; };
 		3417FA911EBE1629009E5E29 /* MNLineRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA8E1EBE1629009E5E29 /* MNLineRoute.m */; };
 		3417FA941EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */; };
-		3417FA951EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */; };
 		3417FA961EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */; };
 		343BFB801EA802C100CEC472 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB7F1EA802C100CEC472 /* main.m */; };
 		343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB821EA802C100CEC472 /* AppDelegate.m */; };
 		343BFB891EA802C100CEC472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343BFB871EA802C100CEC472 /* Main.storyboard */; };
 		343BFB8B1EA802C100CEC472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343BFB8A1EA802C100CEC472 /* Assets.xcassets */; };
 		343BFB8E1EA802C100CEC472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343BFB8C1EA802C100CEC472 /* LaunchScreen.storyboard */; };
-		343BFB991EA802C100CEC472 /* MetroNavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB981EA802C100CEC472 /* MetroNavigationTests.m */; };
 		343BFBA41EA802C100CEC472 /* MetroNavigationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBA31EA802C100CEC472 /* MetroNavigationUITests.m */; };
-		343BFBB71EA8066E00CEC472 /* MetroGraphLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBB61EA8066E00CEC472 /* MetroGraphLogic.m */; };
 		343BFBC01EA8068900CEC472 /* MNMetro.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBB91EA8068900CEC472 /* MNMetro.m */; };
-		343BFBC11EA8068900CEC472 /* MNMetro.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBB91EA8068900CEC472 /* MNMetro.m */; };
 		343BFBC21EA8068900CEC472 /* MNStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBB1EA8068900CEC472 /* MNStation.m */; };
-		343BFBC31EA8068900CEC472 /* MNStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBB1EA8068900CEC472 /* MNStation.m */; };
 		343BFBC41EA8068900CEC472 /* MNEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBD1EA8068900CEC472 /* MNEdge.m */; };
-		343BFBC51EA8068900CEC472 /* MNEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBD1EA8068900CEC472 /* MNEdge.m */; };
 		343BFBC61EA8068900CEC472 /* MNRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBF1EA8068900CEC472 /* MNRoute.m */; };
-		343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBBF1EA8068900CEC472 /* MNRoute.m */; };
 		343BFBCA1EA8070500CEC472 /* MNDataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBC91EA8070500CEC472 /* MNDataAPI.m */; };
-		343BFBCB1EA8070500CEC472 /* MNDataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBC91EA8070500CEC472 /* MNDataAPI.m */; };
+		343E458C1EBE9BD5006AFCF1 /* MetroNavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB981EA802C100CEC472 /* MetroNavigationTests.m */; };
+		343E458D1EBE9BD5006AFCF1 /* MetroGraphLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBB61EA8066E00CEC472 /* MetroGraphLogic.m */; };
 		344DFA941EB8F73400960F6F /* MNMetro+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA931EB8F73400960F6F /* MNMetro+JSON.m */; };
-		344DFA951EB8F73400960F6F /* MNMetro+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA931EB8F73400960F6F /* MNMetro+JSON.m */; };
 		344DFA961EB8F73400960F6F /* MNMetro+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA931EB8F73400960F6F /* MNMetro+JSON.m */; };
 		344DFA991EB8F74700960F6F /* MNStation+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA981EB8F74700960F6F /* MNStation+JSON.m */; };
-		344DFA9A1EB8F74700960F6F /* MNStation+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA981EB8F74700960F6F /* MNStation+JSON.m */; };
 		344DFA9B1EB8F74700960F6F /* MNStation+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA981EB8F74700960F6F /* MNStation+JSON.m */; };
 		344DFAA31EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFAA21EB8F95900960F6F /* MNBaseSearchListViewController.m */; };
-		344DFAA41EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFAA21EB8F95900960F6F /* MNBaseSearchListViewController.m */; };
 		344DFAA51EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFAA21EB8F95900960F6F /* MNBaseSearchListViewController.m */; };
 		3462DC111EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
-		3462DC121EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
 		3462DC131EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
 		3462DC171EB85A5F00D77301 /* MNBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* MNBarItemButton.m */; };
-		3462DC181EB85A5F00D77301 /* MNBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* MNBarItemButton.m */; };
 		3462DC191EB85A5F00D77301 /* MNBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* MNBarItemButton.m */; };
 		3462DC2C1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */; };
-		3462DC2D1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */; };
 		3462DC2E1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */; };
 		3462DC311EB8722D00D77301 /* MNCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* MNCityButton.m */; };
-		3462DC321EB8722D00D77301 /* MNCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* MNCityButton.m */; };
 		3462DC331EB8722D00D77301 /* MNCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* MNCityButton.m */; };
 		3462DC361EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */; };
-		3462DC371EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */; };
 		3462DC381EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */; };
 		348CC5681EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MNMetroRouteViewController.m */; };
 		348CC5691EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MNMetroRouteViewController.m */; };
 		348D3AB71EABD04F00D341C6 /* MNMetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */; };
-		348D3AB81EABD04F00D341C6 /* MNMetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */; };
 		348D3AB91EABD04F00D341C6 /* MNMetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */; };
 		349B7B261EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */; };
-		349B7B271EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */; };
 		349B7B281EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */; };
 		34D087F01EBD2367006FB6AE /* MNColor+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087EF1EBD2367006FB6AE /* MNColor+JSON.m */; };
 		34D087F31EBD237B006FB6AE /* MNEdge+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F21EBD237B006FB6AE /* MNEdge+JSON.m */; };
-		34D087F41EBD237B006FB6AE /* MNEdge+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F21EBD237B006FB6AE /* MNEdge+JSON.m */; };
 		34D087F51EBD237B006FB6AE /* MNEdge+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F21EBD237B006FB6AE /* MNEdge+JSON.m */; };
 		34D087F81EBD239C006FB6AE /* MNLine+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F71EBD239C006FB6AE /* MNLine+JSON.m */; };
-		34D087F91EBD239C006FB6AE /* MNLine+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F71EBD239C006FB6AE /* MNLine+JSON.m */; };
 		34D087FA1EBD239C006FB6AE /* MNLine+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F71EBD239C006FB6AE /* MNLine+JSON.m */; };
 		34D088041EBD23CF006FB6AE /* MNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088011EBD23CF006FB6AE /* MNColor.m */; };
-		34D088051EBD23CF006FB6AE /* MNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088011EBD23CF006FB6AE /* MNColor.m */; };
 		34D088061EBD23CF006FB6AE /* MNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088011EBD23CF006FB6AE /* MNColor.m */; };
 		34D088071EBD23CF006FB6AE /* MNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088031EBD23CF006FB6AE /* MNLine.m */; };
-		34D088081EBD23CF006FB6AE /* MNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088031EBD23CF006FB6AE /* MNLine.m */; };
 		34D088091EBD23CF006FB6AE /* MNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088031EBD23CF006FB6AE /* MNLine.m */; };
 		34D2E9F71EB9145D0058E4F5 /* MNStationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F61EB9145D0058E4F5 /* MNStationTableViewCell.m */; };
 		34D2E9FA1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */; };
-		34D2E9FB1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */; };
 		34D2E9FC1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */; };
 		34D2EA041EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA031EB91B150058E4F5 /* MNMetroStateHolder.m */; };
-		34D2EA051EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA031EB91B150058E4F5 /* MNMetroStateHolder.m */; };
 		34D2EA061EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA031EB91B150058E4F5 /* MNMetroStateHolder.m */; };
 		34D2EA191EB9C8CE0058E4F5 /* MNStationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */; };
-		34D2EA1A1EB9C8CE0058E4F5 /* MNStationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */; };
 		34D2EA1B1EB9C8CE0058E4F5 /* MNStationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */; };
 		34F49EED1EBD25E30026BF8F /* UISearchBar+MNApearence.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F49EEC1EBD25E30026BF8F /* UISearchBar+MNApearence.m */; };
 		34F49EF51EBD273D0026BF8F /* MNSearchListNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F49EF41EBD273D0026BF8F /* MNSearchListNavigationBar.m */; };
-		34F49EF61EBD273D0026BF8F /* MNSearchListNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F49EF41EBD273D0026BF8F /* MNSearchListNavigationBar.m */; };
 		34F49EF71EBD273D0026BF8F /* MNSearchListNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F49EF41EBD273D0026BF8F /* MNSearchListNavigationBar.m */; };
-		34F49EF81EBD2C090026BF8F /* MNColor+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087EF1EBD2367006FB6AE /* MNColor+JSON.m */; };
 		34F9D9121EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */; };
-		34F9D9131EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */; };
 		34F9D9141EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */; };
 		34F9D9171EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */; };
-		34F9D9181EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */; };
 		34F9D9191EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */; };
 /* End PBXBuildFile section */
 
@@ -632,38 +602,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3417FA851EBE0C5D009E5E29 /* MNRouteDetailsViewController.m in Sources */,
-				34F49EF81EBD2C090026BF8F /* MNColor+JSON.m in Sources */,
-				3462DC2D1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */,
-				3462DC371EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */,
-				34F9D9131EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */,
-				344DFAA41EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */,
-				343BFB991EA802C100CEC472 /* MetroNavigationTests.m in Sources */,
-				348D3AB81EABD04F00D341C6 /* MNMetroImageView.m in Sources */,
-				34D087F91EBD239C006FB6AE /* MNLine+JSON.m in Sources */,
-				343BFBCB1EA8070500CEC472 /* MNDataAPI.m in Sources */,
-				343BFBC11EA8068900CEC472 /* MNMetro.m in Sources */,
-				344DFA951EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
-				3462DC121EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
-				34D088081EBD23CF006FB6AE /* MNLine.m in Sources */,
-				34D2EA1A1EB9C8CE0058E4F5 /* MNStationButton.m in Sources */,
-				3417FA8B1EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m in Sources */,
-				3462DC181EB85A5F00D77301 /* MNBarItemButton.m in Sources */,
-				343BFBC51EA8068900CEC472 /* MNEdge.m in Sources */,
-				34D087F41EBD237B006FB6AE /* MNEdge+JSON.m in Sources */,
-				344DFA9A1EB8F74700960F6F /* MNStation+JSON.m in Sources */,
-				34F9D9181EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */,
-				349B7B271EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */,
-				34D2E9FB1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */,
-				34D088051EBD23CF006FB6AE /* MNColor.m in Sources */,
-				3462DC321EB8722D00D77301 /* MNCityButton.m in Sources */,
-				34F49EF61EBD273D0026BF8F /* MNSearchListNavigationBar.m in Sources */,
-				343BFBB71EA8066E00CEC472 /* MetroGraphLogic.m in Sources */,
-				3417FA901EBE1629009E5E29 /* MNLineRoute.m in Sources */,
-				343BFBC71EA8068900CEC472 /* MNRoute.m in Sources */,
-				343BFBC31EA8068900CEC472 /* MNStation.m in Sources */,
-				34D2EA051EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */,
-				3417FA951EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */,
+				343E458C1EBE9BD5006AFCF1 /* MetroNavigationTests.m in Sources */,
+				343E458D1EBE9BD5006AFCF1 /* MetroGraphLogic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +794,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = YSVD2VLRXZ;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = MetroNavigationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kpi.university.MetroNavigationTests;
@@ -867,6 +808,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = YSVD2VLRXZ;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = MetroNavigationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kpi.university.MetroNavigationTests;

@@ -4,31 +4,31 @@
     "id": "100",
             "lines":[
         {
-            "color":{"red":233, "green":244, "blue":243},
+            "color":{"red":208, "green":2, "blue":27},
             "name":"red"
         },
         {
-            "color":{"red":233, "green":244, "blue":243},
+            "color":{"red":208, "green":2, "blue":27},
             "name":"red-branch"
         },
         {
-            "color":{"red":234, "green":244, "blue":243},
+            "color":{"red":65, "green":117, "blue":5},
             "name":"green"
         },
         {
-            "color":{"red":234, "green":244, "blue":243},
+            "color":{"red":65, "green":117, "blue":5},
             "name":"green-branch-one"
         },
         {
-            "color":{"red":234, "green":244, "blue":243},
+            "color":{"red":65, "green":117, "blue":5},
             "name":"green-branch-two"
         },
         {
-            "color":{"red":234, "green":244, "blue":243},
+            "color":{"red":144, "green":19, "blue":254},
             "name":"violet"
         },
         {
-            "color":{"red":234, "green":244, "blue":243},
+            "color":{"red":248, "green":231, "blue":28},
             "name":"yellow"
         }
     ],
@@ -549,19 +549,19 @@
       "first": {"id": "411","name": "Cascina Gobba", "posX":1526.933333 , "posY":485.133333, "transferDuration":5.0},
       "second": {"id": "412","name": "Cologno Sud", "posX":1534.400000 , "posY":407.666667},
       "duration": 1.3,
-        "line":["green-branch-1"]
+        "line":["green-branch-one"]
     },
     {
       "first": {"id": "412","name": "Cologno Sud", "posX":1534.400000 , "posY":407.666667},
       "second": {"id": "413","name": "Cologno Centro", "posX":1534.400000 , "posY":352.600000},
       "duration": 1.3,
-        "line":["green-branch-1"]
+        "line":["green-branch-one"]
     },
     {
       "first": {"id": "413","name": "Cologno Centro", "posX":1534.400000 , "posY":352.600000},
       "second": {"id": "415","name": "Cologno Nord", "posX":1536.266667 , "posY":293.800000},
       "duration": 1.3,
-        "line":["green-branch-1"]
+        "line":["green-branch-one"]
     },
     {
       "first": {"id": "411","name": "Cascina Gobba", "posX":1526.933333 , "posY":485.133333, "transferDuration":5.0},
@@ -675,7 +675,7 @@
       "first": {"id": "434","name": "Famagosta", "posX":842.800000 , "posY":1243.933333},
       "second": {"id": "435","name": "Abbiategrasso", "posX":928.666667 , "posY":1364.333333},
       "duration": 1.3,
-        "line":["green-branch-2"]
+        "line":["green-branch-two"]
     },
     {
       "first": {"id": "434","name": "Famagosta", "posX":842.800000 , "posY":1243.933333},

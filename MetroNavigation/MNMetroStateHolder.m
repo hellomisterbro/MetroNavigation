@@ -33,13 +33,13 @@ NSString *const kCityMetroStateKeyForUserDefaults = @"MNCityMetroStateKey";
 }
 
 - (MNMetro *)currentMetroState {
-    MNMetro *metroStateToReturn = _currentMetroState;
+    MNMetro *metroState = _currentMetroState;
     
-    if ((metroStateToReturn = _currentMetroState) ||
-        (metroStateToReturn = [self loadLastStoredMetroState]) ||
-        (metroStateToReturn = [self defaultMetroState])) {
+    if ((metroState = _currentMetroState) ||
+        (metroState = [self loadLastStoredMetroState]) ||
+        (metroState = [self defaultMetroState])) {
         
-        _currentMetroState = metroStateToReturn;
+        _currentMetroState = metroState;
         
         return _currentMetroState;
     }
@@ -52,7 +52,7 @@ NSString *const kCityMetroStateKeyForUserDefaults = @"MNCityMetroStateKey";
     NSData *encodedObject = [defaults objectForKey:kCityMetroStateKeyForUserDefaults];
    
     if (encodedObject) {
-        MNMetro *loadedMetro = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+        MNMetro *loadedMetro = (MNMetro *)[NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
         return loadedMetro;
     }
     
@@ -60,13 +60,17 @@ NSString *const kCityMetroStateKeyForUserDefaults = @"MNCityMetroStateKey";
    
 }
 
-- (void)storeCurrentMetroState:(MNMetro *)metroToStore {
+- (void)storeCurrentMetroState:(MNMetro *)aMetro {
     
-    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:metroToStore];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setObject:encodedObject forKey:kCityMetroStateKeyForUserDefaults];
-    [defaults synchronize];
+    if (aMetro) {
+        
+        NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:aMetro];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        [defaults setObject:encodedObject forKey:kCityMetroStateKeyForUserDefaults];
+        [defaults synchronize];
+    }
+
 }
 
 - (MNMetro *)defaultMetroState {

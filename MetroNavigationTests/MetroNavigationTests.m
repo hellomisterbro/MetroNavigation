@@ -10,6 +10,7 @@
 #import "MNMetro.h"
 #import "MNDataAPI.h"
 #import "MNLineRoute.h"
+#import "MNMetroStateHolder.h"
 
 @interface MetroNavigationTests : XCTestCase
 
@@ -232,8 +233,28 @@
 }
 
 - (void)testStateHolder {
+    MNMetro *milanoMetro = [DataAPI metroJSONFile:@"milano"];
+    
+    //stores metro
+    MNMetroStateHolder.sharedInstance.currentMetroState = milanoMetro;
+    
+    MNMetroStateHolder.sharedInstance.currentMetroState = nil;
+   
+    //gives us a stored value instead of nil
+    XCTAssertEqualObjects(milanoMetro, MNMetroStateHolder.sharedInstance.currentMetroState,
+                          @"Number of stations for yellow should be");
+    
     
 }
 
 
 @end
+
+
+
+
+
+
+
+
+

@@ -49,7 +49,7 @@
     
     color.red = self.red;
     color.green = self.green;
-    color.blue = self.red;
+    color.blue = self.blue;
     
     return color;
 }
