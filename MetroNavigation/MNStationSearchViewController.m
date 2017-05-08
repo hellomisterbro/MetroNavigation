@@ -11,6 +11,8 @@
 
 #import "MNMetroStateHolder.h"
 
+#import "UIColor+MNColors.h"
+
 NSString *const kReusableCellForStationSearch = @"MNStationTableViewCellIdentidier";
 NSString *const kUnwindToMetroRouteSegueName = @"MNStationChangedUnwindToMetroViewController";
 
@@ -37,7 +39,15 @@ NSString *const kUnwindToMetroRouteSegueName = @"MNStationChangedUnwindToMetroVi
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    MNMetro *metro = MNMetroStateHolder.sharedInstance.currentMetroState;
+    
     MNStationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableCellForStationSearch forIndexPath:indexPath];
+  
+    [cell.circleHolderView removeAllColors];
+    
+    for (MNColor *color in [metro colorsForStation:[self contentForIndexPath:indexPath]]) {
+        [cell.circleHolderView addCircleWithColor:[UIColor colorWithMNColor:color]];
+    }
     
     NSString *labelName = [self nameForIndexPath:indexPath];
     cell.stationNameLabel.text = labelName;

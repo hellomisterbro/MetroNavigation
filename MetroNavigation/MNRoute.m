@@ -140,7 +140,7 @@
                 [stationsSequence removeObjectsInArray:lineStationSequence];
                 [stationsSequence insertObject:previousStation atIndex:0];
                 
-                lineRoute.line = [self.metro lineByNamed:[previousEdge.lineNames firstObject]];
+                lineRoute.line = [self.metro lineNamed:[previousEdge.lineNames firstObject]];
                 
                 lineRoute.transferToNextDuration = previousStation.transferDuration;
                 
@@ -165,7 +165,7 @@
                     
                 } else {
                     
-                    lineRoute.line = [self.metro lineByNamed:[edgeFromCurrentToPrevious.lineNames firstObject]];
+                    lineRoute.line = [self.metro lineNamed:[edgeFromCurrentToPrevious.lineNames firstObject]];
                 }
             }
             

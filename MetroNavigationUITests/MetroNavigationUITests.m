@@ -8,7 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
+#import "XCUIElement+Helpers.h"
+
 @interface MetroNavigationUITests : XCTestCase
+
+@property (nonatomic, strong) XCUIApplication *app;
 
 @end
 
@@ -22,7 +26,9 @@
     // In UI tests it is usually best to stop immediately when a failure occurs.
     self.continueAfterFailure = NO;
     // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-    [[[XCUIApplication alloc] init] launch];
+    
+    self.app = [XCUIApplication new] ;
+    [self.app launch];
     
     // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
 }
@@ -32,9 +38,29 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testSelectingStations {
+    
+    XCUIApplication *app = [XCUIApplication new];
+    XCUIElement *kyivMetroImage = app.images[@"kyiv-metro"];
+
+    
+    [app.navigationBars[@"Kyiv Metro"].buttons[@"More cities"] tap];
+    [app.tables.staticTexts[@"Kiev Metropolitan"] tap];
+    [app.navigationBars[@"Choose Metro"].buttons[@"Done"] tap];
+
+    [kyivMetroImage tapAtPointX:123.4f y:308.0f];
+    [kyivMetroImage tapAtPointX:226.7f y:231.1f];
+    
+    XCTAssertTrue([app.buttons[@"Tarasa Shevchenka"] exists], @"Tapped station was not Tarasa Shevchenka.");
+    XCTAssertTrue([app.buttons[@"Politechnichnyi Instytut"] exists], @"Tapped station was not Tarasa Shevchenka.");
+
+    
+    [app.buttons[@"Details"] tap];
+    [app.navigationBars[@"Route Details"].buttons[@"Done"] tap];
+    
+    
+    
 }
+
 
 @end

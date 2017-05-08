@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MNCircleHolder.h"
+
 @interface MNStationTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *stationNameLabel;
+@property (weak, nonatomic) IBOutlet MNCircleHolder *circleHolderView;
 
 @end

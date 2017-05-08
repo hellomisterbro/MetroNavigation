@@ -9,7 +9,15 @@
 #import "MNMetroImageView.h"
 #import "MNDataAPI.h"
 
-const CGFloat kDiameterForPin = 10.0f;
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
+#define IS_IPHONE_5_OR_LESS (SCREEN_HEIGHT <= 568.0)
+#define IS_IPHONE_6 (SCREEN_HEIGHT == 667.0)
+#define IS_IPHONE_6P (SCREEN_HEIGHT >= 736.0)
+
+#define kDiameterForPin IS_IPHONE_5_OR_LESS ? 8.0f : (IS_IPHONE_6  ? 10.0f : (IS_IPHONE_6P ? 11.0f : 10.0f));
+
+
 
 NSString *const kMetroNavigationStartPinName = @"start";
 NSString *const kMetroNavigationEndPinName = @"end";
@@ -40,8 +48,6 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
     CGPoint viewTouchPoint = [touch locationInView:self];
     
     CGPoint imageTouchPoint = [self imagePointFromViewPoint:viewTouchPoint];
-    
-    NSLog(@"\"posX\":%f , \"posY\":%f", imageTouchPoint.x, imageTouchPoint.y);
     
     [self.delegate imageTouchedAtPoint:imageTouchPoint metroImageView:self];
 }
@@ -118,6 +124,9 @@ NSString *const kMetroNavigationIntermediatePinName = @"intermediate";
     circleLayer.frame = CGRectMake(point.x - radious / 2.0f, point.y - radious / 2.0f, radious, radious);
     
     circleLayer.contents = (id)image.CGImage;
+    
+    // Change the actual data value in the layer to the final value.
+    circleLayer.opacity = 1.0;
     
     return circleLayer;
 }

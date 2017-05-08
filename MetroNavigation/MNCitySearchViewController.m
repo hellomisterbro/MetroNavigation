@@ -52,6 +52,7 @@ NSString *const kUnwindToMetroViewControllerSegueName = @"MNMetroChangedUnwindTo
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    
     MNCityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableCellForCitySearch forIndexPath:indexPath];
     
     NSString *labelName = [self nameForIndexPath:indexPath];

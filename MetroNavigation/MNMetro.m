@@ -143,6 +143,25 @@
     return nil;
 }
 
+- (NSArray <MNColor *> *)colorsForStation:(MNStation *)station {
+    NSMutableSet <MNColor *> * colors = [NSMutableSet set];
+    
+    for (MNStation *neighboringStation in [self neighboringStationsToStation:station]) {
+        
+        MNEdge *neighboringEdge = [self edgeFromStation:station toStation:neighboringStation];
+        
+        if (!neighboringEdge.isTransferEdge) {
+            
+            MNLine *line = [self lineNamed:[[neighboringEdge lineNames] firstObject]];
+            
+            [colors addObject:line.color];
+        }
+    }
+    
+    
+    return [colors allObjects];
+}
+
 - (void)addEdge:(MNEdge *)anEdge fromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation {
     if ([aStation isEqual:anotherStation] ||
         [self edgeFromStation:aStation toStation:anotherStation]) {
@@ -197,12 +216,26 @@
     return (graphEdge) ? graphEdge.duration : nil;
 }
 
-- (MNLine *)lineByNamed:(NSString *)aName {
+- (MNLine *)lineNamed:(NSString *)aName {
     
     for (MNLine *line in self.lines) {
         
         if ([line.name isEqualToString:aName]) {
             return line;
+        }
+    }
+    
+    return nil;
+}
+
+- (MNLine *)lineForStation:(MNStation *)aStation {
+    
+    for (MNStation *neighboringStation in [self neighboringStationsToStation:aStation]) {
+        
+        MNEdge *neighboringEdge = [self edgeFromStation:aStation toStation:neighboringStation];
+        
+        if (!neighboringEdge.isTransferEdge) {
+            return [self lineNamed:[neighboringEdge.lineNames firstObject]];
         }
     }
     
@@ -334,21 +367,6 @@
     return resultStation;
 }
 
-//Returns the line for a station
-//IMPORTANT: only works for specific strucure of graph (when one station cannot belong to several lines).
-- (MNLine *)lineForStation:(MNStation *)aStation {
-    
-    for (MNStation *neighboringStation in [self neighboringStationsToStation:aStation]) {
-        
-        MNEdge *neighboringEdge = [self edgeFromStation:aStation toStation:neighboringStation];
-        
-        if (!neighboringEdge.isTransferEdge) {
-            return [self lineByNamed:[neighboringEdge.lineNames firstObject]];
-        }
-    }
-    
-    return nil;
-}
 
 @end
 

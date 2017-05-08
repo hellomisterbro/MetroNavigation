@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MNCircleHolder.h"
 
 @interface MNCityTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
-
 
 @end

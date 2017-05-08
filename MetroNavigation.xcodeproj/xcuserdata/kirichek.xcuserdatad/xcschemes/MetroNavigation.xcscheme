@@ -48,6 +48,16 @@
                ReferencedContainer = "container:MetroNavigation.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "348FF1DC1EBFBB6000A71EA8"
+               BuildableName = "MetroNavigationTestUITests.xctest"
+               BlueprintName = "MetroNavigationTestUITests"
+               ReferencedContainer = "container:MetroNavigation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

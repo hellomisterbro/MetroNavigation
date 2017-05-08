@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3417FA841EBE0C5D009E5E29 /* MNRouteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA831EBE0C5D009E5E29 /* MNRouteDetailsViewController.m */; };
-		3417FA861EBE0C5D009E5E29 /* MNRouteDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA831EBE0C5D009E5E29 /* MNRouteDetailsViewController.m */; };
 		3417FA8A1EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA891EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m */; };
-		3417FA8C1EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA891EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m */; };
 		3417FA8F1EBE1629009E5E29 /* MNLineRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA8E1EBE1629009E5E29 /* MNLineRoute.m */; };
-		3417FA911EBE1629009E5E29 /* MNLineRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA8E1EBE1629009E5E29 /* MNLineRoute.m */; };
 		3417FA941EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */; };
-		3417FA961EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3417FA931EBE7F73009E5E29 /* MNTransferTimeLabel.m */; };
 		343BFB801EA802C100CEC472 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB7F1EA802C100CEC472 /* main.m */; };
 		343BFB831EA802C100CEC472 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB821EA802C100CEC472 /* AppDelegate.m */; };
 		343BFB891EA802C100CEC472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343BFB871EA802C100CEC472 /* Main.storyboard */; };
@@ -29,50 +25,30 @@
 		343E458C1EBE9BD5006AFCF1 /* MetroNavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFB981EA802C100CEC472 /* MetroNavigationTests.m */; };
 		343E458D1EBE9BD5006AFCF1 /* MetroGraphLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BFBB61EA8066E00CEC472 /* MetroGraphLogic.m */; };
 		344DFA941EB8F73400960F6F /* MNMetro+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA931EB8F73400960F6F /* MNMetro+JSON.m */; };
-		344DFA961EB8F73400960F6F /* MNMetro+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA931EB8F73400960F6F /* MNMetro+JSON.m */; };
 		344DFA991EB8F74700960F6F /* MNStation+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA981EB8F74700960F6F /* MNStation+JSON.m */; };
-		344DFA9B1EB8F74700960F6F /* MNStation+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFA981EB8F74700960F6F /* MNStation+JSON.m */; };
 		344DFAA31EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFAA21EB8F95900960F6F /* MNBaseSearchListViewController.m */; };
-		344DFAA51EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344DFAA21EB8F95900960F6F /* MNBaseSearchListViewController.m */; };
 		3462DC111EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
-		3462DC131EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC101EB7B0FC00D77301 /* UIColor+MNColors.m */; };
 		3462DC171EB85A5F00D77301 /* MNBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* MNBarItemButton.m */; };
-		3462DC191EB85A5F00D77301 /* MNBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC161EB85A5F00D77301 /* MNBarItemButton.m */; };
 		3462DC2C1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */; };
-		3462DC2E1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */; };
-		3462DC311EB8722D00D77301 /* MNCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* MNCityButton.m */; };
-		3462DC331EB8722D00D77301 /* MNCityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC301EB8722D00D77301 /* MNCityButton.m */; };
 		3462DC361EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */; };
-		3462DC381EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */; };
 		348CC5681EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MNMetroRouteViewController.m */; };
-		348CC5691EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348CC5671EA9F8B700A7302D /* MNMetroRouteViewController.m */; };
 		348D3AB71EABD04F00D341C6 /* MNMetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */; };
-		348D3AB91EABD04F00D341C6 /* MNMetroImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */; };
+		348FF1E91EBFC65900A71EA8 /* XCUIElement+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 348FF1E81EBFC65900A71EA8 /* XCUIElement+Helpers.m */; };
 		349B7B261EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */; };
-		349B7B281EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */; };
+		34AEA7221EC0851700CC2B15 /* MNCircleHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AEA7211EC0851700CC2B15 /* MNCircleHolder.m */; };
 		34D087F01EBD2367006FB6AE /* MNColor+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087EF1EBD2367006FB6AE /* MNColor+JSON.m */; };
 		34D087F31EBD237B006FB6AE /* MNEdge+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F21EBD237B006FB6AE /* MNEdge+JSON.m */; };
-		34D087F51EBD237B006FB6AE /* MNEdge+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F21EBD237B006FB6AE /* MNEdge+JSON.m */; };
 		34D087F81EBD239C006FB6AE /* MNLine+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F71EBD239C006FB6AE /* MNLine+JSON.m */; };
-		34D087FA1EBD239C006FB6AE /* MNLine+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D087F71EBD239C006FB6AE /* MNLine+JSON.m */; };
 		34D088041EBD23CF006FB6AE /* MNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088011EBD23CF006FB6AE /* MNColor.m */; };
-		34D088061EBD23CF006FB6AE /* MNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088011EBD23CF006FB6AE /* MNColor.m */; };
 		34D088071EBD23CF006FB6AE /* MNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088031EBD23CF006FB6AE /* MNLine.m */; };
-		34D088091EBD23CF006FB6AE /* MNLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D088031EBD23CF006FB6AE /* MNLine.m */; };
 		34D2E9F71EB9145D0058E4F5 /* MNStationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F61EB9145D0058E4F5 /* MNStationTableViewCell.m */; };
 		34D2E9FA1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */; };
-		34D2E9FC1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2E9F91EB916220058E4F5 /* MNStationSearchViewController.m */; };
 		34D2EA041EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA031EB91B150058E4F5 /* MNMetroStateHolder.m */; };
-		34D2EA061EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA031EB91B150058E4F5 /* MNMetroStateHolder.m */; };
 		34D2EA191EB9C8CE0058E4F5 /* MNStationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */; };
-		34D2EA1B1EB9C8CE0058E4F5 /* MNStationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2EA181EB9C8CE0058E4F5 /* MNStationButton.m */; };
 		34F49EED1EBD25E30026BF8F /* UISearchBar+MNApearence.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F49EEC1EBD25E30026BF8F /* UISearchBar+MNApearence.m */; };
 		34F49EF51EBD273D0026BF8F /* MNSearchListNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F49EF41EBD273D0026BF8F /* MNSearchListNavigationBar.m */; };
-		34F49EF71EBD273D0026BF8F /* MNSearchListNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F49EF41EBD273D0026BF8F /* MNSearchListNavigationBar.m */; };
 		34F9D9121EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */; };
-		34F9D9141EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */; };
 		34F9D9171EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */; };
-		34F9D9191EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9161EB5185200322D64 /* MNRouteDescriptionBannerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,16 +114,18 @@
 		3462DC161EB85A5F00D77301 /* MNBarItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBarItemButton.m; sourceTree = "<group>"; };
 		3462DC2A1EB871AF00D77301 /* MNCitySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCitySearchViewController.h; sourceTree = "<group>"; };
 		3462DC2B1EB871AF00D77301 /* MNCitySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCitySearchViewController.m; sourceTree = "<group>"; };
-		3462DC2F1EB8722D00D77301 /* MNCityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCityButton.h; sourceTree = "<group>"; };
-		3462DC301EB8722D00D77301 /* MNCityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCityButton.m; sourceTree = "<group>"; };
 		3462DC341EB88F1B00D77301 /* MNCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCityTableViewCell.h; sourceTree = "<group>"; };
 		3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCityTableViewCell.m; sourceTree = "<group>"; };
 		348CC5661EA9F8B700A7302D /* MNMetroRouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMetroRouteViewController.h; sourceTree = "<group>"; };
 		348CC5671EA9F8B700A7302D /* MNMetroRouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMetroRouteViewController.m; sourceTree = "<group>"; };
 		348D3AB51EABD04F00D341C6 /* MNMetroImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMetroImageView.h; sourceTree = "<group>"; };
 		348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMetroImageView.m; sourceTree = "<group>"; };
+		348FF1E71EBFC65900A71EA8 /* XCUIElement+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCUIElement+Helpers.h"; sourceTree = "<group>"; };
+		348FF1E81EBFC65900A71EA8 /* XCUIElement+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCUIElement+Helpers.m"; sourceTree = "<group>"; };
 		349B7B241EBB272200BC37D0 /* MNDurationDescriptionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNDurationDescriptionLabel.h; sourceTree = "<group>"; };
 		349B7B251EBB272200BC37D0 /* MNDurationDescriptionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNDurationDescriptionLabel.m; sourceTree = "<group>"; };
+		34AEA7201EC0851700CC2B15 /* MNCircleHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCircleHolder.h; sourceTree = "<group>"; };
+		34AEA7211EC0851700CC2B15 /* MNCircleHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCircleHolder.m; sourceTree = "<group>"; };
 		34D087EE1EBD2367006FB6AE /* MNColor+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNColor+JSON.h"; sourceTree = "<group>"; };
 		34D087EF1EBD2367006FB6AE /* MNColor+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MNColor+JSON.m"; sourceTree = "<group>"; };
 		34D087F11EBD237B006FB6AE /* MNEdge+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MNEdge+JSON.h"; sourceTree = "<group>"; };
@@ -265,6 +243,7 @@
 		343BFBA21EA802C100CEC472 /* MetroNavigationUITests */ = {
 			isa = PBXGroup;
 			children = (
+				348FF1EA1EBFC66300A71EA8 /* UI Test Helpres */,
 				343BFBA31EA802C100CEC472 /* MetroNavigationUITests.m */,
 				343BFBA51EA802C100CEC472 /* Info.plist */,
 			);
@@ -374,6 +353,15 @@
 			name = Colors;
 			sourceTree = "<group>";
 		};
+		348FF1EA1EBFC66300A71EA8 /* UI Test Helpres */ = {
+			isa = PBXGroup;
+			children = (
+				348FF1E71EBFC65900A71EA8 /* XCUIElement+Helpers.h */,
+				348FF1E81EBFC65900A71EA8 /* XCUIElement+Helpers.m */,
+			);
+			name = "UI Test Helpres";
+			sourceTree = "<group>";
+		};
 		349B7B231EBB260800BC37D0 /* Route Description Banner */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,8 +384,6 @@
 				348D3AB61EABD04F00D341C6 /* MNMetroImageView.m */,
 				34F9D9101EB4E32F00322D64 /* MNMetroImageScrollView.h */,
 				34F9D9111EB4E32F00322D64 /* MNMetroImageScrollView.m */,
-				3462DC2F1EB8722D00D77301 /* MNCityButton.h */,
-				3462DC301EB8722D00D77301 /* MNCityButton.m */,
 			);
 			name = "Metro Route";
 			sourceTree = "<group>";
@@ -407,6 +393,8 @@
 			children = (
 				3462DC341EB88F1B00D77301 /* MNCityTableViewCell.h */,
 				3462DC351EB88F1B00D77301 /* MNCityTableViewCell.m */,
+				34AEA7201EC0851700CC2B15 /* MNCircleHolder.h */,
+				34AEA7211EC0851700CC2B15 /* MNCircleHolder.m */,
 			);
 			name = "City Search";
 			sourceTree = "<group>";
@@ -584,9 +572,9 @@
 				34F49EF51EBD273D0026BF8F /* MNSearchListNavigationBar.m in Sources */,
 				34D2EA041EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */,
 				34D088071EBD23CF006FB6AE /* MNLine.m in Sources */,
-				3462DC311EB8722D00D77301 /* MNCityButton.m in Sources */,
 				34D2EA191EB9C8CE0058E4F5 /* MNStationButton.m in Sources */,
 				343BFBC61EA8068900CEC472 /* MNRoute.m in Sources */,
+				34AEA7221EC0851700CC2B15 /* MNCircleHolder.m in Sources */,
 				344DFA941EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
 				349B7B261EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */,
 				348CC5681EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */,
@@ -611,31 +599,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D2EA1B1EB9C8CE0058E4F5 /* MNStationButton.m in Sources */,
-				34D2EA061EB91B150058E4F5 /* MNMetroStateHolder.m in Sources */,
-				34F9D9141EB4E32F00322D64 /* MNMetroImageScrollView.m in Sources */,
-				3462DC131EB7B0FC00D77301 /* UIColor+MNColors.m in Sources */,
-				3417FA911EBE1629009E5E29 /* MNLineRoute.m in Sources */,
-				34D088091EBD23CF006FB6AE /* MNLine.m in Sources */,
-				3462DC381EB88F1B00D77301 /* MNCityTableViewCell.m in Sources */,
-				3417FA861EBE0C5D009E5E29 /* MNRouteDetailsViewController.m in Sources */,
-				3462DC331EB8722D00D77301 /* MNCityButton.m in Sources */,
-				344DFAA51EB8F95900960F6F /* MNBaseSearchListViewController.m in Sources */,
-				3417FA8C1EBE0EB4009E5E29 /* MNRouteDetailsForLineTableViewCell.m in Sources */,
-				344DFA9B1EB8F74700960F6F /* MNStation+JSON.m in Sources */,
-				34F9D9191EB5185200322D64 /* MNRouteDescriptionBannerView.m in Sources */,
-				348D3AB91EABD04F00D341C6 /* MNMetroImageView.m in Sources */,
-				349B7B281EBB272200BC37D0 /* MNDurationDescriptionLabel.m in Sources */,
-				3417FA961EBE7F73009E5E29 /* MNTransferTimeLabel.m in Sources */,
-				344DFA961EB8F73400960F6F /* MNMetro+JSON.m in Sources */,
-				34D087FA1EBD239C006FB6AE /* MNLine+JSON.m in Sources */,
-				3462DC2E1EB871AF00D77301 /* MNCitySearchViewController.m in Sources */,
-				3462DC191EB85A5F00D77301 /* MNBarItemButton.m in Sources */,
-				34F49EF71EBD273D0026BF8F /* MNSearchListNavigationBar.m in Sources */,
-				34D2E9FC1EB916220058E4F5 /* MNStationSearchViewController.m in Sources */,
-				34D087F51EBD237B006FB6AE /* MNEdge+JSON.m in Sources */,
-				348CC5691EA9F8B700A7302D /* MNMetroRouteViewController.m in Sources */,
-				34D088061EBD23CF006FB6AE /* MNColor.m in Sources */,
+				348FF1E91EBFC65900A71EA8 /* XCUIElement+Helpers.m in Sources */,
 				343BFBA41EA802C100CEC472 /* MetroNavigationUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

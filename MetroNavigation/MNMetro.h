@@ -31,11 +31,11 @@
 - (void)addEdge:(MNEdge *)anEdge fromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation;
 - (NSArray *)neighboringStationsToStation:(MNStation *)aStation;
 - (MNEdge *)edgeFromStation:(MNStation *)aStation toStation:(MNStation *)anotherStation;
-- (MNLine *)lineByNamed:(NSString *)aName;
+- (MNLine *)lineNamed:(NSString *)aName;
 - (NSNumber *)durationFromStation:(MNStation *)sourceStation toNeighboringStation:(MNStation *)targetStation;
 - (MNRoute *)shortestRouteFromStation:(MNStation *)sourceStation toStation:(MNStation *)targetStation;
 
-//Returns the statation the has 
+- (NSArray <MNColor *> *)colorsForStation:(MNStation *)station;
 - (MNStation *)stationWithImagePositionX:(double)x positionY:(double)y radious:(double)radious;
 
 //Returns the line for a station

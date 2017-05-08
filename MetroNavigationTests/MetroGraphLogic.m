@@ -95,14 +95,11 @@
     NSSet *predictedResultForA = [NSSet setWithArray:@[stationC, stationB, stationD]];
     NSSet *resultForA = [NSSet setWithArray:[cityA neighboringStationsToStation:stationA]];
     
-    NSSet *predictedResultForG = [NSSet setWithArray:@[stationE, stationF]];
-    NSSet *resultForG = [NSSet setWithArray:[cityA neighboringStationsToStation:stationG]];
-    
     NSSet *predictedResultForC = [NSSet setWithArray:@[stationA, stationD, stationF]];
     NSSet *resultForC = [NSSet setWithArray:[cityA neighboringStationsToStation:stationC]];
     
     XCTAssertEqualObjects(predictedResultForA, resultForA,  @"Incorrect neighboring stations for the station A");
-    XCTAssertEqualObjects(predictedResultForG, resultForG,  @"Incorrect neighboring stations for the station G");
+    
     XCTAssertEqualObjects(predictedResultForC, resultForC,  @"Incorrect neighboring stations for the station C");
 }
 

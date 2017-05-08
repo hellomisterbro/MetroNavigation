@@ -45,8 +45,6 @@ NSString *const kMilanoMetropolitanIdentifier = @"100";
     return imagesForNames[metroName];
 }
 
-
-
 + (NSDictionary *)metroNamesWithIDs {
     return @{ @"Kiev Metropolitan": kKyivMetropolitanIdentifier,
               @"Milano Metro": kMilanoMetropolitanIdentifier};

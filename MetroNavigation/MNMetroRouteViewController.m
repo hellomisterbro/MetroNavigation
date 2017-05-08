@@ -163,12 +163,11 @@ const int kMinDiameterForPinDetecting = 20;
     
     self.route = nil;
     
+    self.metroNameNavigationItem.title = metro.name;
+    
     //change the image
     NSString *imageName = [DataAPI imageMetroNameWithMetroIdentifier:metro.ID];
     self.metroImage.image = [UIImage imageNamed:imageName];
-    
-    //change the city button title
-    [self.cityButton setTitle:metro.name forState:UIControlStateNormal];
     
     //updating the image with the corresponing pins
     [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
@@ -259,8 +258,10 @@ const int kMinDiameterForPinDetecting = 20;
     [self.routeDescriptionBannerView setStartStationName:self.startStation.name];
     [self.routeDescriptionBannerView setEndStationName:self.endStation.name];
     [self.routeDescriptionBannerView.timelabel setTotalDuration:self.route.totalDuration withTransfersCount:self.route.totalTransfers];
-
+    
     self.routeDescriptionBannerView.bottomRouteDescriptionContraint.constant = 0;
+    
+    self.routeDescriptionBannerView.hidden = NO;
     
     //updating views to fit the contrains
     [UIView animateWithDuration:0.3 animations:^{
@@ -278,6 +279,8 @@ const int kMinDiameterForPinDetecting = 20;
     //updating views to fit the contrains
     [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        self.routeDescriptionBannerView.hidden = YES;
     }];
 }
 
@@ -289,6 +292,7 @@ const int kMinDiameterForPinDetecting = 20;
     
     self.endStation = self.startStation;
     self.startStation = endStation;
+    
     
     [self updatePinsAndRouteDisplayingWithStartStation:self.startStation endStation:self.endStation];
 }
@@ -305,14 +309,6 @@ const int kMinDiameterForPinDetecting = 20;
     return  self.metroImage;
 }
 
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-    
-}
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    
-}
 
 
 // MARK: - MNMetroImageViewDelegate
@@ -370,8 +366,6 @@ const int kMinDiameterForPinDetecting = 20;
         self.endStation = station;
     }
 }
-
-
 
 // MARK: - Local Helpers
 

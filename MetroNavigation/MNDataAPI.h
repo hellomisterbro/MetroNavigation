@@ -11,10 +11,8 @@
 #import "MNMetro.h"
 
 extern NSString *const kKyivMetropolitanIdentifier;
-extern NSString *const kMoscowMetropolitanIdentifier;
-extern NSString *const kPetersburgMetropolitanIdentifier;
-extern NSString *const kRigaMetropolitanIdentifier;
-extern NSString *const kBrusselsMetropolitanIdentifier;
+extern NSString *const kMilanoMetropolitanIdentifier;
+
 
 
 @interface DataAPI : NSObject
