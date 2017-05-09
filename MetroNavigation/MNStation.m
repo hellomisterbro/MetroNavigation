@@ -12,6 +12,10 @@
 
 // MARK: - Initializers
 
+- (instancetype)init {
+    @throw nil;
+}
+
 - (id)initWithIdentifier:(NSString *)identifier {
     self = [super init];
     

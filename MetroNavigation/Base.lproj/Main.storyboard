@@ -254,7 +254,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="11h-pm-X4B">
                             <connections>
-                                <segue destination="T5t-hz-baX" kind="unwind" identifier="MNMetroChangedUnwindToMetroViewController" unwindAction="updateStationsWithUnwindSegue:" id="TKd-uv-vOe"/>
+                                <segue destination="T5t-hz-baX" kind="unwind" identifier="MNMetroChangedUnwindToMetroViewController" unwindAction="updateMetroWithUnwindSegue:" id="TKd-uv-vOe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -458,7 +458,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBk-lc-LT4" customClass="MNTransferTimeLabel">
-                                            <rect key="frame" x="120" y="113" width="243" height="20"/>
+                                            <rect key="frame" x="119" y="113" width="243" height="20"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>

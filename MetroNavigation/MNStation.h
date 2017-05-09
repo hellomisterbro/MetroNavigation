@@ -24,7 +24,10 @@
 
 + (MNStation *)stationWithIdentifier:(NSString *)identifier;
 
-- (id)initWithIdentifier:(NSString *)identifier;
+- (instancetype)init NS_UNAVAILABLE;
+- (id)initWithIdentifier:(NSString *)identifier NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
+
 - (BOOL)isEqualToStation:(MNStation *)aStation;
 
 @end

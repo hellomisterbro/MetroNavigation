@@ -11,6 +11,14 @@
 
 NSString *const kCityMetroStateKeyForUserDefaults = @"MNCityMetroStateKey";
 
+@interface MNMetroStateHolder ()
+
+- (void)storeCurrentMetroState:(MNMetro *)aMetro;
+- (MNMetro *)loadLastStoredMetroState;
+- (MNMetro *)defaultMetroState;
+
+@end
+
 @implementation MNMetroStateHolder
 
 @synthesize currentMetroState = _currentMetroState;

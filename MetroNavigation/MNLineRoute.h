@@ -16,11 +16,10 @@
 @interface MNLineRoute : NSObject
 
 @property (nonatomic, copy) NSArray<MNStation *> *stationSequence;
+@property (nonatomic, strong) NSNumber *transferToNextDuration;
 
 @property (nonatomic, copy) MNMetro *metro;
 @property (nonatomic, copy) MNLine *line;
-
-@property (nonatomic, strong) NSNumber *transferToNextDuration;
 
 - (NSNumber *)duration;
 

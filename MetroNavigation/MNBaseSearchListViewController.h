@@ -10,7 +10,6 @@
 
 @interface MNBaseSearchListViewController : UITableViewController
 
-
 //The following dictionary represents the correspondence between the names of the objects and objects itself. The names will be used when seraching for the corresponding object to entered text.
 @property (nonatomic, strong) NSDictionary *contentForTableView;
 
